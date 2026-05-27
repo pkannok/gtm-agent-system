@@ -39,3 +39,5 @@ The optimized JSON must be accompanied by audit findings, change log, validation
 - `custom-gpt/instructions-draft.md`
 - `skills/gtm-container-auditor/references/deliverable-contract.md`
 - `outputs/_template/README.md`
+
+Task 0.1 status: canonical MLP deliverable defined.
