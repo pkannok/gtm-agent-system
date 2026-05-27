@@ -4,7 +4,9 @@ This repository defines a portable Custom GPT + Skill system for technical marke
 
 ## Current milestone
 
-Task 0.1: Define the canonical MLP deliverable.
+Task 0.2: Establish the portable project repository.
+
+Task 0.1 status: complete. The canonical MLP deliverable is defined and accepted in ADR-0001.
 
 ## Canonical MLP deliverable
 
@@ -32,12 +34,13 @@ The MLP will not produce optimized GTM JSON as the only deliverable.
 
 The optimized JSON must be accompanied by audit findings, change log, validation report, QA checklist, and run metadata.
 
-## Current files
+## Repository structure
 
-- `docs/decisions/ADR-0001-canonical-mlp-deliverable.md`
-- `docs/mlp-deliverable.md`
-- `custom-gpt/instructions-draft.md`
-- `skills/gtm-container-auditor/references/deliverable-contract.md`
-- `outputs/_template/README.md`
+- `docs/` - Product decisions, MLP deliverable documentation, architecture notes, glossary, and roadmap.
+- `custom-gpt/` - Custom GPT instructions, draft instructions, description, conversation starters, and test prompts.
+- `skills/gtm-container-auditor/` - Future reusable Skill package, including references, schemas, scripts, agents, and recipes.
+- `standards/` - Agency standards and client profile templates.
+- `outputs/_template/` - Expected output folder shape for the GTM Container Audit & Patch Package.
+- `tests/` - Future golden tests and package behavior checks.
 
-Task 0.1 status: canonical MLP deliverable defined.
+Some Task 0.2 files may be scaffolds until their corresponding implementation tasks are started.
