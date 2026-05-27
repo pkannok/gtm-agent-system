@@ -73,3 +73,6 @@ Do not work outside the active task scope.
 - API connectors
 - Full Skill implementation
 - Custom GPT creation in ChatGPT UI
+- GitHub actions
+- Production scripts
+- Live API actions

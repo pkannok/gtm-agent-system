@@ -39,7 +39,7 @@ The optimized JSON must be accompanied by audit findings, change log, validation
 - `docs/` - Product decisions, MLP deliverable documentation, architecture notes, glossary, and roadmap.
 - `docs/tasks/` - Detailed task scope and acceptance criteria.
 - `custom-gpt/` - Custom GPT instructions, draft instructions, description, conversation starters, and test prompts.
-- `skills/gtm-container-auditor/` - Future reusable Skill package, including references, schemas, scripts, agents, and recipes.
+- `skills/gtm-container-auditor/` - Future reusable Skill package references, starting with the deliverable contract.
 - `outputs/_template/` - Expected output folder shape for the GTM Container Audit & Patch Package.
 
 Some Task 0.2 files may be scaffolds until their corresponding implementation tasks are started.
