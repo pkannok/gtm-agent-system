@@ -12,7 +12,7 @@ The first MLP deliverable is:
 
 **GTM Container Audit & Patch Package**
 
-It is produced from a Google Tag Manager container export JSON and optional client standards.
+It is produced from a GTM container export JSON and optional client standards.
 
 ## Required MLP output files
 
