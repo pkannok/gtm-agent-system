@@ -1,10 +1,14 @@
 # Changelog
 
-This file records notable project documentation and scaffold changes.
+All notable project changes will be documented in this file.
 
 ## Unreleased
 
-- Completed Task 0.1 by accepting the canonical MLP deliverable: GTM Container Audit & Patch Package.
-- Started Task 0.2 to establish the portable project repository structure.
-- Added source-of-truth documentation scaffolds for roadmap, architecture, glossary, Custom GPT support files, Skill references, and output package shape.
+### Added
 
+- Defined the canonical MLP deliverable as **GTM Container Audit & Patch Package**.
+- Added project roadmap.
+- Added Codex guidance through `AGENTS.md`.
+- Added task-brief workflow under `docs/tasks/`.
+- Added initial placeholders for future Custom GPT configuration files.
+- Added initial placeholder structure for the future `gtm-container-auditor` Skill.

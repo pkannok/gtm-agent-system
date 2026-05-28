@@ -4,9 +4,23 @@
 
 This repository defines and implements a portable GTM Container Audit & Patch Package system for a future Custom GPT + Skill workflow.
 
-The system is being built in phases. The current phase is **Phase 0: Project framing and repository setup**.
+The long-term goal is a portable technical marketing analyst system that starts as a file-in/file-out Custom GPT + Skill and can later expand into schemas, validators, scripts, fixture tests, API connectors, and multi-agent workflows.
 
-The long-term goal is a portable technical marketing analyst system that starts as a file-in/file-out Custom GPT + Skill and can later expand into API-backed tools, validation scripts, and multi-agent workflows.
+## Active task source of truth
+
+The active task is defined in `docs/tasks/CURRENT.md`.
+
+Before making changes, read:
+
+- `docs/tasks/CURRENT.md`
+- Any active task brief referenced from `docs/tasks/CURRENT.md`
+- `docs/roadmap.md`
+- `docs/mlp-deliverable.md`
+- `docs/decisions/ADR-0001-canonical-mlp-deliverable.md`
+
+Do not work outside the active task scope.
+
+Task-specific constraints, implementation details, and temporary out-of-scope lists belong in `docs/tasks/CURRENT.md` or the referenced task brief, not in this file.
 
 ## Canonical MLP deliverable
 
@@ -14,65 +28,34 @@ The canonical MLP deliverable is:
 
 **GTM Container Audit & Patch Package**
 
-A complete MLP output package includes:
+It is a file-in/file-out package produced from a Google Tag Manager container export JSON.
 
-1. `optimized_container.json`
-2. `audit_report.md`
-3. `audit_report.json`
-4. `change_log.json`
-5. `validation_report.json`
-6. `qa_checklist.md`
-7. `run_metadata.json`
+It must include `optimized_container.json`, but it must not treat that JSON as the only deliverable.
 
-A run is incomplete if it only produces `optimized_container.json`.
+All generated GTM artifacts are draft proposals and must be reviewed and approved by a human analyst before import, workspace creation, publishing, or production use.
 
-## Current active task
+For the full deliverable contract, use `docs/mlp-deliverable.md` and `docs/decisions/ADR-0001-canonical-mlp-deliverable.md`.
 
-Active task: Task 0.2 — Create the portable project repository
+## Required Codex workflow
 
-Primary task brief:
+1. Read the active task source and referenced docs before editing.
+2. Summarize the intended scope before edits.
+3. Keep changes limited to files implied by the active task.
+4. Review the diff against the active task after edits.
+5. Return a pass/fail against the definition of done.
 
-- `docs/tasks/TASK-0.2-repository-structure.md`
+## Standing working rules
 
-Supporting context:
-
-- `docs/roadmap.md`
-- `docs/mlp-deliverable.md`
-- `docs/decisions/ADR-0001-canonical-mlp-deliverable.md`
-
-Do not work outside the active task scope.
-
-## Project working rules
-
-- Prefer small, reviewable changes.
-- Keep all project decisions in repo files, not only in ChatGPT or Custom GPT configuration.
-- Use plain Markdown for planning documents.
+- Keep changes small and reviewable.
+- Treat the repository as the system of record.
 - Treat the Custom GPT as a user interface, not the system of record.
-- Treat the Skill as a reusable package that will later reference the same deliverable contract.
-- Preserve the exact deliverable name: GTM Container Audit & Patch Package.
-- Do not describe optimized_container.json as the only MLP output.
-- Do not imply that any generated GTM JSON is safe to publish without human review.
-
-#### Task 0.2 working rules
-
-- Keep the repository portable.
-- Do not rely on Custom GPT configuration as the only source of truth.
-- Store instructions, decisions, roadmap, and deliverable definitions in version-controlled files.
+- Treat the Skill as a reusable package that will later reference repo-defined contracts.
 - Prefer plain Markdown for planning and documentation.
-- Do not create schemas, validators, synthetic fixtures, API connectors, GitHub Actions, or production scripts unless explicitly asked.
-- Do not build the full Skill yet.
-- Do not configure live API actions yet.
-- Keep this task focused on repository structure and source-of-truth documentation.
-
-## Out of scope
-
-- JSON schemas
-- Python scripts
-- Validators
-- Synthetic fixtures
-- API connectors
-- Full Skill implementation
-- Custom GPT creation in ChatGPT UI
-- GitHub Actions
-- Production scripts
-- Live API actions
+- Do not introduce implementation code or artifacts unless the active task explicitly requires them.
+- Do not create schemas, validators, scripts, fixtures, recipes, GitHub Actions, API connectors, or full Skill implementation files unless the active task explicitly requires them.
+- Do not configure live GTM, GA4, or Google Ads API access unless the active task explicitly requires it.
+- Do not imply generated GTM JSON is safe to publish.
+- Do not imply the MLP replaces human QA.
+- Preserve the exact deliverable name: **GTM Container Audit & Patch Package**.
+- Keep all project decisions in repo files, not only in ChatGPT or Custom GPT configuration.
+- Do not describe optimized_container.json as the only MLP output.
