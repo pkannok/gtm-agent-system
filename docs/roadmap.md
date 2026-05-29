@@ -22,6 +22,8 @@ A complete MLP output package includes:
 
 # Phase 0 — Project framing and repository setup
 
+Status: Complete.
+
 ## Goal
 
 Create the durable project foundation before building schemas, scripts, fixtures, the full Skill, or the Custom GPT configuration.
@@ -44,7 +46,7 @@ The repository will become the system of record for project documentation, task 
 
 ### Task 0.3 — Define project terminology
 
-Status: Active.
+Status: Complete.
 
 Outcome:
 The project will have a shared glossary for GTM concepts, artifact concepts, Custom GPT concepts, Skill concepts, and future validation/testing concepts.

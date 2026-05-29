@@ -2,16 +2,23 @@
 
 Current active task:
 
-- Task 0.3 — Define project terminology
-- Active task brief: `docs/tasks/TASK-0.3-project-terminology.md`
+- None. Phase 0 is complete.
+
+Next recommended task:
+
+- Task 1.1 — Create `gtm_patch_package.schema.json`
+
+Task 1.1 brief:
+
+- Not created yet.
 
 ## Instructions for Codex
 
-Before editing files:
+Before editing files for a future active task:
 
 1. Read `AGENTS.md`.
 2. Read this file.
-3. Read the active task brief.
+3. Read the active task brief, if one is listed.
 4. Summarize the task goal, expected files changed, files that should not change, and scope-creep risks.
 
 Do not work outside the active task scope.

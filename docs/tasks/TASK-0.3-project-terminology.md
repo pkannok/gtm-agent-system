@@ -2,7 +2,7 @@
 
 ## Status
 
-Upcoming
+Complete
 
 ## Goal
 
@@ -92,10 +92,10 @@ AGENTS.md
 
 ## Definition of done
 
-- [ ] `docs/glossary.md` exists.
-- [ ] All required terms are defined.
-- [ ] Definitions are project-specific and operational.
-- [ ] The glossary distinguishes proposed artifacts from live GTM changes.
-- [ ] The glossary says `optimized_container.json` is not a publish-ready guarantee.
-- [ ] The glossary says the MLP does not publish GTM changes.
-- [ ] The glossary can be referenced by future Custom GTP instructions, Skill references, schemas, validators, and analyst documentation.
+- [x] `docs/glossary.md` exists.
+- [x] All required terms are defined.
+- [x] Definitions are project-specific and operational.
+- [x] The glossary distinguishes proposed artifacts from live GTM changes.
+- [x] The glossary says `optimized_container.json` is not a publish-ready guarantee.
+- [x] The glossary says the MLP does not publish GTM changes.
+- [x] The glossary can be referenced by future Custom GPT instructions, Skill references, schemas, validators, and analyst documentation.

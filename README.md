@@ -2,13 +2,19 @@
 
 This repository defines a portable Custom GPT + Skill system for technical marketing analytics workflows.
 
-## Current milestone
+## Project status
 
-Task 0.3: Define project terminology.
+Phase 0 status: complete.
+
+Task 0.3 status: complete. Project terminology is defined in `docs/glossary.md`.
 
 Task 0.2 status: complete. The portable project repository structure is established.
 
 Task 0.1 status: complete. The canonical MLP deliverable is defined and accepted in ADR-0001.
+
+Next recommended task: Task 1.1 — Create `gtm_patch_package.schema.json`.
+
+The Task 1.1 brief has not been created yet.
 
 ## Canonical MLP deliverable
 
