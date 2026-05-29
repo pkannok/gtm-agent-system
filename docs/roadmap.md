@@ -37,14 +37,14 @@ The project has defined the canonical MLP deliverable as **GTM Container Audit &
 
 ### Task 0.2 — Create the portable project repository
 
-Status: Active.
+Status: Complete.
 
 Outcome:
 The repository will become the system of record for project documentation, task briefs, future Custom GPT drafts, future Skill files, and output package definitions.
 
 ### Task 0.3 — Define project terminology
 
-Status: Upcoming.
+Status: Active.
 
 Outcome:
 The project will have a shared glossary for GTM concepts, artifact concepts, Custom GPT concepts, Skill concepts, and future validation/testing concepts.

@@ -4,7 +4,9 @@ This repository defines a portable Custom GPT + Skill system for technical marke
 
 ## Current milestone
 
-Task 0.2: Establish the portable project repository.
+Task 0.3: Define project terminology.
+
+Task 0.2 status: complete. The portable project repository structure is established.
 
 Task 0.1 status: complete. The canonical MLP deliverable is defined and accepted in ADR-0001.
 
@@ -42,4 +44,4 @@ The optimized JSON must be accompanied by audit findings, change log, validation
 - `skills/gtm-container-auditor/` - Future reusable Skill package references, starting with the deliverable contract.
 - `outputs/_template/` - Expected output folder shape for the GTM Container Audit & Patch Package.
 
-Some Task 0.2 files may be scaffolds until their corresponding implementation tasks are started.
+Some Phase 0 files may remain scaffolds until their corresponding implementation tasks are started.
