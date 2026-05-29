@@ -2,8 +2,8 @@
 
 Current active task:
 
-- Task 0.3 — Define project terminology
-- Active task brief: `docs/tasks/TASK-0.3-project-terminology.md`
+- Task 0.2 — Create the portable project repository
+- Active task brief: `docs/tasks/TASK-0.2-repository-structure.md`
 
 ## Instructions for Codex
 
