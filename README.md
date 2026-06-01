@@ -6,15 +6,19 @@ This repository defines a portable Custom GPT + Skill system for technical marke
 
 Phase 0 status: complete.
 
+Phase 1 status: in progress.
+
+Task 1.1 status: complete. The top-level package schema is defined in `gtm_patch_package.schema.json`, with a validating sample in `gtm_patch_package.sample.json`.
+
 Task 0.3 status: complete. Project terminology is defined in `docs/glossary.md`.
 
 Task 0.2 status: complete. The portable project repository structure is established.
 
-Task 0.1 status: complete. The canonical MLP deliverable is defined and accepted in ADR-0001.
+Task 0.1 status: complete. The canonical MLP deliverable is defined in ADR-0001.
 
-Next recommended task: Task 1.1 — Create `gtm_patch_package.schema.json`.
+Next recommended task: Task 1.2 — Create `gtm_audit_report.schema.json`.
 
-The Task 1.1 brief has not been created yet.
+The Task 1.2 brief has not been created yet.
 
 ## Canonical MLP deliverable
 
@@ -41,6 +45,11 @@ A complete package includes:
 The MLP will not produce optimized GTM JSON as the only deliverable.
 
 The optimized JSON must be accompanied by audit findings, change log, validation report, QA checklist, and run metadata.
+
+## Current schema contracts
+
+- `gtm_patch_package.schema.json` - Top-level JSON Schema for the full GTM Container Audit & Patch Package.
+- `gtm_patch_package.sample.json` - Minimal sample package that validates against the top-level schema.
 
 ## Repository structure
 
