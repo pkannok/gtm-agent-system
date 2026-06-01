@@ -2,15 +2,19 @@
 
 Current active task:
 
-- None. Phase 0 is complete.
+- None. Task 1.1 — Create `gtm_patch_package.schema.json` is complete.
 
 Next recommended task:
 
-- Task 1.1 — Create `gtm_patch_package.schema.json`
+- Task 1.2 - Create `gtm_audit_report.schema.json`
 
-Task 1.1 brief:
+Task 1.2 brief:
 
 - Not created yet.
+
+Most recent completed task brief:
+
+- `docs/tasks/TASK-1.1-gtm-patch-schema.md`
 
 ## Instructions for Codex
 
@@ -23,13 +27,12 @@ Before editing files for a future active task:
 
 Do not work outside the active task scope.
 
-## Phase 0 working rules
+## Phase 1 working rules
 
-- Do not create validators, scripts, fixtures, recipes, or GitHub Actions during Phase 0.
-- Do not configure live GTM, GA4, or Google Ads API access during Phase 0.
+- Do not create validators, scripts, fixtures, recipes, GitHub Actions, API connectors, or full Skill implementation files unless the active task explicitly requires them.
+- Do not configure live GTM, GA4, or Google Ads API access.
+- Treat all generated GTM artifacts as draft proposals for human analyst review.
 
-## Phase 0 constraints
+## Phase 1 constraints
 
-During Phase 0, only create or update planning, documentation, repo-structure, task-management, and terminology files.
-
-Phase 0 should not produce production code.
+During Phase 1, define output contracts and schemas before building intelligence, validators, scripts, fixtures, recipes, API connectors, or workflow automation.

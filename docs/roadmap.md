@@ -50,3 +50,27 @@ Status: Complete.
 
 Outcome:
 The project will have a shared glossary for GTM concepts, artifact concepts, Custom GPT concepts, Skill concepts, and future validation/testing concepts.
+
+---
+
+# Phase 1 — Output contracts and schemas
+
+## Goal
+
+Define the GTM Container Audit & Patch Package artifact contracts before building intelligence, validators, scripts, fixtures, recipes, API connectors, or workflow automation.
+
+## Tasks
+
+### Task 1.1 - Create `gtm_patch_package.schema.json`
+
+Status: Complete.
+
+Outcome:
+Defines the top-level machine-readable contract for the full GTM Container Audit & Patch Package, ensuring every MLP run can be represented as a consistent, schema-valid package that includes optimized container output, audit findings, change log, validation results, QA guidance, run metadata, and human-review requirements.
+
+### Task 1.2 - Create `gtm_audit_report.schema.json`
+
+Status: Upcoming.
+
+Outcome:
+Defines the machine-readable audit report contract for the GTM Container Audit & Patch Package, ensuring future agents, validators, tests, and automation workflows can consume structured audit findings with consistent container summary data, severity, category, affected entities, evidence, recommended actions, automated-change indicators, and manual-review requirements.

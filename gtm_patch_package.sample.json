@@ -1,0 +1,160 @@
+{
+  "artifact_type": "gtm_patch_package",
+  "schema_version": "1.0.0",
+  "run_id": "sample-run-001",
+  "client_id": "sample-client",
+  "source_container_summary": {
+    "input_file_name": "source_container.json",
+    "account_id": "123456",
+    "container_id": "GTM-SAMPLE",
+    "container_name": "Sample Web Container",
+    "export_format_version": 2,
+    "entity_counts": {
+      "tags": 1,
+      "triggers": 1,
+      "variables": 1,
+      "folders": 0,
+      "templates": 0
+    }
+  },
+  "standards_applied": [
+    {
+      "standard_id": "agency-defaults",
+      "name": "Agency default GTM standards",
+      "version": "1.0.0",
+      "source": "agency_standard"
+    }
+  ],
+  "package_files": {
+    "optimized_container_json": {
+      "file_name": "optimized_container.json",
+      "media_type": "application/json",
+      "required": true,
+      "description": "Draft proposed GTM container export JSON."
+    },
+    "audit_report_md": {
+      "file_name": "audit_report.md",
+      "media_type": "text/markdown",
+      "required": true,
+      "description": "Human-readable audit report."
+    },
+    "audit_report_json": {
+      "file_name": "audit_report.json",
+      "media_type": "application/json",
+      "required": true,
+      "description": "Machine-readable audit findings."
+    },
+    "change_log_json": {
+      "file_name": "change_log.json",
+      "media_type": "application/json",
+      "required": true,
+      "description": "Machine-readable proposed change log."
+    },
+    "validation_report_json": {
+      "file_name": "validation_report.json",
+      "media_type": "application/json",
+      "required": true,
+      "description": "Machine-readable validation summary."
+    },
+    "qa_checklist_md": {
+      "file_name": "qa_checklist.md",
+      "media_type": "text/markdown",
+      "required": true,
+      "description": "Human-readable QA checklist."
+    },
+    "run_metadata_json": {
+      "file_name": "run_metadata.json",
+      "media_type": "application/json",
+      "required": true,
+      "description": "Machine-readable run metadata."
+    }
+  },
+  "optimized_container": {
+    "file_name": "optimized_container.json",
+    "artifact_status": "draft_proposal",
+    "publish_ready": false,
+    "human_review_required": true,
+    "container": {
+      "exportFormatVersion": 2,
+      "containerVersion": {
+        "accountId": "123456",
+        "containerId": "GTM-SAMPLE",
+        "name": "Sample Web Container"
+      }
+    }
+  },
+  "audit_report": {
+    "file_name_md": "audit_report.md",
+    "file_name_json": "audit_report.json",
+    "summary": "Sample audit report for schema validation.",
+    "findings": [
+      {
+        "finding_id": "finding-001",
+        "severity": "low",
+        "category": "naming",
+        "title": "Sample naming inconsistency",
+        "evidence": [
+          {
+            "entity_type": "tag",
+            "entity_id": "1",
+            "entity_name": "Sample Tag",
+            "observation": "Name does not match the agency convention."
+          }
+        ],
+        "proposed_change_ids": ["change-001"],
+        "human_review_required": true
+      }
+    ]
+  },
+  "change_log": [
+    {
+      "change_id": "change-001",
+      "change_type": "rename",
+      "entity_type": "tag",
+      "entity_id": "1",
+      "entity_name": "Sample Tag",
+      "reason": "Align the tag name with the agency convention.",
+      "risk_level": "low",
+      "rollback_notes": "Restore the previous tag name if rejected.",
+      "related_finding_ids": ["finding-001"],
+      "status": "proposed",
+      "human_approval_required": true
+    }
+  ],
+  "validation_report": {
+    "file_name": "validation_report.json",
+    "validation_status": "pass",
+    "checks": [
+      {
+        "check_id": "required-files-present",
+        "status": "pass",
+        "message": "All required package file descriptors are present."
+      }
+    ]
+  },
+  "risk_summary": {
+    "overall_risk": "low",
+    "high_risk_change_count": 0,
+    "manual_review_required": true,
+    "notes": [
+      "Sample package only; all generated GTM changes require analyst review."
+    ]
+  },
+  "qa_checklist": [
+    {
+      "item_id": "qa-001",
+      "description": "Review proposed GTM changes before import or use.",
+      "status": "todo",
+      "required": true
+    }
+  ],
+  "run_metadata": {
+    "file_name": "run_metadata.json",
+    "created_at": "2026-06-01T20:00:00Z",
+    "input_files": ["source_container.json"],
+    "mlp_version": "1.0.0",
+    "tool_version": null
+  },
+  "human_approval_required": true,
+  "publishes_gtm_changes": false
+}
