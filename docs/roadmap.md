@@ -97,3 +97,43 @@ Status: Complete.
 
 Outcome:
 Defines the optional client profile contract for client-specific standards, overrides, consent requirements, and manual-review rules.
+
+---
+
+# Phase 2 - Agency standards and audit rules
+
+Status: In Progress.
+
+## Goal
+
+Define the agency standards and audit rules that teach the GTM Container Audit & Patch Package workflow what "good" looks like for GTM organization, naming, consent-sensitive review, audit findings, and human-readable reporting.
+
+## Tasks
+
+### Task 2.1 - Create agency naming conventions
+
+Status: Complete.
+
+Outcome:
+Defines default naming standards for GTM tags, triggers, variables, folders, and recipes, including examples, anti-examples, safe rename guidance, manual-review rename guidance, and audit-finding requirements.
+
+### Task 2.2 - Create consent and privacy review standard
+
+Status: Upcoming.
+
+Outcome:
+Will define consent and privacy review standards for advertising, remarketing, Custom HTML, enhanced conversions, user identifiers, and sensitive data.
+
+### Task 2.3 - Create GTM audit rule catalog
+
+Status: Upcoming.
+
+Outcome:
+Will define initial GTM audit rules with rule IDs, evidence requirements, severity guidance, recommended actions, automated-change policy, and manual-review triggers.
+
+### Task 2.4 - Create output writing standard
+
+Status: Upcoming.
+
+Outcome:
+Will define human-readable report structure, severity labels, uncertainty handling, and output writing standards for the GTM Container Audit & Patch Package.

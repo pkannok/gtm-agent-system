@@ -2,7 +2,7 @@
 
 ## Status
 
-Upcoming
+Complete
 
 ## Goal
 
@@ -28,7 +28,7 @@ Naming cleanup is one of the safest high-value MLP capabilities and gives the au
 
 ## Definition of done for MLP
 
-- [ ] Naming convention doc exists.
-- [ ] It includes examples and anti-examples.
-- [ ] It states when renaming is safe versus manual-review.
-- [ ] Audit report can flag naming violations.
+- [x] Naming convention doc exists.
+- [x] It includes examples and anti-examples.
+- [x] It states when renaming is safe versus manual-review.
+- [x] Audit report can flag naming violations.

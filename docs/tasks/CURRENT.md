@@ -2,19 +2,19 @@
 
 Current active task:
 
-- None. Phase 1 is complete.
+- None. Task 2.1 - Create agency naming conventions is complete.
 
 Next recommended task:
 
-- Not defined yet.
+- Task 2.2 - Create consent and privacy review standard
 
 Next task brief:
 
-- Not created yet.
+- `docs/tasks/TASK-2.2-consent-and-privacy-review-standard.md`
 
-Most recent completed phase brief:
+Most recent completed task brief:
 
-- `docs/tasks/PHASE-1-goal-output-contracts-and-schemas.md`
+- `docs/tasks/TASK-2.1-agency-naming-conventions.md`
 
 ## Instructions for Codex
 
@@ -27,12 +27,12 @@ Before editing files for a future active task:
 
 Do not work outside the active task scope.
 
-## Phase 1 working rules
+## Phase 2 working rules
 
 - Do not create validators, scripts, fixtures, recipes, GitHub Actions, API connectors, or full Skill implementation files unless the active task explicitly requires them.
 - Do not configure live GTM, GA4, or Google Ads API access.
 - Treat all generated GTM artifacts as draft proposals for human analyst review.
 
-## Phase 1 constraints
+## Phase 2 constraints
 
-During Phase 1, define output contracts and schemas before building intelligence, validators, scripts, fixtures, recipes, API connectors, or workflow automation.
+During Phase 2, define agency standards and audit rules before building validators, scripts, fixtures, recipes, API connectors, or workflow automation.
