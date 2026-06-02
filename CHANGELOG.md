@@ -14,9 +14,16 @@ All notable project changes will be documented in this file.
 - Added task-brief workflow under `docs/tasks/`.
 - Added initial placeholders for future Custom GPT configuration files.
 - Added initial placeholder structure for the future `gtm-container-auditor` Skill.
-- Added `gtm_patch_package.schema.json` as the top-level JSON Schema contract for the full GTM Container Audit & Patch Package.
-- Added `gtm_patch_package.sample.json` as a minimal sample package that validates against the top-level schema.
+- Added the Phase 1 schema layer under `schemas/`.
+- Added `schemas/gtm_patch_package.schema.json` as the top-level JSON Schema contract for the full GTM Container Audit & Patch Package.
+- Added `schemas/gtm_audit_report.schema.json` for machine-readable audit findings.
+- Added `schemas/gtm_change_log.schema.json` for proposed GTM change logs.
+- Added `schemas/validation_report.schema.json` for package validation summaries.
+- Added `schemas/client_profile.schema.json` for optional client-specific standards and overrides.
+- Added matching minimal sample files under `examples/schema-validation/` for all five Phase 1 schemas.
 
 ### Changed
 
-- Updated `docs/tasks/CURRENT.md`, `docs/roadmap.md`, and `README.md` to reflect Task 1.1 completion and Task 1.2 as the next recommended task.
+- Updated `docs/tasks/CURRENT.md`, `docs/roadmap.md`, and `README.md` to reflect Phase 1 completion.
+- Moved the top-level package schema contract from the repository root to `schemas/` so all Phase 1 schema contracts live together.
+- Kept `schemas/` contract-only and placed schema validation samples under `examples/schema-validation/`.

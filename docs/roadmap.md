@@ -55,6 +55,8 @@ The project will have a shared glossary for GTM concepts, artifact concepts, Cus
 
 # Phase 1 — Output contracts and schemas
 
+Status: Complete.
+
 ## Goal
 
 Define the GTM Container Audit & Patch Package artifact contracts before building intelligence, validators, scripts, fixtures, recipes, API connectors, or workflow automation.
@@ -70,7 +72,28 @@ Defines the top-level machine-readable contract for the full GTM Container Audit
 
 ### Task 1.2 - Create `gtm_audit_report.schema.json`
 
-Status: Upcoming.
+Status: Complete.
 
 Outcome:
 Defines the machine-readable audit report contract for the GTM Container Audit & Patch Package, ensuring future agents, validators, tests, and automation workflows can consume structured audit findings with consistent container summary data, severity, category, affected entities, evidence, recommended actions, automated-change indicators, and manual-review requirements.
+
+### Task 1.3 - Create `gtm_change_log.schema.json`
+
+Status: Complete.
+
+Outcome:
+Defines the machine-readable proposed change log contract for the GTM Container Audit & Patch Package, including proposed change IDs, affected GTM entities, reasons, risk levels, rollback notes, related findings, and human-approval requirements.
+
+### Task 1.4 - Create `validation_report.schema.json`
+
+Status: Complete.
+
+Outcome:
+Defines the machine-readable validation report contract for the GTM Container Audit & Patch Package, including validation status, checks, errors, warnings, and explicit publish-safety fields.
+
+### Task 1.5 - Create `client_profile.schema.json`
+
+Status: Complete.
+
+Outcome:
+Defines the optional client profile contract for client-specific standards, overrides, consent requirements, and manual-review rules.

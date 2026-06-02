@@ -6,9 +6,9 @@ This repository defines a portable Custom GPT + Skill system for technical marke
 
 Phase 0 status: complete.
 
-Phase 1 status: in progress.
+Phase 1 status: complete.
 
-Task 1.1 status: complete. The top-level package schema is defined in `gtm_patch_package.schema.json`, with a validating sample in `gtm_patch_package.sample.json`.
+Phase 1 schema contracts are defined in `schemas/`, with matching sample files in `examples/schema-validation/` that validate against each schema.
 
 Task 0.3 status: complete. Project terminology is defined in `docs/glossary.md`.
 
@@ -16,9 +16,9 @@ Task 0.2 status: complete. The portable project repository structure is establis
 
 Task 0.1 status: complete. The canonical MLP deliverable is defined in ADR-0001.
 
-Next recommended task: Task 1.2 — Create `gtm_audit_report.schema.json`.
+Next recommended task: not defined yet.
 
-The Task 1.2 brief has not been created yet.
+The next task brief has not been created yet.
 
 ## Canonical MLP deliverable
 
@@ -48,13 +48,18 @@ The optimized JSON must be accompanied by audit findings, change log, validation
 
 ## Current schema contracts
 
-- `gtm_patch_package.schema.json` - Top-level JSON Schema for the full GTM Container Audit & Patch Package.
-- `gtm_patch_package.sample.json` - Minimal sample package that validates against the top-level schema.
+- `schemas/gtm_patch_package.schema.json` with `examples/schema-validation/gtm_patch_package.sample.json`
+- `schemas/gtm_audit_report.schema.json` with `examples/schema-validation/gtm_audit_report.sample.json`
+- `schemas/gtm_change_log.schema.json` with `examples/schema-validation/gtm_change_log.sample.json`
+- `schemas/validation_report.schema.json` with `examples/schema-validation/validation_report.sample.json`
+- `schemas/client_profile.schema.json` with `examples/schema-validation/client_profile.sample.json`
 
 ## Repository structure
 
 - `docs/` - Product decisions, MLP deliverable documentation, architecture notes, glossary, and roadmap.
 - `docs/tasks/` - Detailed task scope and acceptance criteria.
+- `schemas/` - Phase 1 JSON Schema contracts for the GTM Container Audit & Patch Package.
+- `examples/schema-validation/` - Minimal sample files that validate against the Phase 1 schemas.
 - `custom-gpt/` - Custom GPT draft instructions, description, conversation starters, and test prompts.
 - `skills/gtm-container-auditor/` - Future reusable Skill package references, starting with the deliverable contract.
 - `outputs/_template/` - Expected output folder shape for the GTM Container Audit & Patch Package.
