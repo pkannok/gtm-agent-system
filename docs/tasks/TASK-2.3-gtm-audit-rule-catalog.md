@@ -2,7 +2,7 @@
 
 ## Status
 
-Upcoming
+Complete
 
 ## Goal
 
@@ -27,6 +27,6 @@ The audit rule catalog is the core knowledge source for identifying findings and
 
 ## Definition of done for MLP
 
-- [ ] Audit rule catalog exists.
-- [ ] Each rule includes category, severity guidance, evidence requirements, and whether automated change is allowed.
-- [ ] The Custom GPT can cite a rule ID in an audit finding.
+- [x] Audit rule catalog exists.
+- [x] Each rule includes category, severity guidance, evidence requirements, and whether automated change is allowed.
+- [x] The Custom GPT can cite a rule ID in an audit finding.

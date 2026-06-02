@@ -126,10 +126,10 @@ Defines consent and privacy review standards for advertising, remarketing, Custo
 
 ### Task 2.3 - Create GTM audit rule catalog
 
-Status: Upcoming.
+Status: Complete.
 
 Outcome:
-Will define initial GTM audit rules with rule IDs, evidence requirements, severity guidance, recommended actions, automated-change policy, and manual-review triggers.
+Defines initial GTM audit rules for inventory, reference integrity, duplicates, unused entities, naming, ecommerce, consent/risk, and QA, including rule IDs, evidence requirements, severity guidance, recommended actions, automated-change policy, manual-review triggers, and related output artifacts.
 
 ### Task 2.4 - Create output writing standard
 

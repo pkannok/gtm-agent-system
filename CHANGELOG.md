@@ -23,6 +23,7 @@ All notable project changes will be documented in this file.
 - Added matching minimal sample files under `examples/schema-validation/` for all five Phase 1 schemas.
 - Added `standards/agency/naming-conventions.md` with default GTM naming standards for tags, triggers, variables, folders, and future recipes.
 - Added `standards/agency/consent-standard.md` with consent and privacy risk review standards for advertising, remarketing, Custom HTML, enhanced conversions, user identifiers, and sensitive data.
+- Added `skills/gtm-container-auditor/references/audit-rules.md` with initial GTM audit rule IDs, severity guidance, evidence requirements, automated-change policies, and manual-review triggers.
 
 ### Changed
 

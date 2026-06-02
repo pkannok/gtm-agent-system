@@ -2,19 +2,19 @@
 
 Current active task:
 
-- None. Task 2.2 - Create consent and privacy review standard is complete.
+- None. Task 2.3 - Create GTM audit rule catalog is complete.
 
 Next recommended task:
 
-- Task 2.3 - Create GTM audit rule catalog
+- Task 2.4 - Create output writing standard
 
 Next task brief:
 
-- `docs/tasks/TASK-2.3-gtm-audit-rule-catalog.md`
+- `docs/tasks/TASK-2.4-output-writing-standard.md`
 
 Most recent completed task brief:
 
-- `docs/tasks/TASK-2.2-consent-and-privacy-review-standard.md`
+- `docs/tasks/TASK-2.3-gtm-audit-rule-catalog.md`
 
 ## Instructions for Codex
 
