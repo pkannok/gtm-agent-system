@@ -2,19 +2,19 @@
 
 Current active task:
 
-- None. Task 3.1 is complete.
+- None. Task 3.2 is complete.
 
 Next recommended task:
 
-- Task 3.2 - Create Skill reference files
+- Task 3.3 - Add schemas to the Skill
 
 Next task brief:
 
-- `docs/tasks/TASK-3.2-skill-reference-files.md`
+- `docs/tasks/TASK-3.3-add-schemas-to-skill.md`
 
 Most recent completed task brief:
 
-- `docs/tasks/TASK-3.1-skill-directory-and-skill-md.md`
+- `docs/tasks/TASK-3.2-skill-reference-files.md`
 
 Most recent completed phase brief:
 

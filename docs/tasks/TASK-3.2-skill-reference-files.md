@@ -2,7 +2,7 @@
 
 ## Status
 
-Upcoming
+Complete
 
 ## Goal
 
@@ -15,10 +15,12 @@ Reference files keep `SKILL.md` short while giving the workflow access to detail
 ## In scope
 
 - Create `references/workflow.md`.
-- Create `references/audit-rules.md`.
+- Create or verify `references/audit-rules.md`.
 - Create `references/gtm-object-model.md`.
 - Create `references/client-overrides.md`.
-- Create `references/output-standards.md`.
+- Create or verify `references/output-standards.md`.
+- Create or verify `references/deliverable-contract.md`.
+- Update `SKILL.md` reference navigation if needed.
 
 ## Out of scope
 
@@ -29,7 +31,7 @@ Reference files keep `SKILL.md` short while giving the workflow access to detail
 
 ## Definition of done for MLP
 
-- [ ] Each reference file exists.
-- [ ] Each file has a clear purpose.
-- [ ] Long files have a short table of contents.
-- [ ] No file mixes unrelated topics.
+- [x] Each reference file exists.
+- [x] Each file has a clear purpose.
+- [x] Long files have a short table of contents.
+- [x] No file mixes unrelated topics.

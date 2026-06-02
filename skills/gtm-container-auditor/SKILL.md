@@ -45,6 +45,9 @@ Return the full package, not only optimized JSON:
 ## Supporting References
 
 - Use `references/deliverable-contract.md` to preserve the canonical deliverable name, required artifact list, and completion rules.
+- Use `references/workflow.md` for the end-to-end file-in/file-out execution workflow and stopping conditions.
+- Use `references/gtm-object-model.md` when mapping GTM tags, triggers, variables, folders, templates, zones, and entity references.
+- Use `references/client-overrides.md` when applying a client profile, client standard, client override, or user task instruction.
 - Use `references/audit-rules.md` when findings need rule IDs, evidence requirements, severity guidance, automated-change policy, or manual-review triggers.
 - Use `references/output-standards.md` when writing `audit_report.md`, QA guidance, severity labels, uncertainty notes, or human approval notes.
 - Use agency standards and client profiles when they are bundled with the Skill, supplied by the user, or available in the repository.

@@ -8,6 +8,20 @@ Future Custom GPT and Skill workflows should cite these rule IDs in `audit_repor
 
 The catalog is a standards reference, not an audit script. It does not run audits, validate live site behavior, publish GTM changes, certify legal compliance, certify privacy compliance, or make generated GTM JSON safe to publish. All generated GTM artifacts remain draft proposals for human analyst review before import, workspace creation, publishing, or production use.
 
+## Contents
+
+- How to use rule IDs
+- Severity guidance
+- Automated change policy values
+- Inventory rule
+- Reference integrity rule
+- Duplicate tracking rule
+- Unused entity rule
+- Naming rule
+- Ecommerce rule
+- Consent/risk rule
+- QA rule
+
 ## How to Use Rule IDs
 
 Each audit finding should include:

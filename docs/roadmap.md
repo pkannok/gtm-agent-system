@@ -159,10 +159,10 @@ Creates the concise Skill entrypoint with valid frontmatter, UI metadata, workfl
 
 ### Task 3.2 - Create Skill reference files
 
-Status: Upcoming.
+Status: Complete.
 
 Outcome:
-Will add focused reference documents for workflow, audit rules, GTM object model guidance, client overrides, and output standards while keeping `SKILL.md` concise.
+Adds focused reference documents for workflow, audit rules, GTM object model guidance, client overrides, deliverable contract, and output standards while keeping `SKILL.md` concise.
 
 ### Task 3.3 - Add schemas to the Skill
 
