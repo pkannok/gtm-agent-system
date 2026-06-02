@@ -34,6 +34,8 @@ All notable project changes will be documented in this file.
 - Added mirrored Phase 1 schema contracts under `skills/gtm-container-auditor/schemas/` for portable Skill use.
 - Added `skills/gtm-container-auditor/recipes/ga4-basic-cleanup.yaml` with optional GA4 cleanup and QA guidance.
 - Added `skills/gtm-container-auditor/recipes/google-ads-conversion-basic.yaml` with optional Google Ads conversion review and QA guidance.
+- Added `scripts/normalize_gtm_export.py` to produce deterministic GTM container export summary JSON with metadata, counts, lookup maps, preserved entities, warnings, and safety flags.
+- Added `examples/script-smoke-tests/valid-basic-container.json` as minimal smoke-test input for Task 4.1 script verification.
 
 ### Changed
 
@@ -48,5 +50,6 @@ All notable project changes will be documented in this file.
 - Updated `SKILL.md` to reference optional recipes as reviewable aids, not live configuration behavior.
 - Updated README, roadmap, current-task handoff, and Phase 3 goal documentation to reflect Phase 3 completion and the upcoming Phase 4 deterministic script work.
 - Marked ADR-0001 accepted now that the canonical MLP deliverable decision is reflected in the project docs, Custom GPT instruction draft, and Skill deliverable contract.
+- Marked Phase 4 in progress, Task 4.1 complete, and updated the README/current-task handoff after normalizer verification passed.
 - Moved the top-level package schema contract from the repository root to `schemas/` so all Phase 1 schema contracts live together.
 - Kept `schemas/` contract-only and placed schema validation samples under `examples/schema-validation/`.
