@@ -14,11 +14,15 @@ Phase 2 status: complete.
 
 Phase 2 standards are defined in `standards/agency/` and `skills/gtm-container-auditor/references/`.
 
-Phase 3 status: upcoming.
+Phase 3 status: complete.
 
-Next recommended task: Task 3.1 - Create the Skill directory and `SKILL.md`.
+Phase 3 Skill package files are defined in `skills/gtm-container-auditor/`, including the Skill entrypoint, UI metadata, references, mirrored schema contracts, and initial recipe files.
 
-The next task brief is `docs/tasks/TASK-3.1-skill-directory-and-skill-md.md`.
+Phase 4 status: upcoming.
+
+Next recommended task: Task 4.1 - Build `normalize_gtm_export.py`.
+
+The next task brief is `docs/tasks/TASK-4.1-normalize-gtm-export-script.md`.
 
 Task 0.3 status: complete. Project terminology is defined in `docs/glossary.md`.
 
@@ -65,9 +69,23 @@ The optimized JSON must be accompanied by audit findings, change log, validation
 - `standards/agency/naming-conventions.md`
 - `standards/agency/consent-standard.md`
 - `standards/agency/qa-standard.md`
+- `skills/gtm-container-auditor/references/workflow.md`
 - `skills/gtm-container-auditor/references/deliverable-contract.md`
 - `skills/gtm-container-auditor/references/audit-rules.md`
+- `skills/gtm-container-auditor/references/gtm-object-model.md`
+- `skills/gtm-container-auditor/references/client-overrides.md`
 - `skills/gtm-container-auditor/references/output-standards.md`
+
+## Current Skill package
+
+- `skills/gtm-container-auditor/SKILL.md`
+- `skills/gtm-container-auditor/agents/openai.yaml`
+- `skills/gtm-container-auditor/references/`
+- `skills/gtm-container-auditor/schemas/`
+- `skills/gtm-container-auditor/recipes/ga4-basic-cleanup.yaml`
+- `skills/gtm-container-auditor/recipes/google-ads-conversion-basic.yaml`
+
+The Skill is portable and file-in/file-out. It does not publish GTM changes, call live APIs, or replace analyst QA.
 
 ## Repository structure
 
@@ -77,7 +95,7 @@ The optimized JSON must be accompanied by audit findings, change log, validation
 - `examples/schema-validation/` - Minimal sample files that validate against the Phase 1 schemas.
 - `standards/agency/` - Agency standards for naming, consent/privacy review, and QA.
 - `custom-gpt/` - Custom GPT draft instructions, description, conversation starters, and test prompts.
-- `skills/gtm-container-auditor/` - Future reusable Skill package references and Phase 3 Skill package location.
+- `skills/gtm-container-auditor/` - Reusable Skill package with entrypoint, UI metadata, references, mirrored schemas, and initial recipes.
 - `outputs/_template/` - Expected output folder shape for the GTM Container Audit & Patch Package.
 
-Some Phase 0 files may remain scaffolds until their corresponding implementation tasks are started.
+Some future-phase files may remain scaffolds until their corresponding implementation tasks are started.

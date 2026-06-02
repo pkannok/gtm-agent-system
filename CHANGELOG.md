@@ -46,5 +46,7 @@ All notable project changes will be documented in this file.
 - Marked Task 3.3 complete and documented bundled Skill schema paths while preserving root schemas as the source of truth.
 - Marked Task 3.4 and Phase 3 complete.
 - Updated `SKILL.md` to reference optional recipes as reviewable aids, not live configuration behavior.
+- Updated README, roadmap, current-task handoff, and Phase 3 goal documentation to reflect Phase 3 completion and the upcoming Phase 4 deterministic script work.
+- Marked ADR-0001 accepted now that the canonical MLP deliverable decision is reflected in the project docs, Custom GPT instruction draft, and Skill deliverable contract.
 - Moved the top-level package schema contract from the repository root to `schemas/` so all Phase 1 schema contracts live together.
 - Kept `schemas/` contract-only and placed schema validation samples under `examples/schema-validation/`.

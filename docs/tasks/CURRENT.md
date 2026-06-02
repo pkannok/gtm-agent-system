@@ -31,12 +31,14 @@ Before editing files for a future active task:
 
 Do not work outside the active task scope.
 
-## Phase 3 working rules
+## Current boundaries
 
-- Do not create validators, scripts, fixtures, recipes, GitHub Actions, API connectors, or full Skill implementation files unless the active task explicitly requires them.
+- Do not start Task 4.1 implementation unless it is explicitly requested as the active task.
+- Do not create validators, scripts, fixtures, GitHub Actions, API connectors, or Custom GPT final UI configuration unless the active task explicitly requires them.
+- Do not modify the completed Phase 3 Skill package unless the active task explicitly requires it.
 - Do not configure live GTM, GA4, or Google Ads API access.
 - Treat all generated GTM artifacts as draft proposals for human analyst review.
 
-## Phase 3 constraints
+## Next phase preview
 
-During Phase 3, build the reusable Skill package while preserving the repository as the system of record and avoiding live GTM, GA4, or Google Ads API access.
+Phase 4 is expected to introduce deterministic local scripts for normalization, GTM container validation, container diffing, and output package validation. The next recommended task is Task 4.1, but there is no active task until the user explicitly starts one.
