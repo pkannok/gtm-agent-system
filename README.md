@@ -10,15 +10,21 @@ Phase 1 status: complete.
 
 Phase 1 schema contracts are defined in `schemas/`, with matching sample files in `examples/schema-validation/` that validate against each schema.
 
+Phase 2 status: complete.
+
+Phase 2 standards are defined in `standards/agency/` and `skills/gtm-container-auditor/references/`.
+
+Phase 3 status: upcoming.
+
+Next recommended task: Task 3.1 - Create the Skill directory and `SKILL.md`.
+
+The next task brief is `docs/tasks/TASK-3.1-skill-directory-and-skill-md.md`.
+
 Task 0.3 status: complete. Project terminology is defined in `docs/glossary.md`.
 
 Task 0.2 status: complete. The portable project repository structure is established.
 
 Task 0.1 status: complete. The canonical MLP deliverable is defined in ADR-0001.
-
-Next recommended task: not defined yet.
-
-The next task brief has not been created yet.
 
 ## Canonical MLP deliverable
 
@@ -54,14 +60,24 @@ The optimized JSON must be accompanied by audit findings, change log, validation
 - `schemas/validation_report.schema.json` with `examples/schema-validation/validation_report.sample.json`
 - `schemas/client_profile.schema.json` with `examples/schema-validation/client_profile.sample.json`
 
+## Current standards and references
+
+- `standards/agency/naming-conventions.md`
+- `standards/agency/consent-standard.md`
+- `standards/agency/qa-standard.md`
+- `skills/gtm-container-auditor/references/deliverable-contract.md`
+- `skills/gtm-container-auditor/references/audit-rules.md`
+- `skills/gtm-container-auditor/references/output-standards.md`
+
 ## Repository structure
 
 - `docs/` - Product decisions, MLP deliverable documentation, architecture notes, glossary, and roadmap.
 - `docs/tasks/` - Detailed task scope and acceptance criteria.
 - `schemas/` - Phase 1 JSON Schema contracts for the GTM Container Audit & Patch Package.
 - `examples/schema-validation/` - Minimal sample files that validate against the Phase 1 schemas.
+- `standards/agency/` - Agency standards for naming, consent/privacy review, and QA.
 - `custom-gpt/` - Custom GPT draft instructions, description, conversation starters, and test prompts.
-- `skills/gtm-container-auditor/` - Future reusable Skill package references, starting with the deliverable contract.
+- `skills/gtm-container-auditor/` - Future reusable Skill package references and Phase 3 Skill package location.
 - `outputs/_template/` - Expected output folder shape for the GTM Container Audit & Patch Package.
 
 Some Phase 0 files may remain scaffolds until their corresponding implementation tasks are started.

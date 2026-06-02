@@ -137,3 +137,43 @@ Status: Complete.
 
 Outcome:
 Defines human-readable report structure, severity labels, uncertainty handling, QA checklist guidance, human approval notes, and output writing standards for the GTM Container Audit & Patch Package.
+
+---
+
+# Phase 3 - Build the Skill package
+
+Status: Upcoming.
+
+## Goal
+
+Create the reusable GTM Container Auditor Skill package that stores the repeatable workflow and references repo-defined contracts, schemas, standards, and audit rules.
+
+## Tasks
+
+### Task 3.1 - Create the Skill directory and `SKILL.md`
+
+Status: Upcoming.
+
+Outcome:
+Will create the concise Skill entrypoint with valid frontmatter, workflow and safety rules, and links to supporting reference files.
+
+### Task 3.2 - Create Skill reference files
+
+Status: Upcoming.
+
+Outcome:
+Will add focused reference documents for workflow, audit rules, GTM object model guidance, client overrides, and output standards while keeping `SKILL.md` concise.
+
+### Task 3.3 - Add schemas to the Skill
+
+Status: Upcoming.
+
+Outcome:
+Will make Phase 1 schema contracts available from the Skill without creating divergent schema definitions.
+
+### Task 3.4 - Add initial recipe files
+
+Status: Upcoming.
+
+Outcome:
+Will add initial reusable recipe files for MLP-safe GTM cleanup or tracking patterns with risk and manual-review guidance.
