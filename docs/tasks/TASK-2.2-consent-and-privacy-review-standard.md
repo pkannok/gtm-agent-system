@@ -2,7 +2,7 @@
 
 ## Status
 
-Upcoming
+Complete
 
 ## Goal
 
@@ -28,7 +28,7 @@ The MLP is file-in/file-out and cannot certify that consent works on site. It sh
 
 ## Definition of done for MLP
 
-- [ ] Consent standard exists.
-- [ ] Risky vendors are listed.
-- [ ] Custom HTML is always flagged.
-- [ ] Output wording avoids legal compliance claims.
+- [x] Consent standard exists.
+- [x] Risky vendors are listed.
+- [x] Custom HTML is always flagged.
+- [x] Output wording avoids legal compliance claims.
