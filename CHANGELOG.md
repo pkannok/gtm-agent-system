@@ -31,5 +31,6 @@ All notable project changes will be documented in this file.
 
 - Updated `docs/tasks/CURRENT.md`, `docs/roadmap.md`, and `README.md` to reflect Phase 1 completion.
 - Marked Phase 2 complete after adding naming, consent/privacy, audit-rule, output-writing, and QA standards.
+- Updated `README.md` and `docs/roadmap.md` to reflect Phase 2 completion and the upcoming Phase 3 Skill package work.
 - Moved the top-level package schema contract from the repository root to `schemas/` so all Phase 1 schema contracts live together.
 - Kept `schemas/` contract-only and placed schema validation samples under `examples/schema-validation/`.
