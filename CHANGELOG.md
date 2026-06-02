@@ -28,6 +28,9 @@ All notable project changes will be documented in this file.
 - Added `standards/agency/qa-standard.md` with human QA checklist standards for the GTM Container Audit & Patch Package.
 - Added `skills/gtm-container-auditor/SKILL.md` as the concise Skill entrypoint for the GTM Container Audit & Patch Package workflow.
 - Added `skills/gtm-container-auditor/agents/openai.yaml` with UI metadata for the GTM Container Auditor Skill.
+- Added `skills/gtm-container-auditor/references/workflow.md` with the Skill's end-to-end file-in/file-out workflow and stopping conditions.
+- Added `skills/gtm-container-auditor/references/gtm-object-model.md` with GTM entity and reference relationship guidance for audit evidence.
+- Added `skills/gtm-container-auditor/references/client-overrides.md` with client profile, override, and safety-priority rules.
 
 ### Changed
 
@@ -35,5 +38,7 @@ All notable project changes will be documented in this file.
 - Marked Phase 2 complete after adding naming, consent/privacy, audit-rule, output-writing, and QA standards.
 - Updated `README.md` and `docs/roadmap.md` to reflect Phase 2 completion and the upcoming Phase 3 Skill package work.
 - Marked Phase 3 in progress and Task 3.1 complete.
+- Marked Task 3.2 complete and updated `SKILL.md` reference navigation for the Skill reference files.
+- Added contents lists and current-purpose wording to existing Skill references.
 - Moved the top-level package schema contract from the repository root to `schemas/` so all Phase 1 schema contracts live together.
 - Kept `schemas/` contract-only and placed schema validation samples under `examples/schema-validation/`.

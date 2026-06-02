@@ -16,6 +16,16 @@ It is intended for future Custom GPT and Skill workflows that produce `audit_rep
 
 The report must help a human analyst review proposed GTM changes. It must not imply that `optimized_container.json` is the only deliverable, safe to publish, production-ready, legally compliant, privacy compliant, or a replacement for GTM Preview and human QA.
 
+## Contents
+
+- Core writing rules
+- Fixed report structure
+- Severity label definitions
+- Statement type rules
+- Rules against hiding uncertainty
+- Artifact alignment
+- Disallowed claims
+
 ## Core Writing Rules
 
 - Use plain, direct language.
