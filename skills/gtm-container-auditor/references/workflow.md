@@ -10,6 +10,7 @@ The workflow is file-in/file-out. It does not call GTM, GA4, Google Ads, or othe
 
 - Workflow inputs
 - Execution workflow
+- Schema paths
 - Output assembly rules
 - Validation and QA boundaries
 - Stopping conditions
@@ -52,6 +53,18 @@ Do not proceed as if a live GTM account is available. If the user provides a URL
 19. Create `qa_checklist.md` with manual GTM Preview and analyst review steps.
 20. Create `run_metadata.json` with run ID, input filename, standards applied, and version notes.
 21. Return the full GTM Container Audit & Patch Package.
+
+## Schema Paths
+
+Use the bundled Skill schema copies when producing or checking machine-readable artifacts:
+
+- `schemas/gtm_patch_package.schema.json`
+- `schemas/gtm_audit_report.schema.json`
+- `schemas/gtm_change_log.schema.json`
+- `schemas/validation_report.schema.json`
+- `schemas/client_profile.schema.json`
+
+The repository root `schemas/` directory remains the source of truth. Skill schema copies must match the root schemas unless the user explicitly approves a project-scope schema divergence.
 
 ## Output Assembly Rules
 

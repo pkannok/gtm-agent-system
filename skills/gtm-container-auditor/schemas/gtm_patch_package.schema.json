@@ -1,0 +1,702 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "gtm_patch_package.schema.json",
+  "title": "GTM Container Audit & Patch Package Schema",
+  "description": "Top-level JSON Schema for the GTM Container Audit & Patch Package. The package is a draft proposal for human analyst review and does not publish GTM changes.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact_type",
+    "schema_version",
+    "run_id",
+    "client_id",
+    "source_container_summary",
+    "standards_applied",
+    "package_files",
+    "optimized_container",
+    "audit_report",
+    "change_log",
+    "validation_report",
+    "risk_summary",
+    "qa_checklist",
+    "run_metadata",
+    "human_approval_required",
+    "publishes_gtm_changes"
+  ],
+  "properties": {
+    "artifact_type": {
+      "type": "string",
+      "enum": ["gtm_patch_package"]
+    },
+    "schema_version": {
+      "type": "string",
+      "description": "Semantic version of this package schema.",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "default": "1.0.0"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "client_id": {
+      "type": ["string", "null"]
+    },
+    "source_container_summary": {
+      "$ref": "#/definitions/sourceContainerSummary"
+    },
+    "standards_applied": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/standardApplied"
+      }
+    },
+    "package_files": {
+      "type": "object",
+      "description": "Machine-readable coverage map for the required MLP output files.",
+      "additionalProperties": false,
+      "required": [
+        "optimized_container_json",
+        "audit_report_md",
+        "audit_report_json",
+        "change_log_json",
+        "validation_report_json",
+        "qa_checklist_md",
+        "run_metadata_json"
+      ],
+      "properties": {
+        "optimized_container_json": {
+          "$ref": "#/definitions/optimizedContainerPackageFile"
+        },
+        "audit_report_md": {
+          "$ref": "#/definitions/auditReportMdPackageFile"
+        },
+        "audit_report_json": {
+          "$ref": "#/definitions/auditReportJsonPackageFile"
+        },
+        "change_log_json": {
+          "$ref": "#/definitions/changeLogPackageFile"
+        },
+        "validation_report_json": {
+          "$ref": "#/definitions/validationReportPackageFile"
+        },
+        "qa_checklist_md": {
+          "$ref": "#/definitions/qaChecklistPackageFile"
+        },
+        "run_metadata_json": {
+          "$ref": "#/definitions/runMetadataPackageFile"
+        }
+      }
+    },
+    "optimized_container": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "file_name",
+        "artifact_status",
+        "publish_ready",
+        "human_review_required",
+        "container"
+      ],
+      "properties": {
+        "file_name": {
+          "type": "string",
+          "enum": ["optimized_container.json"]
+        },
+        "artifact_status": {
+          "type": "string",
+          "enum": ["draft_proposal"]
+        },
+        "publish_ready": {
+          "type": "boolean",
+          "enum": [false],
+          "default": false
+        },
+        "human_review_required": {
+          "type": "boolean",
+          "enum": [true],
+          "default": true
+        },
+        "container": {
+          "type": "object",
+          "description": "Proposed GTM container export JSON. This object is intentionally not a publish-ready guarantee.",
+          "additionalProperties": true
+        }
+      }
+    },
+    "audit_report": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "file_name_md",
+        "file_name_json",
+        "summary",
+        "findings"
+      ],
+      "properties": {
+        "file_name_md": {
+          "type": "string",
+          "enum": ["audit_report.md"]
+        },
+        "file_name_json": {
+          "type": "string",
+          "enum": ["audit_report.json"]
+        },
+        "summary": {
+          "type": "string"
+        },
+        "findings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/finding"
+          }
+        }
+      }
+    },
+    "change_log": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/changeLogEntry"
+      }
+    },
+    "validation_report": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "file_name",
+        "validation_status",
+        "checks"
+      ],
+      "properties": {
+        "file_name": {
+          "type": "string",
+          "enum": ["validation_report.json"]
+        },
+        "validation_status": {
+          "type": "string",
+          "enum": ["pass", "warn", "fail", "not_run"]
+        },
+        "checks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/validationCheck"
+          }
+        }
+      }
+    },
+    "risk_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "overall_risk",
+        "high_risk_change_count",
+        "manual_review_required",
+        "notes"
+      ],
+      "properties": {
+        "overall_risk": {
+          "type": "string",
+          "enum": ["low", "medium", "high", "unknown"]
+        },
+        "high_risk_change_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "manual_review_required": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "qa_checklist": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/qaChecklistItem"
+      }
+    },
+    "run_metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "file_name",
+        "created_at",
+        "input_files",
+        "mlp_version",
+        "tool_version"
+      ],
+      "properties": {
+        "file_name": {
+          "type": "string",
+          "enum": ["run_metadata.json"]
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "input_files": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "mlp_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tool_version": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "human_approval_required": {
+      "type": "boolean",
+      "description": "Required package-level safety field. Conceptual default is true for all generated GTM patch packages.",
+      "enum": [true],
+      "default": true
+    },
+    "publishes_gtm_changes": {
+      "type": "boolean",
+      "description": "The MLP does not publish GTM changes.",
+      "enum": [false],
+      "default": false
+    }
+  },
+  "definitions": {
+    "sourceContainerSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "input_file_name",
+        "account_id",
+        "container_id",
+        "container_name",
+        "export_format_version",
+        "entity_counts"
+      ],
+      "properties": {
+        "input_file_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "account_id": {
+          "type": ["string", "null"]
+        },
+        "container_id": {
+          "type": ["string", "null"]
+        },
+        "container_name": {
+          "type": ["string", "null"]
+        },
+        "export_format_version": {
+          "type": ["integer", "null"],
+          "minimum": 1
+        },
+        "entity_counts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "tags",
+            "triggers",
+            "variables",
+            "folders",
+            "templates"
+          ],
+          "properties": {
+            "tags": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "triggers": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "variables": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "folders": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "templates": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        }
+      }
+    },
+    "packageFile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "file_name",
+        "media_type",
+        "required",
+        "description"
+      ],
+      "properties": {
+        "file_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "media_type": {
+          "type": "string",
+          "enum": ["application/json", "text/markdown"]
+        },
+        "required": {
+          "type": "boolean",
+          "enum": [true],
+          "default": true
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "optimizedContainerPackageFile": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/packageFile"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "file_name": {
+              "const": "optimized_container.json"
+            },
+            "media_type": {
+              "const": "application/json"
+            }
+          }
+        }
+      ]
+    },
+    "auditReportMdPackageFile": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/packageFile"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "file_name": {
+              "const": "audit_report.md"
+            },
+            "media_type": {
+              "const": "text/markdown"
+            }
+          }
+        }
+      ]
+    },
+    "auditReportJsonPackageFile": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/packageFile"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "file_name": {
+              "const": "audit_report.json"
+            },
+            "media_type": {
+              "const": "application/json"
+            }
+          }
+        }
+      ]
+    },
+    "changeLogPackageFile": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/packageFile"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "file_name": {
+              "const": "change_log.json"
+            },
+            "media_type": {
+              "const": "application/json"
+            }
+          }
+        }
+      ]
+    },
+    "validationReportPackageFile": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/packageFile"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "file_name": {
+              "const": "validation_report.json"
+            },
+            "media_type": {
+              "const": "application/json"
+            }
+          }
+        }
+      ]
+    },
+    "qaChecklistPackageFile": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/packageFile"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "file_name": {
+              "const": "qa_checklist.md"
+            },
+            "media_type": {
+              "const": "text/markdown"
+            }
+          }
+        }
+      ]
+    },
+    "runMetadataPackageFile": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/packageFile"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "file_name": {
+              "const": "run_metadata.json"
+            },
+            "media_type": {
+              "const": "application/json"
+            }
+          }
+        }
+      ]
+    },
+    "standardApplied": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "standard_id",
+        "name",
+        "version",
+        "source"
+      ],
+      "properties": {
+        "standard_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": ["string", "null"]
+        },
+        "source": {
+          "type": "string",
+          "enum": ["agency_standard", "client_profile", "client_override", "user_intent"]
+        }
+      }
+    },
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "finding_id",
+        "severity",
+        "category",
+        "title",
+        "evidence",
+        "proposed_change_ids",
+        "human_review_required"
+      ],
+      "properties": {
+        "finding_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "severity": {
+          "type": "string",
+          "enum": ["info", "low", "medium", "high"]
+        },
+        "category": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/evidence"
+          }
+        },
+        "proposed_change_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "human_review_required": {
+          "type": "boolean"
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "entity_type",
+        "entity_id",
+        "entity_name",
+        "observation"
+      ],
+      "properties": {
+        "entity_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "entity_id": {
+          "type": ["string", "null"]
+        },
+        "entity_name": {
+          "type": ["string", "null"]
+        },
+        "observation": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "changeLogEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "change_id",
+        "change_type",
+        "entity_type",
+        "entity_id",
+        "entity_name",
+        "reason",
+        "risk_level",
+        "rollback_notes",
+        "related_finding_ids",
+        "status",
+        "human_approval_required"
+      ],
+      "properties": {
+        "change_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "change_type": {
+          "type": "string",
+          "enum": ["add", "modify", "remove", "rename", "no_change"]
+        },
+        "entity_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "entity_id": {
+          "type": ["string", "null"]
+        },
+        "entity_name": {
+          "type": ["string", "null"]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "risk_level": {
+          "type": "string",
+          "enum": ["low", "medium", "high"]
+        },
+        "rollback_notes": {
+          "type": "string",
+          "minLength": 1
+        },
+        "related_finding_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "status": {
+          "type": "string",
+          "enum": ["proposed"]
+        },
+        "human_approval_required": {
+          "type": "boolean"
+        }
+      }
+    },
+    "validationCheck": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "check_id",
+        "status",
+        "message"
+      ],
+      "properties": {
+        "check_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "enum": ["pass", "warn", "fail", "not_run"]
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "qaChecklistItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "item_id",
+        "description",
+        "status",
+        "required"
+      ],
+      "properties": {
+        "item_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "enum": ["todo", "done", "not_applicable"]
+        },
+        "required": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

@@ -51,4 +51,4 @@ Return the full package, not only optimized JSON:
 - Use `references/audit-rules.md` when findings need rule IDs, evidence requirements, severity guidance, automated-change policy, or manual-review triggers.
 - Use `references/output-standards.md` when writing `audit_report.md`, QA guidance, severity labels, uncertainty notes, or human approval notes.
 - Use agency standards and client profiles when they are bundled with the Skill, supplied by the user, or available in the repository.
-- Use schema files when they are bundled with the Skill or available in the repository to keep machine-readable artifacts aligned with the project contracts.
+- Use bundled schemas in `schemas/` to keep machine-readable artifacts aligned with the project contracts. Start with `schemas/gtm_patch_package.schema.json`; see `references/workflow.md` for all schema paths. The root repository schemas remain the source of truth.

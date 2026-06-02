@@ -1,0 +1,151 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "client_profile.schema.json",
+  "title": "Client Profile Schema",
+  "description": "Optional client-specific standards and overrides for the GTM Container Audit & Patch Package workflow.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact_type",
+    "schema_version",
+    "client_id",
+    "client_name",
+    "standards",
+    "overrides",
+    "consent_requirements",
+    "manual_review_rules"
+  ],
+  "properties": {
+    "artifact_type": {
+      "type": "string",
+      "enum": ["client_profile"]
+    },
+    "schema_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "default": "1.0.0"
+    },
+    "client_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "client_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "standards": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/standard"
+      }
+    },
+    "overrides": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/override"
+      }
+    },
+    "consent_requirements": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "requires_consent_review",
+        "notes"
+      ],
+      "properties": {
+        "requires_consent_review": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "manual_review_rules": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/manualReviewRule"
+      }
+    }
+  },
+  "definitions": {
+    "standard": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "standard_id",
+        "name",
+        "description",
+        "required"
+      ],
+      "properties": {
+        "standard_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string"
+        },
+        "required": {
+          "type": "boolean"
+        }
+      }
+    },
+    "override": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "override_id",
+        "applies_to",
+        "description",
+        "reason"
+      ],
+      "properties": {
+        "override_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "applies_to": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        }
+      }
+    },
+    "manualReviewRule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rule_id",
+        "trigger",
+        "required_reviewer"
+      ],
+      "properties": {
+        "rule_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "trigger": {
+          "type": "string",
+          "minLength": 1
+        },
+        "required_reviewer": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

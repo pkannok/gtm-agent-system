@@ -166,10 +166,10 @@ Adds focused reference documents for workflow, audit rules, GTM object model gui
 
 ### Task 3.3 - Add schemas to the Skill
 
-Status: Upcoming.
+Status: Complete.
 
 Outcome:
-Will make Phase 1 schema contracts available from the Skill without creating divergent schema definitions.
+Makes Phase 1 schema contracts available from the Skill without creating divergent schema definitions.
 
 ### Task 3.4 - Add initial recipe files
 
