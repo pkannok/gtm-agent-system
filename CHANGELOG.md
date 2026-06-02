@@ -21,6 +21,7 @@ All notable project changes will be documented in this file.
 - Added `schemas/validation_report.schema.json` for package validation summaries.
 - Added `schemas/client_profile.schema.json` for optional client-specific standards and overrides.
 - Added matching minimal sample files under `examples/schema-validation/` for all five Phase 1 schemas.
+- Added `standards/agency/naming-conventions.md` with default GTM naming standards for tags, triggers, variables, folders, and future recipes.
 
 ### Changed
 
