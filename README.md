@@ -18,11 +18,13 @@ Phase 3 status: complete.
 
 Phase 3 Skill package files are defined in `skills/gtm-container-auditor/`, including the Skill entrypoint, UI metadata, references, mirrored schema contracts, and initial recipe files.
 
-Phase 4 status: upcoming.
+Phase 4 status: in progress.
 
-Next recommended task: Task 4.1 - Build `normalize_gtm_export.py`.
+Task 4.1 status: complete. `scripts/normalize_gtm_export.py` produces deterministic GTM container export summary JSON for audit and diff workflows.
 
-The next task brief is `docs/tasks/TASK-4.1-normalize-gtm-export-script.md`.
+Next recommended task: Task 4.2 - Build `validate_gtm_container.py`.
+
+The next task brief is `docs/tasks/TASK-4.2-validate-gtm-container-script.md`.
 
 Task 0.3 status: complete. Project terminology is defined in `docs/glossary.md`.
 
@@ -87,13 +89,21 @@ The optimized JSON must be accompanied by audit findings, change log, validation
 
 The Skill is portable and file-in/file-out. It does not publish GTM changes, call live APIs, or replace analyst QA.
 
+## Current deterministic scripts
+
+- `scripts/normalize_gtm_export.py` - Reads a GTM container export JSON file and writes a deterministic normalized summary JSON with metadata, counts, lookup maps, preserved entities, warnings, and safety flags.
+
+The script layer is local and file-in/file-out. It does not call live APIs, publish GTM changes, or replace analyst QA.
+
 ## Repository structure
 
 - `docs/` - Product decisions, MLP deliverable documentation, architecture notes, glossary, and roadmap.
 - `docs/tasks/` - Detailed task scope and acceptance criteria.
 - `schemas/` - Phase 1 JSON Schema contracts for the GTM Container Audit & Patch Package.
 - `examples/schema-validation/` - Minimal sample files that validate against the Phase 1 schemas.
+- `examples/script-smoke-tests/` - Minimal smoke-test inputs for deterministic scripts.
 - `standards/agency/` - Agency standards for naming, consent/privacy review, and QA.
+- `scripts/` - Deterministic local scripts for Phase 4 container and package checks.
 - `custom-gpt/` - Custom GPT draft instructions, description, conversation starters, and test prompts.
 - `skills/gtm-container-auditor/` - Reusable Skill package with entrypoint, UI metadata, references, mirrored schemas, and initial recipes.
 - `outputs/_template/` - Expected output folder shape for the GTM Container Audit & Patch Package.

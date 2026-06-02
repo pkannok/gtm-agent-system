@@ -2,7 +2,7 @@
 
 ## Status
 
-Upcoming
+Complete
 
 ## Goal
 
@@ -28,7 +28,11 @@ Normalization reduces noise and makes later validation, comparison, and testing 
 
 ## Definition of done for MLP
 
-- [ ] Script parses valid GTM exports.
-- [ ] Script produces deterministic normalized output.
-- [ ] Script preserves source data needed for audit and diff workflows.
-- [ ] Invalid JSON produces an understandable error.
+- [x] Script accepts input path and output path.
+- [x] Script parses valid GTM exports.
+- [x] Script produces deterministic normalized output.
+- [x] Script outputs counts and lookup maps.
+- [x] Script preserves source data needed for audit and diff workflows.
+- [x] Script works on at least one minimal smoke-test GTM export.
+- [x] Invalid JSON produces an understandable error.
+- [x] Script does not claim the container is publish-ready.
