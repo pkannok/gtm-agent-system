@@ -2,23 +2,23 @@
 
 Current active task:
 
-- None. Task 3.3 is complete.
+- None. Phase 3 is complete.
 
 Next recommended task:
 
-- Task 3.4 - Add initial recipe files
+- Task 4.1 - Build `normalize_gtm_export.py`
 
 Next task brief:
 
-- `docs/tasks/TASK-3.4-initial-recipe-files.md`
+- `docs/tasks/TASK-4.1-normalize-gtm-export-script.md`
 
 Most recent completed task brief:
 
-- `docs/tasks/TASK-3.3-add-schemas-to-skill.md`
+- `docs/tasks/TASK-3.4-initial-recipe-files.md`
 
 Most recent completed phase brief:
 
-- `docs/tasks/PHASE-2-goal-agency-standards-and-audit-rules.md`
+- `docs/tasks/PHASE-3-goal-build-skill-package.md`
 
 ## Instructions for Codex
 

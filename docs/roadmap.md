@@ -142,7 +142,7 @@ Defines human-readable report structure, severity labels, uncertainty handling, 
 
 # Phase 3 - Build the Skill package
 
-Status: In Progress.
+Status: Complete.
 
 ## Goal
 
@@ -173,7 +173,7 @@ Makes Phase 1 schema contracts available from the Skill without creating diverge
 
 ### Task 3.4 - Add initial recipe files
 
-Status: Upcoming.
+Status: Complete.
 
 Outcome:
-Will add initial reusable recipe files for MLP-safe GTM cleanup or tracking patterns with risk and manual-review guidance.
+Adds initial reusable recipe files for MLP-safe GTM cleanup or tracking patterns with risk and manual-review guidance.

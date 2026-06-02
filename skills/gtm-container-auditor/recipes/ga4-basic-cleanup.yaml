@@ -1,0 +1,63 @@
+recipe_id: ga4-basic-cleanup
+version: "1.0.0"
+platform: ga4
+target: gtm_container_export
+purpose: "Review GA4 tags, triggers, and variables for low-risk cleanup opportunities in a GTM Container Audit & Patch Package."
+requires:
+  - gtm_container_export_json
+  - audit_rule_catalog
+  - agency_naming_conventions
+  - qa_standard
+recommended_parameters:
+  naming_patterns:
+    tag: "GA4 - Event - {event_name}"
+    config_tag: "GA4 - Config - {property_or_measurement_purpose}"
+    custom_event_trigger: "CE - {event_name}"
+    data_layer_variable: "DLV - {data_layer_key}"
+  allowed_candidate_changes:
+    - "Name-only cleanup when evidence is clear and no manual-review trigger is present."
+    - "Folder organization recommendations when they do not imply approval or production readiness."
+    - "Documentation-only recommendations in audit_report.md and audit_report.json."
+  blocked_changes:
+    - "Changing GA4 event names."
+    - "Changing dataLayer keys."
+    - "Changing trigger logic."
+    - "Changing ecommerce payload fields."
+    - "Deleting or disabling tags, triggers, or variables."
+manual_review:
+  required: true
+  default_policy: "All proposed changes remain draft file-based recommendations for human analyst review."
+  triggers:
+    - "event naming"
+    - "purchase/ecommerce object mapping"
+    - "transaction_id or order_id mapping"
+    - "duplicate GA4 event tags"
+    - "value and currency mapping"
+    - "Custom HTML or custom JavaScript involvement"
+    - "consent-sensitive behavior"
+    - "unclear dataLayer evidence"
+outputs:
+  proposed_artifacts:
+    - optimized_container.json
+    - audit_report.md
+    - audit_report.json
+    - change_log.json
+    - validation_report.json
+    - qa_checklist.md
+    - run_metadata.json
+  related_rules:
+    - GTM-NAME-001
+    - GTM-DUP-001
+    - GTM-ECOM-001
+    - GTM-QA-001
+qa_steps:
+  - "Confirm GA4 event tags fire only on intended GTM Preview events."
+  - "Confirm purchase events include expected transaction_id or order_id, value, currency, and item data when applicable."
+  - "Check for duplicate GA4 event tags firing on the same event and trigger scope."
+  - "Inspect renamed entities to confirm the configuration, entity IDs, dataLayer keys, and trigger logic did not change."
+  - "Record unresolved ecommerce mapping questions as manual-review items in qa_checklist.md."
+safety_notes:
+  - "This recipe is optional and does not apply to every audit run."
+  - "This recipe does not configure GA4 or GTM directly."
+  - "This recipe must not imply generated GTM JSON is safe to publish."
+  - "Human review is required before import, workspace creation, publishing, or production use."

@@ -1,0 +1,67 @@
+recipe_id: google-ads-conversion-basic
+version: "1.0.0"
+platform: google_ads
+target: gtm_container_export
+purpose: "Review Google Ads conversion tags, triggers, and variables for proposed cleanup and QA guidance in a GTM Container Audit & Patch Package."
+requires:
+  - gtm_container_export_json
+  - audit_rule_catalog
+  - agency_naming_conventions
+  - consent_standard
+  - qa_standard
+recommended_parameters:
+  naming_patterns:
+    conversion_tag: "Google Ads - Conversion - {conversion_name}"
+    conversion_linker_tag: "Google Ads - Conversion Linker - Sitewide"
+    trigger: "{Trigger Type Prefix} - {condition_or_event}"
+    data_layer_variable: "DLV - {data_layer_key}"
+  allowed_candidate_changes:
+    - "Name-only cleanup when the vendor, conversion purpose, and trigger evidence are clear."
+    - "Documentation-only recommendations for duplicate candidates, consent review, and QA scenarios."
+    - "Folder organization recommendations when they do not imply approval or production readiness."
+  blocked_changes:
+    - "Changing conversion IDs, labels, values, currency, or transaction_id mappings."
+    - "Changing enhanced conversion fields or user-provided data mappings."
+    - "Changing consent settings."
+    - "Changing trigger logic."
+    - "Deleting or disabling conversion tags."
+manual_review:
+  required: true
+  default_policy: "Google Ads conversion recommendations are draft file-based proposals and require human analyst review."
+  triggers:
+    - "consent behavior"
+    - "enhanced conversions"
+    - "duplicate conversion actions"
+    - "transaction_id or order_id mapping"
+    - "value and currency mapping"
+    - "conversion ID or conversion label uncertainty"
+    - "Conversion Linker configuration"
+    - "Custom HTML or custom JavaScript involvement"
+    - "user identifier or sensitive data signals"
+outputs:
+  proposed_artifacts:
+    - optimized_container.json
+    - audit_report.md
+    - audit_report.json
+    - change_log.json
+    - validation_report.json
+    - qa_checklist.md
+    - run_metadata.json
+  related_rules:
+    - GTM-NAME-001
+    - GTM-DUP-001
+    - GTM-CONSENT-001
+    - GTM-ECOM-001
+    - GTM-QA-001
+qa_steps:
+  - "Confirm Google Ads conversion tags fire only on intended conversion events in GTM Preview."
+  - "Confirm consent behavior with the appropriate analyst, legal, or privacy reviewer before use."
+  - "Review enhanced conversion fields and user-provided data mappings without exposing raw sensitive values."
+  - "Check whether duplicate conversion actions may double-count the same lead, purchase, or event."
+  - "Confirm transaction_id or order_id, value, and currency mappings are present and correct when applicable."
+  - "Inspect renamed entities to confirm conversion IDs, labels, trigger logic, and payload fields did not change."
+safety_notes:
+  - "This recipe is optional and does not apply to every audit run."
+  - "This recipe does not configure Google Ads, GA4, or GTM directly."
+  - "This recipe does not certify consent, privacy, legal compliance, tracking correctness, or production readiness."
+  - "Human review is required before import, workspace creation, publishing, or production use."
