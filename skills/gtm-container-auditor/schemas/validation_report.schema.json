@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "validation_report.schema.json",
+  "title": "Validation Report Schema",
+  "description": "Machine-readable validation summary contract for the GTM Container Audit & Patch Package.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact_type",
+    "schema_version",
+    "run_id",
+    "package_schema_version",
+    "validation_status",
+    "checks",
+    "errors",
+    "warnings",
+    "publish_safety"
+  ],
+  "properties": {
+    "artifact_type": {
+      "type": "string",
+      "enum": ["validation_report"]
+    },
+    "schema_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "default": "1.0.0"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "package_schema_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "validation_status": {
+      "type": "string",
+      "enum": ["pass", "warn", "fail", "not_run"]
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/check"
+      }
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "publish_safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "optimized_container_publish_ready",
+        "mlp_publishes_gtm_changes",
+        "human_approval_required"
+      ],
+      "properties": {
+        "optimized_container_publish_ready": {
+          "type": "boolean",
+          "enum": [false],
+          "default": false
+        },
+        "mlp_publishes_gtm_changes": {
+          "type": "boolean",
+          "enum": [false],
+          "default": false
+        },
+        "human_approval_required": {
+          "type": "boolean",
+          "enum": [true],
+          "default": true
+        }
+      }
+    }
+  },
+  "definitions": {
+    "check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "check_id",
+        "status",
+        "message",
+        "checked_at"
+      ],
+      "properties": {
+        "check_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "enum": ["pass", "warn", "fail", "not_run"]
+        },
+        "message": {
+          "type": "string"
+        },
+        "checked_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}

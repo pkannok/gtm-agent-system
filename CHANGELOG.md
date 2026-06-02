@@ -31,6 +31,7 @@ All notable project changes will be documented in this file.
 - Added `skills/gtm-container-auditor/references/workflow.md` with the Skill's end-to-end file-in/file-out workflow and stopping conditions.
 - Added `skills/gtm-container-auditor/references/gtm-object-model.md` with GTM entity and reference relationship guidance for audit evidence.
 - Added `skills/gtm-container-auditor/references/client-overrides.md` with client profile, override, and safety-priority rules.
+- Added mirrored Phase 1 schema contracts under `skills/gtm-container-auditor/schemas/` for portable Skill use.
 
 ### Changed
 
@@ -40,5 +41,6 @@ All notable project changes will be documented in this file.
 - Marked Phase 3 in progress and Task 3.1 complete.
 - Marked Task 3.2 complete and updated `SKILL.md` reference navigation for the Skill reference files.
 - Added contents lists and current-purpose wording to existing Skill references.
+- Marked Task 3.3 complete and documented bundled Skill schema paths while preserving root schemas as the source of truth.
 - Moved the top-level package schema contract from the repository root to `schemas/` so all Phase 1 schema contracts live together.
 - Kept `schemas/` contract-only and placed schema validation samples under `examples/schema-validation/`.

@@ -1,0 +1,282 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "gtm_audit_report.schema.json",
+  "title": "GTM Audit Report Schema",
+  "description": "Machine-readable audit report contract for the GTM Container Audit & Patch Package.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact_type",
+    "schema_version",
+    "run_id",
+    "client_id",
+    "source_container_summary",
+    "audit_summary",
+    "findings",
+    "manual_review_items",
+    "assumptions"
+  ],
+  "properties": {
+    "artifact_type": {
+      "type": "string",
+      "enum": ["gtm_audit_report"]
+    },
+    "schema_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "default": "1.0.0"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "client_id": {
+      "type": ["string", "null"]
+    },
+    "source_container_summary": {
+      "$ref": "#/definitions/sourceContainerSummary"
+    },
+    "audit_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "summary",
+        "finding_count",
+        "highest_severity",
+        "human_review_required"
+      ],
+      "properties": {
+        "summary": {
+          "type": "string"
+        },
+        "finding_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "highest_severity": {
+          "type": "string",
+          "enum": ["info", "low", "medium", "high", "none"]
+        },
+        "human_review_required": {
+          "type": "boolean",
+          "enum": [true],
+          "default": true
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/finding"
+      }
+    },
+    "manual_review_items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/manualReviewItem"
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "definitions": {
+    "sourceContainerSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "input_file_name",
+        "account_id",
+        "container_id",
+        "container_name",
+        "export_format_version",
+        "entity_counts"
+      ],
+      "properties": {
+        "input_file_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "account_id": {
+          "type": ["string", "null"]
+        },
+        "container_id": {
+          "type": ["string", "null"]
+        },
+        "container_name": {
+          "type": ["string", "null"]
+        },
+        "export_format_version": {
+          "type": ["integer", "null"],
+          "minimum": 1
+        },
+        "entity_counts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "tags",
+            "triggers",
+            "variables",
+            "folders",
+            "templates"
+          ],
+          "properties": {
+            "tags": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "triggers": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "variables": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "folders": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "templates": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        }
+      }
+    },
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "finding_id",
+        "severity",
+        "category",
+        "title",
+        "description",
+        "affected_entities",
+        "evidence",
+        "recommended_actions",
+        "related_change_ids",
+        "human_review_required"
+      ],
+      "properties": {
+        "finding_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "severity": {
+          "type": "string",
+          "enum": ["info", "low", "medium", "high"]
+        },
+        "category": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string"
+        },
+        "affected_entities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/affectedEntity"
+          }
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/evidence"
+          }
+        },
+        "recommended_actions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "related_change_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "human_review_required": {
+          "type": "boolean"
+        }
+      }
+    },
+    "affectedEntity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "entity_type",
+        "entity_id",
+        "entity_name"
+      ],
+      "properties": {
+        "entity_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "entity_id": {
+          "type": ["string", "null"]
+        },
+        "entity_name": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_type",
+        "observation"
+      ],
+      "properties": {
+        "evidence_type": {
+          "type": "string",
+          "enum": ["observed_fact", "assumption", "manual_review_note"]
+        },
+        "observation": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "manualReviewItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "item_id",
+        "reason",
+        "related_finding_ids"
+      ],
+      "properties": {
+        "item_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "related_finding_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}
