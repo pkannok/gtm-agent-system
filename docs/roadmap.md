@@ -177,3 +177,43 @@ Status: Complete.
 
 Outcome:
 Adds initial reusable recipe files for MLP-safe GTM cleanup or tracking patterns with risk and manual-review guidance.
+
+---
+
+# Phase 4 - Build deterministic scripts
+
+Status: Upcoming.
+
+## Goal
+
+Create deterministic scripts that parse, normalize, diff, and validate GTM container exports and GTM Container Audit & Patch Package outputs.
+
+## Tasks
+
+### Task 4.1 - Build `normalize_gtm_export.py`
+
+Status: Upcoming.
+
+Outcome:
+Builds a deterministic script that normalizes GTM container exports for repeatable analysis and diffing.
+
+### Task 4.2 - Build `validate_gtm_container.py`
+
+Status: Upcoming.
+
+Outcome:
+Builds a deterministic script that validates basic GTM container export structure and references.
+
+### Task 4.3 - Build `diff_gtm_containers.py`
+
+Status: Upcoming.
+
+Outcome:
+Builds a deterministic script that compares a source GTM export and `optimized_container.json`.
+
+### Task 4.4 - Build `validate_output_package.py`
+
+Status: Upcoming.
+
+Outcome:
+Builds a deterministic script that validates a full GTM Container Audit & Patch Package.
