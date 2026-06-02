@@ -2,7 +2,7 @@
 
 ## Status
 
-Upcoming
+Complete
 
 ## Goal
 
@@ -14,9 +14,11 @@ Recipes let the system propose consistent implementation patterns without hard-c
 
 ## In scope
 
-- Create initial recipe files for MLP-safe patterns.
+- Create `skills/gtm-container-auditor/recipes/ga4-basic-cleanup.yaml`.
+- Create `skills/gtm-container-auditor/recipes/google-ads-conversion-basic.yaml`.
 - Document when each recipe applies.
 - Include risk and manual-review notes.
+- Include required recipe fields: `recipe_id`, `version`, `platform`, `target`, `purpose`, `requires`, `recommended_parameters`, `manual_review`, `outputs`, and `qa_steps`.
 - Keep recipe changes proposed and reversible.
 
 ## Out of scope
@@ -28,7 +30,8 @@ Recipes let the system propose consistent implementation patterns without hard-c
 
 ## Definition of done for MLP
 
-- [ ] Initial recipe files exist.
-- [ ] Each recipe states its purpose and when it applies.
-- [ ] Each recipe includes risk and manual-review guidance.
-- [ ] Recipes do not imply live GTM changes.
+- [x] Initial recipe files exist.
+- [x] Each recipe states its purpose and when it applies.
+- [x] Each recipe includes risk and manual-review guidance.
+- [x] Each recipe includes required inputs, outputs, recommended parameters, manual-review flags, and QA guidance.
+- [x] Recipes do not imply live GTM changes.

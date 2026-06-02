@@ -32,6 +32,8 @@ All notable project changes will be documented in this file.
 - Added `skills/gtm-container-auditor/references/gtm-object-model.md` with GTM entity and reference relationship guidance for audit evidence.
 - Added `skills/gtm-container-auditor/references/client-overrides.md` with client profile, override, and safety-priority rules.
 - Added mirrored Phase 1 schema contracts under `skills/gtm-container-auditor/schemas/` for portable Skill use.
+- Added `skills/gtm-container-auditor/recipes/ga4-basic-cleanup.yaml` with optional GA4 cleanup and QA guidance.
+- Added `skills/gtm-container-auditor/recipes/google-ads-conversion-basic.yaml` with optional Google Ads conversion review and QA guidance.
 
 ### Changed
 
@@ -42,5 +44,7 @@ All notable project changes will be documented in this file.
 - Marked Task 3.2 complete and updated `SKILL.md` reference navigation for the Skill reference files.
 - Added contents lists and current-purpose wording to existing Skill references.
 - Marked Task 3.3 complete and documented bundled Skill schema paths while preserving root schemas as the source of truth.
+- Marked Task 3.4 and Phase 3 complete.
+- Updated `SKILL.md` to reference optional recipes as reviewable aids, not live configuration behavior.
 - Moved the top-level package schema contract from the repository root to `schemas/` so all Phase 1 schema contracts live together.
 - Kept `schemas/` contract-only and placed schema validation samples under `examples/schema-validation/`.
