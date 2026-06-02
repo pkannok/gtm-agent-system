@@ -2,13 +2,17 @@
 
 Current active task:
 
-- None. Phase 2 is complete.
+- None. Task 3.1 is complete.
 
 Next recommended task:
 
-- Task 3.1 - Create the Skill directory and `SKILL.md`
+- Task 3.2 - Create Skill reference files
 
 Next task brief:
+
+- `docs/tasks/TASK-3.2-skill-reference-files.md`
+
+Most recent completed task brief:
 
 - `docs/tasks/TASK-3.1-skill-directory-and-skill-md.md`
 
