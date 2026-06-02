@@ -119,10 +119,10 @@ Defines default naming standards for GTM tags, triggers, variables, folders, and
 
 ### Task 2.2 - Create consent and privacy review standard
 
-Status: Upcoming.
+Status: Complete.
 
 Outcome:
-Will define consent and privacy review standards for advertising, remarketing, Custom HTML, enhanced conversions, user identifiers, and sensitive data.
+Defines consent and privacy review standards for advertising, remarketing, Custom HTML, enhanced conversions, user identifiers, sensitive data, consent configuration evidence, manual-review criteria, and non-certification wording.
 
 ### Task 2.3 - Create GTM audit rule catalog
 

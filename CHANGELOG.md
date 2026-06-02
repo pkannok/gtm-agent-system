@@ -22,6 +22,7 @@ All notable project changes will be documented in this file.
 - Added `schemas/client_profile.schema.json` for optional client-specific standards and overrides.
 - Added matching minimal sample files under `examples/schema-validation/` for all five Phase 1 schemas.
 - Added `standards/agency/naming-conventions.md` with default GTM naming standards for tags, triggers, variables, folders, and future recipes.
+- Added `standards/agency/consent-standard.md` with consent and privacy risk review standards for advertising, remarketing, Custom HTML, enhanced conversions, user identifiers, and sensitive data.
 
 ### Changed
 

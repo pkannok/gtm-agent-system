@@ -2,19 +2,19 @@
 
 Current active task:
 
-- None. Task 2.1 - Create agency naming conventions is complete.
+- None. Task 2.2 - Create consent and privacy review standard is complete.
 
 Next recommended task:
 
-- Task 2.2 - Create consent and privacy review standard
+- Task 2.3 - Create GTM audit rule catalog
 
 Next task brief:
 
-- `docs/tasks/TASK-2.2-consent-and-privacy-review-standard.md`
+- `docs/tasks/TASK-2.3-gtm-audit-rule-catalog.md`
 
 Most recent completed task brief:
 
-- `docs/tasks/TASK-2.1-agency-naming-conventions.md`
+- `docs/tasks/TASK-2.2-consent-and-privacy-review-standard.md`
 
 ## Instructions for Codex
 
