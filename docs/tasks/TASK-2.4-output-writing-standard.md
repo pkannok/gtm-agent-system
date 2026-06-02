@@ -2,7 +2,7 @@
 
 ## Status
 
-Upcoming
+Complete
 
 ## Goal
 
@@ -28,8 +28,8 @@ Consistent report structure helps analysts, account managers, developers, and cl
 
 ## Definition of done for MLP
 
-- [ ] `output-standards.md` exists.
-- [ ] Report structure is fixed.
-- [ ] Severity labels are defined.
-- [ ] The report never hides uncertainty.
-- [ ] The report distinguishes detected, inferred, and requires manual verification.
+- [x] `output-standards.md` exists.
+- [x] Report structure is fixed.
+- [x] Severity labels are defined.
+- [x] The report never hides uncertainty.
+- [x] The report distinguishes detected, inferred, and requires manual verification.

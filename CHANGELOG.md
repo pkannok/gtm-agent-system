@@ -24,9 +24,12 @@ All notable project changes will be documented in this file.
 - Added `standards/agency/naming-conventions.md` with default GTM naming standards for tags, triggers, variables, folders, and future recipes.
 - Added `standards/agency/consent-standard.md` with consent and privacy risk review standards for advertising, remarketing, Custom HTML, enhanced conversions, user identifiers, and sensitive data.
 - Added `skills/gtm-container-auditor/references/audit-rules.md` with initial GTM audit rule IDs, severity guidance, evidence requirements, automated-change policies, and manual-review triggers.
+- Added `skills/gtm-container-auditor/references/output-standards.md` with report structure, severity labels, uncertainty handling, and human approval wording standards.
+- Added `standards/agency/qa-standard.md` with human QA checklist standards for the GTM Container Audit & Patch Package.
 
 ### Changed
 
 - Updated `docs/tasks/CURRENT.md`, `docs/roadmap.md`, and `README.md` to reflect Phase 1 completion.
+- Marked Phase 2 complete after adding naming, consent/privacy, audit-rule, output-writing, and QA standards.
 - Moved the top-level package schema contract from the repository root to `schemas/` so all Phase 1 schema contracts live together.
 - Kept `schemas/` contract-only and placed schema validation samples under `examples/schema-validation/`.
