@@ -102,7 +102,7 @@ Defines the optional client profile contract for client-specific standards, over
 
 # Phase 2 - Agency standards and audit rules
 
-Status: In Progress.
+Status: Complete.
 
 ## Goal
 
@@ -133,7 +133,7 @@ Defines initial GTM audit rules for inventory, reference integrity, duplicates, 
 
 ### Task 2.4 - Create output writing standard
 
-Status: Upcoming.
+Status: Complete.
 
 Outcome:
-Will define human-readable report structure, severity labels, uncertainty handling, and output writing standards for the GTM Container Audit & Patch Package.
+Defines human-readable report structure, severity labels, uncertainty handling, QA checklist guidance, human approval notes, and output writing standards for the GTM Container Audit & Patch Package.
