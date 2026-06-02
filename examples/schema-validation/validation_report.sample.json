@@ -1,0 +1,22 @@
+{
+  "artifact_type": "validation_report",
+  "schema_version": "1.0.0",
+  "run_id": "sample-run-001",
+  "package_schema_version": "1.0.0",
+  "validation_status": "pass",
+  "checks": [
+    {
+      "check_id": "sample-validates",
+      "status": "pass",
+      "message": "Sample package validates against the Phase 1 schema set.",
+      "checked_at": "2026-06-02T18:00:00Z"
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "publish_safety": {
+    "optimized_container_publish_ready": false,
+    "mlp_publishes_gtm_changes": false,
+    "human_approval_required": true
+  }
+}

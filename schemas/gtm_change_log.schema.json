@@ -1,0 +1,161 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "gtm_change_log.schema.json",
+  "title": "GTM Change Log Schema",
+  "description": "Machine-readable proposed change log contract for the GTM Container Audit & Patch Package.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact_type",
+    "schema_version",
+    "run_id",
+    "client_id",
+    "source_container_file",
+    "optimized_container_file",
+    "changes",
+    "summary",
+    "human_approval_required",
+    "publishes_gtm_changes"
+  ],
+  "properties": {
+    "artifact_type": {
+      "type": "string",
+      "enum": ["gtm_change_log"]
+    },
+    "schema_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "default": "1.0.0"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "client_id": {
+      "type": ["string", "null"]
+    },
+    "source_container_file": {
+      "type": "string",
+      "minLength": 1
+    },
+    "optimized_container_file": {
+      "type": "string",
+      "enum": ["optimized_container.json"]
+    },
+    "changes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/change"
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "change_count",
+        "high_risk_change_count",
+        "manual_review_required"
+      ],
+      "properties": {
+        "change_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "high_risk_change_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "manual_review_required": {
+          "type": "boolean",
+          "enum": [true],
+          "default": true
+        }
+      }
+    },
+    "human_approval_required": {
+      "type": "boolean",
+      "enum": [true],
+      "default": true
+    },
+    "publishes_gtm_changes": {
+      "type": "boolean",
+      "enum": [false],
+      "default": false
+    }
+  },
+  "definitions": {
+    "change": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "change_id",
+        "change_type",
+        "entity_type",
+        "entity_id",
+        "entity_name",
+        "before",
+        "after",
+        "reason",
+        "risk_level",
+        "rollback_notes",
+        "related_finding_ids",
+        "status",
+        "human_approval_required"
+      ],
+      "properties": {
+        "change_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "change_type": {
+          "type": "string",
+          "enum": ["add", "modify", "remove", "rename", "no_change"]
+        },
+        "entity_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "entity_id": {
+          "type": ["string", "null"]
+        },
+        "entity_name": {
+          "type": ["string", "null"]
+        },
+        "before": {
+          "type": ["object", "null"],
+          "additionalProperties": true
+        },
+        "after": {
+          "type": ["object", "null"],
+          "additionalProperties": true
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "risk_level": {
+          "type": "string",
+          "enum": ["low", "medium", "high"]
+        },
+        "rollback_notes": {
+          "type": "string",
+          "minLength": 1
+        },
+        "related_finding_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "status": {
+          "type": "string",
+          "enum": ["proposed"]
+        },
+        "human_approval_required": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

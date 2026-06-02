@@ -1,0 +1,35 @@
+{
+  "artifact_type": "client_profile",
+  "schema_version": "1.0.0",
+  "client_id": "sample-client",
+  "client_name": "Sample Client",
+  "standards": [
+    {
+      "standard_id": "naming-001",
+      "name": "GA4 tag naming",
+      "description": "GA4 tags should use the configured channel prefix.",
+      "required": true
+    }
+  ],
+  "overrides": [
+    {
+      "override_id": "override-001",
+      "applies_to": "legacy-tags",
+      "description": "Legacy tag names may remain unchanged if renaming would break reporting conventions.",
+      "reason": "Client reporting depends on historical tag names."
+    }
+  ],
+  "consent_requirements": {
+    "requires_consent_review": true,
+    "notes": [
+      "Consent-sensitive tags require manual analyst review."
+    ]
+  },
+  "manual_review_rules": [
+    {
+      "rule_id": "manual-review-001",
+      "trigger": "custom-html",
+      "required_reviewer": "human analyst"
+    }
+  ]
+}

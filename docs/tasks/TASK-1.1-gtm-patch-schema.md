@@ -22,7 +22,7 @@ The schema must describe the whole package, not only `optimized_container.json`.
 
 ## In scope
 
-- Create `gtm_patch_package.schema.json`.
+- Create `schemas/gtm_patch_package.schema.json`.
 - Define the top-level package object for the GTM Container Audit & Patch Package.
 - Use JSON Schema-compatible patterns suitable for future structured outputs.
 - Require package-level metadata such as artifact type, schema version, run ID, and human approval status.
@@ -78,8 +78,8 @@ Use JSON Schema-compatible patterns because later API-based versions should be a
 ```text
 docs/tasks/TASK-1.1-gtm-patch-schema.md
 docs/tasks/CURRENT.md
-gtm_patch_package.schema.json
-gtm_patch_package.sample.json
+schemas/gtm_patch_package.schema.json
+examples/schema-validation/gtm_patch_package.sample.json
 ```
 
 If validation requires a sample package, add the smallest sample package needed for Task 1.1. Do not create a fixture catalog.

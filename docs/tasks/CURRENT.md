@@ -2,19 +2,19 @@
 
 Current active task:
 
-- None. Task 1.1 — Create `gtm_patch_package.schema.json` is complete.
+- None. Phase 1 is complete.
 
 Next recommended task:
 
-- Task 1.2 - Create `gtm_audit_report.schema.json`
+- Not defined yet.
 
-Task 1.2 brief:
+Next task brief:
 
 - Not created yet.
 
-Most recent completed task brief:
+Most recent completed phase brief:
 
-- `docs/tasks/TASK-1.1-gtm-patch-schema.md`
+- `docs/tasks/PHASE-1-goal-output-contracts-and-schemas.md`
 
 ## Instructions for Codex
 

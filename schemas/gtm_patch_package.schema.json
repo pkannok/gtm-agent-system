@@ -42,68 +42,7 @@
       "type": ["string", "null"]
     },
     "source_container_summary": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "input_file_name",
-        "account_id",
-        "container_id",
-        "container_name",
-        "export_format_version",
-        "entity_counts"
-      ],
-      "properties": {
-        "input_file_name": {
-          "type": "string",
-          "minLength": 1
-        },
-        "account_id": {
-          "type": ["string", "null"]
-        },
-        "container_id": {
-          "type": ["string", "null"]
-        },
-        "container_name": {
-          "type": ["string", "null"]
-        },
-        "export_format_version": {
-          "type": ["integer", "null"],
-          "minimum": 1
-        },
-        "entity_counts": {
-          "type": "object",
-          "additionalProperties": false,
-          "required": [
-            "tags",
-            "triggers",
-            "variables",
-            "folders",
-            "templates"
-          ],
-          "properties": {
-            "tags": {
-              "type": "integer",
-              "minimum": 0
-            },
-            "triggers": {
-              "type": "integer",
-              "minimum": 0
-            },
-            "variables": {
-              "type": "integer",
-              "minimum": 0
-            },
-            "folders": {
-              "type": "integer",
-              "minimum": 0
-            },
-            "templates": {
-              "type": "integer",
-              "minimum": 0
-            }
-          }
-        }
-      }
+      "$ref": "#/definitions/sourceContainerSummary"
     },
     "standards_applied": {
       "type": "array",
@@ -126,25 +65,25 @@
       ],
       "properties": {
         "optimized_container_json": {
-          "$ref": "#/definitions/packageFile"
+          "$ref": "#/definitions/optimizedContainerPackageFile"
         },
         "audit_report_md": {
-          "$ref": "#/definitions/packageFile"
+          "$ref": "#/definitions/auditReportMdPackageFile"
         },
         "audit_report_json": {
-          "$ref": "#/definitions/packageFile"
+          "$ref": "#/definitions/auditReportJsonPackageFile"
         },
         "change_log_json": {
-          "$ref": "#/definitions/packageFile"
+          "$ref": "#/definitions/changeLogPackageFile"
         },
         "validation_report_json": {
-          "$ref": "#/definitions/packageFile"
+          "$ref": "#/definitions/validationReportPackageFile"
         },
         "qa_checklist_md": {
-          "$ref": "#/definitions/packageFile"
+          "$ref": "#/definitions/qaChecklistPackageFile"
         },
         "run_metadata_json": {
-          "$ref": "#/definitions/packageFile"
+          "$ref": "#/definitions/runMetadataPackageFile"
         }
       }
     },
@@ -328,6 +267,70 @@
     }
   },
   "definitions": {
+    "sourceContainerSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "input_file_name",
+        "account_id",
+        "container_id",
+        "container_name",
+        "export_format_version",
+        "entity_counts"
+      ],
+      "properties": {
+        "input_file_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "account_id": {
+          "type": ["string", "null"]
+        },
+        "container_id": {
+          "type": ["string", "null"]
+        },
+        "container_name": {
+          "type": ["string", "null"]
+        },
+        "export_format_version": {
+          "type": ["integer", "null"],
+          "minimum": 1
+        },
+        "entity_counts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "tags",
+            "triggers",
+            "variables",
+            "folders",
+            "templates"
+          ],
+          "properties": {
+            "tags": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "triggers": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "variables": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "folders": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "templates": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        }
+      }
+    },
     "packageFile": {
       "type": "object",
       "additionalProperties": false,
@@ -356,6 +359,132 @@
           "minLength": 1
         }
       }
+    },
+    "optimizedContainerPackageFile": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/packageFile"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "file_name": {
+              "const": "optimized_container.json"
+            },
+            "media_type": {
+              "const": "application/json"
+            }
+          }
+        }
+      ]
+    },
+    "auditReportMdPackageFile": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/packageFile"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "file_name": {
+              "const": "audit_report.md"
+            },
+            "media_type": {
+              "const": "text/markdown"
+            }
+          }
+        }
+      ]
+    },
+    "auditReportJsonPackageFile": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/packageFile"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "file_name": {
+              "const": "audit_report.json"
+            },
+            "media_type": {
+              "const": "application/json"
+            }
+          }
+        }
+      ]
+    },
+    "changeLogPackageFile": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/packageFile"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "file_name": {
+              "const": "change_log.json"
+            },
+            "media_type": {
+              "const": "application/json"
+            }
+          }
+        }
+      ]
+    },
+    "validationReportPackageFile": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/packageFile"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "file_name": {
+              "const": "validation_report.json"
+            },
+            "media_type": {
+              "const": "application/json"
+            }
+          }
+        }
+      ]
+    },
+    "qaChecklistPackageFile": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/packageFile"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "file_name": {
+              "const": "qa_checklist.md"
+            },
+            "media_type": {
+              "const": "text/markdown"
+            }
+          }
+        }
+      ]
+    },
+    "runMetadataPackageFile": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/packageFile"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "file_name": {
+              "const": "run_metadata.json"
+            },
+            "media_type": {
+              "const": "application/json"
+            }
+          }
+        }
+      ]
     },
     "standardApplied": {
       "type": "object",

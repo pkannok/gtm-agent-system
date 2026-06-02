@@ -101,7 +101,9 @@
             "observation": "Name does not match the agency convention."
           }
         ],
-        "proposed_change_ids": ["change-001"],
+        "proposed_change_ids": [
+          "change-001"
+        ],
         "human_review_required": true
       }
     ]
@@ -116,7 +118,9 @@
       "reason": "Align the tag name with the agency convention.",
       "risk_level": "low",
       "rollback_notes": "Restore the previous tag name if rejected.",
-      "related_finding_ids": ["finding-001"],
+      "related_finding_ids": [
+        "finding-001"
+      ],
       "status": "proposed",
       "human_approval_required": true
     }
@@ -150,8 +154,10 @@
   ],
   "run_metadata": {
     "file_name": "run_metadata.json",
-    "created_at": "2026-06-01T20:00:00Z",
-    "input_files": ["source_container.json"],
+    "created_at": "2026-06-02T18:00:00Z",
+    "input_files": [
+      "source_container.json"
+    ],
     "mlp_version": "1.0.0",
     "tool_version": null
   },

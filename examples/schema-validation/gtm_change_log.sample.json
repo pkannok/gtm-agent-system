@@ -1,0 +1,38 @@
+{
+  "artifact_type": "gtm_change_log",
+  "schema_version": "1.0.0",
+  "run_id": "sample-run-001",
+  "client_id": "sample-client",
+  "source_container_file": "source_container.json",
+  "optimized_container_file": "optimized_container.json",
+  "changes": [
+    {
+      "change_id": "change-001",
+      "change_type": "rename",
+      "entity_type": "tag",
+      "entity_id": "1",
+      "entity_name": "Sample Tag",
+      "before": {
+        "name": "Sample Tag"
+      },
+      "after": {
+        "name": "GA4 - Sample Tag"
+      },
+      "reason": "Align the tag name with agency naming standards.",
+      "risk_level": "low",
+      "rollback_notes": "Restore the original tag name if rejected during analyst review.",
+      "related_finding_ids": [
+        "finding-001"
+      ],
+      "status": "proposed",
+      "human_approval_required": true
+    }
+  ],
+  "summary": {
+    "change_count": 1,
+    "high_risk_change_count": 0,
+    "manual_review_required": true
+  },
+  "human_approval_required": true,
+  "publishes_gtm_changes": false
+}
