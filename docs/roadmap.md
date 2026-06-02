@@ -142,7 +142,7 @@ Defines human-readable report structure, severity labels, uncertainty handling, 
 
 # Phase 3 - Build the Skill package
 
-Status: Upcoming.
+Status: In Progress.
 
 ## Goal
 
@@ -152,10 +152,10 @@ Create the reusable GTM Container Auditor Skill package that stores the repeatab
 
 ### Task 3.1 - Create the Skill directory and `SKILL.md`
 
-Status: Upcoming.
+Status: Complete.
 
 Outcome:
-Will create the concise Skill entrypoint with valid frontmatter, workflow and safety rules, and links to supporting reference files.
+Creates the concise Skill entrypoint with valid frontmatter, UI metadata, workflow and safety rules, and links to supporting reference files.
 
 ### Task 3.2 - Create Skill reference files
 

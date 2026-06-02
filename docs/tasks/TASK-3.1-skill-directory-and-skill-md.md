@@ -2,7 +2,7 @@
 
 ## Status
 
-Upcoming
+Complete
 
 ## Goal
 
@@ -16,6 +16,7 @@ The Skill stores the portable, repeatable workflow that the Custom GPT can call 
 
 - Create or update the Skill folder.
 - Create `SKILL.md` with valid frontmatter.
+- Create `agents/openai.yaml` with minimal UI metadata.
 - Include concise workflow and safety rules.
 - Point to supporting reference files.
 
@@ -28,8 +29,9 @@ The Skill stores the portable, repeatable workflow that the Custom GPT can call 
 
 ## Definition of done for MLP
 
-- [ ] Skill folder exists.
-- [ ] `SKILL.md` has valid frontmatter.
-- [ ] `SKILL.md` is concise and points to supporting files.
-- [ ] Skill can be zipped and moved to another environment.
-- [ ] No placeholder/example files remain.
+- [x] Skill folder exists.
+- [x] `SKILL.md` has valid frontmatter.
+- [x] `agents/openai.yaml` exists with UI metadata.
+- [x] `SKILL.md` is concise and points to supporting files.
+- [x] Skill can be zipped and moved to another environment.
+- [x] No placeholder/example files remain.

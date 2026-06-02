@@ -1,0 +1,5 @@
+interface:
+  display_name: "GTM Container Auditor"
+  short_description: "Audit GTM container exports and produce a reviewable GTM Container Audit & Patch Package."
+  icon: "tag"
+  primary_color: "#1A73E8"
