@@ -2,7 +2,7 @@
 
 ## Status
 
-Upcoming
+Complete
 
 ## Goal
 
@@ -17,6 +17,7 @@ The validator catches structural issues that model reasoning should not be trust
 - Validate JSON parsing.
 - Check expected GTM top-level sections.
 - Check tag trigger references where detectable.
+- Check folder references where detectable.
 - Check variable references where detectable.
 - Report understandable validation results.
 
@@ -29,7 +30,7 @@ The validator catches structural issues that model reasoning should not be trust
 
 ## Definition of done for MLP
 
-- [ ] Script validates valid fixture containers.
-- [ ] Script reports broken references.
-- [ ] Script reports missing expected GTM sections.
-- [ ] Errors are understandable to a human analyst.
+- [x] Script validates valid fixture containers.
+- [x] Script reports broken references.
+- [x] Script reports missing expected GTM sections.
+- [x] Errors are understandable to a human analyst.

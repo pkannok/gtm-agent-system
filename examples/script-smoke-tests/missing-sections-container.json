@@ -1,0 +1,15 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-06-02 00:00:00",
+  "containerVersion": {
+    "accountId": "1000",
+    "containerId": "2000",
+    "name": "Missing Sections Smoke Version",
+    "container": {
+      "accountId": "1000",
+      "containerId": "2000",
+      "name": "Missing Sections Smoke Container",
+      "publicId": "GTM-MISSING"
+    }
+  }
+}

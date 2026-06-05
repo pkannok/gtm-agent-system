@@ -4,6 +4,13 @@
 
 In Progress
 
+Current progress:
+
+- Task 4.1 is complete.
+- Task 4.2 is complete.
+- Task 4.3 is upcoming.
+- Task 4.4 is upcoming.
+
 ## Task
 
 Complete Phase 4 of the MLP project plan in VS Code/Codex.

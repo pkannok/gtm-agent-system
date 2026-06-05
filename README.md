@@ -22,9 +22,11 @@ Phase 4 status: in progress.
 
 Task 4.1 status: complete. `scripts/normalize_gtm_export.py` produces deterministic GTM container export summary JSON for audit and diff workflows.
 
-Next recommended task: Task 4.2 - Build `validate_gtm_container.py`.
+Task 4.2 status: complete. `scripts/validate_gtm_container.py` validates JSON parsing, expected GTM sections, and detectable tag trigger, folder, and variable references.
 
-The next task brief is `docs/tasks/TASK-4.2-validate-gtm-container-script.md`.
+Next recommended task: Task 4.3 - Build `diff_gtm_containers.py`.
+
+The next task brief is `docs/tasks/TASK-4.3-diff-gtm-containers-script.md`.
 
 Task 0.3 status: complete. Project terminology is defined in `docs/glossary.md`.
 
@@ -92,8 +94,16 @@ The Skill is portable and file-in/file-out. It does not publish GTM changes, cal
 ## Current deterministic scripts
 
 - `scripts/normalize_gtm_export.py` - Reads a GTM container export JSON file and writes a deterministic normalized summary JSON with metadata, counts, lookup maps, preserved entities, warnings, and safety flags.
+- `scripts/validate_gtm_container.py` - Validates JSON parsing, expected GTM sections, and detectable tag trigger, folder, and variable references.
 
 The script layer is local and file-in/file-out. It does not call live APIs, publish GTM changes, or replace analyst QA.
+
+## Current script smoke-test inputs
+
+- `examples/script-smoke-tests/valid-basic-container.json` - Valid GTM container smoke-test input.
+- `examples/script-smoke-tests/broken-reference-container.json` - Failure fixture for missing trigger, folder, and variable references.
+- `examples/script-smoke-tests/missing-sections-container.json` - Failure fixture for missing expected GTM sections.
+- `examples/script-smoke-tests/invalid-json-container.json` - Failure fixture for JSON parsing errors.
 
 ## Repository structure
 
