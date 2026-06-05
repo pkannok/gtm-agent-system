@@ -1,0 +1,70 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-06-02 00:00:00",
+  "containerVersion": {
+    "accountId": "1000",
+    "containerId": "2000",
+    "name": "Broken Reference Smoke Version",
+    "container": {
+      "accountId": "1000",
+      "containerId": "2000",
+      "name": "Broken Reference Smoke Container",
+      "publicId": "GTM-BROKEN"
+    },
+    "tag": [
+      {
+        "accountId": "1000",
+        "containerId": "2000",
+        "tagId": "1",
+        "name": "GA4 - Event - purchase",
+        "type": "gaawe",
+        "firingTriggerId": [
+          "999"
+        ],
+        "parentFolderId": "404",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "eventName",
+            "value": "{{Missing Variable}}"
+          }
+        ]
+      }
+    ],
+    "trigger": [
+      {
+        "accountId": "1000",
+        "containerId": "2000",
+        "triggerId": "2",
+        "name": "CE - purchase",
+        "type": "CUSTOM_EVENT"
+      }
+    ],
+    "variable": [
+      {
+        "accountId": "1000",
+        "containerId": "2000",
+        "variableId": "3",
+        "name": "DLV - ecommerce.transaction_id",
+        "type": "v"
+      }
+    ],
+    "folder": [
+      {
+        "accountId": "1000",
+        "containerId": "2000",
+        "folderId": "10",
+        "name": "GA4"
+      }
+    ],
+    "builtInVariable": [
+      {
+        "accountId": "1000",
+        "containerId": "2000",
+        "type": "PAGE_URL",
+        "name": "Page URL"
+      }
+    ],
+    "customTemplate": []
+  }
+}

@@ -199,10 +199,10 @@ Builds a deterministic script that normalizes GTM container exports for repeatab
 
 ### Task 4.2 - Build `validate_gtm_container.py`
 
-Status: Upcoming.
+Status: Complete.
 
 Outcome:
-Builds a deterministic script that validates basic GTM container export structure and references.
+Builds a deterministic script that validates basic GTM container export structure, expected sections, and detectable tag trigger, folder, and variable references.
 
 ### Task 4.3 - Build `diff_gtm_containers.py`
 
