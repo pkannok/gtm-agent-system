@@ -206,10 +206,10 @@ Builds a deterministic script that validates basic GTM container export structur
 
 ### Task 4.3 - Build `diff_gtm_containers.py`
 
-Status: Upcoming.
+Status: Complete.
 
 Outcome:
-Builds a deterministic script that compares a source GTM export and `optimized_container.json`.
+Builds a deterministic script that compares a source GTM export and `optimized_container.json`, detects entity-level changes, and outputs a machine-readable proposed change log.
 
 ### Task 4.4 - Build `validate_output_package.py`
 

@@ -1,0 +1,83 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-06-02 00:00:00",
+  "containerVersion": {
+    "accountId": "1000",
+    "containerId": "2000",
+    "name": "Smoke Version",
+    "container": {
+      "accountId": "1000",
+      "containerId": "2000",
+      "name": "Smoke Test Container",
+      "publicId": "GTM-SMOKE"
+    },
+    "tag": [
+      {
+        "accountId": "1000",
+        "containerId": "2000",
+        "tagId": "1",
+        "name": "GA4 - Event - purchase - Reviewed",
+        "type": "gaawe",
+        "firingTriggerId": [
+          "2"
+        ],
+        "parentFolderId": "10",
+        "paused": true,
+        "fingerprint": "tag-fingerprint-1-updated"
+      }
+    ],
+    "trigger": [
+      {
+        "accountId": "1000",
+        "containerId": "2000",
+        "triggerId": "2",
+        "name": "CE - purchase",
+        "type": "CUSTOM_EVENT",
+        "fingerprint": "trigger-fingerprint-2"
+      }
+    ],
+    "variable": [
+      {
+        "accountId": "1000",
+        "containerId": "2000",
+        "variableId": "3",
+        "name": "DLV - ecommerce.transaction_id",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "name",
+            "value": "ecommerce.order_id"
+          }
+        ],
+        "fingerprint": "variable-fingerprint-3-updated"
+      }
+    ],
+    "folder": [
+      {
+        "accountId": "1000",
+        "containerId": "2000",
+        "folderId": "10",
+        "name": "GA4",
+        "fingerprint": "folder-fingerprint-10"
+      }
+    ],
+    "builtInVariable": [
+      {
+        "accountId": "1000",
+        "containerId": "2000",
+        "type": "PAGE_URL",
+        "name": "Page URL"
+      }
+    ],
+    "customTemplate": [
+      {
+        "accountId": "1000",
+        "containerId": "2000",
+        "templateId": "100",
+        "name": "Smoke Custom Template",
+        "fingerprint": "template-fingerprint-100"
+      }
+    ]
+  }
+}
