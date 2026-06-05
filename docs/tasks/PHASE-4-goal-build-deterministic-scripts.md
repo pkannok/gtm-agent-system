@@ -8,7 +8,7 @@ Current progress:
 
 - Task 4.1 is complete.
 - Task 4.2 is complete.
-- Task 4.3 is upcoming.
+- Task 4.3 is complete.
 - Task 4.4 is upcoming.
 
 ## Task

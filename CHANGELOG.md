@@ -38,6 +38,8 @@ All notable project changes will be documented in this file.
 - Added `examples/script-smoke-tests/valid-basic-container.json` as minimal smoke-test input for Task 4.1 script verification.
 - Added `scripts/validate_gtm_container.py` to validate JSON parsing, expected GTM sections, and detectable tag trigger, folder, and variable references.
 - Added Task 4.2 failure fixtures under `examples/script-smoke-tests/` for broken references, missing sections, and invalid JSON.
+- Added `scripts/diff_gtm_containers.py` to compare original and optimized GTM exports and output a deterministic proposed change log.
+- Added `examples/script-smoke-tests/valid-basic-container-renamed.json` as optimized smoke-test input for Task 4.3 diff verification.
 
 ### Changed
 
@@ -54,5 +56,6 @@ All notable project changes will be documented in this file.
 - Marked ADR-0001 accepted now that the canonical MLP deliverable decision is reflected in the project docs, Custom GPT instruction draft, and Skill deliverable contract.
 - Marked Phase 4 in progress, Task 4.1 complete, and updated the README/current-task handoff after normalizer verification passed.
 - Marked Task 4.2 complete after the GTM container validator passed all definition-of-done checks.
+- Marked Task 4.3 complete after the GTM container diff script passed syntax, help, smoke, invalid-input, safety, and scope checks.
 - Moved the top-level package schema contract from the repository root to `schemas/` so all Phase 1 schema contracts live together.
 - Kept `schemas/` contract-only and placed schema validation samples under `examples/schema-validation/`.

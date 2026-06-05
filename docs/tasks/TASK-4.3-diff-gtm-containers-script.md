@@ -2,7 +2,7 @@
 
 ## Status
 
-Upcoming
+Complete
 
 ## Goal
 
@@ -27,7 +27,13 @@ The diff script supports change log verification and helps analysts confirm prop
 
 ## Definition of done for MLP
 
-- [ ] Script detects entity-level differences.
-- [ ] Script outputs a deterministic machine-readable diff.
-- [ ] Diff can support change log validation.
-- [ ] Deletions are visible and not hidden.
+- [x] Script accepts original and optimized JSON paths.
+- [x] Script outputs `change_log.json`.
+- [x] Every detected modification has entity type, entity ID/name, change type, and before/after summary.
+- [x] Each change can include or support a rollback note.
+- [x] Deletions are clearly flagged as high-risk/manual-review when detected.
+- [x] Script detects entity-level differences.
+- [x] Script outputs a deterministic machine-readable diff.
+- [x] Diff can support change log validation.
+- [x] Deletions are visible and not hidden.
+- [x] Script does not imply detected changes are approved for import, workspace creation, publishing, or production use.

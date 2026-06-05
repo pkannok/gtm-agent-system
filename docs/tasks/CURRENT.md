@@ -6,15 +6,15 @@ Current active task:
 
 Next recommended task:
 
-- Task 4.3 - Build `diff_gtm_containers.py`
+- Task 4.4 - Build `validate_output_package.py`
 
 Next task brief:
 
-- `docs/tasks/TASK-4.3-diff-gtm-containers-script.md`
+- `docs/tasks/TASK-4.4-validate-output-package-script.md`
 
 Most recent completed task brief:
 
-- `docs/tasks/TASK-4.2-validate-gtm-container-script.md`
+- `docs/tasks/TASK-4.3-diff-gtm-containers-script.md`
 
 Most recent completed phase brief:
 
@@ -33,8 +33,8 @@ Do not work outside the active task scope.
 
 ## Current boundaries
 
-- Do not start Task 4.3 implementation unless it is explicitly requested as the active task.
-- Do not create the Task 4.3 diff script or Task 4.4 package validator unless the active task explicitly requires them.
+- Do not start Task 4.4 implementation unless it is explicitly requested as the active task.
+- Do not create the Task 4.4 package validator unless the active task explicitly requires it.
 - Do not create the full Phase 5 synthetic fixture suite or golden tests.
 - Do not create GitHub Actions, API connectors, or Custom GPT final UI configuration.
 - Do not modify the completed Phase 3 Skill package unless the active task explicitly requires it.
@@ -45,4 +45,5 @@ Do not work outside the active task scope.
 
 - Task 4.1 is complete. `scripts/normalize_gtm_export.py` can normalize a GTM export into a deterministic summary JSON with metadata, counts, lookup maps, preserved entities, warnings, and safety flags.
 - Task 4.2 is complete. `scripts/validate_gtm_container.py` can validate JSON parsing, expected GTM sections, tag trigger references, folder references, and detectable variable references.
-- Task 4.3 is the next recommended task.
+- Task 4.3 is complete. `scripts/diff_gtm_containers.py` can compare original and optimized GTM exports and output a machine-readable proposed change log.
+- Task 4.4 is the next recommended task.
