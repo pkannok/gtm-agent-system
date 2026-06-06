@@ -18,7 +18,7 @@ Phase 3 status: complete.
 
 Phase 3 Skill package files are defined in `skills/gtm-container-auditor/`, including the Skill entrypoint, UI metadata, references, mirrored schema contracts, and initial recipe files.
 
-Phase 4 status: in progress.
+Phase 4 status: complete.
 
 Task 4.1 status: complete. `scripts/normalize_gtm_export.py` produces deterministic GTM container export summary JSON for audit and diff workflows.
 
@@ -26,9 +26,11 @@ Task 4.2 status: complete. `scripts/validate_gtm_container.py` validates JSON pa
 
 Task 4.3 status: complete. `scripts/diff_gtm_containers.py` compares original and optimized GTM exports and outputs a machine-readable proposed change log.
 
-Next recommended task: Task 4.4 - Build `validate_output_package.py`.
+Task 4.4 status: complete. `scripts/validate_output_package.py` validates full GTM Container Audit & Patch Package directories for required artifacts, schema-backed JSON artifacts, consistency, safety flags, and validation-report-compatible output.
 
-The next task brief is `docs/tasks/TASK-4.4-validate-output-package-script.md`.
+Next recommended task: Task 5.1 - Create synthetic GTM container fixtures.
+
+The next task brief is `docs/tasks/TASK-5.1-synthetic-gtm-container-fixtures.md`.
 
 Task 0.3 status: complete. Project terminology is defined in `docs/glossary.md`.
 
@@ -98,6 +100,7 @@ The Skill is portable and file-in/file-out. It does not publish GTM changes, cal
 - `scripts/normalize_gtm_export.py` - Reads a GTM container export JSON file and writes a deterministic normalized summary JSON with metadata, counts, lookup maps, preserved entities, warnings, and safety flags.
 - `scripts/validate_gtm_container.py` - Validates JSON parsing, expected GTM sections, and detectable tag trigger, folder, and variable references.
 - `scripts/diff_gtm_containers.py` - Compares original and optimized GTM exports and writes a deterministic proposed change log.
+- `scripts/validate_output_package.py` - Validates a GTM Container Audit & Patch Package directory and writes a `validation_report.json`-compatible report.
 
 The script layer is local and file-in/file-out. It does not call live APIs, publish GTM changes, or replace analyst QA.
 
@@ -108,6 +111,9 @@ The script layer is local and file-in/file-out. It does not call live APIs, publ
 - `examples/script-smoke-tests/missing-sections-container.json` - Failure fixture for missing expected GTM sections.
 - `examples/script-smoke-tests/invalid-json-container.json` - Failure fixture for JSON parsing errors.
 - `examples/script-smoke-tests/valid-basic-container-renamed.json` - Optimized smoke-test input for deterministic diff checks.
+- `examples/script-smoke-tests/valid-output-package/` - Passing GTM Container Audit & Patch Package smoke-test fixture.
+- `examples/script-smoke-tests/bad-output-package/` - Failure fixture for broken finding-to-change references.
+- `examples/script-smoke-tests/missing-files-output-package/` - Failure fixture for missing required package artifacts.
 
 ## Repository structure
 

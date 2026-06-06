@@ -1,0 +1,22 @@
+{
+  "artifact_type": "validation_report",
+  "schema_version": "1.0.0",
+  "run_id": "task-4.4-smoke-bad",
+  "package_schema_version": "1.0.0",
+  "validation_status": "pass",
+  "checks": [
+    {
+      "check_id": "bad-package-placeholder",
+      "status": "pass",
+      "message": "This placeholder intentionally does not catch the broken reference.",
+      "checked_at": "1970-01-01T00:00:00Z"
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "publish_safety": {
+    "optimized_container_publish_ready": false,
+    "mlp_publishes_gtm_changes": false,
+    "human_approval_required": true
+  }
+}

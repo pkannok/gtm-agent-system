@@ -1,0 +1,67 @@
+{
+  "artifact_type": "gtm_audit_report",
+  "schema_version": "1.0.0",
+  "run_id": "task-4.4-smoke-bad",
+  "client_id": null,
+  "source_container_summary": {
+    "input_file_name": "source_container.json",
+    "account_id": "1000",
+    "container_id": "2000",
+    "container_name": "Bad Smoke Container",
+    "export_format_version": 2,
+    "entity_counts": {
+      "tags": 1,
+      "triggers": 0,
+      "variables": 0,
+      "folders": 0,
+      "templates": 0
+    }
+  },
+  "audit_summary": {
+    "summary": "Known-bad smoke-test audit report.",
+    "finding_count": 1,
+    "highest_severity": "low",
+    "human_review_required": true
+  },
+  "findings": [
+    {
+      "finding_id": "finding-001",
+      "severity": "low",
+      "category": "naming",
+      "title": "Sample naming review",
+      "description": "This finding intentionally has a valid related change ID.",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "1",
+          "entity_name": "Sample Tag"
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_type": "observed_fact",
+          "observation": "The sample package includes one reviewable proposed change."
+        }
+      ],
+      "recommended_actions": [
+        "Review the proposed change before import or production use."
+      ],
+      "related_change_ids": [
+        "change-001"
+      ],
+      "human_review_required": true
+    }
+  ],
+  "manual_review_items": [
+    {
+      "item_id": "review-001",
+      "reason": "Confirm the known-bad package is rejected.",
+      "related_finding_ids": [
+        "finding-001"
+      ]
+    }
+  ],
+  "assumptions": [
+    "This is synthetic smoke-test data."
+  ]
+}

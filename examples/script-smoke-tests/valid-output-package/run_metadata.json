@@ -1,0 +1,13 @@
+{
+  "run_id": "task-4.4-smoke-valid",
+  "created_at": "1970-01-01T00:00:00Z",
+  "input_files": [
+    "source_container.json"
+  ],
+  "client_id": null,
+  "standards_applied": [
+    "agency-defaults"
+  ],
+  "mlp_version": "1.0.0",
+  "tool_version": null
+}
