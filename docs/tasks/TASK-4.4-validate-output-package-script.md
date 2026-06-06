@@ -2,7 +2,7 @@
 
 ## Status
 
-Upcoming
+Complete
 
 ## Goal
 
@@ -28,7 +28,7 @@ Package validation ensures required artifacts exist, JSON artifacts parse, schem
 
 ## Definition of done for MLP
 
-- [ ] Valid package passes.
-- [ ] Known-bad package fails.
-- [ ] Missing required files fail.
-- [ ] Errors are understandable to a human analyst.
+- [x] Valid package passes.
+- [x] Known-bad package fails.
+- [x] Missing required files fail.
+- [x] Errors are understandable to a human analyst.

@@ -40,6 +40,8 @@ All notable project changes will be documented in this file.
 - Added Task 4.2 failure fixtures under `examples/script-smoke-tests/` for broken references, missing sections, and invalid JSON.
 - Added `scripts/diff_gtm_containers.py` to compare original and optimized GTM exports and output a deterministic proposed change log.
 - Added `examples/script-smoke-tests/valid-basic-container-renamed.json` as optimized smoke-test input for Task 4.3 diff verification.
+- Added `scripts/validate_output_package.py` to validate full GTM Container Audit & Patch Package directories and produce `validation_report.json`-compatible output.
+- Added minimal Task 4.4 smoke-test output packages for valid, known-bad, and missing-file validation paths.
 
 ### Changed
 
@@ -57,5 +59,7 @@ All notable project changes will be documented in this file.
 - Marked Phase 4 in progress, Task 4.1 complete, and updated the README/current-task handoff after normalizer verification passed.
 - Marked Task 4.2 complete after the GTM container validator passed all definition-of-done checks.
 - Marked Task 4.3 complete after the GTM container diff script passed syntax, help, smoke, invalid-input, safety, and scope checks.
+- Marked Task 4.4 complete after package-validator smoke checks passed.
+- Marked Phase 4 complete after all four deterministic script tasks were finished.
 - Moved the top-level package schema contract from the repository root to `schemas/` so all Phase 1 schema contracts live together.
 - Kept `schemas/` contract-only and placed schema validation samples under `examples/schema-validation/`.

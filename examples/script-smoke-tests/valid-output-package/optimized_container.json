@@ -1,0 +1,48 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-06-02 00:00:00",
+  "containerVersion": {
+    "accountId": "1000",
+    "containerId": "2000",
+    "name": "Smoke Version",
+    "container": {
+      "accountId": "1000",
+      "containerId": "2000",
+      "name": "Smoke Test Container",
+      "publicId": "GTM-SMOKE"
+    },
+    "tag": [
+      {
+        "accountId": "1000",
+        "containerId": "2000",
+        "tagId": "1",
+        "name": "GA4 - Event - purchase",
+        "type": "gaawe",
+        "firingTriggerId": [
+          "2"
+        ]
+      }
+    ],
+    "trigger": [
+      {
+        "accountId": "1000",
+        "containerId": "2000",
+        "triggerId": "2",
+        "name": "CE - purchase",
+        "type": "CUSTOM_EVENT"
+      }
+    ],
+    "variable": [
+      {
+        "accountId": "1000",
+        "containerId": "2000",
+        "variableId": "3",
+        "name": "DLV - ecommerce.transaction_id",
+        "type": "v"
+      }
+    ],
+    "folder": [],
+    "builtInVariable": [],
+    "customTemplate": []
+  }
+}
