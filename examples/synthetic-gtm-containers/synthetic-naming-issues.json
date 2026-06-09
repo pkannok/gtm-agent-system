@@ -1,0 +1,87 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-06-09 00:00:00",
+  "containerVersion": {
+    "accountId": "9001",
+    "containerId": "5101",
+    "name": "Synthetic Naming Issues Version",
+    "container": {
+      "accountId": "9001",
+      "containerId": "5101",
+      "name": "Synthetic Naming Issues Container",
+      "publicId": "GTM-SYN501"
+    },
+    "tag": [
+      {
+        "accountId": "9001",
+        "containerId": "5101",
+        "tagId": "101",
+        "name": "tag 1",
+        "type": "gaawe",
+        "firingTriggerId": [
+          "201"
+        ],
+        "parentFolderId": "401",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "eventName",
+            "value": "lead_submit"
+          },
+          {
+            "type": "template",
+            "key": "measurementId",
+            "value": "{{id}}"
+          }
+        ],
+        "fingerprint": "synthetic-naming-tag-101"
+      }
+    ],
+    "trigger": [
+      {
+        "accountId": "9001",
+        "containerId": "5101",
+        "triggerId": "201",
+        "name": "all",
+        "type": "PAGEVIEW",
+        "fingerprint": "synthetic-naming-trigger-201"
+      }
+    ],
+    "variable": [
+      {
+        "accountId": "9001",
+        "containerId": "5101",
+        "variableId": "301",
+        "name": "id",
+        "type": "c",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "value",
+            "value": "G-TEST501"
+          }
+        ],
+        "parentFolderId": "401",
+        "fingerprint": "synthetic-naming-variable-301"
+      }
+    ],
+    "folder": [
+      {
+        "accountId": "9001",
+        "containerId": "5101",
+        "folderId": "401",
+        "name": "misc",
+        "fingerprint": "synthetic-naming-folder-401"
+      }
+    ],
+    "builtInVariable": [
+      {
+        "accountId": "9001",
+        "containerId": "5101",
+        "type": "PAGE_URL",
+        "name": "Page URL"
+      }
+    ],
+    "customTemplate": []
+  }
+}

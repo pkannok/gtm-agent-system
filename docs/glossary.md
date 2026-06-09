@@ -347,7 +347,7 @@ Definition:
 A controlled sample input used for testing.
 
 Project usage:
-Future phases will create GTM container fixtures with known issues.
+Phase 5 creates GTM container fixtures with known issues under `examples/synthetic-gtm-containers/`.
 
 Not to be confused with:
 A real client container.

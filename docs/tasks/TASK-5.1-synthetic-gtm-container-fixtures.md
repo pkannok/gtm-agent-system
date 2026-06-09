@@ -2,7 +2,7 @@
 
 ## Status
 
-Upcoming
+Complete
 
 ## Goal
 
@@ -28,7 +28,7 @@ Fixtures let the MLP workflow be tested against repeatable inputs without using 
 
 ## Definition of done for MLP
 
-- [ ] At least six synthetic fixtures exist.
-- [ ] Fixtures are small and deterministic.
-- [ ] Each fixture has known expected issues.
-- [ ] No fixture contains real client data.
+- [x] At least six synthetic fixtures exist.
+- [x] Fixtures are small and deterministic.
+- [x] Each fixture has known expected issues.
+- [x] No fixture contains real client data.
