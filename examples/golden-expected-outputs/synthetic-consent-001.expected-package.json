@@ -1,0 +1,178 @@
+{
+  "artifact_type": "gtm_patch_package",
+  "schema_version": "1.0.0",
+  "run_id": "golden-synthetic-consent-001",
+  "client_id": null,
+  "source_container_summary": {
+    "input_file_name": "synthetic-consent-risk-remarketing.json",
+    "account_id": "9001",
+    "container_id": "5106",
+    "container_name": "Synthetic Consent Risk Container",
+    "export_format_version": 2,
+    "entity_counts": {
+      "tags": 2,
+      "triggers": 1,
+      "variables": 1,
+      "folders": 1,
+      "templates": 0
+    }
+  },
+  "standards_applied": [
+    {
+      "standard_id": "consent-and-privacy-review-standard",
+      "name": "Consent and Privacy Review Standard",
+      "version": "1.0.0",
+      "source": "agency_standard"
+    }
+  ],
+  "package_files": {
+    "optimized_container_json": {
+      "file_name": "optimized_container.json",
+      "media_type": "application/json",
+      "required": true,
+      "description": "Draft proposed GTM container export JSON."
+    },
+    "audit_report_md": {
+      "file_name": "audit_report.md",
+      "media_type": "text/markdown",
+      "required": true,
+      "description": "Human-readable audit report."
+    },
+    "audit_report_json": {
+      "file_name": "audit_report.json",
+      "media_type": "application/json",
+      "required": true,
+      "description": "Machine-readable audit findings."
+    },
+    "change_log_json": {
+      "file_name": "change_log.json",
+      "media_type": "application/json",
+      "required": true,
+      "description": "Machine-readable proposed change log."
+    },
+    "validation_report_json": {
+      "file_name": "validation_report.json",
+      "media_type": "application/json",
+      "required": true,
+      "description": "Machine-readable validation summary."
+    },
+    "qa_checklist_md": {
+      "file_name": "qa_checklist.md",
+      "media_type": "text/markdown",
+      "required": true,
+      "description": "Human-readable QA checklist."
+    },
+    "run_metadata_json": {
+      "file_name": "run_metadata.json",
+      "media_type": "application/json",
+      "required": true,
+      "description": "Machine-readable run metadata."
+    }
+  },
+  "optimized_container": {
+    "file_name": "optimized_container.json",
+    "artifact_status": "draft_proposal",
+    "publish_ready": false,
+    "human_review_required": true,
+    "container": {
+      "exportFormatVersion": 2,
+      "containerVersion": {
+        "accountId": "9001",
+        "containerId": "5106",
+        "name": "Synthetic Consent Risk Version"
+      }
+    }
+  },
+  "audit_report": {
+    "file_name_md": "audit_report.md",
+    "file_name_json": "audit_report.json",
+    "summary": "Expected consent-risk audit for all-pages remarketing and Custom HTML without clear consent evidence.",
+    "findings": [
+      {
+        "finding_id": "synthetic-consent-001-finding-001",
+        "severity": "high",
+        "category": "consent_risk",
+        "title": "Consent-sensitive tags require human review",
+        "evidence": [
+          {
+            "entity_type": "tag",
+            "entity_id": "106",
+            "entity_name": "Google Ads - Remarketing - All Pages",
+            "observation": "Remarketing tag appears to fire on all pages."
+          },
+          {
+            "entity_type": "tag",
+            "entity_id": "107",
+            "entity_name": "Custom HTML - Vendor Pixel",
+            "observation": "Custom HTML loads an external vendor script from vendor.example.test."
+          },
+          {
+            "entity_type": "trigger",
+            "entity_id": "206",
+            "entity_name": "PV - All Pages",
+            "observation": "The fixture does not show clear consent gating evidence for the all-pages trigger."
+          }
+        ],
+        "proposed_change_ids": [
+          "synthetic-consent-001-change-001"
+        ],
+        "human_review_required": true
+      }
+    ]
+  },
+  "change_log": [
+    {
+      "change_id": "synthetic-consent-001-change-001",
+      "change_type": "no_change",
+      "entity_type": "tag",
+      "entity_id": "106",
+      "entity_name": "Google Ads - Remarketing - All Pages",
+      "reason": "Consent-sensitive tags must be reviewed by a human; no automatic consent or Custom HTML changes are expected.",
+      "risk_level": "high",
+      "rollback_notes": "No GTM configuration change is expected for this golden fixture.",
+      "related_finding_ids": [
+        "synthetic-consent-001-finding-001"
+      ],
+      "status": "proposed",
+      "human_approval_required": true
+    }
+  ],
+  "validation_report": {
+    "file_name": "validation_report.json",
+    "validation_status": "pass",
+    "checks": [
+      {
+        "check_id": "fixture-structure",
+        "status": "pass",
+        "message": "Consent-risk fixture is structurally valid GTM-like JSON."
+      }
+    ]
+  },
+  "risk_summary": {
+    "overall_risk": "high",
+    "high_risk_change_count": 1,
+    "manual_review_required": true,
+    "notes": [
+      "Expected output should flag consent risk without certifying legal, privacy, or live consent behavior."
+    ]
+  },
+  "qa_checklist": [
+    {
+      "item_id": "qa-synthetic-consent-001-001",
+      "description": "Review consent requirements, GTM Preview behavior, and network activity before using any recommendation for remarketing or Custom HTML tags.",
+      "status": "todo",
+      "required": true
+    }
+  ],
+  "run_metadata": {
+    "file_name": "run_metadata.json",
+    "created_at": "2026-06-09T00:00:00Z",
+    "input_files": [
+      "examples/synthetic-gtm-containers/synthetic-consent-risk-remarketing.json"
+    ],
+    "mlp_version": "1.0.0",
+    "tool_version": null
+  },
+  "human_approval_required": true,
+  "publishes_gtm_changes": false
+}

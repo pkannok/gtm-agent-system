@@ -32,9 +32,11 @@ Phase 5 status: in progress.
 
 Task 5.1 status: complete. `examples/synthetic-gtm-containers/` contains six small synthetic GTM container export fixtures with documented expected issues and no real client data.
 
-Next recommended task: Task 5.2 - Create golden expected outputs.
+Task 5.2 status: complete. `examples/golden-expected-outputs/` contains schema-aligned expected package shapes for the synthetic fixtures.
 
-The next task brief is `docs/tasks/TASK-5.2-golden-expected-outputs.md`.
+Next recommended task: Task 5.3 - Create manual evaluation rubric.
+
+The next task brief is `docs/tasks/TASK-5.3-manual-evaluation-rubric.md`.
 
 Task 0.3 status: complete. Project terminology is defined in `docs/glossary.md`.
 
@@ -128,6 +130,10 @@ The script layer is local and file-in/file-out. It does not call live APIs, publ
 - `examples/synthetic-gtm-containers/synthetic-ecommerce-missing-fields.json` - Fixture for ecommerce purchase-field review findings.
 - `examples/synthetic-gtm-containers/synthetic-consent-risk-remarketing.json` - Fixture for consent-sensitive remarketing and Custom HTML findings.
 
+## Current golden expected outputs
+
+- `examples/golden-expected-outputs/` - Schema-aligned expected GTM Container Audit & Patch Package shapes for the six synthetic fixtures.
+
 ## Repository structure
 
 - `docs/` - Product decisions, MLP deliverable documentation, architecture notes, glossary, and roadmap.
@@ -136,6 +142,7 @@ The script layer is local and file-in/file-out. It does not call live APIs, publ
 - `examples/schema-validation/` - Minimal sample files that validate against the Phase 1 schemas.
 - `examples/script-smoke-tests/` - Minimal smoke-test inputs for deterministic scripts.
 - `examples/synthetic-gtm-containers/` - Controlled synthetic GTM container fixtures with documented expected issues.
+- `examples/golden-expected-outputs/` - Expected output package shapes for future fixture-based regression tests.
 - `standards/agency/` - Agency standards for naming, consent/privacy review, and QA.
 - `scripts/` - Deterministic local scripts for Phase 4 container and package checks.
 - `custom-gpt/` - Custom GPT draft instructions, description, conversation starters, and test prompts.

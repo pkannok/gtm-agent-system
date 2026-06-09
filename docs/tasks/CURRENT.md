@@ -6,15 +6,15 @@ Current active task:
 
 Next recommended task:
 
-- Task 5.2 - Create golden expected outputs
+- Task 5.3 - Create manual evaluation rubric
 
 Next task brief:
 
-- `docs/tasks/TASK-5.2-golden-expected-outputs.md`
+- `docs/tasks/TASK-5.3-manual-evaluation-rubric.md`
 
 Most recent completed task brief:
 
-- `docs/tasks/TASK-5.1-synthetic-gtm-container-fixtures.md`
+- `docs/tasks/TASK-5.2-golden-expected-outputs.md`
 
 Most recent completed phase brief:
 
@@ -33,8 +33,8 @@ Do not work outside the active task scope.
 
 ## Current boundaries
 
-- Do not start Task 5.2 implementation unless it is explicitly requested as the active task.
-- Do not create Task 5.2 golden outputs or the Task 5.3 manual evaluation rubric unless the active task explicitly requires them.
+- Do not start Task 5.3 implementation unless it is explicitly requested as the active task.
+- Do not create the Task 5.3 manual evaluation rubric unless the active task explicitly requires it.
 - Do not create the full Phase 5 synthetic fixture suite or golden tests.
 - Do not create GitHub Actions, API connectors, or Custom GPT final UI configuration.
 - Do not modify the completed Phase 3 Skill package unless the active task explicitly requires it.
@@ -52,4 +52,5 @@ Do not work outside the active task scope.
 ## Phase 5 progress
 
 - Task 5.1 is complete. `examples/synthetic-gtm-containers/` contains six small, deterministic, synthetic GTM container export fixtures with documented expected issues and no real client data.
-- Task 5.2 is the next recommended task.
+- Task 5.2 is complete. `examples/golden-expected-outputs/` contains schema-aligned expected GTM Container Audit & Patch Package shapes for the synthetic fixtures.
+- Task 5.3 is the next recommended task.

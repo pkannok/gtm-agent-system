@@ -1,0 +1,188 @@
+{
+  "artifact_type": "gtm_patch_package",
+  "schema_version": "1.0.0",
+  "run_id": "golden-synthetic-reference-001",
+  "client_id": null,
+  "source_container_summary": {
+    "input_file_name": "synthetic-broken-references.json",
+    "account_id": "9001",
+    "container_id": "5102",
+    "container_name": "Synthetic Broken References Container",
+    "export_format_version": 2,
+    "entity_counts": {
+      "tags": 1,
+      "triggers": 1,
+      "variables": 1,
+      "folders": 1,
+      "templates": 0
+    }
+  },
+  "standards_applied": [
+    {
+      "standard_id": "gtm-audit-rule-catalog",
+      "name": "GTM Audit Rule Catalog",
+      "version": "1.0.0",
+      "source": "agency_standard"
+    }
+  ],
+  "package_files": {
+    "optimized_container_json": {
+      "file_name": "optimized_container.json",
+      "media_type": "application/json",
+      "required": true,
+      "description": "Draft proposed GTM container export JSON."
+    },
+    "audit_report_md": {
+      "file_name": "audit_report.md",
+      "media_type": "text/markdown",
+      "required": true,
+      "description": "Human-readable audit report."
+    },
+    "audit_report_json": {
+      "file_name": "audit_report.json",
+      "media_type": "application/json",
+      "required": true,
+      "description": "Machine-readable audit findings."
+    },
+    "change_log_json": {
+      "file_name": "change_log.json",
+      "media_type": "application/json",
+      "required": true,
+      "description": "Machine-readable proposed change log."
+    },
+    "validation_report_json": {
+      "file_name": "validation_report.json",
+      "media_type": "application/json",
+      "required": true,
+      "description": "Machine-readable validation summary."
+    },
+    "qa_checklist_md": {
+      "file_name": "qa_checklist.md",
+      "media_type": "text/markdown",
+      "required": true,
+      "description": "Human-readable QA checklist."
+    },
+    "run_metadata_json": {
+      "file_name": "run_metadata.json",
+      "media_type": "application/json",
+      "required": true,
+      "description": "Machine-readable run metadata."
+    }
+  },
+  "optimized_container": {
+    "file_name": "optimized_container.json",
+    "artifact_status": "draft_proposal",
+    "publish_ready": false,
+    "human_review_required": true,
+    "container": {
+      "exportFormatVersion": 2,
+      "containerVersion": {
+        "accountId": "9001",
+        "containerId": "5102",
+        "name": "Synthetic Broken References Version"
+      }
+    }
+  },
+  "audit_report": {
+    "file_name_md": "audit_report.md",
+    "file_name_json": "audit_report.json",
+    "summary": "Expected reference-integrity audit for a synthetic fixture with missing trigger, folder, and variable references.",
+    "findings": [
+      {
+        "finding_id": "synthetic-reference-001-finding-001",
+        "severity": "medium",
+        "category": "reference_integrity",
+        "title": "Tag references missing GTM entities",
+        "evidence": [
+          {
+            "entity_type": "tag",
+            "entity_id": "102",
+            "entity_name": "GA4 - Event - Purchase",
+            "observation": "Tag references missing firing trigger ID 299."
+          },
+          {
+            "entity_type": "tag",
+            "entity_id": "102",
+            "entity_name": "GA4 - Event - Purchase",
+            "observation": "Tag references missing folder ID 499."
+          },
+          {
+            "entity_type": "tag",
+            "entity_id": "102",
+            "entity_name": "GA4 - Event - Purchase",
+            "observation": "Tag parameter references missing variable {{Missing Revenue}}."
+          }
+        ],
+        "proposed_change_ids": [
+          "synthetic-reference-001-change-001"
+        ],
+        "human_review_required": true
+      }
+    ]
+  },
+  "change_log": [
+    {
+      "change_id": "synthetic-reference-001-change-001",
+      "change_type": "no_change",
+      "entity_type": "tag",
+      "entity_id": "102",
+      "entity_name": "GA4 - Event - Purchase",
+      "reason": "Broken references require analyst review; the expected output should not repair references automatically.",
+      "risk_level": "medium",
+      "rollback_notes": "No GTM configuration change is expected for this golden fixture.",
+      "related_finding_ids": [
+        "synthetic-reference-001-finding-001"
+      ],
+      "status": "proposed",
+      "human_approval_required": true
+    }
+  ],
+  "validation_report": {
+    "file_name": "validation_report.json",
+    "validation_status": "fail",
+    "checks": [
+      {
+        "check_id": "tag-trigger-references",
+        "status": "fail",
+        "message": "Expected missing trigger reference for tag 102."
+      },
+      {
+        "check_id": "folder-references",
+        "status": "fail",
+        "message": "Expected missing folder reference for tag 102."
+      },
+      {
+        "check_id": "variable-references",
+        "status": "fail",
+        "message": "Expected missing variable reference for tag 102."
+      }
+    ]
+  },
+  "risk_summary": {
+    "overall_risk": "medium",
+    "high_risk_change_count": 0,
+    "manual_review_required": true,
+    "notes": [
+      "Reference repair is manual-review only in the MLP."
+    ]
+  },
+  "qa_checklist": [
+    {
+      "item_id": "qa-synthetic-reference-001-001",
+      "description": "Identify the intended trigger, folder, and revenue variable before any proposed repair.",
+      "status": "todo",
+      "required": true
+    }
+  ],
+  "run_metadata": {
+    "file_name": "run_metadata.json",
+    "created_at": "2026-06-09T00:00:00Z",
+    "input_files": [
+      "examples/synthetic-gtm-containers/synthetic-broken-references.json"
+    ],
+    "mlp_version": "1.0.0",
+    "tool_version": null
+  },
+  "human_approval_required": true,
+  "publishes_gtm_changes": false
+}

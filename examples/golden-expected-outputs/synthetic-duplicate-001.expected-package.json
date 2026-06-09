@@ -1,0 +1,172 @@
+{
+  "artifact_type": "gtm_patch_package",
+  "schema_version": "1.0.0",
+  "run_id": "golden-synthetic-duplicate-001",
+  "client_id": null,
+  "source_container_summary": {
+    "input_file_name": "synthetic-duplicate-purchase-tags.json",
+    "account_id": "9001",
+    "container_id": "5103",
+    "container_name": "Synthetic Duplicate Purchase Container",
+    "export_format_version": 2,
+    "entity_counts": {
+      "tags": 2,
+      "triggers": 1,
+      "variables": 2,
+      "folders": 1,
+      "templates": 0
+    }
+  },
+  "standards_applied": [
+    {
+      "standard_id": "gtm-audit-rule-catalog",
+      "name": "GTM Audit Rule Catalog",
+      "version": "1.0.0",
+      "source": "agency_standard"
+    }
+  ],
+  "package_files": {
+    "optimized_container_json": {
+      "file_name": "optimized_container.json",
+      "media_type": "application/json",
+      "required": true,
+      "description": "Draft proposed GTM container export JSON."
+    },
+    "audit_report_md": {
+      "file_name": "audit_report.md",
+      "media_type": "text/markdown",
+      "required": true,
+      "description": "Human-readable audit report."
+    },
+    "audit_report_json": {
+      "file_name": "audit_report.json",
+      "media_type": "application/json",
+      "required": true,
+      "description": "Machine-readable audit findings."
+    },
+    "change_log_json": {
+      "file_name": "change_log.json",
+      "media_type": "application/json",
+      "required": true,
+      "description": "Machine-readable proposed change log."
+    },
+    "validation_report_json": {
+      "file_name": "validation_report.json",
+      "media_type": "application/json",
+      "required": true,
+      "description": "Machine-readable validation summary."
+    },
+    "qa_checklist_md": {
+      "file_name": "qa_checklist.md",
+      "media_type": "text/markdown",
+      "required": true,
+      "description": "Human-readable QA checklist."
+    },
+    "run_metadata_json": {
+      "file_name": "run_metadata.json",
+      "media_type": "application/json",
+      "required": true,
+      "description": "Machine-readable run metadata."
+    }
+  },
+  "optimized_container": {
+    "file_name": "optimized_container.json",
+    "artifact_status": "draft_proposal",
+    "publish_ready": false,
+    "human_review_required": true,
+    "container": {
+      "exportFormatVersion": 2,
+      "containerVersion": {
+        "accountId": "9001",
+        "containerId": "5103",
+        "name": "Synthetic Duplicate Purchase Version"
+      }
+    }
+  },
+  "audit_report": {
+    "file_name_md": "audit_report.md",
+    "file_name_json": "audit_report.json",
+    "summary": "Expected duplicate-tracking audit for a synthetic fixture with two GA4 purchase tags on the same trigger.",
+    "findings": [
+      {
+        "finding_id": "synthetic-duplicate-001-finding-001",
+        "severity": "high",
+        "category": "duplicates",
+        "title": "Duplicate GA4 purchase tags may inflate ecommerce reporting",
+        "evidence": [
+          {
+            "entity_type": "tag",
+            "entity_id": "103",
+            "entity_name": "GA4 - Event - purchase",
+            "observation": "Tag sends purchase from trigger 203 using the GA4 measurement ID variable."
+          },
+          {
+            "entity_type": "tag",
+            "entity_id": "104",
+            "entity_name": "GA4 - Event - purchase copy",
+            "observation": "Tag also sends purchase from trigger 203 using the same GA4 measurement ID variable."
+          }
+        ],
+        "proposed_change_ids": [
+          "synthetic-duplicate-001-change-001"
+        ],
+        "human_review_required": true
+      }
+    ]
+  },
+  "change_log": [
+    {
+      "change_id": "synthetic-duplicate-001-change-001",
+      "change_type": "no_change",
+      "entity_type": "tag",
+      "entity_id": "103",
+      "entity_name": "GA4 - Event - purchase",
+      "reason": "Duplicate ecommerce tracking must be reviewed in GTM Preview before any disable, delete, or consolidation recommendation.",
+      "risk_level": "high",
+      "rollback_notes": "No GTM configuration change is expected for this golden fixture.",
+      "related_finding_ids": [
+        "synthetic-duplicate-001-finding-001"
+      ],
+      "status": "proposed",
+      "human_approval_required": true
+    }
+  ],
+  "validation_report": {
+    "file_name": "validation_report.json",
+    "validation_status": "pass",
+    "checks": [
+      {
+        "check_id": "fixture-structure",
+        "status": "pass",
+        "message": "Duplicate purchase fixture is structurally valid GTM-like JSON."
+      }
+    ]
+  },
+  "risk_summary": {
+    "overall_risk": "high",
+    "high_risk_change_count": 1,
+    "manual_review_required": true,
+    "notes": [
+      "Duplicate purchase tracking can affect revenue reporting and should not be modified automatically."
+    ]
+  },
+  "qa_checklist": [
+    {
+      "item_id": "qa-synthetic-duplicate-001-001",
+      "description": "Use GTM Preview to confirm whether both purchase tags fire on one test purchase before recommending cleanup.",
+      "status": "todo",
+      "required": true
+    }
+  ],
+  "run_metadata": {
+    "file_name": "run_metadata.json",
+    "created_at": "2026-06-09T00:00:00Z",
+    "input_files": [
+      "examples/synthetic-gtm-containers/synthetic-duplicate-purchase-tags.json"
+    ],
+    "mlp_version": "1.0.0",
+    "tool_version": null
+  },
+  "human_approval_required": true,
+  "publishes_gtm_changes": false
+}

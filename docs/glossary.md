@@ -358,7 +358,7 @@ Definition:
 A test with expected outputs used to detect regressions.
 
 Project usage:
-Future phases will compare system outputs against expected findings.
+Phase 5 stores expected package shapes for synthetic fixtures under `examples/golden-expected-outputs/`.
 
 Not to be confused with:
 A one-time manual review.
