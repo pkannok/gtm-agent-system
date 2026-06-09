@@ -1,0 +1,106 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-06-09 00:00:00",
+  "containerVersion": {
+    "accountId": "9001",
+    "containerId": "5105",
+    "name": "Synthetic Ecommerce Missing Fields Version",
+    "container": {
+      "accountId": "9001",
+      "containerId": "5105",
+      "name": "Synthetic Ecommerce Missing Fields Container",
+      "publicId": "GTM-SYN505"
+    },
+    "tag": [
+      {
+        "accountId": "9001",
+        "containerId": "5105",
+        "tagId": "105",
+        "name": "GA4 - Event - purchase",
+        "type": "gaawe",
+        "firingTriggerId": [
+          "205"
+        ],
+        "parentFolderId": "405",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "eventName",
+            "value": "purchase"
+          },
+          {
+            "type": "template",
+            "key": "measurementId",
+            "value": "{{CONST - GA4 Measurement ID}}"
+          },
+          {
+            "type": "template",
+            "key": "value",
+            "value": "{{DLV - ecommerce.value}}"
+          }
+        ],
+        "fingerprint": "synthetic-ecommerce-tag-105"
+      }
+    ],
+    "trigger": [
+      {
+        "accountId": "9001",
+        "containerId": "5105",
+        "triggerId": "205",
+        "name": "CE - purchase",
+        "type": "CUSTOM_EVENT",
+        "fingerprint": "synthetic-ecommerce-trigger-205"
+      }
+    ],
+    "variable": [
+      {
+        "accountId": "9001",
+        "containerId": "5105",
+        "variableId": "305",
+        "name": "CONST - GA4 Measurement ID",
+        "type": "c",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "value",
+            "value": "G-TEST505"
+          }
+        ],
+        "fingerprint": "synthetic-ecommerce-variable-305"
+      },
+      {
+        "accountId": "9001",
+        "containerId": "5105",
+        "variableId": "306",
+        "name": "DLV - ecommerce.value",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "name",
+            "value": "ecommerce.value"
+          }
+        ],
+        "fingerprint": "synthetic-ecommerce-variable-306"
+      }
+    ],
+    "folder": [
+      {
+        "accountId": "9001",
+        "containerId": "5105",
+        "folderId": "405",
+        "name": "GA4 - Ecommerce",
+        "fingerprint": "synthetic-ecommerce-folder-405"
+      }
+    ],
+    "builtInVariable": [
+      {
+        "accountId": "9001",
+        "containerId": "5105",
+        "type": "PAGE_URL",
+        "name": "Page URL"
+      }
+    ],
+    "customTemplate": []
+  }
+}

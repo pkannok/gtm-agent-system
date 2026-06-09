@@ -217,3 +217,36 @@ Status: Complete.
 
 Outcome:
 Builds a deterministic script that validates a full GTM Container Audit & Patch Package, including required artifacts, schema-backed JSON artifacts, package consistency, safety flags, and validation-report-compatible output.
+
+---
+
+# Phase 5 - Build synthetic fixtures and tests
+
+Status: In Progress.
+
+## Goal
+
+Create synthetic GTM container fixtures, expected outputs, and a manual evaluation rubric for repeatable MLP testing.
+
+## Tasks
+
+### Task 5.1 - Create synthetic GTM container fixtures
+
+Status: Complete.
+
+Outcome:
+Creates six small, deterministic, synthetic GTM container export fixtures with known expected issues and no real client data.
+
+### Task 5.2 - Create golden expected outputs
+
+Status: Upcoming.
+
+Outcome:
+Creates expected outputs for fixture-based regression checks.
+
+### Task 5.3 - Create manual evaluation rubric
+
+Status: Upcoming.
+
+Outcome:
+Creates a rubric for analysts to evaluate MLP output quality and safety.

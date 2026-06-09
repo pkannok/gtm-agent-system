@@ -28,9 +28,13 @@ Task 4.3 status: complete. `scripts/diff_gtm_containers.py` compares original an
 
 Task 4.4 status: complete. `scripts/validate_output_package.py` validates full GTM Container Audit & Patch Package directories for required artifacts, schema-backed JSON artifacts, consistency, safety flags, and validation-report-compatible output.
 
-Next recommended task: Task 5.1 - Create synthetic GTM container fixtures.
+Phase 5 status: in progress.
 
-The next task brief is `docs/tasks/TASK-5.1-synthetic-gtm-container-fixtures.md`.
+Task 5.1 status: complete. `examples/synthetic-gtm-containers/` contains six small synthetic GTM container export fixtures with documented expected issues and no real client data.
+
+Next recommended task: Task 5.2 - Create golden expected outputs.
+
+The next task brief is `docs/tasks/TASK-5.2-golden-expected-outputs.md`.
 
 Task 0.3 status: complete. Project terminology is defined in `docs/glossary.md`.
 
@@ -115,6 +119,15 @@ The script layer is local and file-in/file-out. It does not call live APIs, publ
 - `examples/script-smoke-tests/bad-output-package/` - Failure fixture for broken finding-to-change references.
 - `examples/script-smoke-tests/missing-files-output-package/` - Failure fixture for missing required package artifacts.
 
+## Current synthetic GTM fixtures
+
+- `examples/synthetic-gtm-containers/synthetic-naming-issues.json` - Fixture for naming-standard findings.
+- `examples/synthetic-gtm-containers/synthetic-broken-references.json` - Fixture for missing trigger, folder, and variable references.
+- `examples/synthetic-gtm-containers/synthetic-duplicate-purchase-tags.json` - Fixture for duplicate GA4 purchase tracking findings.
+- `examples/synthetic-gtm-containers/synthetic-unused-legacy-entities.json` - Fixture for unused or orphaned legacy-entity findings.
+- `examples/synthetic-gtm-containers/synthetic-ecommerce-missing-fields.json` - Fixture for ecommerce purchase-field review findings.
+- `examples/synthetic-gtm-containers/synthetic-consent-risk-remarketing.json` - Fixture for consent-sensitive remarketing and Custom HTML findings.
+
 ## Repository structure
 
 - `docs/` - Product decisions, MLP deliverable documentation, architecture notes, glossary, and roadmap.
@@ -122,6 +135,7 @@ The script layer is local and file-in/file-out. It does not call live APIs, publ
 - `schemas/` - Phase 1 JSON Schema contracts for the GTM Container Audit & Patch Package.
 - `examples/schema-validation/` - Minimal sample files that validate against the Phase 1 schemas.
 - `examples/script-smoke-tests/` - Minimal smoke-test inputs for deterministic scripts.
+- `examples/synthetic-gtm-containers/` - Controlled synthetic GTM container fixtures with documented expected issues.
 - `standards/agency/` - Agency standards for naming, consent/privacy review, and QA.
 - `scripts/` - Deterministic local scripts for Phase 4 container and package checks.
 - `custom-gpt/` - Custom GPT draft instructions, description, conversation starters, and test prompts.
