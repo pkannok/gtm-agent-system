@@ -362,3 +362,14 @@ Phase 5 stores expected package shapes for synthetic fixtures under `examples/go
 
 Not to be confused with:
 A one-time manual review.
+
+## Evaluation rubric
+
+Definition:
+A manual review aid with questions, scoring criteria, and safety checks.
+
+Project usage:
+Phase 5 stores the MLP manual evaluation rubric in `docs/evaluation/manual-evaluation-rubric.md`.
+
+Not to be confused with:
+Automated scoring, live GTM testing, public release approval, legal review, or privacy certification.

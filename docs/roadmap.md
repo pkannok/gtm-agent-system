@@ -222,7 +222,7 @@ Builds a deterministic script that validates a full GTM Container Audit & Patch 
 
 # Phase 5 - Build synthetic fixtures and tests
 
-Status: In Progress.
+Status: Complete.
 
 ## Goal
 
@@ -246,7 +246,7 @@ Creates schema-aligned expected package shapes for the synthetic fixtures, inclu
 
 ### Task 5.3 - Create manual evaluation rubric
 
-Status: Upcoming.
+Status: Complete.
 
 Outcome:
-Creates a rubric for analysts to evaluate MLP output quality and safety.
+Creates a manual rubric for analysts to evaluate MLP output usefulness, safety, clarity, unsafe recommendations, and fixture-output alignment.
