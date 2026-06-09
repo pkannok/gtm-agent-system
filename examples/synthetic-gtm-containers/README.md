@@ -4,7 +4,7 @@ These fixtures are controlled, synthetic GTM container export JSON files for MLP
 
 They do not contain real client data, live GTM account data, production container IDs, or real customer values. They are hand-authored, deterministic examples with known issues that future fixture-based tests can use as repeatable inputs.
 
-These files document expected findings only. They are not golden output packages and do not define expected `audit_report.json`, `change_log.json`, `validation_report.json`, or `qa_checklist.md` artifacts.
+These files document expected findings only. The schema-aligned golden expected output package shapes live in `../golden-expected-outputs/`.
 
 ## Fixture index
 

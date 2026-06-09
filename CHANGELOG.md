@@ -43,6 +43,7 @@ All notable project changes will be documented in this file.
 - Added `scripts/validate_output_package.py` to validate full GTM Container Audit & Patch Package directories and produce `validation_report.json`-compatible output.
 - Added minimal Task 4.4 smoke-test output packages for valid, known-bad, and missing-file validation paths.
 - Added six Task 5.1 synthetic GTM container export fixtures under `examples/synthetic-gtm-containers/` with documented expected issues and no real client data.
+- Added Task 5.2 golden expected package shapes under `examples/golden-expected-outputs/` for the six synthetic fixtures.
 
 ### Changed
 
@@ -63,5 +64,6 @@ All notable project changes will be documented in this file.
 - Marked Task 4.4 complete after package-validator smoke checks passed.
 - Marked Phase 4 complete after all four deterministic script tasks were finished.
 - Marked Phase 5 in progress and Task 5.1 complete after fixture documentation and validation checks passed.
+- Marked Task 5.2 complete after expected package shapes passed schema-alignment checks.
 - Moved the top-level package schema contract from the repository root to `schemas/` so all Phase 1 schema contracts live together.
 - Kept `schemas/` contract-only and placed schema validation samples under `examples/schema-validation/`.

@@ -239,10 +239,10 @@ Creates six small, deterministic, synthetic GTM container export fixtures with k
 
 ### Task 5.2 - Create golden expected outputs
 
-Status: Upcoming.
+Status: Complete.
 
 Outcome:
-Creates expected outputs for fixture-based regression checks.
+Creates schema-aligned expected package shapes for the synthetic fixtures, including finding summaries, change posture, validation status, risk summaries, and QA checklist coverage.
 
 ### Task 5.3 - Create manual evaluation rubric
 

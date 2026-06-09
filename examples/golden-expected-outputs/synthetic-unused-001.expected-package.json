@@ -1,0 +1,178 @@
+{
+  "artifact_type": "gtm_patch_package",
+  "schema_version": "1.0.0",
+  "run_id": "golden-synthetic-unused-001",
+  "client_id": null,
+  "source_container_summary": {
+    "input_file_name": "synthetic-unused-legacy-entities.json",
+    "account_id": "9001",
+    "container_id": "5104",
+    "container_name": "Synthetic Unused Legacy Container",
+    "export_format_version": 2,
+    "entity_counts": {
+      "tags": 1,
+      "triggers": 2,
+      "variables": 2,
+      "folders": 2,
+      "templates": 0
+    }
+  },
+  "standards_applied": [
+    {
+      "standard_id": "gtm-audit-rule-catalog",
+      "name": "GTM Audit Rule Catalog",
+      "version": "1.0.0",
+      "source": "agency_standard"
+    }
+  ],
+  "package_files": {
+    "optimized_container_json": {
+      "file_name": "optimized_container.json",
+      "media_type": "application/json",
+      "required": true,
+      "description": "Draft proposed GTM container export JSON."
+    },
+    "audit_report_md": {
+      "file_name": "audit_report.md",
+      "media_type": "text/markdown",
+      "required": true,
+      "description": "Human-readable audit report."
+    },
+    "audit_report_json": {
+      "file_name": "audit_report.json",
+      "media_type": "application/json",
+      "required": true,
+      "description": "Machine-readable audit findings."
+    },
+    "change_log_json": {
+      "file_name": "change_log.json",
+      "media_type": "application/json",
+      "required": true,
+      "description": "Machine-readable proposed change log."
+    },
+    "validation_report_json": {
+      "file_name": "validation_report.json",
+      "media_type": "application/json",
+      "required": true,
+      "description": "Machine-readable validation summary."
+    },
+    "qa_checklist_md": {
+      "file_name": "qa_checklist.md",
+      "media_type": "text/markdown",
+      "required": true,
+      "description": "Human-readable QA checklist."
+    },
+    "run_metadata_json": {
+      "file_name": "run_metadata.json",
+      "media_type": "application/json",
+      "required": true,
+      "description": "Machine-readable run metadata."
+    }
+  },
+  "optimized_container": {
+    "file_name": "optimized_container.json",
+    "artifact_status": "draft_proposal",
+    "publish_ready": false,
+    "human_review_required": true,
+    "container": {
+      "exportFormatVersion": 2,
+      "containerVersion": {
+        "accountId": "9001",
+        "containerId": "5104",
+        "name": "Synthetic Unused Legacy Version"
+      }
+    }
+  },
+  "audit_report": {
+    "file_name_md": "audit_report.md",
+    "file_name_json": "audit_report.json",
+    "summary": "Expected unused-entity audit for a synthetic fixture with legacy and orphaned candidates.",
+    "findings": [
+      {
+        "finding_id": "synthetic-unused-001-finding-001",
+        "severity": "medium",
+        "category": "unused_entities",
+        "title": "Legacy trigger, variable, and folder appear unused in the export",
+        "evidence": [
+          {
+            "entity_type": "trigger",
+            "entity_id": "204",
+            "entity_name": "legacy - do not delete",
+            "observation": "Trigger is not referenced by any tag in the synthetic fixture."
+          },
+          {
+            "entity_type": "variable",
+            "entity_id": "306",
+            "entity_name": "DLV - legacy_unused_value",
+            "observation": "Variable is not referenced by any tag, trigger, or variable in the synthetic fixture."
+          },
+          {
+            "entity_type": "folder",
+            "entity_id": "404",
+            "entity_name": "Archive - Legacy Review",
+            "observation": "Folder does not contain referenced entities in the synthetic fixture."
+          }
+        ],
+        "proposed_change_ids": [
+          "synthetic-unused-001-change-001"
+        ],
+        "human_review_required": true
+      }
+    ]
+  },
+  "change_log": [
+    {
+      "change_id": "synthetic-unused-001-change-001",
+      "change_type": "no_change",
+      "entity_type": "trigger",
+      "entity_id": "204",
+      "entity_name": "legacy - do not delete",
+      "reason": "Unused-looking entities may be externally referenced; the expected output should recommend review rather than deletion.",
+      "risk_level": "medium",
+      "rollback_notes": "No GTM configuration change is expected for this golden fixture.",
+      "related_finding_ids": [
+        "synthetic-unused-001-finding-001"
+      ],
+      "status": "proposed",
+      "human_approval_required": true
+    }
+  ],
+  "validation_report": {
+    "file_name": "validation_report.json",
+    "validation_status": "pass",
+    "checks": [
+      {
+        "check_id": "fixture-structure",
+        "status": "pass",
+        "message": "Unused legacy fixture is structurally valid GTM-like JSON."
+      }
+    ]
+  },
+  "risk_summary": {
+    "overall_risk": "medium",
+    "high_risk_change_count": 0,
+    "manual_review_required": true,
+    "notes": [
+      "The expected output must not delete or disable legacy entities automatically."
+    ]
+  },
+  "qa_checklist": [
+    {
+      "item_id": "qa-synthetic-unused-001-001",
+      "description": "Confirm whether legacy entities are referenced by external documentation, QA instructions, or pending work before recommending cleanup.",
+      "status": "todo",
+      "required": true
+    }
+  ],
+  "run_metadata": {
+    "file_name": "run_metadata.json",
+    "created_at": "2026-06-09T00:00:00Z",
+    "input_files": [
+      "examples/synthetic-gtm-containers/synthetic-unused-legacy-entities.json"
+    ],
+    "mlp_version": "1.0.0",
+    "tool_version": null
+  },
+  "human_approval_required": true,
+  "publishes_gtm_changes": false
+}

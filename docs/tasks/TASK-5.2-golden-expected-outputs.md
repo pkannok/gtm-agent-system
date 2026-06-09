@@ -2,7 +2,7 @@
 
 ## Status
 
-Upcoming
+Complete
 
 ## Goal
 
@@ -28,7 +28,7 @@ Golden expected outputs help detect regressions in findings, change logs, valida
 
 ## Definition of done for MLP
 
-- [ ] Expected outputs exist for MLP fixtures.
-- [ ] Expected outputs include findings and key package sections.
-- [ ] Expected outputs are schema-aligned.
-- [ ] Expected outputs can be used by future golden tests.
+- [x] Expected outputs exist for MLP fixtures.
+- [x] Expected outputs include findings and key package sections.
+- [x] Expected outputs are schema-aligned.
+- [x] Expected outputs can be used by future golden tests.

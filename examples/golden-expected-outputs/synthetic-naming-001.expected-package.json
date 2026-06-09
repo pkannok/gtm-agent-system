@@ -1,0 +1,184 @@
+{
+  "artifact_type": "gtm_patch_package",
+  "schema_version": "1.0.0",
+  "run_id": "golden-synthetic-naming-001",
+  "client_id": null,
+  "source_container_summary": {
+    "input_file_name": "synthetic-naming-issues.json",
+    "account_id": "9001",
+    "container_id": "5101",
+    "container_name": "Synthetic Naming Issues Container",
+    "export_format_version": 2,
+    "entity_counts": {
+      "tags": 1,
+      "triggers": 1,
+      "variables": 1,
+      "folders": 1,
+      "templates": 0
+    }
+  },
+  "standards_applied": [
+    {
+      "standard_id": "agency-naming-conventions",
+      "name": "Agency Naming Conventions",
+      "version": "1.0.0",
+      "source": "agency_standard"
+    }
+  ],
+  "package_files": {
+    "optimized_container_json": {
+      "file_name": "optimized_container.json",
+      "media_type": "application/json",
+      "required": true,
+      "description": "Draft proposed GTM container export JSON."
+    },
+    "audit_report_md": {
+      "file_name": "audit_report.md",
+      "media_type": "text/markdown",
+      "required": true,
+      "description": "Human-readable audit report."
+    },
+    "audit_report_json": {
+      "file_name": "audit_report.json",
+      "media_type": "application/json",
+      "required": true,
+      "description": "Machine-readable audit findings."
+    },
+    "change_log_json": {
+      "file_name": "change_log.json",
+      "media_type": "application/json",
+      "required": true,
+      "description": "Machine-readable proposed change log."
+    },
+    "validation_report_json": {
+      "file_name": "validation_report.json",
+      "media_type": "application/json",
+      "required": true,
+      "description": "Machine-readable validation summary."
+    },
+    "qa_checklist_md": {
+      "file_name": "qa_checklist.md",
+      "media_type": "text/markdown",
+      "required": true,
+      "description": "Human-readable QA checklist."
+    },
+    "run_metadata_json": {
+      "file_name": "run_metadata.json",
+      "media_type": "application/json",
+      "required": true,
+      "description": "Machine-readable run metadata."
+    }
+  },
+  "optimized_container": {
+    "file_name": "optimized_container.json",
+    "artifact_status": "draft_proposal",
+    "publish_ready": false,
+    "human_review_required": true,
+    "container": {
+      "exportFormatVersion": 2,
+      "containerVersion": {
+        "accountId": "9001",
+        "containerId": "5101",
+        "name": "Synthetic Naming Issues Version"
+      }
+    }
+  },
+  "audit_report": {
+    "file_name_md": "audit_report.md",
+    "file_name_json": "audit_report.json",
+    "summary": "Expected naming audit for a synthetic fixture with vague tag, trigger, variable, and folder names.",
+    "findings": [
+      {
+        "finding_id": "synthetic-naming-001-finding-001",
+        "severity": "low",
+        "category": "naming",
+        "title": "Multiple GTM entities use vague names",
+        "evidence": [
+          {
+            "entity_type": "tag",
+            "entity_id": "101",
+            "entity_name": "tag 1",
+            "observation": "Tag name does not identify platform, tag type, or purpose."
+          },
+          {
+            "entity_type": "trigger",
+            "entity_id": "201",
+            "entity_name": "all",
+            "observation": "Trigger name does not describe the trigger condition."
+          },
+          {
+            "entity_type": "variable",
+            "entity_id": "301",
+            "entity_name": "id",
+            "observation": "Variable name does not identify variable type or value."
+          },
+          {
+            "entity_type": "folder",
+            "entity_id": "401",
+            "entity_name": "misc",
+            "observation": "Folder name does not describe grouping purpose."
+          }
+        ],
+        "proposed_change_ids": [
+          "synthetic-naming-001-change-001"
+        ],
+        "human_review_required": true
+      }
+    ]
+  },
+  "change_log": [
+    {
+      "change_id": "synthetic-naming-001-change-001",
+      "change_type": "rename",
+      "entity_type": "tag",
+      "entity_id": "101",
+      "entity_name": "tag 1",
+      "reason": "Expected low-risk name-only cleanup candidate for a clearly vague GA4 event tag name.",
+      "risk_level": "low",
+      "rollback_notes": "Restore the original entity names if the analyst rejects the naming proposal.",
+      "related_finding_ids": [
+        "synthetic-naming-001-finding-001"
+      ],
+      "status": "proposed",
+      "human_approval_required": true
+    }
+  ],
+  "validation_report": {
+    "file_name": "validation_report.json",
+    "validation_status": "pass",
+    "checks": [
+      {
+        "check_id": "fixture-structure",
+        "status": "pass",
+        "message": "Synthetic naming fixture is valid GTM-like JSON for expected-output comparison."
+      }
+    ]
+  },
+  "risk_summary": {
+    "overall_risk": "low",
+    "high_risk_change_count": 0,
+    "manual_review_required": true,
+    "notes": [
+      "Expected changes are name-only draft proposals and still require analyst review."
+    ]
+  },
+  "qa_checklist": [
+    {
+      "item_id": "qa-synthetic-naming-001-001",
+      "description": "Confirm any proposed names preserve GTM IDs, trigger logic, variable values, and tag payloads.",
+      "status": "todo",
+      "required": true
+    }
+  ],
+  "run_metadata": {
+    "file_name": "run_metadata.json",
+    "created_at": "2026-06-09T00:00:00Z",
+    "input_files": [
+      "examples/synthetic-gtm-containers/synthetic-naming-issues.json"
+    ],
+    "mlp_version": "1.0.0",
+    "tool_version": null
+  },
+  "human_approval_required": true,
+  "publishes_gtm_changes": false
+}
