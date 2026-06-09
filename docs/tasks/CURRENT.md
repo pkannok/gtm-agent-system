@@ -2,23 +2,23 @@
 
 Current active task:
 
-- None. Phase 5 is in progress.
+- None. Phase 5 is complete.
 
 Next recommended task:
 
-- Task 5.3 - Create manual evaluation rubric
+- Task 6.1 - Create Custom GPT configuration
 
 Next task brief:
 
-- `docs/tasks/TASK-5.3-manual-evaluation-rubric.md`
+- `docs/tasks/TASK-6.1-custom-gpt-configuration.md`
 
 Most recent completed task brief:
 
-- `docs/tasks/TASK-5.2-golden-expected-outputs.md`
+- `docs/tasks/TASK-5.3-manual-evaluation-rubric.md`
 
 Most recent completed phase brief:
 
-- `docs/tasks/PHASE-4-goal-build-deterministic-scripts.md`
+- `docs/tasks/PHASE-5-goal-build-synthetic-fixtures-and-tests.md`
 
 ## Instructions for Codex
 
@@ -33,10 +33,9 @@ Do not work outside the active task scope.
 
 ## Current boundaries
 
-- Do not start Task 5.3 implementation unless it is explicitly requested as the active task.
-- Do not create the Task 5.3 manual evaluation rubric unless the active task explicitly requires it.
-- Do not create the full Phase 5 synthetic fixture suite or golden tests.
-- Do not create GitHub Actions, API connectors, or Custom GPT final UI configuration.
+- Do not start Task 6.1 implementation unless it is explicitly requested as the active task.
+- Do not create Custom GPT configuration files, instructions, knowledge-file copies, capability configuration, or conversation starters unless the active task explicitly requires them.
+- Do not create GitHub Actions, API connectors, live API actions, or Custom GPT final UI configuration beyond the active task scope.
 - Do not modify the completed Phase 3 Skill package unless the active task explicitly requires it.
 - Do not configure live GTM, GA4, or Google Ads API access.
 - Treat all generated GTM artifacts as draft proposals for human analyst review.
@@ -53,4 +52,5 @@ Do not work outside the active task scope.
 
 - Task 5.1 is complete. `examples/synthetic-gtm-containers/` contains six small, deterministic, synthetic GTM container export fixtures with documented expected issues and no real client data.
 - Task 5.2 is complete. `examples/golden-expected-outputs/` contains schema-aligned expected GTM Container Audit & Patch Package shapes for the synthetic fixtures.
-- Task 5.3 is the next recommended task.
+- Task 5.3 is complete. `docs/evaluation/manual-evaluation-rubric.md` can be applied to fixture outputs and checks usefulness, safety, clarity, manual-review handling, and unsafe recommendations.
+- Phase 5 is complete. Task 6.1 is the next recommended task.

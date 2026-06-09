@@ -2,13 +2,13 @@
 
 ## Status
 
-In Progress
+Complete
 
 Current progress:
 
 - Task 5.1 is complete.
 - Task 5.2 is complete.
-- Task 5.3 is upcoming.
+- Task 5.3 is complete.
 
 ## Goal
 

@@ -2,7 +2,7 @@
 
 ## Status
 
-Upcoming
+Complete
 
 ## Goal
 
@@ -28,7 +28,7 @@ Manual review measures usefulness, accuracy, clarity, and safety before internal
 
 ## Definition of done for MLP
 
-- [ ] Rubric exists.
-- [ ] Rubric evaluates usefulness, safety, and clarity.
-- [ ] Rubric identifies unsafe recommendations.
-- [ ] Rubric can be applied to fixture outputs.
+- [x] Rubric exists.
+- [x] Rubric evaluates usefulness, safety, and clarity.
+- [x] Rubric identifies unsafe recommendations.
+- [x] Rubric can be applied to fixture outputs.

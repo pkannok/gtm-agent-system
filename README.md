@@ -28,15 +28,17 @@ Task 4.3 status: complete. `scripts/diff_gtm_containers.py` compares original an
 
 Task 4.4 status: complete. `scripts/validate_output_package.py` validates full GTM Container Audit & Patch Package directories for required artifacts, schema-backed JSON artifacts, consistency, safety flags, and validation-report-compatible output.
 
-Phase 5 status: in progress.
+Phase 5 status: complete.
 
 Task 5.1 status: complete. `examples/synthetic-gtm-containers/` contains six small synthetic GTM container export fixtures with documented expected issues and no real client data.
 
 Task 5.2 status: complete. `examples/golden-expected-outputs/` contains schema-aligned expected package shapes for the synthetic fixtures.
 
-Next recommended task: Task 5.3 - Create manual evaluation rubric.
+Task 5.3 status: complete. `docs/evaluation/manual-evaluation-rubric.md` defines manual review questions, scoring criteria, safety checks, and fixture-output application guidance.
 
-The next task brief is `docs/tasks/TASK-5.3-manual-evaluation-rubric.md`.
+Next recommended task: Task 6.1 - Create Custom GPT configuration.
+
+The next task brief is `docs/tasks/TASK-6.1-custom-gpt-configuration.md`.
 
 Task 0.3 status: complete. Project terminology is defined in `docs/glossary.md`.
 
@@ -134,10 +136,15 @@ The script layer is local and file-in/file-out. It does not call live APIs, publ
 
 - `examples/golden-expected-outputs/` - Schema-aligned expected GTM Container Audit & Patch Package shapes for the six synthetic fixtures.
 
+## Current evaluation docs
+
+- `docs/evaluation/manual-evaluation-rubric.md` - Manual analyst rubric for evaluating fixture outputs for usefulness, safety, clarity, and unsafe recommendations.
+
 ## Repository structure
 
 - `docs/` - Product decisions, MLP deliverable documentation, architecture notes, glossary, and roadmap.
 - `docs/tasks/` - Detailed task scope and acceptance criteria.
+- `docs/evaluation/` - Manual evaluation rubrics and review aids.
 - `schemas/` - Phase 1 JSON Schema contracts for the GTM Container Audit & Patch Package.
 - `examples/schema-validation/` - Minimal sample files that validate against the Phase 1 schemas.
 - `examples/script-smoke-tests/` - Minimal smoke-test inputs for deterministic scripts.
