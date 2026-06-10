@@ -45,6 +45,7 @@ All notable project changes will be documented in this file.
 - Added six Task 5.1 synthetic GTM container export fixtures under `examples/synthetic-gtm-containers/` with documented expected issues and no real client data.
 - Added Task 5.2 golden expected package shapes under `examples/golden-expected-outputs/` for the six synthetic fixtures.
 - Added `docs/evaluation/manual-evaluation-rubric.md` for analyst review of MLP fixture outputs.
+- Added `custom-gpt/configuration.md` as the repo source-of-truth Custom GPT configuration record for Task 6.1.
 
 ### Changed
 
@@ -67,5 +68,6 @@ All notable project changes will be documented in this file.
 - Marked Phase 5 in progress and Task 5.1 complete after fixture documentation and validation checks passed.
 - Marked Task 5.2 complete after expected package shapes passed schema-alignment checks.
 - Marked Task 5.3 and Phase 5 complete after rubric scope and safety checks passed.
+- Marked Phase 6 and Task 6.1 in progress while GPT editor verification remains pending.
 - Moved the top-level package schema contract from the repository root to `schemas/` so all Phase 1 schema contracts live together.
 - Kept `schemas/` contract-only and placed schema validation samples under `examples/schema-validation/`.

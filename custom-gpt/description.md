@@ -11,6 +11,8 @@ GTM Container Analyst
 
 Audits Google Tag Manager container export JSON files and produces a GTM Container Audit & Patch Package with optimized JSON, audit findings, change log, validation report, QA checklist, and run metadata.
 
+Task 6.1 source-of-truth configuration fields are recorded in `custom-gpt/configuration.md`.
+
 ## Intended users
 
 - Technical marketing analysts.

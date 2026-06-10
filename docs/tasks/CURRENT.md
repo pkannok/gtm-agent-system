@@ -2,7 +2,7 @@
 
 Current active task:
 
-- None. Phase 5 is complete.
+- Task 6.1 - Create Custom GPT configuration
 
 Next recommended task:
 
@@ -33,7 +33,6 @@ Do not work outside the active task scope.
 
 ## Current boundaries
 
-- Do not start Task 6.1 implementation unless it is explicitly requested as the active task.
 - Do not create Custom GPT configuration files, instructions, knowledge-file copies, capability configuration, or conversation starters unless the active task explicitly requires them.
 - Do not create GitHub Actions, API connectors, live API actions, or Custom GPT final UI configuration beyond the active task scope.
 - Do not modify the completed Phase 3 Skill package unless the active task explicitly requires it.
@@ -54,3 +53,7 @@ Do not work outside the active task scope.
 - Task 5.2 is complete. `examples/golden-expected-outputs/` contains schema-aligned expected GTM Container Audit & Patch Package shapes for the synthetic fixtures.
 - Task 5.3 is complete. `docs/evaluation/manual-evaluation-rubric.md` can be applied to fixture outputs and checks usefulness, safety, clarity, manual-review handling, and unsafe recommendations.
 - Phase 5 is complete. Task 6.1 is the next recommended task.
+
+## Phase 6 progress
+
+- Task 6.1 is in progress. Repo configuration fields are being recorded in `custom-gpt/configuration.md`; GPT editor creation, internal access verification, and editor version-history verification are still required before completion.

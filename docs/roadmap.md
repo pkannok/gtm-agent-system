@@ -250,3 +250,50 @@ Status: Complete.
 
 Outcome:
 Creates a manual rubric for analysts to evaluate MLP output usefulness, safety, clarity, unsafe recommendations, and fixture-output alignment.
+
+---
+
+# Phase 6 - Build the Custom GPT wrapper
+
+Status: In Progress.
+
+## Goal
+
+Create the Custom GPT wrapper for early file-in/file-out agency use while keeping the repository and Skill as the system of record.
+
+## Tasks
+
+### Task 6.1 - Create Custom GPT configuration
+
+Status: In Progress.
+
+Outcome:
+Records the repo source-of-truth Custom GPT name, description, intended access, scope boundaries, and GPT editor verification checklist.
+
+### Task 6.2 - Write Custom GPT instructions
+
+Status: Upcoming.
+
+Outcome:
+Writes the core behavior instructions for the GTM Container Analyst Custom GPT.
+
+### Task 6.3 - Add knowledge files to the GPT
+
+Status: Upcoming.
+
+Outcome:
+Identifies and uploads MLP reference documents and standards as Custom GPT knowledge.
+
+### Task 6.4 - Configure GPT capabilities
+
+Status: Upcoming.
+
+Outcome:
+Configures MLP-safe GPT capabilities without live API actions.
+
+### Task 6.5 - Create conversation starters
+
+Status: Upcoming.
+
+Outcome:
+Creates conversation starters aligned with the file-in/file-out GTM Container Audit & Patch Package workflow.

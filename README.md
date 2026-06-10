@@ -36,9 +36,13 @@ Task 5.2 status: complete. `examples/golden-expected-outputs/` contains schema-a
 
 Task 5.3 status: complete. `docs/evaluation/manual-evaluation-rubric.md` defines manual review questions, scoring criteria, safety checks, and fixture-output application guidance.
 
+Phase 6 status: in progress.
+
+Task 6.1 status: in progress. `custom-gpt/configuration.md` records the repo source-of-truth Custom GPT configuration fields; GPT editor creation, intended access verification, and editor version-history verification are still required before completion.
+
 Next recommended task: Task 6.1 - Create Custom GPT configuration.
 
-The next task brief is `docs/tasks/TASK-6.1-custom-gpt-configuration.md`.
+The active task brief is `docs/tasks/TASK-6.1-custom-gpt-configuration.md`.
 
 Task 0.3 status: complete. Project terminology is defined in `docs/glossary.md`.
 
@@ -152,7 +156,7 @@ The script layer is local and file-in/file-out. It does not call live APIs, publ
 - `examples/golden-expected-outputs/` - Expected output package shapes for future fixture-based regression tests.
 - `standards/agency/` - Agency standards for naming, consent/privacy review, and QA.
 - `scripts/` - Deterministic local scripts for Phase 4 container and package checks.
-- `custom-gpt/` - Custom GPT draft instructions, description, conversation starters, and test prompts.
+- `custom-gpt/` - Custom GPT configuration source, draft instructions, description, conversation starters, and test prompts.
 - `skills/gtm-container-auditor/` - Reusable Skill package with entrypoint, UI metadata, references, mirrored schemas, and initial recipes.
 - `outputs/_template/` - Expected output folder shape for the GTM Container Audit & Patch Package.
 
