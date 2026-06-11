@@ -2,7 +2,7 @@
 
 ## Status
 
-Upcoming
+Complete
 
 ## Goal
 
@@ -28,7 +28,7 @@ The Custom GPT is the user interface for the MLP, while the repository and Skill
 
 ## Definition of done for MLP
 
-- [ ] GPT exists.
-- [ ] GPT has a clear name and description.
-- [ ] GPT is accessible to intended internal users.
-- [ ] GPT has version history through the GPT editor flow.
+- [x] GPT exists.
+- [x] GPT has a clear name and description.
+- [x] GPT is accessible to intended internal users.
+- [x] GPT has version history through the GPT editor flow.

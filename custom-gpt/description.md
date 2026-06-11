@@ -1,6 +1,3 @@
-## `custom-gpt/description.md`
-
-```markdown
 # Custom GPT Description Draft
 
 ## GPT name
@@ -10,6 +7,10 @@ GTM Container Analyst
 ## Short description
 
 Audits Google Tag Manager container export JSON files and produces a GTM Container Audit & Patch Package with optimized JSON, audit findings, change log, validation report, QA checklist, and run metadata.
+
+## Repo note
+
+Task 6.1 source-of-truth configuration fields are recorded in `custom-gpt/configuration.md`.
 
 ## Intended users
 
@@ -31,4 +32,3 @@ The GPT should produce:
 **GTM Container Audit & Patch Package**
 
 A run is incomplete if it only produces `optimized_container.json`.
-```
