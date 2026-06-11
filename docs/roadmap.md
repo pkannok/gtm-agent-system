@@ -265,10 +265,10 @@ Create the Custom GPT wrapper for early file-in/file-out agency use while keepin
 
 ### Task 6.1 - Create Custom GPT configuration
 
-Status: In Progress.
+Status: Complete.
 
 Outcome:
-Records the repo source-of-truth Custom GPT name, description, intended access, scope boundaries, and GPT editor verification checklist.
+Records the repo source-of-truth Custom GPT name, description, intended access, scope boundaries, GPT editor creation checklist, share/access notes, and editor verification checklist.
 
 ### Task 6.2 - Write Custom GPT instructions
 

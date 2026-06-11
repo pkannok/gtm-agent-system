@@ -2,9 +2,17 @@
 
 ## Status
 
-Repo configuration drafted for Task 6.1.
+Repo configuration documentation and manual creation evidence completed for Task 6.1.
 
-GPT editor setup and verification are required before Task 6.1 can be marked complete.
+GPT editor creation, intended internal access, and editor version-history verification are recorded as complete.
+
+## Related Task 6.1 files
+
+- `custom-gpt/description.md` - GPT name, short description, intended users, and MLP scope.
+- `custom-gpt/create-gpt-checklist.md` - GPT editor creation and verification checklist.
+- `custom-gpt/share-access-notes.md` - Intended internal sharing and access notes.
+- `custom-gpt/instructions-draft.md` - Existing draft context only. Final detailed instructions are deferred to Task 6.2.
+- `custom-gpt/task-6.1-verification.md` - Record of manual GPT setup evidence and test GPT queries and responses.
 
 ## GPT identity
 
@@ -12,7 +20,12 @@ Name:
 `GTM Container Analyst`
 
 Short description:
-Audits Google Tag Manager container export JSON files and helps produce a GTM Container Audit & Patch Package with optimized JSON, audit findings, change log, validation report, QA checklist, and run metadata.
+Audits Google Tag Manager container export JSON files, applies agency and client standards, proposes reviewable cleanup changes, and returns a GTM Container Audit & Patch Package with optimized JSON, audit findings, change log, validation report, QA checklist, and run metadata.
+
+Purpose:
+This GPT is the initial user-facing wrapper for the GTM Container Audit & Patch Package MLP.
+
+The GPT is file-in/file-out only. It is designed for users who upload GTM container export JSON files and optional client profile files.
 
 Category:
 Internal technical marketing analytics assistant.
@@ -48,6 +61,18 @@ It accepts Google Tag Manager container export JSON files and guides users towar
 
 The deliverable is incomplete if it only includes `optimized_container.json`.
 
+## Initial configuration scope
+
+Task 6.1 creates the GPT shell and records the configuration.
+
+Detailed behavior instructions are deferred to Task 6.2.
+
+Knowledge file selection and upload are deferred to Task 6.3.
+
+Capability configuration is deferred to Task 6.4.
+
+Conversation starters are deferred to Task 6.5.
+
 ## Required safety boundaries
 
 - Do not claim generated GTM JSON is publish-ready.
@@ -59,29 +84,31 @@ The deliverable is incomplete if it only includes `optimized_container.json`.
 
 ## GPT editor field plan
 
-| GPT editor field | Task 6.1 value or status |
-| --- | --- |
-| Name | `GTM Container Analyst` |
-| Description | Use the short description above. |
-| Instructions | Deferred to Task 6.2. Use `custom-gpt/instructions-draft.md` only as existing draft context until Task 6.2 creates the final instructions file. |
-| Knowledge | Deferred to Task 6.3. Do not upload hidden or non-repo knowledge. |
-| Capabilities | Deferred to Task 6.4. Do not enable web browsing, image generation, API actions, or live platform access for the MLP. |
-| Conversation starters | Deferred to Task 6.5. |
-| Actions | Out of scope for Phase 6 MLP configuration. Do not configure API actions. |
-| Visibility/access | Internal workspace users only. |
+| GPT editor field      | Task 6.1 value or status                                                            |
+| --------------------- | ----------------------------------------------------------------------------------- |
+| Name                  | `GTM Container Analyst`                                                             |
+| Description           | Use the short description in `custom-gpt/description.md` or a reviewed equivalent.  |
+| Instructions          | Deferred to Task 6.2. Do not create final detailed instructions in Task 6.1.        |
+| Knowledge             | Deferred to Task 6.3. Do not upload or reference final knowledge files in Task 6.1. |
+| Capabilities          | Deferred to Task 6.4. Do not finalize capabilities in Task 6.1.                     |
+| Conversation starters | Deferred to Task 6.5. Do not finalize conversation starters in Task 6.1.            |
+| Actions               | Out of scope. Do not configure GPT Actions or API connectors.                       |
+| Visibility/access     | Internal workspace users only, following `custom-gpt/share-access-notes.md`.        |
 
 ## GPT editor verification checklist
 
-Task 6.1 can be marked complete only after a human with GPT editor access verifies:
+Task 6.1 was marked complete after a human with GPT editor access verified:
 
-- [ ] A Custom GPT exists with the name `GTM Container Analyst`.
-- [ ] The GPT description matches the short description in this file or a reviewed equivalent.
-- [ ] GPT access is limited to intended internal users.
-- [ ] The GPT editor version history records the configuration update.
-- [ ] No API actions, live GTM access, GA4 access, Google Ads access, web browsing requirement, or public release setting was added.
+- [x] A Custom GPT exists with the name `GTM Container Analyst`.
+- [x] The GPT description matches the short description in this file or a reviewed equivalent.
+- [x] GPT access is limited to intended internal users.
+- [x] The GPT editor version history records the configuration update.
+- [x] No API actions, live GTM access, GA4 access, Google Ads access, web browsing requirement, or public release setting was added.
 
 ## Version history log
 
-| Date | Source | Change | Verification status |
-| --- | --- | --- | --- |
-| 2026-06-10 | Repo Task 6.1 | Drafted repo source-of-truth configuration fields for the Custom GPT. | GPT editor verification pending. |
+| Date       | Source        | Change                                                                                            | Verification status              |
+| ---------- | ------------- | ------------------------------------------------------------------------------------------------- | -------------------------------- |
+| 2026-06-10 | Repo Task 6.1 | Drafted repo source-of-truth configuration fields for the Custom GPT.                             | Superseded by completed Task 6.1 verification. |
+| 2026-06-11 | Repo Task 6.1 | Added Task 6.1 creation checklist and share/access notes; clarified deferred Task 6.2-6.5 fields. | Superseded by completed Task 6.1 verification. |
+| 2026-06-11 | Manual GPT setup | Recorded manual GPT creation notes, internal sharing status, Task 6.1 verification prompts, and GPT editor version-history verification. | Complete. |

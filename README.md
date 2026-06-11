@@ -38,11 +38,11 @@ Task 5.3 status: complete. `docs/evaluation/manual-evaluation-rubric.md` defines
 
 Phase 6 status: in progress.
 
-Task 6.1 status: in progress. `custom-gpt/configuration.md` records the repo source-of-truth Custom GPT configuration fields; GPT editor creation, intended access verification, and editor version-history verification are still required before completion.
+Task 6.1 status: complete. `custom-gpt/configuration.md`, `custom-gpt/create-gpt-checklist.md`, `custom-gpt/share-access-notes.md`, and `custom-gpt/task-6.1-verification.md` record the repo source-of-truth Custom GPT configuration, manual creation evidence, internal sharing status, and editor version-history verification.
 
-Next recommended task: Task 6.1 - Create Custom GPT configuration.
+Next recommended task: Task 6.2 - Write Custom GPT instructions.
 
-The active task brief is `docs/tasks/TASK-6.1-custom-gpt-configuration.md`.
+The next task brief is `docs/tasks/TASK-6.2-custom-gpt-instructions.md`.
 
 Task 0.3 status: complete. Project terminology is defined in `docs/glossary.md`.
 
