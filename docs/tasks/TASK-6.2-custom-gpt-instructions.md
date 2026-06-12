@@ -2,7 +2,7 @@
 
 ## Status
 
-Upcoming
+Complete
 
 ## Goal
 
@@ -29,7 +29,7 @@ The Custom GPT controls interaction style and task execution, while the Skill/re
 
 ## Definition of done for MLP
 
-- [ ] Instructions are in `custom-gpt/instructions.md`.
-- [ ] Instructions are copied into the GPT configuration.
-- [ ] Instructions do not duplicate the full audit rule catalog.
-- [ ] GPT consistently returns required package sections during tests.
+- [x] Instructions are in `custom-gpt/instructions.md`.
+- [x] Instructions are copied into the GPT configuration.
+- [x] Instructions do not duplicate the full audit rule catalog.
+- [x] GPT consistently returns required package sections during tests.

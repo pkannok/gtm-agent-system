@@ -49,6 +49,8 @@ All notable project changes will be documented in this file.
 - Added `custom-gpt/create-gpt-checklist.md` for Task 6.1 GPT editor creation and verification.
 - Added `custom-gpt/share-access-notes.md` for Task 6.1 intended internal access and sharing boundaries.
 - Added `custom-gpt/task-6.1-verification.md` for non-secret manual GPT creation and verification notes.
+- Added `custom-gpt/instructions.md` as the repo source-of-truth Custom GPT instructions draft for Task 6.2.
+- Added `custom-gpt/task-6.2-verification.md` for non-secret manual GPT instruction-copy and response-section verification notes.
 
 ### Changed
 
@@ -75,5 +77,7 @@ All notable project changes will be documented in this file.
 - Updated Task 6.1 Custom GPT configuration documentation while keeping final instructions, knowledge files, capabilities, conversation starters, and GPT Actions deferred to later tasks.
 - Recorded Task 6.1 manual GPT creation, internal sharing, and GPT editor version-history verification evidence.
 - Marked Task 6.1 complete after manual GPT creation, internal sharing, and GPT editor version-history verification were recorded.
+- Marked Task 6.2 in progress and began the core GPT behavior instructions.
+- Marked Task 6.2 complete after GPT editor instruction copy and required package-section response verification were recorded.
 - Moved the top-level package schema contract from the repository root to `schemas/` so all Phase 1 schema contracts live together.
 - Kept `schemas/` contract-only and placed schema validation samples under `examples/schema-validation/`.
