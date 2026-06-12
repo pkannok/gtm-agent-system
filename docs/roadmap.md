@@ -272,7 +272,7 @@ Records the repo source-of-truth Custom GPT name, description, intended access, 
 
 ### Task 6.2 - Write Custom GPT instructions
 
-Status: Upcoming.
+Status: Complete.
 
 Outcome:
 Writes the core behavior instructions for the GTM Container Analyst Custom GPT.

@@ -6,15 +6,15 @@ Current active task:
 
 Next recommended task:
 
-- Task 6.2 - Write Custom GPT instructions
+- Task 6.3 - Add knowledge files to the GPT
 
 Next task brief:
 
-- `docs/tasks/TASK-6.2-custom-gpt-instructions.md`
+- `docs/tasks/TASK-6.3-gpt-knowledge-files.md`
 
 Most recent completed task brief:
 
-- `docs/tasks/TASK-6.1-custom-gpt-configuration.md`
+- `docs/tasks/TASK-6.2-custom-gpt-instructions.md`
 
 Most recent completed phase brief:
 
@@ -33,7 +33,7 @@ Do not work outside the active task scope.
 
 ## Current boundaries
 
-- Do not create final Custom GPT instructions, knowledge-file copies, capability configuration, or conversation starters unless the active task explicitly requires them.
+- Do not create knowledge-file copies, capability configuration, or conversation starters unless the active task explicitly requires them.
 - Do not create GitHub Actions, API connectors, live API actions, or Custom GPT final UI configuration beyond the active task scope.
 - Do not modify the completed Phase 3 Skill package unless the active task explicitly requires it.
 - Do not configure live GTM, GA4, or Google Ads API access.
@@ -57,4 +57,5 @@ Do not work outside the active task scope.
 ## Phase 6 progress
 
 - Task 6.1 is complete. `custom-gpt/configuration.md`, `custom-gpt/create-gpt-checklist.md`, `custom-gpt/share-access-notes.md`, and `custom-gpt/task-6.1-verification.md` record the Custom GPT configuration, manual creation evidence, internal sharing status, and editor version-history verification.
-- Task 6.2 is the next recommended task.
+- Task 6.2 is complete. `custom-gpt/instructions.md` stores the core GPT behavior instructions, and `custom-gpt/task-6.2-verification.md` records GPT editor copy and response-section verification.
+- Task 6.3 is the next recommended task.

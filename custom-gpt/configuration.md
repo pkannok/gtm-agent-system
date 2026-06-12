@@ -11,7 +11,9 @@ GPT editor creation, intended internal access, and editor version-history verifi
 - `custom-gpt/description.md` - GPT name, short description, intended users, and MLP scope.
 - `custom-gpt/create-gpt-checklist.md` - GPT editor creation and verification checklist.
 - `custom-gpt/share-access-notes.md` - Intended internal sharing and access notes.
-- `custom-gpt/instructions-draft.md` - Existing draft context only. Final detailed instructions are deferred to Task 6.2.
+- `custom-gpt/instructions.md` - Final Task 6.2 Custom GPT instructions copied into the GPT editor.
+- `custom-gpt/instructions-draft.md` - Superseded draft context retained for project history.
+- `custom-gpt/task-6.2-verification.md` - Record of manual GPT instruction-copy and response-section verification.
 - `custom-gpt/task-6.1-verification.md` - Record of manual GPT setup evidence and test GPT queries and responses.
 
 ## GPT identity
@@ -88,10 +90,10 @@ Conversation starters are deferred to Task 6.5.
 | --------------------- | ----------------------------------------------------------------------------------- |
 | Name                  | `GTM Container Analyst`                                                             |
 | Description           | Use the short description in `custom-gpt/description.md` or a reviewed equivalent.  |
-| Instructions          | Deferred to Task 6.2. Do not create final detailed instructions in Task 6.1.        |
-| Knowledge             | Deferred to Task 6.3. Do not upload or reference final knowledge files in Task 6.1. |
-| Capabilities          | Deferred to Task 6.4. Do not finalize capabilities in Task 6.1.                     |
-| Conversation starters | Deferred to Task 6.5. Do not finalize conversation starters in Task 6.1.            |
+| Instructions          | Copied from `custom-gpt/instructions.md` during Task 6.2.                          |
+| Knowledge             | Deferred to Task 6.3. Do not upload or reference final knowledge files yet.         |
+| Capabilities          | Deferred to Task 6.4. Do not finalize capabilities yet.                             |
+| Conversation starters | Deferred to Task 6.5. Do not finalize conversation starters yet.                    |
 | Actions               | Out of scope. Do not configure GPT Actions or API connectors.                       |
 | Visibility/access     | Internal workspace users only, following `custom-gpt/share-access-notes.md`.        |
 
