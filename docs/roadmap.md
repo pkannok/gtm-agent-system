@@ -279,10 +279,10 @@ Writes the core behavior instructions for the GTM Container Analyst Custom GPT.
 
 ### Task 6.3 - Add knowledge files to the GPT
 
-Status: Upcoming.
+Status: Complete.
 
 Outcome:
-Identifies and uploads MLP reference documents and standards as Custom GPT knowledge.
+Identifies and uploads MLP reference documents and standards as Custom GPT knowledge, including the `custom-gpt/instructions.md` field-limit workaround.
 
 ### Task 6.4 - Configure GPT capabilities
 

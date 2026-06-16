@@ -6,9 +6,9 @@ In Progress
 
 Current progress:
 
-- Task 6.1 is in progress.
-- Task 6.2 is upcoming.
-- Task 6.3 is upcoming.
+- Task 6.1 is complete.
+- Task 6.2 is complete.
+- Task 6.3 is complete.
 - Task 6.4 is upcoming.
 - Task 6.5 is upcoming.
 

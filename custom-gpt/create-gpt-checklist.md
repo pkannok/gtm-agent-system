@@ -45,3 +45,12 @@ Use `custom-gpt/instructions-draft.md` only as existing draft context. Final det
 ## Evidence to record after verification
 
 Non-secret version-history verification notes are recorded in `custom-gpt/configuration.md` and `custom-gpt/task-6.1-verification.md`.
+
+## Later task checklists
+
+Task 6.3 knowledge upload selection and verification are recorded in:
+
+- `custom-gpt/knowledge-files.md`
+- `custom-gpt/task-6.3-verification.md`
+
+Task 6.3 also records the GPT Instructions field-limit workaround: upload `custom-gpt/instructions.md` as approved knowledge and keep the GPT Instructions field as a short explicit pointer to that file.
