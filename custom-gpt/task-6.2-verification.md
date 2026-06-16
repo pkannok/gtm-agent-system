@@ -3,7 +3,8 @@
 ## GPT editor evidence
 
 - Updated GPT instructions exist: Yes.
-- GPT instructions were copied into the GPT Instructions configuration: Yes.
+- GPT instructions were copied into the GPT Instructions configuration during Task 6.2: Yes.
+- Current Task 6.3 note: `custom-gpt/instructions.md` exceeds the GPT Instructions field limit, so Task 6.3 uploads it as a knowledge file and uses a short GPT Instructions field pointer.
 - GPT consistently returns required package sections during tests: Yes.
 
 ## Version-history confirmation

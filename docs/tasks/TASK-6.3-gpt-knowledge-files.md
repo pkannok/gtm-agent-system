@@ -2,7 +2,7 @@
 
 ## Status
 
-Upcoming
+Complete
 
 ## Goal
 
@@ -11,6 +11,8 @@ Upload MLP reference documents and standards as Custom GPT knowledge.
 ## How it fits
 
 Knowledge files provide reference material while behavior and workflow rules stay in instructions and Skill files.
+
+For this GPT, `custom-gpt/instructions.md` exceeds the GPT Instructions field limit. Task 6.3 may upload that repo-versioned instructions file as knowledge when the GPT Instructions field explicitly references it.
 
 ## In scope
 
@@ -28,7 +30,7 @@ Knowledge files provide reference material while behavior and workflow rules sta
 
 ## Definition of done for MLP
 
-- [ ] GPT knowledge includes only MLP-relevant files.
-- [ ] Knowledge files are versioned in repo.
-- [ ] GPT can answer which standards were applied.
-- [ ] GPT does not rely on hidden, non-repo instructions.
+- [x] GPT knowledge includes only MLP-relevant files.
+- [x] Knowledge files are versioned in repo.
+- [x] GPT can answer which standards were applied.
+- [x] GPT does not rely on hidden, non-repo instructions.

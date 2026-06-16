@@ -51,6 +51,8 @@ All notable project changes will be documented in this file.
 - Added `custom-gpt/task-6.1-verification.md` for non-secret manual GPT creation and verification notes.
 - Added `custom-gpt/instructions.md` as the repo source-of-truth Custom GPT instructions draft for Task 6.2.
 - Added `custom-gpt/task-6.2-verification.md` for non-secret manual GPT instruction-copy and response-section verification notes.
+- Added `custom-gpt/knowledge-files.md` for the approved Task 6.3 Custom GPT knowledge upload set.
+- Added `custom-gpt/task-6.3-verification.md` for Task 6.3 manual knowledge-upload instructions and verification notes.
 
 ### Changed
 
@@ -79,5 +81,8 @@ All notable project changes will be documented in this file.
 - Marked Task 6.1 complete after manual GPT creation, internal sharing, and GPT editor version-history verification were recorded.
 - Marked Task 6.2 in progress and began the core GPT behavior instructions.
 - Marked Task 6.2 complete after GPT editor instruction copy and required package-section response verification were recorded.
+- Marked Task 6.3 in progress and documented the Custom GPT knowledge-file selection and pending manual verification workflow.
+- Documented the Task 6.3 GPT Instructions field-limit workaround: upload `custom-gpt/instructions.md` as approved knowledge and use a short Instructions-field pointer.
+- Marked Task 6.3 complete after approved knowledge files were uploaded and GPT applied-standards verification passed.
 - Moved the top-level package schema contract from the repository root to `schemas/` so all Phase 1 schema contracts live together.
 - Kept `schemas/` contract-only and placed schema validation samples under `examples/schema-validation/`.
