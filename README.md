@@ -44,9 +44,11 @@ Task 6.2 status: complete. `custom-gpt/instructions.md` stores the core GPT beha
 
 Task 6.3 status: complete. `custom-gpt/knowledge-files.md` records the approved MLP-relevant, repo-versioned Custom GPT knowledge files, including `custom-gpt/instructions.md` because it exceeds the GPT Instructions field limit. `custom-gpt/task-6.3-verification.md` records the short Instructions-field pointer, completed manual upload, and verification evidence.
 
-Next recommended task: Task 6.4 - Configure GPT capabilities.
+Task 6.4 status: complete. `custom-gpt/task-6.4-verification.md` records the approved MLP-safe capability posture, completed manual GPT editor verification, and verification prompts.
 
-The next task brief is `docs/tasks/TASK-6.4-gpt-capabilities.md`.
+Next recommended task: Task 6.5 - Conversation starters.
+
+The next task brief is `docs/tasks/TASK-6.5-conversation-starters.md`.
 
 Task 0.3 status: complete. Project terminology is defined in `docs/glossary.md`.
 
@@ -160,7 +162,7 @@ The script layer is local and file-in/file-out. It does not call live APIs, publ
 - `examples/golden-expected-outputs/` - Expected output package shapes for future fixture-based regression tests.
 - `standards/agency/` - Agency standards for naming, consent/privacy review, and QA.
 - `scripts/` - Deterministic local scripts for Phase 4 container and package checks.
-- `custom-gpt/` - Custom GPT configuration source, instructions, knowledge-file selection, description, verification notes, conversation starters, and test prompts.
+- `custom-gpt/` - Custom GPT configuration source, instructions, knowledge-file selection, capability verification notes, description, conversation starters, and test prompts.
 - `skills/gtm-container-auditor/` - Reusable Skill package with entrypoint, UI metadata, references, mirrored schemas, and initial recipes.
 - `outputs/_template/` - Expected output folder shape for the GTM Container Audit & Patch Package.
 

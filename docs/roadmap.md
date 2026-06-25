@@ -286,7 +286,7 @@ Identifies and uploads MLP reference documents and standards as Custom GPT knowl
 
 ### Task 6.4 - Configure GPT capabilities
 
-Status: Upcoming.
+Status: Complete.
 
 Outcome:
 Configures MLP-safe GPT capabilities without live API actions.

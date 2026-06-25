@@ -2,7 +2,7 @@
 
 ## Status
 
-Upcoming
+Manual verification complete.
 
 ## Goal
 
@@ -29,7 +29,7 @@ The MLP needs file handling and possibly data analysis, not external actions or 
 
 ## Definition of done for MLP
 
-- [ ] GPT can accept uploaded JSON.
-- [ ] GPT can produce downloadable JSON/Markdown artifacts if supported.
-- [ ] No external API action is configured.
-- [ ] GPT instructions explicitly state live writes are out of scope.
+- [x] GPT can accept uploaded JSON.
+- [x] GPT can produce downloadable JSON/Markdown artifacts if supported.
+- [x] No external API action is configured.
+- [x] GPT instructions explicitly state live writes are out of scope.
