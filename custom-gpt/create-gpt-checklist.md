@@ -54,3 +54,7 @@ Task 6.3 knowledge upload selection and verification are recorded in:
 - `custom-gpt/task-6.3-verification.md`
 
 Task 6.3 also records the GPT Instructions field-limit workaround: upload `custom-gpt/instructions.md` as approved knowledge and keep the GPT Instructions field as a short explicit pointer to that file.
+
+Task 6.4 capability posture and manual editor verification are recorded in:
+
+- `custom-gpt/task-6.4-verification.md`

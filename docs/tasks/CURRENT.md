@@ -6,15 +6,15 @@ Current active task:
 
 Next recommended task:
 
-- Task 6.4 - Configure GPT capabilities
+- Task 6.5 - Conversation starters
 
 Next task brief:
 
-- `docs/tasks/TASK-6.4-gpt-capabilities.md`
+- `docs/tasks/TASK-6.5-conversation-starters.md`
 
 Most recent completed task brief:
 
-- `docs/tasks/TASK-6.3-gpt-knowledge-files.md`
+- `docs/tasks/TASK-6.4-gpt-capabilities.md`
 
 Most recent completed phase brief:
 
@@ -59,4 +59,4 @@ Do not work outside the active task scope.
 - Task 6.1 is complete. `custom-gpt/configuration.md`, `custom-gpt/create-gpt-checklist.md`, `custom-gpt/share-access-notes.md`, and `custom-gpt/task-6.1-verification.md` record the Custom GPT configuration, manual creation evidence, internal sharing status, and editor version-history verification.
 - Task 6.2 is complete. `custom-gpt/instructions.md` stores the core GPT behavior instructions, and `custom-gpt/task-6.2-verification.md` records GPT editor copy and response-section verification.
 - Task 6.3 is complete. `custom-gpt/knowledge-files.md` records the approved MLP-relevant, repo-versioned Custom GPT knowledge upload set, including the `custom-gpt/instructions.md` field-limit workaround, and `custom-gpt/task-6.3-verification.md` records completed manual upload and verification evidence.
-- Task 6.4 is the next recommended task.
+- Task 6.4 is complete. `custom-gpt/task-6.4-verification.md` records the approved capability posture, manual GPT editor steps, and verification prompts.
