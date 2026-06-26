@@ -2,7 +2,7 @@
 
 ## Status
 
-In Progress
+Complete
 
 Current progress:
 
@@ -10,7 +10,7 @@ Current progress:
 - Task 6.2 is complete.
 - Task 6.3 is complete.
 - Task 6.4 is complete.
-- Task 6.5 is upcoming.
+- Task 6.5 is complete.
 
 ## Goal
 

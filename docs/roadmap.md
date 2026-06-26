@@ -255,7 +255,7 @@ Creates a manual rubric for analysts to evaluate MLP output usefulness, safety, 
 
 # Phase 6 - Build the Custom GPT wrapper
 
-Status: In Progress.
+Status: Complete.
 
 ## Goal
 
@@ -293,7 +293,7 @@ Configures MLP-safe GPT capabilities without live API actions.
 
 ### Task 6.5 - Create conversation starters
 
-Status: Upcoming.
+Status: Complete.
 
 Outcome:
 Creates conversation starters aligned with the file-in/file-out GTM Container Audit & Patch Package workflow.

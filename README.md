@@ -36,7 +36,7 @@ Task 5.2 status: complete. `examples/golden-expected-outputs/` contains schema-a
 
 Task 5.3 status: complete. `docs/evaluation/manual-evaluation-rubric.md` defines manual review questions, scoring criteria, safety checks, and fixture-output application guidance.
 
-Phase 6 status: in progress.
+Phase 6 status: complete.
 
 Task 6.1 status: complete. `custom-gpt/configuration.md`, `custom-gpt/create-gpt-checklist.md`, `custom-gpt/share-access-notes.md`, and `custom-gpt/task-6.1-verification.md` record the repo source-of-truth Custom GPT configuration, manual creation evidence, internal sharing status, and editor version-history verification.
 
@@ -46,9 +46,13 @@ Task 6.3 status: complete. `custom-gpt/knowledge-files.md` records the approved 
 
 Task 6.4 status: complete. `custom-gpt/task-6.4-verification.md` records the approved MLP-safe capability posture, completed manual GPT editor verification, and verification prompts.
 
-Next recommended task: Task 6.5 - Conversation starters.
+Task 6.5 status: complete. `custom-gpt/conversation-starters.md` records the final starter set, and `custom-gpt/task-6.5-verification.md` records the manual editor entry and version-history verification.
 
-The next task brief is `docs/tasks/TASK-6.5-conversation-starters.md`.
+There is no active task brief.
+
+Next recommended task: Task 7.1 - Run fixture-based GPT tests.
+
+Next task brief: `docs/tasks/TASK-7.1-fixture-based-gpt-tests.md`.
 
 Task 0.3 status: complete. Project terminology is defined in `docs/glossary.md`.
 
