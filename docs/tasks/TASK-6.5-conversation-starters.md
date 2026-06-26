@@ -2,7 +2,7 @@
 
 ## Status
 
-Upcoming
+Complete
 
 ## Goal
 
@@ -27,6 +27,6 @@ Good starters reduce bad inputs and set expectations for the full GTM Container 
 
 ## Definition of done for MLP
 
-- [ ] At least four starters exist.
-- [ ] Starters reflect real MLP tasks.
-- [ ] Starters do not mention live API access or publishing.
+- [x] At least four starters exist.
+- [x] Starters reflect real MLP tasks.
+- [x] Starters do not mention live API access or publishing.

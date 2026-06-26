@@ -4,7 +4,7 @@
 
 Repo configuration documentation and manual creation evidence completed for Task 6.1.
 
-GPT editor creation, intended internal access, editor version-history verification, instruction pointer, knowledge upload verification, and capability verification are recorded as complete.
+GPT editor creation, intended internal access, editor version-history verification, instruction pointer, knowledge upload verification, capability verification, and conversation-starter verification are recorded as complete.
 
 ## Related Custom GPT files
 
@@ -15,6 +15,8 @@ GPT editor creation, intended internal access, editor version-history verificati
 - `custom-gpt/knowledge-files.md` - Approved Task 6.3 Custom GPT knowledge upload set.
 - `custom-gpt/task-6.3-verification.md` - Task 6.3 manual knowledge-upload and verification notes.
 - `custom-gpt/task-6.4-verification.md` - Task 6.4 capability posture, manual editor checks, and verification notes.
+- `custom-gpt/conversation-starters.md` - Final Task 6.5 Custom GPT conversation starters.
+- `custom-gpt/task-6.5-verification.md` - Task 6.5 manual GPT editor entry and verification notes.
 - `custom-gpt/instructions-draft.md` - Superseded draft context retained for project history.
 - `custom-gpt/task-6.2-verification.md` - Record of manual GPT instruction-copy and response-section verification.
 - `custom-gpt/task-6.1-verification.md` - Record of manual GPT setup evidence and test GPT queries and responses.
@@ -76,7 +78,7 @@ Knowledge file selection is recorded in `custom-gpt/knowledge-files.md`. Manual 
 
 Capability configuration is complete for Task 6.4. The approved capability posture and manual GPT editor verification are recorded in `custom-gpt/task-6.4-verification.md`.
 
-Conversation starters are deferred to Task 6.5.
+Conversation starters are complete for Task 6.5 and recorded in `custom-gpt/conversation-starters.md`. Manual GPT editor entry and verification are recorded in `custom-gpt/task-6.5-verification.md`.
 
 ## Required safety boundaries
 
@@ -96,7 +98,7 @@ Conversation starters are deferred to Task 6.5.
 | Instructions          | Short pointer to uploaded `custom-gpt/instructions.md` because the full file exceeds the GPT Instructions field limit. |
 | Knowledge             | Completed in Task 6.3. Upload set is recorded in `custom-gpt/knowledge-files.md`, including `custom-gpt/instructions.md`. |
 | Capabilities          | Completed in Task 6.4. File uploads and data analysis/code interpreter are enabled only for file-in/file-out MLP use; GPT Actions, API connectors, live platform access, web browsing, and image generation remain out of scope. |
-| Conversation starters | Deferred to Task 6.5. Do not finalize conversation starters yet.                    |
+| Conversation starters | Completed in Task 6.5. Final starters are recorded in `custom-gpt/conversation-starters.md`, and manual GPT editor verification is recorded in `custom-gpt/task-6.5-verification.md`. |
 | Actions               | Out of scope. Do not configure GPT Actions or API connectors.                       |
 | Visibility/access     | Internal workspace users only, following `custom-gpt/share-access-notes.md`.        |
 
@@ -119,3 +121,4 @@ Task 6.1 was marked complete after a human with GPT editor access verified:
 | 2026-06-11 | Manual GPT setup | Recorded manual GPT creation notes, internal sharing status, Task 6.1 verification prompts, and GPT editor version-history verification. | Complete. |
 | 2026-06-16 | Manual GPT knowledge setup | Uploaded the approved Task 6.3 knowledge set, configured the short Instructions-field pointer to `custom-gpt/instructions.md`, and verified applied-standards responses. | Complete. |
 | 2026-06-25 | Manual GPT capability setup | Verified file upload, data analysis/code interpreter, approved knowledge continuity, absent Actions/API/live platform capabilities, and capability-response prompts. | Complete. |
+| 2026-06-25 | Manual GPT conversation-starter setup | Entered the selected final Task 6.5 conversation starters, verified UI display, and confirmed no live/API/publishing starter was added. | Complete. |

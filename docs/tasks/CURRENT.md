@@ -2,23 +2,23 @@
 
 Current active task:
 
-- None.
+- None
 
 Next recommended task:
 
-- Task 6.5 - Conversation starters
+- Task 7.1 - Run fixture-based GPT tests
 
 Next task brief:
 
-- `docs/tasks/TASK-6.5-conversation-starters.md`
+- `docs/tasks/TASK-7.1-fixture-based-gpt-tests.md`
 
 Most recent completed task brief:
 
-- `docs/tasks/TASK-6.4-gpt-capabilities.md`
+- `docs/tasks/TASK-6.5-conversation-starters.md`
 
 Most recent completed phase brief:
 
-- `docs/tasks/PHASE-5-goal-build-synthetic-fixtures-and-tests.md`
+- `docs/tasks/PHASE-6-goal-build-custom-gpt-wrapper.md`
 
 ## Instructions for Codex
 
@@ -60,3 +60,8 @@ Do not work outside the active task scope.
 - Task 6.2 is complete. `custom-gpt/instructions.md` stores the core GPT behavior instructions, and `custom-gpt/task-6.2-verification.md` records GPT editor copy and response-section verification.
 - Task 6.3 is complete. `custom-gpt/knowledge-files.md` records the approved MLP-relevant, repo-versioned Custom GPT knowledge upload set, including the `custom-gpt/instructions.md` field-limit workaround, and `custom-gpt/task-6.3-verification.md` records completed manual upload and verification evidence.
 - Task 6.4 is complete. `custom-gpt/task-6.4-verification.md` records the approved capability posture, manual GPT editor steps, and verification prompts.
+- Task 6.5 is complete. `custom-gpt/conversation-starters.md` records the final starter set, and `custom-gpt/task-6.5-verification.md` records the manual editor entry and version-history verification.
+
+## Phase 7 progress
+
+- Not yet started.
