@@ -2,23 +2,23 @@
 
 Current active task:
 
-- Task 7.1 - Run fixture-based GPT tests
+- None
 
 Current task status:
 
-- Manual review complete - needs revision
+- Task 7.1 complete after GTM export-shape remediation
 
 Active task brief:
 
-- `docs/tasks/TASK-7.1-fixture-based-gpt-tests.md`
+- None
 
 Next recommended task:
 
-- Resolve repo-wide/output-package JSON validity issue.
+- Task 7.2 - Run script validation on GPT outputs
 
 Most recent completed task brief:
 
-- `docs/tasks/TASK-6.5-conversation-starters.md`
+- `docs/tasks/TASK-7.1-fixture-based-gpt-tests.md`
 
 Most recent completed phase brief:
 
@@ -68,6 +68,8 @@ Do not work outside the active task scope.
 
 ## Phase 7 progress
 
-- Task 7.1 framework manual GPT execution is complete. The manual test workspace is in `outputs/phase-7-fixture-gpt-tests/`.
-- Task 7.1 fixture run output manual review is complete.
+- Task 7.1 is complete. The manual test workspace is in `outputs/phase-7-fixture-gpt-tests/`.
+- Task 7.1 fixture run output manual review is complete, all six runs met the manual quality threshold, and the optimized-container shape blocker was remediated before Task 7.2.
+- The GTM JSON investigation found no invalid JSON syntax and no generated Phase 7 `optimized_container.json` export-shape defect. The issue was metadata-only `optimized_container.container` stubs in the golden expected outputs plus underspecified package validation/generation guidance.
+- Golden expected outputs now preserve fixture intent while using complete GTM export-shaped `optimized_container.container` objects, and schema plus package-validator checks now require the GTM export wrapper and core `tag`, `trigger`, and `variable` arrays.
 - Task 7.2 has not started.

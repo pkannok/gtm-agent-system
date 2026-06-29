@@ -48,15 +48,17 @@ Task 6.4 status: complete. `custom-gpt/task-6.4-verification.md` records the app
 
 Task 6.5 status: complete. `custom-gpt/conversation-starters.md` records the final starter set, and `custom-gpt/task-6.5-verification.md` records the manual editor entry and version-history verification.
 
-Current active task: Task 7.1 - Run fixture-based GPT tests.
+Current active task: None.
 
-Current task status: manual review complete.
+Current task status: Task 7.1 complete.
 
-Active task brief: `docs/tasks/TASK-7.1-fixture-based-gpt-tests.md`.
+Next recommended task: `docs/tasks/TASK-7.2-script-validation-on-gpt-outputs.md`.
 
-Phase 7 status: needs revision.
+Phase 7 status: in progress.
 
-Task 7.1 status: all six synthetic fixture GPT runs complete, package artifacts generated, manual reviews completed, and run-log results recorded; `optimized_container.json` appears to be malformed GTM container JSON across generated outputs and repo examples. This is being treated as a package-level blocker requiring separate remediation before Task 7.1 receives a clean pass.
+Task 7.1 status: complete. All six synthetic fixture GPT runs are captured, package artifacts are generated, manual reviews are complete, run-log results are recorded, and the post-review GTM JSON remediation is complete. The generated Phase 7 optimized containers were valid export-shaped JSON; the actual defect was metadata-only golden expected output stubs and permissive validation guidance.
+
+Task 7.2 status: upcoming. The next task is deterministic script validation on GPT-generated output packages.
 
 Task 0.3 status: complete. Project terminology is defined in `docs/glossary.md`.
 

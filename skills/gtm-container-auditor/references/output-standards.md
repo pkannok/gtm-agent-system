@@ -126,6 +126,8 @@ Include:
 Required safety wording:
 `optimized_container.json` is a proposed artifact, not a publish-ready guarantee.
 
+It must still be a complete GTM export-shaped JSON object when source export content is available. Include the full wrapper and core sections, including `exportFormatVersion`, `containerVersion`, `tag`, `trigger`, and `variable`. Do not replace it with a metadata-only summary, excerpt, or stub.
+
 ### 6. Changes recommended but not applied
 
 Purpose:

@@ -7,6 +7,7 @@ They are deterministic golden expectations for future regression tests. They are
 Each `*.expected-package.json` file is intended to validate against `schemas/gtm_patch_package.schema.json` and includes:
 
 - A link to the source fixture through `source_container_summary.input_file_name` and `run_metadata.input_files`.
+- A complete GTM export-shaped object at `optimized_container.container`, not a metadata-only summary or partial stub.
 - Expected finding summaries.
 - Expected change log posture, including `no_change` entries where the expected outcome is documentation or manual review rather than a proposed GTM edit.
 - Validation, risk, QA, and safety sections required by the package contract.

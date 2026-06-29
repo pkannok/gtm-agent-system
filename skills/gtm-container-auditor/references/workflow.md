@@ -45,7 +45,7 @@ Do not proceed as if a live GTM account is available. If the user provides a URL
 11. Separate detected facts, inferred issues, recommendations, assumptions, and manual-verification items.
 12. Identify proposed file-based changes only when the evidence and standards allow them.
 13. Keep risky changes manual-review only by default.
-14. Create `optimized_container.json` as a proposed artifact when changes are included.
+14. Create `optimized_container.json` as a proposed artifact when changes are included. It must be a complete GTM export-shaped JSON object, including `exportFormatVersion`, `containerVersion`, and the core `tag`, `trigger`, and `variable` arrays; do not output a metadata-only summary or partial container stub.
 15. Create `change_log.json` with proposed change IDs, affected entities, risk levels, rollback notes, related findings, and approval requirements.
 16. Create `audit_report.json` with machine-readable findings and manual-review items.
 17. Create `audit_report.md` using the fixed report structure.

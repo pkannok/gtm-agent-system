@@ -91,5 +91,8 @@ All notable project changes will be documented in this file.
 - Marked Task 6.4 complete after manual capability verification passed and recorded Task 6.5 as the next recommended task.
 - Marked Task 6.5 and Phase 6 complete after manual conversation-starter entry and version-history verification, and recorded Task 7.1 as the next recommended task.
 - Marked Phase 7 in progress and Task 7.1 ready for manual GPT execution without recording fake GPT outputs or starting Task 7.2 validation work.
+- Marked Task 7.1 complete after all six manual GPT fixture reviews met threshold and the optimized-container shape blocker was remediated before Task 7.2.
+- Replaced metadata-only optimized-container stubs in the golden expected outputs with complete GTM export-shaped objects while preserving fixture intent and expected rule coverage.
+- Strengthened the top-level package schema, mirrored Skill schema, package validator, Custom GPT instructions, and Skill guidance so `optimized_container.json` must include the GTM export wrapper and core entity arrays.
 - Moved the top-level package schema contract from the repository root to `schemas/` so all Phase 1 schema contracts live together.
 - Kept `schemas/` contract-only and placed schema validation samples under `examples/schema-validation/`.

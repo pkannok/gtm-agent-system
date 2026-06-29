@@ -312,10 +312,10 @@ Test the Custom GPT plus Skill workflow against fixtures, validators, and analys
 
 ### Task 7.1 - Run fixture-based GPT tests
 
-Status: Needs revision.
+Status: Complete.
 
 Outcome:
-Manual review completed for all fixture runs. No major run-level safety issues were identified. One severity calibration variance was observed and documented. However, optimized_container.json appears to be malformed GTM container JSON across generated outputs and repo examples. This is being treated as a package-level blocker requiring separate remediation before Task 7.1 receives a clean pass.
+Manual review completed for all fixture runs. All six runs met the manual quality threshold, no major run-level safety issues were identified, and one severity calibration variance was observed and documented. A post-review GTM JSON investigation found the generated Phase 7 optimized containers were valid export-shaped JSON; the actual defect was metadata-only golden expected output stubs and permissive validation guidance, which has been remediated.
 
 ### Task 7.2 - Run script validation on GPT outputs
 
