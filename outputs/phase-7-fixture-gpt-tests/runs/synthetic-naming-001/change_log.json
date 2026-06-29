@@ -1,0 +1,138 @@
+{
+  "package_name": "GTM Container Audit & Patch Package",
+  "run_id": "gtm-audit-synthetic-naming-001-39025f2fbf2a",
+  "source_file": "synthetic-naming-issues.json",
+  "optimized_file": "optimized_container.json",
+  "changes": [
+    {
+      "change_id": "CHG-NAME-001",
+      "change_type": "rename",
+      "status": "applied_to_optimized_json",
+      "affected_entity": {
+        "entity_type": "tag",
+        "entity_id": "101",
+        "old_name": "tag 1",
+        "new_name": "GA4 - Event - lead_submit"
+      },
+      "related_finding_ids": [
+        "F-NAME-001"
+      ],
+      "rule_id": "GTM-NAME-001",
+      "what_changed": "Renamed tag 101 from 'tag 1' to 'GA4 - Event - lead_submit'.",
+      "why_changed": "Tag name does not identify platform, tag type, or event purpose.",
+      "risk_level": "low",
+      "is_name_only": true,
+      "unsafe_change": false,
+      "automated_change_policy": "allowed_candidate",
+      "human_approval_required": true,
+      "manual_review_flags": [
+        "Confirm no external plain-text dependency on the old name before import or use."
+      ],
+      "rollback_note": "Restore the tag name from 'GA4 - Event - lead_submit' to 'tag 1'; if rolling back the variable rename, also restore any {CONST - GA4 Measurement ID} token references to {id}."
+    },
+    {
+      "change_id": "CHG-NAME-002",
+      "change_type": "rename",
+      "status": "applied_to_optimized_json",
+      "affected_entity": {
+        "entity_type": "trigger",
+        "entity_id": "201",
+        "old_name": "all",
+        "new_name": "PV - All Pages"
+      },
+      "related_finding_ids": [
+        "F-NAME-002"
+      ],
+      "rule_id": "GTM-NAME-001",
+      "what_changed": "Renamed trigger 201 from 'all' to 'PV - All Pages'.",
+      "why_changed": "Trigger name does not identify trigger type and page scope clearly.",
+      "risk_level": "low",
+      "is_name_only": true,
+      "unsafe_change": false,
+      "automated_change_policy": "allowed_candidate",
+      "human_approval_required": true,
+      "manual_review_flags": [
+        "Confirm no external plain-text dependency on the old name before import or use."
+      ],
+      "rollback_note": "Restore the trigger name from 'PV - All Pages' to 'all'; if rolling back the variable rename, also restore any {CONST - GA4 Measurement ID} token references to {id}."
+    },
+    {
+      "change_id": "CHG-NAME-003",
+      "change_type": "rename",
+      "status": "applied_to_optimized_json",
+      "affected_entity": {
+        "entity_type": "variable",
+        "entity_id": "301",
+        "old_name": "id",
+        "new_name": "CONST - GA4 Measurement ID"
+      },
+      "related_finding_ids": [
+        "F-NAME-003"
+      ],
+      "rule_id": "GTM-NAME-001",
+      "what_changed": "Renamed variable 301 from 'id' to 'CONST - GA4 Measurement ID'.",
+      "why_changed": "Variable name does not identify variable type or purpose.",
+      "risk_level": "low",
+      "is_name_only": true,
+      "unsafe_change": false,
+      "automated_change_policy": "allowed_candidate",
+      "human_approval_required": true,
+      "manual_review_flags": [
+        "Confirm no external plain-text dependency on the old name before import or use."
+      ],
+      "rollback_note": "Restore the variable name from 'CONST - GA4 Measurement ID' to 'id'; if rolling back the variable rename, also restore any {CONST - GA4 Measurement ID} token references to {id}."
+    },
+    {
+      "change_id": "CHG-NAME-004",
+      "change_type": "rename",
+      "status": "applied_to_optimized_json",
+      "affected_entity": {
+        "entity_type": "folder",
+        "entity_id": "401",
+        "old_name": "misc",
+        "new_name": "GA4 - Core Measurement"
+      },
+      "related_finding_ids": [
+        "F-NAME-004"
+      ],
+      "rule_id": "GTM-NAME-001",
+      "what_changed": "Renamed folder 401 from 'misc' to 'GA4 - Core Measurement'.",
+      "why_changed": "Folder name does not identify grouping purpose.",
+      "risk_level": "low",
+      "is_name_only": true,
+      "unsafe_change": false,
+      "automated_change_policy": "allowed_candidate",
+      "human_approval_required": true,
+      "manual_review_flags": [
+        "Confirm no external plain-text dependency on the old name before import or use."
+      ],
+      "rollback_note": "Restore the folder name from 'GA4 - Core Measurement' to 'misc'; if rolling back the variable rename, also restore any {CONST - GA4 Measurement ID} token references to {id}."
+    },
+    {
+      "change_id": "CHG-REF-001",
+      "change_type": "reference_token_maintenance",
+      "status": "applied_to_optimized_json",
+      "affected_entity": {
+        "entity_type": "tag",
+        "entity_id": "101",
+        "name": "GA4 - Event - lead_submit",
+        "field": "parameter[measurementId].value"
+      },
+      "related_finding_ids": [
+        "F-NAME-003"
+      ],
+      "rule_id": "GTM-NAME-001",
+      "what_changed": "Updated the GA4 event tag measurementId variable token from {{id}} to {{CONST - GA4 Measurement ID}} to preserve the renamed constant variable reference.",
+      "why_changed": "GTM variable tokens are name-based in exported parameter strings; the token must follow the proposed variable display-name rename to preserve the same referenced variable value.",
+      "risk_level": "low",
+      "is_name_only": false,
+      "unsafe_change": false,
+      "automated_change_policy": "allowed_candidate",
+      "human_approval_required": true,
+      "manual_review_flags": [
+        "Confirm in GTM Preview or import review that the tag still resolves the measurement ID constant value G-TEST501."
+      ],
+      "rollback_note": "Restore the tag parameter token to {{id}} if the variable rename is rejected or rolled back."
+    }
+  ]
+}

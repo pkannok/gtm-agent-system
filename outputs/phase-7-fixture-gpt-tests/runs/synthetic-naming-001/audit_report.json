@@ -1,0 +1,301 @@
+{
+  "package_name": "GTM Container Audit & Patch Package",
+  "fixture_id": "synthetic-naming-001",
+  "run_id": "gtm-audit-synthetic-naming-001-39025f2fbf2a",
+  "source_file": "synthetic-naming-issues.json",
+  "container_summary": {
+    "account_id": "9001",
+    "container_id": "5101",
+    "container_name": "Synthetic Naming Issues Container",
+    "public_id": "GTM-SYN501",
+    "export_format_version": 2,
+    "export_time": "2026-06-09 00:00:00",
+    "entity_counts": {
+      "tags": 1,
+      "triggers": 1,
+      "variables": 1,
+      "folders": 1,
+      "built_in_variables": 1,
+      "custom_templates": 0,
+      "zones": 0
+    }
+  },
+  "overall_risk_level": "low",
+  "finding_counts": {
+    "high": 0,
+    "medium": 0,
+    "low": 4,
+    "info": 1
+  },
+  "findings": [
+    {
+      "finding_id": "F-INV-001",
+      "rule_id": "GTM-INV-001",
+      "category": "inventory",
+      "severity": "info",
+      "title": "Container inventory summarized from export",
+      "affected_entities": [
+        {
+          "entity_type": "container",
+          "entity_id": "5101",
+          "name": "Synthetic Naming Issues Container"
+        }
+      ],
+      "detected_facts": [
+        "The exportFormatVersion is 2.",
+        "The container public ID is GTM-SYN501.",
+        "The export contains 1 tag, 1 trigger, 1 variable, 1 folder, 1 built-in variable, and 0 custom templates."
+      ],
+      "evidence": [
+        {
+          "source_file": "synthetic-naming-issues.json",
+          "json_path": "$.exportFormatVersion",
+          "observed_value": 2
+        },
+        {
+          "source_file": "synthetic-naming-issues.json",
+          "json_path": "$.containerVersion.container.publicId",
+          "observed_value": "GTM-SYN501"
+        },
+        {
+          "source_file": "synthetic-naming-issues.json",
+          "json_path": "$.containerVersion",
+          "observed_value": {
+            "tags": 1,
+            "triggers": 1,
+            "variables": 1,
+            "folders": 1,
+            "built_in_variables": 1,
+            "custom_templates": 0,
+            "zones": 0
+          }
+        }
+      ],
+      "inferred_issue": null,
+      "recommendation": "Use this inventory as audit coverage context. No GTM configuration change is proposed for inventory.",
+      "automated_change_policy": "blocked",
+      "manual_review_required": false,
+      "manual_review_triggers": [],
+      "related_change_ids": [],
+      "related_qa_item_ids": [
+        "QA-001"
+      ]
+    },
+    {
+      "finding_id": "F-NAME-001",
+      "rule_id": "GTM-NAME-001",
+      "category": "naming",
+      "severity": "low",
+      "title": "Vague tag name: tag 1",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "101",
+          "name": "tag 1"
+        }
+      ],
+      "detected_facts": [
+        "The tag ID 101 is named 'tag 1'.",
+        "Tag type gaawe with eventName lead_submit appears to be a GA4 event tag."
+      ],
+      "evidence": [
+        {
+          "source_file": "synthetic-naming-issues.json",
+          "json_path": "$.containerVersion.tag[0].name",
+          "observed_value": "tag 1"
+        },
+        {
+          "source_file": "synthetic-naming-issues.json",
+          "json_path": "$.containerVersion.tag[0]",
+          "observed_value": "Entity configuration preserved except proposed display name and required variable token maintenance where applicable."
+        }
+      ],
+      "inferred_issue": "Tag name does not identify platform, tag type, or event purpose.",
+      "recommendation": "Propose a draft rename to 'GA4 - Event - lead_submit' following the naming standard. Manual analyst review is still required before import or production use.",
+      "proposed_name": "GA4 - Event - lead_submit",
+      "name_only": true,
+      "automated_change_policy": "allowed_candidate",
+      "manual_review_required": true,
+      "manual_review_triggers": [
+        "All generated GTM JSON remains draft proposal requiring analyst review.",
+        "Confirm the entity name is not referenced as plain text in external documentation, QA scripts, reports, or custom code."
+      ],
+      "related_change_ids": [
+        "CHG-NAME-001"
+      ],
+      "related_qa_item_ids": [
+        "QA-002"
+      ]
+    },
+    {
+      "finding_id": "F-NAME-002",
+      "rule_id": "GTM-NAME-001",
+      "category": "naming",
+      "severity": "low",
+      "title": "Vague trigger name: all",
+      "affected_entities": [
+        {
+          "entity_type": "trigger",
+          "entity_id": "201",
+          "name": "all"
+        }
+      ],
+      "detected_facts": [
+        "The trigger ID 201 is named 'all'.",
+        "Trigger type PAGEVIEW and broad name all indicate an all-pages pageview trigger."
+      ],
+      "evidence": [
+        {
+          "source_file": "synthetic-naming-issues.json",
+          "json_path": "$.containerVersion.trigger[0].name",
+          "observed_value": "all"
+        },
+        {
+          "source_file": "synthetic-naming-issues.json",
+          "json_path": "$.containerVersion.trigger[0]",
+          "observed_value": "Entity configuration preserved except proposed display name and required variable token maintenance where applicable."
+        }
+      ],
+      "inferred_issue": "Trigger name does not identify trigger type and page scope clearly.",
+      "recommendation": "Propose a draft rename to 'PV - All Pages' following the naming standard. Manual analyst review is still required before import or production use.",
+      "proposed_name": "PV - All Pages",
+      "name_only": true,
+      "automated_change_policy": "allowed_candidate",
+      "manual_review_required": true,
+      "manual_review_triggers": [
+        "All generated GTM JSON remains draft proposal requiring analyst review.",
+        "Confirm the entity name is not referenced as plain text in external documentation, QA scripts, reports, or custom code."
+      ],
+      "related_change_ids": [
+        "CHG-NAME-002"
+      ],
+      "related_qa_item_ids": [
+        "QA-003"
+      ]
+    },
+    {
+      "finding_id": "F-NAME-003",
+      "rule_id": "GTM-NAME-001",
+      "category": "naming",
+      "severity": "low",
+      "title": "Vague variable name: id",
+      "affected_entities": [
+        {
+          "entity_type": "variable",
+          "entity_id": "301",
+          "name": "id"
+        }
+      ],
+      "detected_facts": [
+        "The variable ID 301 is named 'id'.",
+        "Variable type c is a constant and its value is G-TEST501, used by the tag measurementId parameter."
+      ],
+      "evidence": [
+        {
+          "source_file": "synthetic-naming-issues.json",
+          "json_path": "$.containerVersion.variable[0].name",
+          "observed_value": "id"
+        },
+        {
+          "source_file": "synthetic-naming-issues.json",
+          "json_path": "$.containerVersion.variable[0]",
+          "observed_value": "Entity configuration preserved except proposed display name and required variable token maintenance where applicable."
+        }
+      ],
+      "inferred_issue": "Variable name does not identify variable type or purpose.",
+      "recommendation": "Propose a draft rename to 'CONST - GA4 Measurement ID' following the naming standard. Manual analyst review is still required before import or production use.",
+      "proposed_name": "CONST - GA4 Measurement ID",
+      "name_only": false,
+      "automated_change_policy": "allowed_candidate",
+      "manual_review_required": true,
+      "manual_review_triggers": [
+        "All generated GTM JSON remains draft proposal requiring analyst review.",
+        "Confirm the entity name is not referenced as plain text in external documentation, QA scripts, reports, or custom code."
+      ],
+      "related_change_ids": [
+        "CHG-NAME-003",
+        "CHG-REF-001"
+      ],
+      "related_qa_item_ids": [
+        "QA-004"
+      ]
+    },
+    {
+      "finding_id": "F-NAME-004",
+      "rule_id": "GTM-NAME-001",
+      "category": "naming",
+      "severity": "low",
+      "title": "Vague folder name: misc",
+      "affected_entities": [
+        {
+          "entity_type": "folder",
+          "entity_id": "401",
+          "name": "misc"
+        }
+      ],
+      "detected_facts": [
+        "The folder ID 401 is named 'misc'.",
+        "Folder 401 groups the GA4 event tag and constant measurement ID variable."
+      ],
+      "evidence": [
+        {
+          "source_file": "synthetic-naming-issues.json",
+          "json_path": "$.containerVersion.folder[0].name",
+          "observed_value": "misc"
+        },
+        {
+          "source_file": "synthetic-naming-issues.json",
+          "json_path": "$.containerVersion.folder[0]",
+          "observed_value": "Entity configuration preserved except proposed display name and required variable token maintenance where applicable."
+        }
+      ],
+      "inferred_issue": "Folder name does not identify grouping purpose.",
+      "recommendation": "Propose a draft rename to 'GA4 - Core Measurement' following the naming standard. Manual analyst review is still required before import or production use.",
+      "proposed_name": "GA4 - Core Measurement",
+      "name_only": true,
+      "automated_change_policy": "allowed_candidate",
+      "manual_review_required": true,
+      "manual_review_triggers": [
+        "All generated GTM JSON remains draft proposal requiring analyst review.",
+        "Confirm the entity name is not referenced as plain text in external documentation, QA scripts, reports, or custom code."
+      ],
+      "related_change_ids": [
+        "CHG-NAME-004"
+      ],
+      "related_qa_item_ids": [
+        "QA-005"
+      ]
+    }
+  ],
+  "manual_review_items": [
+    {
+      "item_id": "MR-001",
+      "reason": "All proposed changes are draft file-based changes requiring human analyst review before import, workspace creation, publishing, or production use.",
+      "related_findings": [
+        "F-NAME-001",
+        "F-NAME-002",
+        "F-NAME-003",
+        "F-NAME-004"
+      ],
+      "related_changes": [
+        "CHG-NAME-001",
+        "CHG-NAME-002",
+        "CHG-NAME-003",
+        "CHG-NAME-004",
+        "CHG-REF-001"
+      ]
+    },
+    {
+      "item_id": "MR-002",
+      "reason": "Confirm the renamed variable token in tag 101 resolves correctly after import/review because GTM variable tokens are name-based in exported parameter strings.",
+      "related_findings": [
+        "F-NAME-003"
+      ],
+      "related_changes": [
+        "CHG-NAME-003",
+        "CHG-REF-001"
+      ]
+    }
+  ],
+  "unsafe_changes": []
+}

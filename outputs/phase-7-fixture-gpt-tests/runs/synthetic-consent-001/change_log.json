@@ -1,0 +1,62 @@
+{
+  "artifact_name": "change_log.json",
+  "package_name": "GTM Container Audit & Patch Package",
+  "fixture_id": "synthetic-consent-001",
+  "run_id": "gtm-audit-synthetic-consent-001-20260626T220218Z",
+  "generated_at": "2026-06-26T22:02:18Z",
+  "source": {
+    "filename": "synthetic-consent-risk-remarketing.json",
+    "sha256": "5181286b3c384f5980368d14772075cbc69621d058f4e2145ba860c961986d45"
+  },
+  "optimized_container": {
+    "filename": "optimized_container.json",
+    "source_preserved": true,
+    "is_identical_to_source": true,
+    "optimized_sha256": "5181286b3c384f5980368d14772075cbc69621d058f4e2145ba860c961986d45",
+    "byte_identical_to_source": true,
+    "semantically_identical_to_source": true
+  },
+  "changes": [],
+  "not_applied_recommendations": [
+    {
+      "recommendation_id": "REC-001",
+      "related_finding_ids": [
+        "F-002"
+      ],
+      "affected_entity": {
+        "entity_type": "tag",
+        "entity_id": "106",
+        "entity_name": "Google Ads - Remarketing - All Pages"
+      },
+      "recommended_action": "Review and, if approved by analyst/client policy, configure appropriate consent gating or blocking behavior for the Google Ads remarketing tag.",
+      "reason_not_applied": "Consent-sensitive changes are blocked for automation in the MLP. Adding consent settings, changing triggers, removing tags, or editing payloads could alter production behavior.",
+      "rule_id": "GTM-CONSENT-001",
+      "risk_level": "high",
+      "automated_change_policy": "blocked",
+      "human_approval_required": true,
+      "rollback_note": "No file-based change was applied. Rejecting this recommendation means keeping the source export unchanged."
+    },
+    {
+      "recommendation_id": "REC-002",
+      "related_finding_ids": [
+        "F-003"
+      ],
+      "affected_entity": {
+        "entity_type": "tag",
+        "entity_id": "107",
+        "entity_name": "Custom HTML - Vendor Pixel"
+      },
+      "recommended_action": "Review Custom HTML code and vendor endpoint, then decide whether consent gating, payload changes, or removal are appropriate.",
+      "reason_not_applied": "Custom HTML and consent-sensitive code edits are blocked for automation in the MLP.",
+      "rule_id": "GTM-CONSENT-001",
+      "risk_level": "high",
+      "automated_change_policy": "blocked",
+      "human_approval_required": true,
+      "rollback_note": "No file-based change was applied. Rejecting this recommendation means keeping the source export unchanged."
+    }
+  ],
+  "approval": {
+    "human_review_required_before_import_workspace_publishing_or_production_use": true,
+    "live_platform_changes_made": false
+  }
+}

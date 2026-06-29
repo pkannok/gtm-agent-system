@@ -2,15 +2,19 @@
 
 Current active task:
 
-- None
+- Task 7.1 - Run fixture-based GPT tests
+
+Current task status:
+
+- Manual review complete - needs revision
+
+Active task brief:
+
+- `docs/tasks/TASK-7.1-fixture-based-gpt-tests.md`
 
 Next recommended task:
 
-- Task 7.1 - Run fixture-based GPT tests
-
-Next task brief:
-
-- `docs/tasks/TASK-7.1-fixture-based-gpt-tests.md`
+- Resolve repo-wide/output-package JSON validity issue.
 
 Most recent completed task brief:
 
@@ -64,4 +68,6 @@ Do not work outside the active task scope.
 
 ## Phase 7 progress
 
-- Not yet started.
+- Task 7.1 framework manual GPT execution is complete. The manual test workspace is in `outputs/phase-7-fixture-gpt-tests/`.
+- Task 7.1 fixture run output manual review is complete.
+- Task 7.2 has not started.

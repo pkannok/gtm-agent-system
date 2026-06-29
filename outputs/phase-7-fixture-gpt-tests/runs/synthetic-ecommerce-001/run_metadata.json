@@ -1,0 +1,71 @@
+{
+  "artifact": "run_metadata.json",
+  "package_name": "GTM Container Audit & Patch Package",
+  "package_status": "draft_proposal_for_human_review",
+  "run_id": "run-synthetic-ecommerce-001-20260626",
+  "timestamp": "2026-06-26T00:00:00Z",
+  "fixture_id": "synthetic-ecommerce-001",
+  "input_files": [
+    {
+      "filename": "synthetic-ecommerce-missing-fields.json",
+      "sandbox_path": "/mnt/data/synthetic-ecommerce-missing-fields.json",
+      "sha256": "38637b5dd17869ac10dc2d82447300687ee18052bde6aeaccdd1131b9263545c",
+      "role": "only_gtm_container_export_input"
+    }
+  ],
+  "output_files": [
+    "optimized_container.json",
+    "audit_report.md",
+    "audit_report.json",
+    "change_log.json",
+    "validation_report.json",
+    "qa_checklist.md",
+    "run_metadata.json"
+  ],
+  "client_id": null,
+  "standards_applied": [
+    {
+      "id": "deliverable-contract",
+      "name": "GTM Container Audit & Patch Package required seven artifacts",
+      "source": "repo_standard"
+    },
+    {
+      "id": "GTM-ECOM-001",
+      "name": "Ecommerce Tracking Integrity",
+      "source": "audit_rule_catalog"
+    },
+    {
+      "id": "GTM-INV-001",
+      "name": "Container Inventory Completeness",
+      "source": "audit_rule_catalog"
+    },
+    {
+      "id": "GTM-QA-001",
+      "name": "QA and Preview Readiness",
+      "source": "audit_rule_catalog"
+    },
+    {
+      "id": "qa-standard",
+      "name": "Manual QA checklist format and safety boundaries",
+      "source": "agency_standard"
+    },
+    {
+      "id": "output-standards",
+      "name": "Human-readable report structure and safety wording",
+      "source": "repo_standard"
+    }
+  ],
+  "mlp_version": "canonical-mlp-draft",
+  "tool_or_gpt_version": "GTM Container Analyst",
+  "user_intent": "Use fixture synthetic-ecommerce-001 and expected rule GTM-ECOM-001 to produce the full canonical package.",
+  "assumptions": [
+    "The uploaded fixture JSON is the only GTM export input.",
+    "The package is a draft proposal for human analyst review.",
+    "No live platform inspection or modification was performed."
+  ],
+  "safety_boundaries": {
+    "draft_only": true,
+    "live_platforms_inspected_or_changed": false,
+    "human_review_required_before_import_workspace_publish_or_production_use": true
+  }
+}

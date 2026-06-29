@@ -1,0 +1,62 @@
+{
+  "package_name": "GTM Container Audit & Patch Package",
+  "run_id": "gtm-audit-synthetic-naming-001-39025f2fbf2a",
+  "fixture_id": "synthetic-naming-001",
+  "timestamp_utc": "2026-06-26T00:00:00Z",
+  "input_files": [
+    {
+      "filename": "synthetic-naming-issues.json",
+      "sha256": "sha256:39025f2fbf2afb5a9f67f649e1ac152d6fd0e5c88931b05d6d72537f18f7daaf"
+    }
+  ],
+  "client_id": null,
+  "standards_applied": [
+    {
+      "standard_id": "deliverable-contract",
+      "name": "GTM Container Audit & Patch Package contract",
+      "source": "repository_standard"
+    },
+    {
+      "standard_id": "GTM-NAME-001",
+      "name": "Naming Standard Alignment",
+      "source": "audit_rule_catalog"
+    },
+    {
+      "standard_id": "agency-naming-conventions",
+      "name": "Agency Naming Conventions",
+      "source": "agency_standard"
+    },
+    {
+      "standard_id": "output-writing-standard",
+      "name": "Output Writing Standard",
+      "source": "repository_standard"
+    },
+    {
+      "standard_id": "qa-standard",
+      "name": "QA Standard",
+      "source": "agency_standard"
+    }
+  ],
+  "tool_or_gpt_version": "GTM Container Analyst",
+  "mlp_version": "canonical-mlp",
+  "environment": "file-in/file-out draft package generation",
+  "live_platforms_accessed": false,
+  "assumptions": [
+    "Tag type gaawe is treated as a GA4 event tag based on its type and eventName parameter.",
+    "Variable type c is treated as a constant variable based on GTM export convention and the value parameter.",
+    "The folder rename is inferred from the entities assigned to folder 401."
+  ],
+  "limitations": [
+    "The uploaded fixture JSON is the only GTM container export input used.",
+    "No live platform verification, GTM Preview execution, import, workspace creation, publishing, or production validation was performed."
+  ],
+  "required_artifacts": [
+    "optimized_container.json",
+    "audit_report.md",
+    "audit_report.json",
+    "change_log.json",
+    "validation_report.json",
+    "qa_checklist.md",
+    "run_metadata.json"
+  ]
+}

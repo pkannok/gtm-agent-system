@@ -1,0 +1,61 @@
+{
+  "run_id": "run_synthetic-unused-001_20260626T215120Z",
+  "fixture_id": "synthetic-unused-001",
+  "generated_at_utc": "2026-06-26T21:51:20.597425Z",
+  "input_files": [
+    {
+      "filename": "synthetic-unused-legacy-entities.json",
+      "role": "primary_gtm_container_export",
+      "sha256": "740348889c671bd50e4ce149a62805ab3d90a847984b635566cc5e6bf8209319"
+    }
+  ],
+  "client_id": null,
+  "container_identity": {
+    "account_id": "9001",
+    "container_id": "5104",
+    "container_name": "Synthetic Unused Legacy Version",
+    "public_id": "GTM-SYN504"
+  },
+  "standards_applied": [
+    {
+      "standard_id": "DELIVERABLE-CONTRACT",
+      "name": "GTM Container Audit & Patch Package required seven artifacts",
+      "source": "repository_knowledge"
+    },
+    {
+      "standard_id": "GTM-UNUSED-001",
+      "name": "Unused or Orphaned Entities",
+      "source": "audit_rule_catalog"
+    },
+    {
+      "standard_id": "GTM-REF-001",
+      "name": "Reference Integrity",
+      "source": "audit_rule_catalog"
+    },
+    {
+      "standard_id": "GTM-INV-001",
+      "name": "Container Inventory Completeness",
+      "source": "audit_rule_catalog"
+    },
+    {
+      "standard_id": "GTM-QA-001",
+      "name": "QA and Preview Readiness",
+      "source": "audit_rule_catalog"
+    },
+    {
+      "standard_id": "QA-STANDARD",
+      "name": "Manual QA checklist requirements",
+      "source": "agency_standard"
+    }
+  ],
+  "mlp_version": "canonical_mlp_draft",
+  "tool_or_gpt_version": "GTM Container Analyst",
+  "execution_mode": "file_in_file_out",
+  "live_platform_accessed": false,
+  "assumptions": [
+    "Fixture JSON was the only GTM export input.",
+    "No client profile or client-specific override was provided.",
+    "Optimized container is unchanged because unsafe unused-entity cleanup was blocked for automation."
+  ],
+  "safety_notice": "All generated artifacts are draft proposals requiring human review before import, workspace creation, publishing, or production use."
+}

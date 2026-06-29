@@ -1,0 +1,86 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-06-09 00:00:00",
+  "containerVersion": {
+    "accountId": "9001",
+    "containerId": "5102",
+    "name": "Synthetic Broken References Version",
+    "container": {
+      "accountId": "9001",
+      "containerId": "5102",
+      "name": "Synthetic Broken References Container",
+      "publicId": "GTM-SYN502"
+    },
+    "tag": [
+      {
+        "accountId": "9001",
+        "containerId": "5102",
+        "tagId": "102",
+        "name": "GA4 - Event - Purchase",
+        "type": "gaawe",
+        "firingTriggerId": [
+          "299"
+        ],
+        "parentFolderId": "499",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "eventName",
+            "value": "purchase"
+          },
+          {
+            "type": "template",
+            "key": "value",
+            "value": "{{Missing Revenue}}"
+          }
+        ],
+        "fingerprint": "synthetic-reference-tag-102"
+      }
+    ],
+    "trigger": [
+      {
+        "accountId": "9001",
+        "containerId": "5102",
+        "triggerId": "202",
+        "name": "CE - purchase",
+        "type": "CUSTOM_EVENT",
+        "fingerprint": "synthetic-reference-trigger-202"
+      }
+    ],
+    "variable": [
+      {
+        "accountId": "9001",
+        "containerId": "5102",
+        "variableId": "302",
+        "name": "DLV - ecommerce.transaction_id",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "name",
+            "value": "ecommerce.transaction_id"
+          }
+        ],
+        "fingerprint": "synthetic-reference-variable-302"
+      }
+    ],
+    "folder": [
+      {
+        "accountId": "9001",
+        "containerId": "5102",
+        "folderId": "402",
+        "name": "GA4 - Ecommerce",
+        "fingerprint": "synthetic-reference-folder-402"
+      }
+    ],
+    "builtInVariable": [
+      {
+        "accountId": "9001",
+        "containerId": "5102",
+        "type": "PAGE_URL",
+        "name": "Page URL"
+      }
+    ],
+    "customTemplate": []
+  }
+}

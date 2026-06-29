@@ -297,3 +297,43 @@ Status: Complete.
 
 Outcome:
 Creates conversation starters aligned with the file-in/file-out GTM Container Audit & Patch Package workflow.
+
+---
+
+# Phase 7 - MLP workflow testing
+
+Status: In Progress.
+
+## Goal
+
+Test the Custom GPT plus Skill workflow against fixtures, validators, and analyst review before internal rollout.
+
+## Tasks
+
+### Task 7.1 - Run fixture-based GPT tests
+
+Status: Needs revision.
+
+Outcome:
+Manual review completed for all fixture runs. No major run-level safety issues were identified. One severity calibration variance was observed and documented. However, optimized_container.json appears to be malformed GTM container JSON across generated outputs and repo examples. This is being treated as a package-level blocker requiring separate remediation before Task 7.1 receives a clean pass.
+
+### Task 7.2 - Run script validation on GPT outputs
+
+Status: Upcoming.
+
+Outcome:
+Validates generated GPT output packages with deterministic scripts after Task 7.1 outputs exist.
+
+### Task 7.3 - Perform analyst review
+
+Status: Upcoming.
+
+Outcome:
+Performs analyst review of workflow outputs before internal rollout.
+
+### Task 7.4 - Create the MLP release checklist
+
+Status: Upcoming.
+
+Outcome:
+Creates the release checklist for controlled internal MLP use.

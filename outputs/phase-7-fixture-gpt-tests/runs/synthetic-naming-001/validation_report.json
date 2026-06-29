@@ -1,0 +1,104 @@
+{
+  "package_name": "GTM Container Audit & Patch Package",
+  "run_id": "gtm-audit-synthetic-naming-001-39025f2fbf2a",
+  "fixture_id": "synthetic-naming-001",
+  "source_file": "synthetic-naming-issues.json",
+  "status": "passed_with_warnings",
+  "artifact_checks": [
+    {
+      "artifact": "optimized_container.json",
+      "present": true,
+      "parse_status": "json_parse_ok"
+    },
+    {
+      "artifact": "audit_report.md",
+      "present": true,
+      "parse_status": "markdown_present"
+    },
+    {
+      "artifact": "audit_report.json",
+      "present": true,
+      "parse_status": "json_parse_ok"
+    },
+    {
+      "artifact": "change_log.json",
+      "present": true,
+      "parse_status": "json_parse_ok"
+    },
+    {
+      "artifact": "validation_report.json",
+      "present": true,
+      "parse_status": "json_parse_ok"
+    },
+    {
+      "artifact": "qa_checklist.md",
+      "present": true,
+      "parse_status": "markdown_present"
+    },
+    {
+      "artifact": "run_metadata.json",
+      "present": true,
+      "parse_status": "json_parse_ok"
+    }
+  ],
+  "source_container_checks": [
+    {
+      "check_id": "VAL-SRC-001",
+      "name": "Source JSON parse",
+      "status": "passed",
+      "details": "Source fixture parsed as JSON."
+    },
+    {
+      "check_id": "VAL-SRC-002",
+      "name": "GTM export shape",
+      "status": "passed",
+      "details": "Source contains exportFormatVersion and containerVersion."
+    },
+    {
+      "check_id": "VAL-SRC-003",
+      "name": "Reference integrity",
+      "status": "passed",
+      "details": "Tag 101 firingTriggerId 201 exists; tag 101 measurementId token {{id}} matches variable name id in source; parentFolderId 401 exists for tag 101 and variable 301."
+    }
+  ],
+  "optimized_container_checks": [
+    {
+      "check_id": "VAL-OPT-001",
+      "name": "Optimized JSON parse",
+      "status": "passed",
+      "details": "optimized_container.json parses as JSON."
+    },
+    {
+      "check_id": "VAL-OPT-002",
+      "name": "Reference integrity after rename",
+      "status": "passed",
+      "details": "Tag 101 firingTriggerId 201 exists; tag 101 measurementId token {{CONST - GA4 Measurement ID}} matches variable name CONST - GA4 Measurement ID; folder ID 401 still exists."
+    },
+    {
+      "check_id": "VAL-OPT-003",
+      "name": "No delete/disable/material payload changes",
+      "status": "passed",
+      "details": "Entity IDs, tag type, trigger type, eventName, measurement ID constant value, folder IDs, fingerprints, and built-in variables are preserved."
+    }
+  ],
+  "warnings": [
+    {
+      "warning_id": "WARN-001",
+      "message": "Validation is structural and file-based only; it does not prove tracking correctness, consent behavior, legal compliance, privacy compliance, production readiness, or publish safety."
+    },
+    {
+      "warning_id": "WARN-002",
+      "message": "Manual review is required to confirm old names are not used as plain-text dependencies in external documentation, QA scripts, reports, or custom code."
+    }
+  ],
+  "errors": [],
+  "manual_review_required": true,
+  "safe_to_publish": false,
+  "live_platforms_accessed": false,
+  "workspace_created": false,
+  "published": false,
+  "limitations": [
+    "No live GTM, GA4, Google Ads, website, workspace, or API inspection was performed.",
+    "The review is limited to the uploaded fixture JSON."
+  ]
+}

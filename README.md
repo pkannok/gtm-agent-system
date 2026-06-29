@@ -48,11 +48,15 @@ Task 6.4 status: complete. `custom-gpt/task-6.4-verification.md` records the app
 
 Task 6.5 status: complete. `custom-gpt/conversation-starters.md` records the final starter set, and `custom-gpt/task-6.5-verification.md` records the manual editor entry and version-history verification.
 
-There is no active task brief.
+Current active task: Task 7.1 - Run fixture-based GPT tests.
 
-Next recommended task: Task 7.1 - Run fixture-based GPT tests.
+Current task status: manual review complete.
 
-Next task brief: `docs/tasks/TASK-7.1-fixture-based-gpt-tests.md`.
+Active task brief: `docs/tasks/TASK-7.1-fixture-based-gpt-tests.md`.
+
+Phase 7 status: needs revision.
+
+Task 7.1 status: all six synthetic fixture GPT runs complete, package artifacts generated, manual reviews completed, and run-log results recorded; `optimized_container.json` appears to be malformed GTM container JSON across generated outputs and repo examples. This is being treated as a package-level blocker requiring separate remediation before Task 7.1 receives a clean pass.
 
 Task 0.3 status: complete. Project terminology is defined in `docs/glossary.md`.
 
@@ -164,6 +168,7 @@ The script layer is local and file-in/file-out. It does not call live APIs, publ
 - `examples/script-smoke-tests/` - Minimal smoke-test inputs for deterministic scripts.
 - `examples/synthetic-gtm-containers/` - Controlled synthetic GTM container fixtures with documented expected issues.
 - `examples/golden-expected-outputs/` - Expected output package shapes for future fixture-based regression tests.
+- `outputs/phase-7-fixture-gpt-tests/` - Manual Task 7.1 fixture-test workspace for prompts, run folders, run-log evidence, and rubric-based review notes.
 - `standards/agency/` - Agency standards for naming, consent/privacy review, and QA.
 - `scripts/` - Deterministic local scripts for Phase 4 container and package checks.
 - `custom-gpt/` - Custom GPT configuration source, instructions, knowledge-file selection, capability verification notes, description, conversation starters, and test prompts.

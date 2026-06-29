@@ -1,0 +1,247 @@
+{
+  "artifact": "audit_report.json",
+  "package_name": "GTM Container Audit & Patch Package",
+  "package_status": "draft_proposal_for_human_review",
+  "run_id": "run-synthetic-ecommerce-001-20260626",
+  "fixture_id": "synthetic-ecommerce-001",
+  "source_filename": "synthetic-ecommerce-missing-fields.json",
+  "source_sha256": "38637b5dd17869ac10dc2d82447300687ee18052bde6aeaccdd1131b9263545c",
+  "container_summary": {
+    "account_id": "9001",
+    "container_id": "5105",
+    "container_name": "Synthetic Ecommerce Missing Fields Container",
+    "container_version_name": "Synthetic Ecommerce Missing Fields Version",
+    "public_id": "GTM-SYN505",
+    "export_format_version": 2,
+    "export_time": "2026-06-09 00:00:00",
+    "entity_counts": {
+      "tags": 1,
+      "triggers": 1,
+      "variables": 2,
+      "folders": 1,
+      "built_in_variables": 1,
+      "custom_templates": 0,
+      "zones": 0
+    }
+  },
+  "overall_risk_level": "high",
+  "finding_counts": {
+    "high": 1,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "findings": [
+    {
+      "finding_id": "F-001",
+      "rule_id": "GTM-ECOM-001",
+      "category": "ecommerce",
+      "severity": "high",
+      "title": "GA4 purchase event lacks clear transaction ID and currency mappings",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "105",
+          "name": "GA4 - Event - purchase",
+          "gtm_path": "containerVersion.tag[tagId=105]"
+        },
+        {
+          "entity_type": "trigger",
+          "entity_id": "205",
+          "name": "CE - purchase",
+          "gtm_path": "containerVersion.trigger[triggerId=205]"
+        },
+        {
+          "entity_type": "variable",
+          "entity_id": "306",
+          "name": "DLV - ecommerce.value",
+          "gtm_path": "containerVersion.variable[variableId=306]"
+        },
+        {
+          "entity_type": "folder",
+          "entity_id": "405",
+          "name": "GA4 - Ecommerce",
+          "gtm_path": "containerVersion.folder[folderId=405]"
+        }
+      ],
+      "detected_facts": [
+        "Tag 105 is named `GA4 - Event - purchase` and has type `gaawe`.",
+        "Tag 105 sets `eventName` to `purchase`.",
+        "Tag 105 sets `measurementId` to `{{CONST - GA4 Measurement ID}}`.",
+        "Tag 105 maps `value` to `{{DLV - ecommerce.value}}`.",
+        "The export includes variable 306 named `DLV - ecommerce.value` with dataLayer key `ecommerce.value`.",
+        "No tag parameter mapping for `transaction_id` was observed on tag 105.",
+        "No tag parameter mapping for `currency` was observed on tag 105.",
+        "No variables named or keyed for `ecommerce.transaction_id`, `transaction_id`, `ecommerce.currency`, or `currency` were observed in the export.",
+        "Tag 105 fires on trigger ID 205, named `CE - purchase`."
+      ],
+      "inferred_issue": "The purchase tag appears to send value without an explicit transaction ID or currency mapping. This may create revenue reporting ambiguity, missing currency context, and weaker deduplication or transaction reconciliation for ecommerce reporting.",
+      "evidence": [
+        {
+          "entity_type": "tag",
+          "entity_id": "105",
+          "name": "GA4 - Event - purchase",
+          "field": "parameter[eventName]",
+          "observed_value": "purchase"
+        },
+        {
+          "entity_type": "tag",
+          "entity_id": "105",
+          "name": "GA4 - Event - purchase",
+          "field": "parameter[value]",
+          "observed_value": "{{DLV - ecommerce.value}}"
+        },
+        {
+          "entity_type": "tag",
+          "entity_id": "105",
+          "name": "GA4 - Event - purchase",
+          "field": "parameter[transaction_id]",
+          "observed_value": "not present"
+        },
+        {
+          "entity_type": "tag",
+          "entity_id": "105",
+          "name": "GA4 - Event - purchase",
+          "field": "parameter[currency]",
+          "observed_value": "not present"
+        },
+        {
+          "entity_type": "variable",
+          "entity_id": "306",
+          "name": "DLV - ecommerce.value",
+          "field": "parameter[name]",
+          "observed_value": "ecommerce.value"
+        },
+        {
+          "entity_type": "trigger",
+          "entity_id": "205",
+          "name": "CE - purchase",
+          "field": "firingTriggerId reference",
+          "observed_value": "referenced by tag 105"
+        }
+      ],
+      "recommendation": "Do not automatically change the purchase payload. Have a human analyst confirm the intended dataLayer contract and, if correct, add explicit GA4 purchase mappings for transaction ID and currency using approved dataLayer keys such as `ecommerce.transaction_id` and `ecommerce.currency`.",
+      "automated_change_policy": "blocked",
+      "manual_review_required": true,
+      "manual_review_triggers": [
+        "purchase/revenue tracking",
+        "transaction ID mapping",
+        "currency/value parameters",
+        "changing ecommerce payloads or dataLayer keys is blocked in the MLP"
+      ],
+      "related_change_ids": [
+        "CHG-001",
+        "CHG-002",
+        "CHG-003"
+      ],
+      "related_qa_item_ids": [
+        "QA-ECOM-001",
+        "QA-ECOM-002"
+      ]
+    },
+    {
+      "finding_id": "F-002",
+      "rule_id": "GTM-INV-001",
+      "category": "inventory",
+      "severity": "info",
+      "title": "Container inventory captured for audit traceability",
+      "affected_entities": [
+        {
+          "entity_type": "container",
+          "entity_id": "5105",
+          "name": "Synthetic Ecommerce Missing Fields Container",
+          "gtm_path": "containerVersion.container"
+        }
+      ],
+      "detected_facts": [
+        "The export format version is 2.",
+        "The container public ID is GTM-SYN505.",
+        "The export contains 1 tag, 1 trigger, 2 variables, 1 folder, 1 built-in variable, and 0 custom templates."
+      ],
+      "inferred_issue": null,
+      "evidence": [
+        {
+          "field": "exportFormatVersion",
+          "observed_value": 2
+        },
+        {
+          "field": "containerVersion.container.publicId",
+          "observed_value": "GTM-SYN505"
+        },
+        {
+          "field": "entity_counts",
+          "observed_value": {
+            "tags": 1,
+            "triggers": 1,
+            "variables": 2,
+            "folders": 1,
+            "builtInVariables": 1,
+            "customTemplates": 0,
+            "zones": 0
+          }
+        }
+      ],
+      "recommendation": "Use this inventory as the audit coverage baseline. Inventory validation does not verify live tag firing.",
+      "automated_change_policy": "blocked",
+      "manual_review_required": false,
+      "manual_review_triggers": [],
+      "related_change_ids": [],
+      "related_qa_item_ids": [
+        "QA-PKG-001"
+      ]
+    }
+  ],
+  "manual_review_items": [
+    {
+      "manual_review_id": "MR-001",
+      "related_finding_id": "F-001",
+      "priority": "high",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "105",
+          "name": "GA4 - Event - purchase",
+          "gtm_path": "containerVersion.tag[tagId=105]"
+        },
+        {
+          "entity_type": "trigger",
+          "entity_id": "205",
+          "name": "CE - purchase",
+          "gtm_path": "containerVersion.trigger[triggerId=205]"
+        },
+        {
+          "entity_type": "variable",
+          "entity_id": "306",
+          "name": "DLV - ecommerce.value",
+          "gtm_path": "containerVersion.variable[variableId=306]"
+        },
+        {
+          "entity_type": "folder",
+          "entity_id": "405",
+          "name": "GA4 - Ecommerce",
+          "gtm_path": "containerVersion.folder[folderId=405]"
+        }
+      ],
+      "review_reason": "Purchase/revenue tracking changes require analyst review and test purchase validation before any import, workspace creation, publishing, or production use.",
+      "unsafe_or_blocked_changes": [
+        "Automatically adding `transaction_id` to tag 105",
+        "Automatically adding `currency` to tag 105",
+        "Automatically creating new dataLayer variables for transaction ID or currency",
+        "Changing event names, trigger logic, values, or dataLayer keys"
+      ],
+      "recommended_human_action": "Confirm the dataLayer contract and add mappings only after analyst/developer approval."
+    }
+  ],
+  "assumptions": [
+    "The uploaded fixture JSON is the only GTM container export input used.",
+    "The expected fixture issue is ecommerce purchase tracking integrity under rule GTM-ECOM-001.",
+    "No live GTM, GA4, Google Ads, website, API, workspace, or production platform was inspected or changed."
+  ],
+  "safety_boundaries": {
+    "draft_only": true,
+    "human_review_required_before_import_workspace_publish_or_production_use": true,
+    "live_platforms_inspected_or_changed": false,
+    "publish_safety_claimed": false,
+    "legal_privacy_or_consent_certification_claimed": false
+  }
+}

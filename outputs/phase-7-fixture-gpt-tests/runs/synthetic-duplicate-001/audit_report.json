@@ -1,0 +1,395 @@
+{
+  "package_name": "GTM Container Audit & Patch Package",
+  "run_id": "gtm-audit-synthetic-duplicate-001-20260626T000000Z",
+  "fixture_id": "synthetic-duplicate-001",
+  "source_filename": "synthetic-duplicate-purchase-tags.json",
+  "container_summary": {
+    "exportFormatVersion": 2,
+    "exportTime": "2026-06-09 00:00:00",
+    "accountId": "9001",
+    "containerId": "5103",
+    "containerName": "Synthetic Duplicate Purchase Version",
+    "publicId": "GTM-SYN503",
+    "entity_counts": {
+      "tags": 2,
+      "triggers": 1,
+      "variables": 2,
+      "folders": 1,
+      "builtInVariables": 1,
+      "customTemplates": 0,
+      "zones": 0
+    }
+  },
+  "risk_summary": {
+    "overall_risk": "high",
+    "finding_counts": {
+      "high": 2,
+      "medium": 0,
+      "low": 0,
+      "info": 2
+    },
+    "human_approval_required": true,
+    "optimized_json_contains_configuration_changes": false,
+    "primary_issue_category": "duplicate GA4 purchase tracking on the same trigger"
+  },
+  "findings": [
+    {
+      "finding_id": "F-INV-001",
+      "rule_id": "GTM-INV-001",
+      "category": "inventory",
+      "severity": "info",
+      "title": "Container inventory captured from exported GTM JSON",
+      "affected_entities": [
+        {
+          "entity_type": "container",
+          "id": "5103",
+          "name": "Synthetic Duplicate Purchase Version"
+        }
+      ],
+      "detected_facts": [
+        "Source file: synthetic-duplicate-purchase-tags.json",
+        "Fixture ID provided by user: synthetic-duplicate-001",
+        "Export format version: 2",
+        "Export time: 2026-06-09 00:00:00",
+        "Account ID: 9001; container ID: 5103; public ID: GTM-SYN503",
+        "Entity counts observed: 2 tags, 1 triggers, 2 variables, 1 folders, 1 built-in variables, 0 custom templates, 0 zones."
+      ],
+      "inferred_issue": null,
+      "evidence": {
+        "source_filename": "synthetic-duplicate-purchase-tags.json",
+        "container_name": "Synthetic Duplicate Purchase Version",
+        "container_public_id": "GTM-SYN503",
+        "entity_counts": {
+          "tags": 2,
+          "triggers": 1,
+          "variables": 2,
+          "folders": 1,
+          "builtInVariables": 1,
+          "customTemplates": 0,
+          "zones": 0
+        }
+      },
+      "recommendation": "Use this inventory as the scope boundary for this draft file-based audit. Do not infer live behavior from this export alone.",
+      "automated_change_policy": "blocked",
+      "manual_review_required": false,
+      "manual_review_triggers": [],
+      "related_change_ids": [],
+      "related_qa_item_ids": [
+        "QA-001"
+      ]
+    },
+    {
+      "finding_id": "F-DUP-001",
+      "rule_id": "GTM-DUP-001",
+      "category": "duplicates",
+      "severity": "high",
+      "title": "Duplicate GA4 purchase event tags fire on the same trigger with the same key parameters",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "id": "103",
+          "name": "GA4 - Event - purchase"
+        },
+        {
+          "entity_type": "tag",
+          "id": "104",
+          "name": "GA4 - Event - purchase copy"
+        },
+        {
+          "entity_type": "trigger",
+          "id": "203",
+          "name": "CE - purchase"
+        }
+      ],
+      "detected_facts": [
+        "Two GA4 event tags use GTM tag type `gaawe`.",
+        "Both tags set `eventName` to `purchase`.",
+        "Both tags use measurement ID variable `{{CONST - GA4 Measurement ID}}`.",
+        "Both tags send `transaction_id` from `{{DLV - ecommerce.transaction_id}}`.",
+        "Both tags fire on trigger ID `203`, named `CE - purchase`.",
+        "The duplicate candidate tags are tag ID `103` (`GA4 - Event - purchase`) and tag ID `104` (`GA4 - Event - purchase copy`)."
+      ],
+      "inferred_issue": "This appears to be duplicate GA4 purchase tracking. If both tags fire for the same purchase event, GA4 may receive duplicate purchase events, which can inflate ecommerce revenue, purchase count, or attribution reporting unless downstream deduplication prevents it.",
+      "evidence": {
+        "duplicate_matching_fields": [
+          "tag_type",
+          "eventName",
+          "measurementId",
+          "transaction_id",
+          "firingTriggerId"
+        ],
+        "duplicate_tags": [
+          {
+            "id": "103",
+            "name": "GA4 - Event - purchase",
+            "type": "gaawe",
+            "eventName": "purchase",
+            "measurementId": "{{CONST - GA4 Measurement ID}}",
+            "transaction_id": "{{DLV - ecommerce.transaction_id}}",
+            "firingTriggerId": [
+              "203"
+            ],
+            "parentFolderId": "403",
+            "fingerprint": "synthetic-duplicate-tag-103"
+          },
+          {
+            "id": "104",
+            "name": "GA4 - Event - purchase copy",
+            "type": "gaawe",
+            "eventName": "purchase",
+            "measurementId": "{{CONST - GA4 Measurement ID}}",
+            "transaction_id": "{{DLV - ecommerce.transaction_id}}",
+            "firingTriggerId": [
+              "203"
+            ],
+            "parentFolderId": "403",
+            "fingerprint": "synthetic-duplicate-tag-104"
+          }
+        ],
+        "shared_trigger": {
+          "triggerId": "203",
+          "name": "CE - purchase",
+          "type": "CUSTOM_EVENT"
+        },
+        "shared_variables": [
+          {
+            "name": "CONST - GA4 Measurement ID",
+            "value": "G-TEST503"
+          },
+          {
+            "name": "DLV - ecommerce.transaction_id",
+            "dataLayer_key": "ecommerce.transaction_id"
+          }
+        ]
+      },
+      "recommendation": "Do not delete or disable either tag automatically in the MLP. A human analyst should confirm whether tag `104` is an intentional copy, test tag, or legacy duplicate, then decide whether to pause/remove/consolidate it in a safe GTM workspace after Preview testing.",
+      "automated_change_policy": "manual_review_only",
+      "manual_review_required": true,
+      "manual_review_triggers": [
+        "duplicate_conversion_or_ecommerce_tracking",
+        "purchase_event",
+        "deletion_or_disabling_decision"
+      ],
+      "related_change_ids": [
+        "CHG-001"
+      ],
+      "related_qa_item_ids": [
+        "QA-002",
+        "QA-003",
+        "QA-004"
+      ]
+    },
+    {
+      "finding_id": "F-ECOM-001",
+      "rule_id": "GTM-ECOM-001",
+      "category": "ecommerce",
+      "severity": "high",
+      "title": "Purchase event tracking risk from duplicate GA4 ecommerce tags",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "id": "103",
+          "name": "GA4 - Event - purchase"
+        },
+        {
+          "entity_type": "tag",
+          "id": "104",
+          "name": "GA4 - Event - purchase copy"
+        },
+        {
+          "entity_type": "variable",
+          "id": "304",
+          "name": "DLV - ecommerce.transaction_id"
+        },
+        {
+          "entity_type": "trigger",
+          "id": "203",
+          "name": "CE - purchase"
+        }
+      ],
+      "detected_facts": [
+        "Both affected tags use GA4 event name `purchase`.",
+        "Both affected tags include a `transaction_id` parameter mapped to `{{DLV - ecommerce.transaction_id}}`.",
+        "Variable ID `304` reads dataLayer key `ecommerce.transaction_id`.",
+        "No `value`, `currency`, or `items` GA4 ecommerce parameters were observed in either purchase tag from this fixture export.",
+        "Both purchase tags fire on the same custom event trigger, `CE - purchase`."
+      ],
+      "inferred_issue": "The duplicate purchase firing pattern may create revenue or purchase-count duplication risk. The export also does not show full purchase payload fields such as value, currency, or items, which may be intentional if provided by another mechanism, but that cannot be verified from this file alone.",
+      "evidence": {
+        "tags": [
+          {
+            "id": "103",
+            "name": "GA4 - Event - purchase",
+            "type": "gaawe",
+            "eventName": "purchase",
+            "measurementId": "{{CONST - GA4 Measurement ID}}",
+            "transaction_id": "{{DLV - ecommerce.transaction_id}}",
+            "firingTriggerId": [
+              "203"
+            ],
+            "parentFolderId": "403",
+            "fingerprint": "synthetic-duplicate-tag-103"
+          },
+          {
+            "id": "104",
+            "name": "GA4 - Event - purchase copy",
+            "type": "gaawe",
+            "eventName": "purchase",
+            "measurementId": "{{CONST - GA4 Measurement ID}}",
+            "transaction_id": "{{DLV - ecommerce.transaction_id}}",
+            "firingTriggerId": [
+              "203"
+            ],
+            "parentFolderId": "403",
+            "fingerprint": "synthetic-duplicate-tag-104"
+          }
+        ],
+        "transaction_id_variable": {
+          "variableId": "304",
+          "name": "DLV - ecommerce.transaction_id",
+          "type": "v",
+          "dataLayer_key": "ecommerce.transaction_id"
+        },
+        "observed_purchase_parameters": [
+          "eventName",
+          "measurementId",
+          "transaction_id"
+        ],
+        "not_observed_in_tag_parameters": [
+          "value",
+          "currency",
+          "items"
+        ]
+      },
+      "recommendation": "Run GTM Preview through a test purchase and confirm exactly one GA4 purchase event is sent with the intended transaction ID and required ecommerce fields. Review dataLayer documentation before changing ecommerce payloads.",
+      "automated_change_policy": "manual_review_only",
+      "manual_review_required": true,
+      "manual_review_triggers": [
+        "purchase_or_revenue_tracking",
+        "transaction_id_mapping",
+        "ecommerce_payload_uncertainty"
+      ],
+      "related_change_ids": [],
+      "related_qa_item_ids": [
+        "QA-002",
+        "QA-003",
+        "QA-005"
+      ]
+    },
+    {
+      "finding_id": "F-REF-001",
+      "rule_id": "GTM-REF-001",
+      "category": "reference_integrity",
+      "severity": "info",
+      "title": "No broken tag trigger or folder references detected in the exported fixture",
+      "affected_entities": [
+        {
+          "entity_type": "container",
+          "id": "5103",
+          "name": "Synthetic Duplicate Purchase Version"
+        }
+      ],
+      "detected_facts": [
+        "Both tag firing trigger references point to trigger ID `203`, which exists in the export.",
+        "Both tag parent folder references point to folder ID `403`, which exists in the export.",
+        "The variable names referenced by purchase tag parameters match variables present in the export by name."
+      ],
+      "inferred_issue": null,
+      "evidence": {
+        "tag_trigger_references": [
+          {
+            "source_entity": {
+              "entity_type": "tag",
+              "id": "103",
+              "name": "GA4 - Event - purchase"
+            },
+            "reference_location": "firingTriggerId",
+            "target_entity": {
+              "entity_type": "trigger",
+              "id": "203",
+              "name": "CE - purchase"
+            },
+            "target_found": true
+          },
+          {
+            "source_entity": {
+              "entity_type": "tag",
+              "id": "104",
+              "name": "GA4 - Event - purchase copy"
+            },
+            "reference_location": "firingTriggerId",
+            "target_entity": {
+              "entity_type": "trigger",
+              "id": "203",
+              "name": "CE - purchase"
+            },
+            "target_found": true
+          }
+        ],
+        "broken_reference_count": 0
+      },
+      "recommendation": "No reference repair is proposed from this export. Manual QA is still required because reference integrity does not verify live tracking behavior.",
+      "automated_change_policy": "blocked",
+      "manual_review_required": false,
+      "manual_review_triggers": [],
+      "related_change_ids": [],
+      "related_qa_item_ids": [
+        "QA-001"
+      ]
+    }
+  ],
+  "manual_review_items": [
+    {
+      "manual_review_id": "MR-001",
+      "related_finding_ids": [
+        "F-DUP-001",
+        "F-ECOM-001"
+      ],
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "id": "103",
+          "name": "GA4 - Event - purchase"
+        },
+        {
+          "entity_type": "tag",
+          "id": "104",
+          "name": "GA4 - Event - purchase copy"
+        },
+        {
+          "entity_type": "trigger",
+          "id": "203",
+          "name": "CE - purchase"
+        }
+      ],
+      "reason": "Duplicate cleanup for ecommerce purchase tracking is high risk and should not be automated from a file export alone.",
+      "required_decision": "Decide whether tag 104 is an unintentional duplicate and, if so, which tag should remain active."
+    },
+    {
+      "manual_review_id": "MR-002",
+      "related_finding_ids": [
+        "F-ECOM-001"
+      ],
+      "affected_entities": [
+        {
+          "entity_type": "variable",
+          "id": "304",
+          "name": "DLV - ecommerce.transaction_id"
+        }
+      ],
+      "reason": "Ecommerce payload completeness and deduplication behavior require GTM Preview, GA4 DebugView/Realtime review, or other human-approved test evidence.",
+      "required_decision": "Confirm transaction_id is populated and one purchase event is sent per order."
+    }
+  ],
+  "assumptions": [
+    "The uploaded fixture JSON is the only GTM container export input for this run.",
+    "Fixture ID was supplied by the user as synthetic-duplicate-001.",
+    "No client-specific profile or override was provided.",
+    "No live GTM, GA4, Google Ads, website, API, workspace, or production system was inspected."
+  ],
+  "limitations": [
+    "This audit is based only on exported GTM JSON.",
+    "Live firing behavior, dataLayer runtime values, GA4 ingestion, consent behavior, and production safety were not verified.",
+    "The optimized container is a draft proposal for human review."
+  ]
+}
