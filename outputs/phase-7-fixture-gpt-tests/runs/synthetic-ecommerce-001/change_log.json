@@ -1,0 +1,90 @@
+{
+  "artifact": "change_log.json",
+  "package_name": "GTM Container Audit & Patch Package",
+  "package_status": "draft_proposal_for_human_review",
+  "run_id": "run-synthetic-ecommerce-001-20260626",
+  "source_filename": "synthetic-ecommerce-missing-fields.json",
+  "optimized_filename": "optimized_container.json",
+  "summary": {
+    "applied_change_count": 0,
+    "recommended_not_applied_count": 3,
+    "reason_no_changes_applied": "The only substantive recommendations would alter ecommerce purchase payloads or create dataLayer mappings. Rule GTM-ECOM-001 treats these as blocked/manual-review-only for the MLP."
+  },
+  "changes": [
+    {
+      "change_id": "CHG-001",
+      "status": "recommended_not_applied",
+      "reflected_in_optimized_container": false,
+      "related_finding_ids": [
+        "F-001"
+      ],
+      "affected_entity": {
+        "entity_type": "tag",
+        "entity_id": "105",
+        "name": "GA4 - Event - purchase"
+      },
+      "change_type": "configuration_payload_mapping",
+      "what_would_change": "Add an explicit GA4 purchase event parameter mapping for `transaction_id` after confirming the approved dataLayer key.",
+      "why_proposed": "A purchase event without a clear transaction ID can weaken deduplication and transaction reconciliation.",
+      "risk_level": "high",
+      "automated_change_policy": "blocked",
+      "unsafe_change": true,
+      "human_approval_required": true,
+      "manual_review_reason": "Transaction ID mapping is purchase/revenue tracking behavior and cannot be safely inferred from this export alone.",
+      "rollback_note": "Reject this recommendation by leaving tag 105 unchanged; optimized_container.json currently preserves the source configuration."
+    },
+    {
+      "change_id": "CHG-002",
+      "status": "recommended_not_applied",
+      "reflected_in_optimized_container": false,
+      "related_finding_ids": [
+        "F-001"
+      ],
+      "affected_entity": {
+        "entity_type": "tag",
+        "entity_id": "105",
+        "name": "GA4 - Event - purchase"
+      },
+      "change_type": "configuration_payload_mapping",
+      "what_would_change": "Add an explicit GA4 purchase event parameter mapping for `currency` after confirming the approved dataLayer key.",
+      "why_proposed": "The purchase tag maps value but does not show currency, which can create reporting ambiguity.",
+      "risk_level": "high",
+      "automated_change_policy": "blocked",
+      "unsafe_change": true,
+      "human_approval_required": true,
+      "manual_review_reason": "Currency/value mappings affect ecommerce revenue reporting and must be confirmed against the dataLayer contract.",
+      "rollback_note": "Reject this recommendation by leaving tag 105 unchanged; optimized_container.json currently preserves the source configuration."
+    },
+    {
+      "change_id": "CHG-003",
+      "status": "recommended_not_applied",
+      "reflected_in_optimized_container": false,
+      "related_finding_ids": [
+        "F-001"
+      ],
+      "affected_entities": [
+        {
+          "entity_type": "variable",
+          "entity_id": "new_manual_review_only",
+          "name": "DLV - ecommerce.transaction_id"
+        },
+        {
+          "entity_type": "variable",
+          "entity_id": "new_manual_review_only",
+          "name": "DLV - ecommerce.currency"
+        }
+      ],
+      "change_type": "new_variable_mapping",
+      "what_would_change": "Create dataLayer variables for transaction ID and currency only after confirming that `ecommerce.transaction_id` and `ecommerce.currency` are the correct client dataLayer keys.",
+      "why_proposed": "No transaction ID or currency variables were observed in the export.",
+      "risk_level": "high",
+      "automated_change_policy": "blocked",
+      "unsafe_change": true,
+      "human_approval_required": true,
+      "manual_review_reason": "Creating variables changes the proposed GTM configuration and may encode incorrect dataLayer keys if inferred.",
+      "rollback_note": "Reject this recommendation by not creating new variables; optimized_container.json currently preserves the source configuration."
+    }
+  ],
+  "applied_diffs": [],
+  "human_approval_required_before_import_workspace_publish_or_production_use": true
+}

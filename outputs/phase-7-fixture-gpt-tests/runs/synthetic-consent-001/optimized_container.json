@@ -1,0 +1,100 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-06-09 00:00:00",
+  "containerVersion": {
+    "accountId": "9001",
+    "containerId": "5106",
+    "name": "Synthetic Consent Risk Version",
+    "container": {
+      "accountId": "9001",
+      "containerId": "5106",
+      "name": "Synthetic Consent Risk Container",
+      "publicId": "GTM-SYN506"
+    },
+    "tag": [
+      {
+        "accountId": "9001",
+        "containerId": "5106",
+        "tagId": "106",
+        "name": "Google Ads - Remarketing - All Pages",
+        "type": "sp",
+        "firingTriggerId": [
+          "206"
+        ],
+        "parentFolderId": "406",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "conversionId",
+            "value": "{{CONST - Google Ads Conversion ID}}"
+          }
+        ],
+        "fingerprint": "synthetic-consent-tag-106"
+      },
+      {
+        "accountId": "9001",
+        "containerId": "5106",
+        "tagId": "107",
+        "name": "Custom HTML - Vendor Pixel",
+        "type": "html",
+        "firingTriggerId": [
+          "206"
+        ],
+        "parentFolderId": "406",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "html",
+            "value": "<script src=\"https://vendor.example.test/pixel.js\"></script>"
+          }
+        ],
+        "fingerprint": "synthetic-consent-tag-107"
+      }
+    ],
+    "trigger": [
+      {
+        "accountId": "9001",
+        "containerId": "5106",
+        "triggerId": "206",
+        "name": "PV - All Pages",
+        "type": "PAGEVIEW",
+        "fingerprint": "synthetic-consent-trigger-206"
+      }
+    ],
+    "variable": [
+      {
+        "accountId": "9001",
+        "containerId": "5106",
+        "variableId": "306",
+        "name": "CONST - Google Ads Conversion ID",
+        "type": "c",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "value",
+            "value": "AW-TEST506"
+          }
+        ],
+        "fingerprint": "synthetic-consent-variable-306"
+      }
+    ],
+    "folder": [
+      {
+        "accountId": "9001",
+        "containerId": "5106",
+        "folderId": "406",
+        "name": "Ads - Consent Review Required",
+        "fingerprint": "synthetic-consent-folder-406"
+      }
+    ],
+    "builtInVariable": [
+      {
+        "accountId": "9001",
+        "containerId": "5106",
+        "type": "PAGE_URL",
+        "name": "Page URL"
+      }
+    ],
+    "customTemplate": []
+  }
+}

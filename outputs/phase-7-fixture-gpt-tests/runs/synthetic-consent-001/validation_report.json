@@ -1,0 +1,214 @@
+{
+  "artifact_name": "validation_report.json",
+  "package_name": "GTM Container Audit & Patch Package",
+  "fixture_id": "synthetic-consent-001",
+  "run_id": "gtm-audit-synthetic-consent-001-20260626T220218Z",
+  "generated_at": "2026-06-26T22:02:18Z",
+  "overall_status": "pass_with_warnings",
+  "required_artifacts": [
+    "optimized_container.json",
+    "audit_report.md",
+    "audit_report.json",
+    "change_log.json",
+    "validation_report.json",
+    "qa_checklist.md",
+    "run_metadata.json"
+  ],
+  "checks": [
+    {
+      "check_id": "VAL-PKG-001",
+      "name": "Required artifact present: optimized_container.json",
+      "status": "pass",
+      "details": {
+        "filename": "optimized_container.json"
+      }
+    },
+    {
+      "check_id": "VAL-PKG-002",
+      "name": "Required artifact present: audit_report.md",
+      "status": "pass",
+      "details": {
+        "filename": "audit_report.md"
+      }
+    },
+    {
+      "check_id": "VAL-PKG-003",
+      "name": "Required artifact present: audit_report.json",
+      "status": "pass",
+      "details": {
+        "filename": "audit_report.json"
+      }
+    },
+    {
+      "check_id": "VAL-PKG-004",
+      "name": "Required artifact present: change_log.json",
+      "status": "pass",
+      "details": {
+        "filename": "change_log.json"
+      }
+    },
+    {
+      "check_id": "VAL-PKG-005",
+      "name": "Required artifact present: validation_report.json",
+      "status": "pass",
+      "details": {
+        "filename": "validation_report.json"
+      }
+    },
+    {
+      "check_id": "VAL-PKG-006",
+      "name": "Required artifact present: qa_checklist.md",
+      "status": "pass",
+      "details": {
+        "filename": "qa_checklist.md"
+      }
+    },
+    {
+      "check_id": "VAL-PKG-007",
+      "name": "Required artifact present: run_metadata.json",
+      "status": "pass",
+      "details": {
+        "filename": "run_metadata.json"
+      }
+    },
+    {
+      "check_id": "VAL-JSON-008",
+      "name": "JSON parses: optimized_container.json",
+      "status": "pass",
+      "details": {
+        "filename": "optimized_container.json",
+        "parseable": true
+      }
+    },
+    {
+      "check_id": "VAL-JSON-009",
+      "name": "JSON parses: audit_report.json",
+      "status": "pass",
+      "details": {
+        "filename": "audit_report.json",
+        "parseable": true
+      }
+    },
+    {
+      "check_id": "VAL-JSON-010",
+      "name": "JSON parses: change_log.json",
+      "status": "pass",
+      "details": {
+        "filename": "change_log.json",
+        "parseable": true
+      }
+    },
+    {
+      "check_id": "VAL-JSON-011",
+      "name": "JSON parses: run_metadata.json",
+      "status": "pass",
+      "details": {
+        "filename": "run_metadata.json",
+        "parseable": true
+      }
+    },
+    {
+      "check_id": "VAL-GTM-001",
+      "name": "Source export has exportFormatVersion and containerVersion",
+      "status": "pass",
+      "details": {
+        "exportFormatVersion": 2,
+        "containerVersion_present": true
+      }
+    },
+    {
+      "check_id": "VAL-GTM-002",
+      "name": "Optimized container preserves source container identifiers",
+      "status": "pass",
+      "details": {
+        "accountId": "9001",
+        "containerId": "5106",
+        "publicId": "GTM-SYN506"
+      }
+    },
+    {
+      "check_id": "VAL-REF-001",
+      "name": "Observed tag firing trigger references resolve within export",
+      "status": "pass",
+      "details": {
+        "reference_checks": [
+          {
+            "source_entity_type": "tag",
+            "source_entity_id": "106",
+            "source_entity_name": "Google Ads - Remarketing - All Pages",
+            "reference_location": "firingTriggerId",
+            "referenced_entity_type": "trigger",
+            "referenced_entity_id": "206",
+            "referenced_entity_name": "PV - All Pages",
+            "target_found": true
+          },
+          {
+            "source_entity_type": "tag",
+            "source_entity_id": "107",
+            "source_entity_name": "Custom HTML - Vendor Pixel",
+            "reference_location": "firingTriggerId",
+            "referenced_entity_type": "trigger",
+            "referenced_entity_id": "206",
+            "referenced_entity_name": "PV - All Pages",
+            "target_found": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "VAL-SAFE-001",
+      "name": "Unsafe automated consent or Custom HTML changes blocked",
+      "status": "pass",
+      "details": {
+        "changes_applied": 0,
+        "blocked_recommendations": [
+          "REC-001",
+          "REC-002"
+        ]
+      }
+    },
+    {
+      "check_id": "VAL-JSON-016",
+      "name": "JSON parses: validation_report.json",
+      "status": "pass",
+      "details": {
+        "filename": "validation_report.json",
+        "parseable": true
+      }
+    }
+  ],
+  "warnings": [
+    "Consent settings were not detected for all-pages advertising/remarketing and Custom HTML vendor tags; this is a manual-review risk, not proof of legal or privacy non-compliance.",
+    "No live GTM Preview, network inspection, CMP verification, GA4 verification, Google Ads verification, website QA, API access, import, workspace creation, or publishing was performed.",
+    "optimized_container.json is identical to the source export because consent-sensitive and Custom HTML changes are blocked for automation."
+  ],
+  "errors": [],
+  "json_artifacts_parse": true,
+  "package_complete": true,
+  "structural_summary": {
+    "source_export_parseable": true,
+    "optimized_container_parseable": true,
+    "optimized_container_identical_to_source": true,
+    "reference_checks_total": 5,
+    "unresolved_references_total": 0,
+    "optimized_container_byte_identical_to_source": true
+  },
+  "safety": {
+    "validation_does_not_prove_tracking_correctness": true,
+    "validation_does_not_prove_consent_behavior": true,
+    "validation_does_not_prove_legal_compliance": true,
+    "validation_does_not_prove_privacy_compliance": true,
+    "validation_does_not_prove_production_readiness": true,
+    "human_review_required_before_import_workspace_creation_publishing_or_production_use": true
+  },
+  "live_platform_activity": {
+    "gtm_connected": false,
+    "ga4_connected": false,
+    "google_ads_connected": false,
+    "api_called": false,
+    "workspace_created": false,
+    "container_imported": false,
+    "container_published": false,
+    "production_verified": false
+  }
+}

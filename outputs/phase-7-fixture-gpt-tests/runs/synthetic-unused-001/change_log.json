@@ -1,0 +1,62 @@
+{
+  "run_id": "run_synthetic-unused-001_20260626T215120Z",
+  "source_filename": "synthetic-unused-legacy-entities.json",
+  "optimized_filename": "optimized_container.json",
+  "summary": {
+    "changes_reflected_in_optimized_container": 0,
+    "recommendations_not_applied": 3,
+    "reason_no_applied_changes": "GTM-UNUSED-001 blocks deletion and requires manual review for orphaned legacy/archive candidates. The source container is preserved unchanged."
+  },
+  "changes": [],
+  "recommendations_not_applied": [
+    {
+      "recommendation_id": "REC-001",
+      "related_finding_id": "F-002",
+      "affected_entity": {
+        "entity_type": "trigger",
+        "entity_id": "204",
+        "name": "legacy - do not delete"
+      },
+      "recommended_action": "Review whether trigger 204 is intentionally retained. Do not delete, disable, or rename automatically.",
+      "why_not_applied": "Unused trigger cleanup is blocked for deletion and manual-review only for archive decisions; the name contains legacy/do-not-delete warnings.",
+      "risk_level": "medium",
+      "automated_change_policy": "blocked",
+      "rollback_note": "No file-based change was applied. Retain source trigger 204 as-is unless a human analyst approves a later cleanup.",
+      "human_approval_required": true,
+      "reflected_in_optimized_container": false
+    },
+    {
+      "recommendation_id": "REC-002",
+      "related_finding_id": "F-003",
+      "affected_entity": {
+        "entity_type": "variable",
+        "entity_id": "306",
+        "name": "DLV - legacy_unused_value"
+      },
+      "recommended_action": "Review whether variable 306 and dataLayer key legacy_unused_value are still needed.",
+      "why_not_applied": "Variable deletion or behavior changes are blocked; external references cannot be ruled out from the export alone.",
+      "risk_level": "medium",
+      "automated_change_policy": "blocked",
+      "rollback_note": "No file-based change was applied. Retain source variable 306 as-is unless a human analyst approves a later cleanup.",
+      "human_approval_required": true,
+      "reflected_in_optimized_container": false
+    },
+    {
+      "recommendation_id": "REC-003",
+      "related_finding_id": "F-004",
+      "affected_entity": {
+        "entity_type": "folder",
+        "entity_id": "404",
+        "name": "Archive - Legacy Review"
+      },
+      "recommended_action": "Review whether empty folder 404 is intentionally retained as an archive/review placeholder.",
+      "why_not_applied": "Folder deletion or archive decisions require human review. The folder name appears intentionally review-oriented.",
+      "risk_level": "low",
+      "automated_change_policy": "blocked",
+      "rollback_note": "No file-based change was applied. Retain source folder 404 as-is unless a human analyst approves a later cleanup.",
+      "human_approval_required": true,
+      "reflected_in_optimized_container": false
+    }
+  ],
+  "safety_notice": "This change log is a draft proposal. Human review is required before import, workspace creation, publishing, or production use."
+}

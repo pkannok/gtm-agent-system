@@ -1,0 +1,116 @@
+{
+  "artifact": "validation_report.json",
+  "run_id": "run-4009056865b0",
+  "fixture_id": "synthetic-reference-001",
+  "source_file": "synthetic-broken-references.json",
+  "optimized_file": "optimized_container.json",
+  "overall_status": "failed_with_manual_review_required",
+  "artifact_completeness": {
+    "required_artifacts": [
+      "optimized_container.json",
+      "audit_report.md",
+      "audit_report.json",
+      "change_log.json",
+      "validation_report.json",
+      "qa_checklist.md",
+      "run_metadata.json"
+    ],
+    "all_required_artifacts_present": true
+  },
+  "json_parseability": {
+    "source_json_parsed": true,
+    "optimized_container_json_parsed": true,
+    "audit_report_json_parsed": true,
+    "change_log_json_parsed": true,
+    "validation_report_json_parsed": true,
+    "run_metadata_json_parsed": true
+  },
+  "checks": [
+    {
+      "check_id": "VAL-001",
+      "name": "Source JSON parsed",
+      "status": "passed",
+      "details": "Uploaded fixture JSON parsed successfully."
+    },
+    {
+      "check_id": "VAL-002",
+      "name": "GTM export shape detected",
+      "status": "passed",
+      "details": "Top-level exportFormatVersion and containerVersion were present."
+    },
+    {
+      "check_id": "VAL-003",
+      "name": "Required package artifacts generated",
+      "status": "passed",
+      "details": "All seven required artifacts were generated."
+    },
+    {
+      "check_id": "VAL-004",
+      "name": "Tag firing trigger references resolve",
+      "status": "failed",
+      "details": "Tag 102 references missing firingTriggerId 299."
+    },
+    {
+      "check_id": "VAL-005",
+      "name": "Tag folder references resolve",
+      "status": "failed",
+      "details": "Tag 102 references missing parentFolderId 499."
+    },
+    {
+      "check_id": "VAL-006",
+      "name": "Variable token references resolve",
+      "status": "failed",
+      "details": "Tag 102 parameter value references missing variable token {{Missing Revenue}}."
+    },
+    {
+      "check_id": "VAL-007",
+      "name": "Optimized container JSON parseability",
+      "status": "passed",
+      "details": "optimized_container.json is valid JSON and preserves the source GTM export without automated repair."
+    }
+  ],
+  "errors": [
+    {
+      "error_id": "ERR-REF-001",
+      "rule_id": "GTM-REF-001",
+      "message": "Unresolved trigger reference: tag 102 firingTriggerId 299."
+    },
+    {
+      "error_id": "ERR-REF-002",
+      "rule_id": "GTM-REF-001",
+      "message": "Unresolved folder reference: tag 102 parentFolderId 499."
+    },
+    {
+      "error_id": "ERR-REF-003",
+      "rule_id": "GTM-REF-001",
+      "message": "Unresolved variable token reference: tag 102 parameter value {{Missing Revenue}}."
+    }
+  ],
+  "warnings": [
+    {
+      "warning_id": "WARN-ECOM-001",
+      "rule_id": "GTM-ECOM-001",
+      "message": "GA4 purchase event has unresolved revenue value mapping and requires manual ecommerce QA."
+    },
+    {
+      "warning_id": "WARN-AUTO-001",
+      "rule_id": "GTM-REF-001",
+      "message": "No broken reference repairs were applied because they are manual-review-only."
+    }
+  ],
+  "publish_safety": {
+    "safe_to_publish_claimed": false,
+    "human_review_required_before_import": true,
+    "human_review_required_before_workspace_creation": true,
+    "human_review_required_before_publishing": true,
+    "human_review_required_before_production_use": true,
+    "validation_proves_tracking_correctness": false,
+    "validation_proves_consent_correctness": false,
+    "validation_proves_legal_or_privacy_compliance": false
+  },
+  "limitations": [
+    "Structural validation inspected the exported file only.",
+    "No live container, website, GA4 property, Google Ads account, API, or production platform was checked.",
+    "Manual GTM Preview and analyst review remain required."
+  ]
+}

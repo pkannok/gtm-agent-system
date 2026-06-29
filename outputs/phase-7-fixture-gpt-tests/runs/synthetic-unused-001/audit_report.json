@@ -1,0 +1,339 @@
+{
+  "run_id": "run_synthetic-unused-001_20260626T215120Z",
+  "fixture_id": "synthetic-unused-001",
+  "source_filename": "synthetic-unused-legacy-entities.json",
+  "container": {
+    "account_id": "9001",
+    "container_id": "5104",
+    "container_name": "Synthetic Unused Legacy Version",
+    "public_id": "GTM-SYN504",
+    "export_format_version": 2,
+    "export_time": "2026-06-09 00:00:00"
+  },
+  "overall_risk_level": "medium",
+  "expected_issue_category": "orphaned legacy trigger, variable, and folder candidates",
+  "findings_summary": {
+    "high": 0,
+    "medium": 2,
+    "low": 1,
+    "info": 3,
+    "total": 6
+  },
+  "findings": [
+    {
+      "finding_id": "F-001",
+      "rule_id": "GTM-INV-001",
+      "category": "inventory",
+      "severity": "info",
+      "title": "Container inventory captured from source export",
+      "affected_entities": [
+        {
+          "entity_type": "container",
+          "entity_id": "5104",
+          "name": "Synthetic Unused Legacy Version"
+        }
+      ],
+      "detected_facts": [
+        "Source exportFormatVersion is 2.",
+        "Container accountId=9001, containerId=5104, name=Synthetic Unused Legacy Version.",
+        "Inventory counts: tags=1, triggers=2, variables=2, folders=2, builtInVariables=1, customTemplates=0, zones=0."
+      ],
+      "evidence": {
+        "source_filename": "synthetic-unused-legacy-entities.json",
+        "export_time": "2026-06-09 00:00:00",
+        "container_public_id": "GTM-SYN504",
+        "counts": {
+          "tags": 1,
+          "triggers": 2,
+          "variables": 2,
+          "folders": 2,
+          "builtInVariables": 1,
+          "customTemplates": 0,
+          "zones": 0
+        }
+      },
+      "inferred_issue": null,
+      "recommendation": "Use this inventory as the audit scope baseline. No GTM configuration change is proposed for inventory.",
+      "automated_change_policy": "blocked",
+      "manual_review_required": false,
+      "manual_review_triggers": [],
+      "related_change_ids": [],
+      "related_qa_item_ids": [
+        "QA-001"
+      ]
+    },
+    {
+      "finding_id": "F-002",
+      "rule_id": "GTM-UNUSED-001",
+      "category": "unused_or_orphaned_entities",
+      "severity": "medium",
+      "title": "Legacy trigger is not referenced by any exported tag",
+      "affected_entities": [
+        {
+          "entity_type": "trigger",
+          "entity_id": "204",
+          "name": "legacy - do not delete"
+        }
+      ],
+      "detected_facts": [
+        "Trigger 204 is named \"legacy - do not delete\".",
+        "Trigger 204 type is CUSTOM_EVENT.",
+        "No tag in the export references trigger 204 in firingTriggerId or blockingTriggerId.",
+        "The trigger name contains both \"legacy\" and \"do not delete\" warning language."
+      ],
+      "evidence": {
+        "reference_count_from_export": 0,
+        "referenced_by": [],
+        "fingerprint": "synthetic-unused-trigger-204",
+        "manual_review_signal_terms": [
+          "legacy",
+          "do not delete"
+        ]
+      },
+      "inferred_issue": "This appears to be an orphaned legacy trigger candidate, but the warning language means deletion, disabling, or archive labeling is unsafe without analyst confirmation.",
+      "recommendation": "Do not delete automatically. Confirm whether any external documentation, workspaces, or planned tags still rely on this trigger; retain or archive only after human analyst approval.",
+      "automated_change_policy": "blocked",
+      "manual_review_required": true,
+      "manual_review_triggers": [
+        "unused trigger",
+        "legacy warning in name",
+        "do not delete warning in name",
+        "deletion/archive decision"
+      ],
+      "related_change_ids": [],
+      "related_qa_item_ids": [
+        "QA-002"
+      ]
+    },
+    {
+      "finding_id": "F-003",
+      "rule_id": "GTM-UNUSED-001",
+      "category": "unused_or_orphaned_entities",
+      "severity": "medium",
+      "title": "Data layer variable is not referenced by exported tags, triggers, or variables",
+      "affected_entities": [
+        {
+          "entity_type": "variable",
+          "entity_id": "306",
+          "name": "DLV - legacy_unused_value"
+        }
+      ],
+      "detected_facts": [
+        "Variable 306 is named \"DLV - legacy_unused_value\".",
+        "Variable 306 type is v.",
+        "The variable dataLayer key parameter is legacy_unused_value.",
+        "No exported tag, trigger, or variable references {{DLV - legacy_unused_value}}."
+      ],
+      "evidence": {
+        "reference_count_from_export": 0,
+        "referenced_by": [],
+        "parameter": [
+          {
+            "type": "template",
+            "key": "name",
+            "value": "legacy_unused_value"
+          }
+        ],
+        "fingerprint": "synthetic-unused-variable-306",
+        "manual_review_signal_terms": [
+          "legacy_unused_value"
+        ]
+      },
+      "inferred_issue": "This appears to be an unused legacy data layer variable candidate. The export alone cannot prove whether it is needed for future tags, documentation, or QA workflows.",
+      "recommendation": "Do not delete automatically. Ask the analyst to confirm whether this dataLayer key is still expected. If not needed, plan a reviewed cleanup in a safe GTM workspace outside this file-only draft.",
+      "automated_change_policy": "blocked",
+      "manual_review_required": true,
+      "manual_review_triggers": [
+        "unused variable",
+        "legacy naming signal",
+        "deletion/archive decision",
+        "possible external documentation reference"
+      ],
+      "related_change_ids": [],
+      "related_qa_item_ids": [
+        "QA-003"
+      ]
+    },
+    {
+      "finding_id": "F-004",
+      "rule_id": "GTM-UNUSED-001",
+      "category": "unused_or_orphaned_entities",
+      "severity": "low",
+      "title": "Archive folder has no exported entity assignments",
+      "affected_entities": [
+        {
+          "entity_type": "folder",
+          "entity_id": "404",
+          "name": "Archive - Legacy Review"
+        }
+      ],
+      "detected_facts": [
+        "Folder 404 is named \"Archive - Legacy Review\".",
+        "No exported tag, trigger, or variable has parentFolderId 404.",
+        "The folder name indicates archive or legacy review purpose."
+      ],
+      "evidence": {
+        "assigned_entities_from_export": [],
+        "assignment_count_from_export": 0,
+        "fingerprint": "synthetic-unused-folder-404",
+        "manual_review_signal_terms": [
+          "Archive",
+          "Legacy Review"
+        ]
+      },
+      "inferred_issue": "This appears to be an empty archive folder candidate. It may be intentionally retained as a review placeholder.",
+      "recommendation": "Do not delete automatically. Confirm whether the folder is intentionally retained for analyst review or should be removed in a later reviewed cleanup.",
+      "automated_change_policy": "blocked",
+      "manual_review_required": true,
+      "manual_review_triggers": [
+        "unused folder",
+        "archive/legacy review naming signal",
+        "deletion/archive decision"
+      ],
+      "related_change_ids": [],
+      "related_qa_item_ids": [
+        "QA-004"
+      ]
+    },
+    {
+      "finding_id": "F-005",
+      "rule_id": "GTM-REF-001",
+      "category": "reference_integrity",
+      "severity": "info",
+      "title": "No unresolved direct references detected in the exported configuration",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "105",
+          "name": "GA4 - Event - sign_up"
+        },
+        {
+          "entity_type": "trigger",
+          "entity_id": "205",
+          "name": "CE - sign_up"
+        },
+        {
+          "entity_type": "variable",
+          "entity_id": "305",
+          "name": "CONST - GA4 Measurement ID"
+        },
+        {
+          "entity_type": "folder",
+          "entity_id": "405",
+          "name": "GA4 - Core"
+        }
+      ],
+      "detected_facts": [
+        "Tag 105 references firing trigger 205, which exists in the export.",
+        "Tag 105 references variable {{CONST - GA4 Measurement ID}}, which exists in the export.",
+        "Tag 105 parentFolderId 405 exists in the export."
+      ],
+      "evidence": {
+        "tag_105_firingTriggerId": [
+          "205"
+        ],
+        "tag_105_variable_tokens": [
+          "CONST - GA4 Measurement ID"
+        ],
+        "tag_105_parentFolderId": "405"
+      },
+      "inferred_issue": null,
+      "recommendation": "No reference repair is proposed. Manual GTM Preview is still required before import or use.",
+      "automated_change_policy": "manual_review_only",
+      "manual_review_required": false,
+      "manual_review_triggers": [],
+      "related_change_ids": [],
+      "related_qa_item_ids": [
+        "QA-005"
+      ]
+    },
+    {
+      "finding_id": "F-006",
+      "rule_id": "GTM-QA-001",
+      "category": "qa",
+      "severity": "info",
+      "title": "Manual QA is required before using any generated artifact",
+      "affected_entities": [
+        {
+          "entity_type": "package",
+          "entity_id": "run_synthetic-unused-001_20260626T215120Z",
+          "name": "GTM Container Audit & Patch Package"
+        }
+      ],
+      "detected_facts": [
+        "The package is generated from a file export only.",
+        "No live GTM, GA4, Google Ads, API, website, workspace, preview session, or production platform was inspected."
+      ],
+      "evidence": {
+        "workflow": "file-in/file-out",
+        "live_platform_access": false
+      },
+      "inferred_issue": "Validation can check structure and traceability, but it cannot prove live tag firing, consent behavior, legal compliance, privacy compliance, tracking correctness, or production readiness.",
+      "recommendation": "Complete the QA checklist and analyst review before import, workspace creation, publishing, or production use.",
+      "automated_change_policy": "blocked",
+      "manual_review_required": true,
+      "manual_review_triggers": [
+        "any generated package",
+        "file-only validation",
+        "human approval boundary"
+      ],
+      "related_change_ids": [],
+      "related_qa_item_ids": [
+        "QA-001",
+        "QA-002",
+        "QA-003",
+        "QA-004",
+        "QA-005",
+        "QA-006"
+      ]
+    }
+  ],
+  "manual_review_items": [
+    {
+      "manual_review_id": "MR-001",
+      "related_finding_id": "F-002",
+      "affected_entity": {
+        "entity_type": "trigger",
+        "entity_id": "204",
+        "name": "legacy - do not delete"
+      },
+      "reason": "Unused-looking trigger contains legacy/do-not-delete warning language and may be intentionally retained outside visible export references.",
+      "recommended_reviewer_role": "GTM analyst",
+      "status": "todo"
+    },
+    {
+      "manual_review_id": "MR-002",
+      "related_finding_id": "F-003",
+      "affected_entity": {
+        "entity_type": "variable",
+        "entity_id": "306",
+        "name": "DLV - legacy_unused_value"
+      },
+      "reason": "Variable has no export references but could be retained for planned tags, QA, or external documentation.",
+      "recommended_reviewer_role": "GTM analyst or developer familiar with dataLayer contract",
+      "status": "todo"
+    },
+    {
+      "manual_review_id": "MR-003",
+      "related_finding_id": "F-004",
+      "affected_entity": {
+        "entity_type": "folder",
+        "entity_id": "404",
+        "name": "Archive - Legacy Review"
+      },
+      "reason": "Folder is empty in the export but appears intentionally named for archive/legacy review.",
+      "recommended_reviewer_role": "GTM analyst",
+      "status": "todo"
+    }
+  ],
+  "assumptions": [
+    "The uploaded fixture JSON is the only GTM container export input.",
+    "Only references visible in the exported JSON were evaluated.",
+    "No live GTM workspace, API, website, GA4, Google Ads, or production platform was inspected."
+  ],
+  "limitations": [
+    "Export-only review cannot detect references from unpublished workspaces, external documentation, templates outside the export, live site code, or future planned tags.",
+    "The package does not certify legal compliance, privacy compliance, consent correctness, tracking correctness, production readiness, or publish safety."
+  ],
+  "safety_notice": "All outputs are draft proposals requiring human analyst review before import, workspace creation, publishing, or production use."
+}

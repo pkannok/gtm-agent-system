@@ -1,0 +1,120 @@
+{
+  "package_name": "GTM Container Audit & Patch Package",
+  "run_id": "gtm-audit-synthetic-duplicate-001-20260626T000000Z",
+  "fixture_id": "synthetic-duplicate-001",
+  "source_filename": "synthetic-duplicate-purchase-tags.json",
+  "validation_timestamp": "2026-06-26T00:00:00Z",
+  "overall_status": "pass_with_warnings",
+  "required_artifacts": [
+    {
+      "filename": "optimized_container.json",
+      "present": true
+    },
+    {
+      "filename": "audit_report.md",
+      "present": true
+    },
+    {
+      "filename": "audit_report.json",
+      "present": true
+    },
+    {
+      "filename": "change_log.json",
+      "present": true
+    },
+    {
+      "filename": "validation_report.json",
+      "present": true
+    },
+    {
+      "filename": "qa_checklist.md",
+      "present": true
+    },
+    {
+      "filename": "run_metadata.json",
+      "present": true
+    }
+  ],
+  "json_parse_checks": [
+    {
+      "filename": "optimized_container.json",
+      "status": "pass"
+    },
+    {
+      "filename": "audit_report.json",
+      "status": "pass"
+    },
+    {
+      "filename": "change_log.json",
+      "status": "pass"
+    },
+    {
+      "filename": "validation_report.json",
+      "status": "pass"
+    },
+    {
+      "filename": "run_metadata.json",
+      "status": "pass"
+    }
+  ],
+  "container_structure_checks": [
+    {
+      "check_id": "VAL-STRUCT-001",
+      "status": "pass",
+      "description": "Source JSON parsed successfully."
+    },
+    {
+      "check_id": "VAL-STRUCT-002",
+      "status": "pass",
+      "description": "Source export contains `exportFormatVersion` and `containerVersion`."
+    },
+    {
+      "check_id": "VAL-STRUCT-003",
+      "status": "pass",
+      "description": "Optimized JSON preserves full source container structure."
+    },
+    {
+      "check_id": "VAL-REF-001",
+      "status": "pass",
+      "description": "No broken tag firing trigger references detected for exported tags."
+    }
+  ],
+  "warnings": [
+    {
+      "warning_id": "VAL-WARN-001",
+      "severity": "high",
+      "message": "Duplicate GA4 purchase tag cleanup is not applied because ecommerce deletion/disabling decisions require manual review."
+    },
+    {
+      "warning_id": "VAL-WARN-002",
+      "severity": "medium",
+      "message": "No live GTM Preview, GA4 DebugView, consent, or production behavior validation was performed."
+    },
+    {
+      "warning_id": "VAL-WARN-003",
+      "severity": "medium",
+      "message": "Purchase tags in the fixture show transaction_id but do not show value, currency, or items parameters; completeness cannot be verified from this file alone."
+    }
+  ],
+  "errors": [],
+  "safety_fields": {
+    "draft_proposal_only": true,
+    "human_review_required_before_import": true,
+    "human_review_required_before_workspace_creation": true,
+    "human_review_required_before_publishing": true,
+    "human_review_required_before_production_use": true,
+    "live_platforms_inspected": false,
+    "gtm_api_called": false,
+    "ga4_api_called": false,
+    "google_ads_api_called": false,
+    "legal_compliance_certified": false,
+    "privacy_compliance_certified": false,
+    "consent_behavior_certified": false,
+    "tracking_correctness_proven": false,
+    "publish_safety_proven": false
+  },
+  "limitations": [
+    "Validation checks package structure and exported JSON structure only.",
+    "Validation results do not prove tracking correctness, consent behavior, legal compliance, privacy compliance, or production readiness."
+  ]
+}

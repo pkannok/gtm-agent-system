@@ -1,0 +1,116 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-06-09 00:00:00",
+  "containerVersion": {
+    "accountId": "9001",
+    "containerId": "5104",
+    "name": "Synthetic Unused Legacy Version",
+    "container": {
+      "accountId": "9001",
+      "containerId": "5104",
+      "name": "Synthetic Unused Legacy Container",
+      "publicId": "GTM-SYN504"
+    },
+    "tag": [
+      {
+        "accountId": "9001",
+        "containerId": "5104",
+        "tagId": "105",
+        "name": "GA4 - Event - sign_up",
+        "type": "gaawe",
+        "firingTriggerId": [
+          "205"
+        ],
+        "parentFolderId": "405",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "eventName",
+            "value": "sign_up"
+          },
+          {
+            "type": "template",
+            "key": "measurementId",
+            "value": "{{CONST - GA4 Measurement ID}}"
+          }
+        ],
+        "fingerprint": "synthetic-unused-tag-105"
+      }
+    ],
+    "trigger": [
+      {
+        "accountId": "9001",
+        "containerId": "5104",
+        "triggerId": "205",
+        "name": "CE - sign_up",
+        "type": "CUSTOM_EVENT",
+        "fingerprint": "synthetic-unused-trigger-205"
+      },
+      {
+        "accountId": "9001",
+        "containerId": "5104",
+        "triggerId": "204",
+        "name": "legacy - do not delete",
+        "type": "CUSTOM_EVENT",
+        "fingerprint": "synthetic-unused-trigger-204"
+      }
+    ],
+    "variable": [
+      {
+        "accountId": "9001",
+        "containerId": "5104",
+        "variableId": "305",
+        "name": "CONST - GA4 Measurement ID",
+        "type": "c",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "value",
+            "value": "G-TEST504"
+          }
+        ],
+        "fingerprint": "synthetic-unused-variable-305"
+      },
+      {
+        "accountId": "9001",
+        "containerId": "5104",
+        "variableId": "306",
+        "name": "DLV - legacy_unused_value",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "name",
+            "value": "legacy_unused_value"
+          }
+        ],
+        "fingerprint": "synthetic-unused-variable-306"
+      }
+    ],
+    "folder": [
+      {
+        "accountId": "9001",
+        "containerId": "5104",
+        "folderId": "405",
+        "name": "GA4 - Core",
+        "fingerprint": "synthetic-unused-folder-405"
+      },
+      {
+        "accountId": "9001",
+        "containerId": "5104",
+        "folderId": "404",
+        "name": "Archive - Legacy Review",
+        "fingerprint": "synthetic-unused-folder-404"
+      }
+    ],
+    "builtInVariable": [
+      {
+        "accountId": "9001",
+        "containerId": "5104",
+        "type": "PAGE_URL",
+        "name": "Page URL"
+      }
+    ],
+    "customTemplate": []
+  }
+}

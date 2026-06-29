@@ -1,0 +1,92 @@
+{
+  "run_id": "run_synthetic-unused-001_20260626T215120Z",
+  "fixture_id": "synthetic-unused-001",
+  "source_filename": "synthetic-unused-legacy-entities.json",
+  "validation_status": "passed_with_warnings",
+  "generated_artifacts": [
+    "optimized_container.json",
+    "audit_report.md",
+    "audit_report.json",
+    "change_log.json",
+    "validation_report.json",
+    "qa_checklist.md",
+    "run_metadata.json"
+  ],
+  "checks": [
+    {
+      "check_id": "VAL-001",
+      "name": "Source JSON parsed",
+      "status": "passed",
+      "details": "Uploaded fixture JSON parsed successfully."
+    },
+    {
+      "check_id": "VAL-002",
+      "name": "GTM export shape present",
+      "status": "passed",
+      "details": "Top-level exportFormatVersion and containerVersion are present."
+    },
+    {
+      "check_id": "VAL-003",
+      "name": "Required output artifact list represented",
+      "status": "passed",
+      "details": "All seven required artifact filenames are generated in this package."
+    },
+    {
+      "check_id": "VAL-004",
+      "name": "Optimized container JSON parseable",
+      "status": "passed",
+      "details": "optimized_container.json preserves the source GTM export structure."
+    },
+    {
+      "check_id": "VAL-005",
+      "name": "Reference integrity spot checks",
+      "status": "passed",
+      "details": "Tag 105 references existing trigger 205, existing variable CONST - GA4 Measurement ID, and existing folder 405."
+    },
+    {
+      "check_id": "VAL-006",
+      "name": "Unsafe cleanup blocked",
+      "status": "passed",
+      "details": "No deletion, disabling, archive labeling, trigger logic, variable value, or tag payload changes were applied."
+    },
+    {
+      "check_id": "VAL-007",
+      "name": "Manual review flags included",
+      "status": "passed",
+      "details": "Findings F-002, F-003, F-004, and F-006 include manual-review requirements."
+    }
+  ],
+  "warnings": [
+    {
+      "warning_id": "WARN-001",
+      "severity": "medium",
+      "message": "Unused/orphaned candidates were detected but not changed because deletion and archive decisions are unsafe without human review.",
+      "related_finding_ids": [
+        "F-002",
+        "F-003",
+        "F-004"
+      ]
+    },
+    {
+      "warning_id": "WARN-002",
+      "severity": "info",
+      "message": "Validation is structural and file-based only. It does not verify live tag firing, consent behavior, legal compliance, privacy compliance, tracking correctness, or production readiness.",
+      "related_finding_ids": [
+        "F-006"
+      ]
+    }
+  ],
+  "errors": [],
+  "publish_safety": {
+    "safe_to_publish_claimed": false,
+    "human_review_required_before_import": true,
+    "human_review_required_before_workspace_creation": true,
+    "human_review_required_before_publishing": true,
+    "human_review_required_before_production_use": true
+  },
+  "limitations": [
+    "No live API or platform verification was performed.",
+    "No GTM Preview run was performed.",
+    "No legal, privacy, or consent certification was performed."
+  ]
+}

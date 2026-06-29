@@ -1,11 +1,9 @@
-# Custom GPT Test Prompts Draft
+# Custom GPT Test Prompts
 
-These prompts will be used later during Custom GPT testing.
+Task 7.1 fixture-specific GPT test prompts are stored in:
 
-## Basic audit
+- `outputs/phase-7-fixture-gpt-tests/prompts/`
 
-Upload a GTM container export JSON and ask:
+Use those prompts for the manual fixture-based GPT runs. They are tailored to the six synthetic GTM container fixtures and preserve the full **GTM Container Audit & Patch Package** requirements.
 
-```text
-Audit this GTM container export and return a complete GTM Container Audit & Patch Package.
-```
+Do not use real client data, live GTM access, GPT Actions, API connectors, web browsing, workspace creation, import, publishing, or production-use claims during Task 7.1 testing.

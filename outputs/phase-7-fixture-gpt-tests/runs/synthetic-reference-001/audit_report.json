@@ -1,0 +1,377 @@
+{
+  "artifact": "audit_report.json",
+  "run_id": "run-4009056865b0",
+  "fixture_id": "synthetic-reference-001",
+  "source_file": "synthetic-broken-references.json",
+  "container_summary": {
+    "account_id": "9001",
+    "container_id": "5102",
+    "container_name": "Synthetic Broken References Container",
+    "container_public_id": "GTM-SYN502",
+    "container_version_name": "Synthetic Broken References Version",
+    "export_format_version": 2,
+    "export_time": "2026-06-09 00:00:00",
+    "entity_counts": {
+      "tags": 1,
+      "triggers": 1,
+      "variables": 1,
+      "folders": 1,
+      "custom_templates": 0,
+      "built_in_variables": 1,
+      "zones": 0
+    }
+  },
+  "overall_risk_level": "high",
+  "finding_counts_by_severity": {
+    "high": 3,
+    "medium": 2,
+    "low": 0,
+    "info": 1
+  },
+  "findings": [
+    {
+      "finding_id": "F-INV-001",
+      "rule_id": "GTM-INV-001",
+      "category": "inventory",
+      "severity": "info",
+      "affected_entities": [
+        {
+          "entity_type": "container",
+          "entity_id": "5102",
+          "entity_name": "Synthetic Broken References Container"
+        }
+      ],
+      "detected_facts": [
+        "Source filename: synthetic-broken-references.json.",
+        "Fixture ID: synthetic-reference-001.",
+        "Export format version: 2.",
+        "Account ID: 9001; container ID: 5102; public ID: GTM-SYN502.",
+        "Entity counts observed: 1 tag, 1 trigger, 1 variable, 1 folder, 0 custom template, 1 built-in variable, 0 zone."
+      ],
+      "evidence": [
+        {
+          "source_file": "synthetic-broken-references.json",
+          "location": "containerVersion",
+          "observed_value": {
+            "accountId": "9001",
+            "containerId": "5102",
+            "containerName": "Synthetic Broken References Container",
+            "publicId": "GTM-SYN502",
+            "counts": {
+              "tags": 1,
+              "triggers": 1,
+              "variables": 1,
+              "folders": 1,
+              "customTemplates": 0,
+              "builtInVariables": 1,
+              "zones": 0
+            }
+          }
+        }
+      ],
+      "inferred_issue": null,
+      "recommendation": "Use this inventory as audit coverage context. No GTM configuration change is proposed from this finding.",
+      "automated_change_policy": "blocked",
+      "manual_review_required": false,
+      "manual_review_triggers": [],
+      "related_change_ids": [],
+      "related_qa_item_ids": [
+        "QA-001"
+      ]
+    },
+    {
+      "finding_id": "F-REF-001",
+      "rule_id": "GTM-REF-001",
+      "category": "reference_integrity",
+      "severity": "high",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "102",
+          "entity_name": "GA4 - Event - Purchase"
+        }
+      ],
+      "detected_facts": [
+        "Tag 102 named \"GA4 - Event - Purchase\" has firingTriggerId \"299\".",
+        "No trigger with triggerId \"299\" exists in the exported trigger array.",
+        "The export does contain trigger 202 named \"CE - purchase\" but this is not the referenced ID."
+      ],
+      "evidence": [
+        {
+          "source_file": "synthetic-broken-references.json",
+          "entity_type": "tag",
+          "entity_id": "102",
+          "entity_name": "GA4 - Event - Purchase",
+          "reference_location": "containerVersion.tag[tagId=102].firingTriggerId[0]",
+          "referenced_entity_type": "trigger",
+          "referenced_entity_id": "299",
+          "target_found": false
+        }
+      ],
+      "inferred_issue": "The GA4 purchase event tag may not fire as intended because its firing trigger reference is unresolved in the export.",
+      "recommendation": "Manual review required. Confirm the intended firing trigger in GTM or source documentation. A likely candidate by name is trigger 202, \"CE - purchase\", but the MLP does not automatically repair ambiguous trigger references.",
+      "automated_change_policy": "manual_review_only",
+      "manual_review_required": true,
+      "manual_review_triggers": [
+        "broken_reference",
+        "trigger_logic_change",
+        "ecommerce_purchase_event"
+      ],
+      "related_change_ids": [
+        "CHG-REC-001"
+      ],
+      "related_qa_item_ids": [
+        "QA-002",
+        "QA-003"
+      ]
+    },
+    {
+      "finding_id": "F-REF-002",
+      "rule_id": "GTM-REF-001",
+      "category": "reference_integrity",
+      "severity": "medium",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "102",
+          "entity_name": "GA4 - Event - Purchase"
+        }
+      ],
+      "detected_facts": [
+        "Tag 102 named \"GA4 - Event - Purchase\" has parentFolderId \"499\".",
+        "No folder with folderId \"499\" exists in the exported folder array.",
+        "The export does contain folder 402 named \"GA4 - Ecommerce\" but this is not the referenced ID."
+      ],
+      "evidence": [
+        {
+          "source_file": "synthetic-broken-references.json",
+          "entity_type": "tag",
+          "entity_id": "102",
+          "entity_name": "GA4 - Event - Purchase",
+          "reference_location": "containerVersion.tag[tagId=102].parentFolderId",
+          "referenced_entity_type": "folder",
+          "referenced_entity_id": "499",
+          "target_found": false
+        }
+      ],
+      "inferred_issue": "The tag's folder assignment is unresolved. This is primarily an organization and reviewability issue, not direct firing behavior.",
+      "recommendation": "Manual review required. Confirm intended folder assignment. A likely candidate by name is folder 402, \"GA4 - Ecommerce\", but the MLP does not automatically repair ambiguous folder references.",
+      "automated_change_policy": "manual_review_only",
+      "manual_review_required": true,
+      "manual_review_triggers": [
+        "broken_reference",
+        "ambiguous_target"
+      ],
+      "related_change_ids": [
+        "CHG-REC-002"
+      ],
+      "related_qa_item_ids": [
+        "QA-002",
+        "QA-004"
+      ]
+    },
+    {
+      "finding_id": "F-REF-003",
+      "rule_id": "GTM-REF-001",
+      "category": "reference_integrity",
+      "severity": "high",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "102",
+          "entity_name": "GA4 - Event - Purchase"
+        }
+      ],
+      "detected_facts": [
+        "Tag 102 named \"GA4 - Event - Purchase\" parameter key \"value\" references variable token \"{{Missing Revenue}}\".",
+        "No variable named \"Missing Revenue\" exists in the exported variable array.",
+        "The export contains variable 302 named \"DLV - ecommerce.transaction_id\" with dataLayer key \"ecommerce.transaction_id\"; this does not match the referenced token."
+      ],
+      "evidence": [
+        {
+          "source_file": "synthetic-broken-references.json",
+          "entity_type": "tag",
+          "entity_id": "102",
+          "entity_name": "GA4 - Event - Purchase",
+          "reference_location": "containerVersion.tag[tagId=102].parameter[1].value",
+          "parameter_key": "value",
+          "referenced_entity_type": "variable",
+          "referenced_entity_name": "Missing Revenue",
+          "target_found": false
+        }
+      ],
+      "inferred_issue": "The GA4 purchase event value may resolve to an undefined value, which may affect ecommerce revenue reporting.",
+      "recommendation": "Manual review required. Confirm the intended revenue variable and dataLayer key before adding, renaming, or remapping any variable. Do not change ecommerce value mapping automatically from the export alone.",
+      "automated_change_policy": "manual_review_only",
+      "manual_review_required": true,
+      "manual_review_triggers": [
+        "broken_reference",
+        "ecommerce_value_mapping",
+        "variable_value_change"
+      ],
+      "related_change_ids": [
+        "CHG-REC-003"
+      ],
+      "related_qa_item_ids": [
+        "QA-002",
+        "QA-003"
+      ]
+    },
+    {
+      "finding_id": "F-ECOM-001",
+      "rule_id": "GTM-ECOM-001",
+      "category": "ecommerce",
+      "severity": "high",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "102",
+          "entity_name": "GA4 - Event - Purchase"
+        }
+      ],
+      "detected_facts": [
+        "Tag 102 is a GA4 event-style tag with eventName \"purchase\".",
+        "The tag includes a value parameter set to \"{{Missing Revenue}}\".",
+        "The referenced revenue variable is unresolved in the export.",
+        "The export contains a transaction ID dataLayer variable, but no observed currency or items variable references on the purchase tag."
+      ],
+      "evidence": [
+        {
+          "source_file": "synthetic-broken-references.json",
+          "entity_type": "tag",
+          "entity_id": "102",
+          "entity_name": "GA4 - Event - Purchase",
+          "reference_location": "containerVersion.tag[tagId=102].parameter",
+          "observed_parameters": {
+            "eventName": "purchase",
+            "value": "{{Missing Revenue}}"
+          }
+        }
+      ],
+      "inferred_issue": "Purchase revenue reporting may be incomplete or broken because the value parameter references a missing variable. Currency and item array mappings were not detected from the export.",
+      "recommendation": "Review ecommerce dataLayer documentation and validate a test purchase in GTM Preview. Confirm revenue, currency, transaction_id, and items mappings before making any payload change.",
+      "automated_change_policy": "manual_review_only",
+      "manual_review_required": true,
+      "manual_review_triggers": [
+        "purchase_event",
+        "revenue_value",
+        "ecommerce_payload_change"
+      ],
+      "related_change_ids": [],
+      "related_qa_item_ids": [
+        "QA-003"
+      ]
+    },
+    {
+      "finding_id": "F-UNUSED-001",
+      "rule_id": "GTM-UNUSED-001",
+      "category": "unused_or_orphaned",
+      "severity": "medium",
+      "affected_entities": [
+        {
+          "entity_type": "trigger",
+          "entity_id": "202",
+          "entity_name": "CE - purchase"
+        },
+        {
+          "entity_type": "folder",
+          "entity_id": "402",
+          "entity_name": "GA4 - Ecommerce"
+        },
+        {
+          "entity_type": "variable",
+          "entity_id": "302",
+          "entity_name": "DLV - ecommerce.transaction_id"
+        }
+      ],
+      "detected_facts": [
+        "Trigger 202 is present but no tag references triggerId 202.",
+        "Folder 402 is present but no exported entity uses parentFolderId 402.",
+        "Variable 302 is present but no exported parameter references {{DLV - ecommerce.transaction_id}}."
+      ],
+      "evidence": [
+        {
+          "source_file": "synthetic-broken-references.json",
+          "reference_counts": {
+            "triggerId_202": 0,
+            "folderId_402": 0,
+            "variable_name_DLV - ecommerce.transaction_id": 0
+          }
+        }
+      ],
+      "inferred_issue": "These entities appear orphaned from the exported relationships. They may be intended targets for the broken references, but that cannot be confirmed from ID/name mismatch alone.",
+      "recommendation": "Do not delete or archive automatically. Review whether these are the intended trigger, folder, and transaction ID variable for the purchase tag.",
+      "automated_change_policy": "blocked",
+      "manual_review_required": true,
+      "manual_review_triggers": [
+        "orphaned_entity",
+        "possible_intended_reference_target",
+        "deletion_blocked"
+      ],
+      "related_change_ids": [],
+      "related_qa_item_ids": [
+        "QA-004"
+      ]
+    }
+  ],
+  "manual_review_items": [
+    {
+      "manual_review_id": "MR-001",
+      "related_finding_ids": [
+        "F-REF-001"
+      ],
+      "priority": "high",
+      "owner_role": "GTM analyst",
+      "item": "Confirm the intended firing trigger for tag 102 before changing firingTriggerId 299.",
+      "reason": "Changing trigger references can alter purchase tracking behavior."
+    },
+    {
+      "manual_review_id": "MR-002",
+      "related_finding_ids": [
+        "F-REF-002"
+      ],
+      "priority": "medium",
+      "owner_role": "GTM analyst",
+      "item": "Confirm intended folder assignment for tag 102 before changing parentFolderId 499.",
+      "reason": "Folder candidate 402 is plausible but not deterministic from the export alone."
+    },
+    {
+      "manual_review_id": "MR-003",
+      "related_finding_ids": [
+        "F-REF-003",
+        "F-ECOM-001"
+      ],
+      "priority": "high",
+      "owner_role": "GTM analyst / developer",
+      "item": "Confirm intended revenue variable and dataLayer key for purchase value before adding, renaming, or remapping variables.",
+      "reason": "The unresolved {{Missing Revenue}} token may affect ecommerce revenue reporting."
+    },
+    {
+      "manual_review_id": "MR-004",
+      "related_finding_ids": [
+        "F-UNUSED-001"
+      ],
+      "priority": "medium",
+      "owner_role": "GTM analyst",
+      "item": "Review apparently orphaned trigger 202, folder 402, and variable 302 before archive, delete, or reuse decisions.",
+      "reason": "They may be intended targets for broken references, but the export does not prove that."
+    }
+  ],
+  "unsafe_change_flags": [
+    "trigger_logic_change_not_applied",
+    "folder_reference_repair_not_applied",
+    "ecommerce_value_mapping_change_not_applied",
+    "deletion_archive_disable_blocked"
+  ],
+  "assumptions": [
+    "The uploaded fixture JSON is the only GTM container export input for this run.",
+    "No client-specific override was provided beyond the active user instruction.",
+    "A tag type of gaawe with eventName purchase is treated as a GA4 event-style ecommerce purchase tag for audit purposes.",
+    "Likely target references are noted only as candidates, not as confirmed intent."
+  ],
+  "limitations": [
+    "This is file-in/file-out analysis of an exported GTM configuration only.",
+    "No live GTM, GA4, Google Ads, website, API, workspace, or production platform was inspected or modified.",
+    "Validation does not prove live tracking correctness, consent behavior, legal compliance, privacy compliance, or publish safety."
+  ]
+}

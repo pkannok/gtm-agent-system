@@ -1,0 +1,89 @@
+{
+  "artifact_name": "run_metadata.json",
+  "package_name": "GTM Container Audit & Patch Package",
+  "fixture_id": "synthetic-consent-001",
+  "run_id": "gtm-audit-synthetic-consent-001-20260626T220218Z",
+  "generated_at": "2026-06-26T22:02:18Z",
+  "input_files": [
+    {
+      "filename": "synthetic-consent-risk-remarketing.json",
+      "sandbox_path": "/mnt/data/synthetic-consent-risk-remarketing.json",
+      "sha256": "5181286b3c384f5980368d14772075cbc69621d058f4e2145ba860c961986d45",
+      "role": "only_gtm_container_export_input"
+    }
+  ],
+  "client_id": null,
+  "client_profile_provided": false,
+  "standards_applied": [
+    {
+      "standard_id": "deliverable-contract",
+      "name": "GTM Container Audit & Patch Package required seven artifacts",
+      "source": "repository_standard"
+    },
+    {
+      "standard_id": "workflow",
+      "name": "File-in/file-out GTM container audit workflow",
+      "source": "repository_standard"
+    },
+    {
+      "standard_id": "audit-rules",
+      "name": "GTM Audit Rule Catalog, including GTM-CONSENT-001 and GTM-QA-001",
+      "source": "repository_standard"
+    },
+    {
+      "standard_id": "gtm-object-model",
+      "name": "GTM entity and reference inspection",
+      "source": "repository_standard"
+    },
+    {
+      "standard_id": "output-standards",
+      "name": "Fixed audit report structure and safety wording",
+      "source": "repository_standard"
+    },
+    {
+      "standard_id": "qa-standard",
+      "name": "Manual QA checklist format and status language",
+      "source": "agency_standard"
+    },
+    {
+      "standard_id": "consent-standard",
+      "name": "Consent and privacy review standard",
+      "source": "agency_standard"
+    },
+    {
+      "standard_id": "user_intent",
+      "name": "Fixture synthetic-consent-001 expected GTM-CONSENT-001 consent risk",
+      "source": "active_user_task_instruction"
+    }
+  ],
+  "tool_or_gpt_version": "GTM Container Analyst draft run",
+  "mlp_version": "canonical MLP",
+  "scope": {
+    "file_in_file_out_only": true,
+    "live_gtm_connected": false,
+    "live_ga4_connected": false,
+    "live_google_ads_connected": false,
+    "live_api_called": false,
+    "workspace_created": false,
+    "container_imported": false,
+    "container_published": false,
+    "website_or_production_verified": false
+  },
+  "assumptions": [
+    "The uploaded fixture JSON is the only GTM container export input for this run.",
+    "Absence of consent settings in the export is treated as lack of clear consent evidence, not proof of non-compliance.",
+    "No client profile or client-specific override was provided."
+  ],
+  "limitations": [
+    "No GTM, GA4, Google Ads, website, API, workspace, CMP, or production platform was connected to, inspected, changed, imported, published, or verified.",
+    "The file export cannot prove live tag firing behavior, consent behavior, legal compliance, privacy compliance, or production readiness.",
+    "Custom HTML external script behavior cannot be fully determined from the export alone."
+  ],
+  "safety": {
+    "draft_proposal": true,
+    "human_review_required_before_import_workspace_creation_publishing_or_production_use": true,
+    "legal_or_privacy_compliance_certified": false,
+    "tracking_correctness_certified": false,
+    "publish_safety_certified": false
+  }
+}

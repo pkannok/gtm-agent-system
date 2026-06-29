@@ -55,6 +55,7 @@ All notable project changes will be documented in this file.
 - Added `custom-gpt/task-6.3-verification.md` for Task 6.3 manual knowledge-upload instructions and verification notes.
 - Added `custom-gpt/task-6.4-verification.md` for Task 6.4 Custom GPT capability posture, manual editor checks, and verification prompts.
 - Added `custom-gpt/task-6.5-verification.md` for Task 6.5 manual conversation-starter entry and verification notes.
+- Added `outputs/phase-7-fixture-gpt-tests/` as the Task 7.1 manual fixture-test workspace with operator workflow, run log, review worksheet, fixture prompts, and run-folder instructions.
 
 ### Changed
 
@@ -89,5 +90,6 @@ All notable project changes will be documented in this file.
 - Marked Task 6.4 ready for manual verification and documented MLP-safe Custom GPT capability settings.
 - Marked Task 6.4 complete after manual capability verification passed and recorded Task 6.5 as the next recommended task.
 - Marked Task 6.5 and Phase 6 complete after manual conversation-starter entry and version-history verification, and recorded Task 7.1 as the next recommended task.
+- Marked Phase 7 in progress and Task 7.1 ready for manual GPT execution without recording fake GPT outputs or starting Task 7.2 validation work.
 - Moved the top-level package schema contract from the repository root to `schemas/` so all Phase 1 schema contracts live together.
 - Kept `schemas/` contract-only and placed schema validation samples under `examples/schema-validation/`.

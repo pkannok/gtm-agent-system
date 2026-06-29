@@ -1,0 +1,55 @@
+{
+  "package_name": "GTM Container Audit & Patch Package",
+  "run_id": "gtm-audit-synthetic-duplicate-001-20260626T000000Z",
+  "fixture_id": "synthetic-duplicate-001",
+  "source_filename": "synthetic-duplicate-purchase-tags.json",
+  "optimized_container_filename": "optimized_container.json",
+  "summary": {
+    "total_changes": 1,
+    "changes_reflected_in_optimized_container": 0,
+    "manual_review_only_changes": 1,
+    "blocked_changes": 1,
+    "note": "No GTM configuration changes were applied to optimized_container.json because duplicate ecommerce cleanup requires human analyst review."
+  },
+  "changes": [
+    {
+      "change_id": "CHG-001",
+      "status": "recommended_not_applied",
+      "change_type": "duplicate_cleanup_decision",
+      "reflected_in_optimized_container": false,
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "id": "103",
+          "name": "GA4 - Event - purchase"
+        },
+        {
+          "entity_type": "tag",
+          "id": "104",
+          "name": "GA4 - Event - purchase copy"
+        },
+        {
+          "entity_type": "trigger",
+          "id": "203",
+          "name": "CE - purchase"
+        }
+      ],
+      "related_finding_ids": [
+        "F-DUP-001",
+        "F-ECOM-001"
+      ],
+      "what_would_change": "A human analyst may choose to disable, remove, or consolidate one duplicate GA4 purchase tag after review. This package does not apply that change.",
+      "why_proposed": "The two GA4 purchase event tags have the same event name, measurement ID variable, transaction ID variable, and firing trigger.",
+      "risk_level": "high",
+      "automated_change_policy": "blocked_for_deletion_or_disabling; manual_review_only_for_duplicate_cleanup",
+      "unsafe_change_reason": "Deleting or disabling ecommerce purchase tracking from an export alone may remove intentional tracking or affect production reporting.",
+      "human_approval_required": true,
+      "rollback_note": "Because no file-based change was applied, rollback is to keep both original tags unchanged. If an analyst later disables/removes one tag in GTM, rollback would restore the original tag configuration and firing trigger from the source export.",
+      "reviewer_roles": [
+        "technical_marketing_analyst",
+        "analytics_owner"
+      ],
+      "proposed_next_step": "Use GTM Preview and a test purchase to determine whether both tags fire for the same event; document the intended keeper tag before making a workspace-level change."
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "package_name": "GTM Container Audit & Patch Package",
+  "run_id": "gtm-audit-synthetic-duplicate-001-20260626T000000Z",
+  "fixture_id": "synthetic-duplicate-001",
+  "timestamp": "2026-06-26T00:00:00Z",
+  "input_files": [
+    {
+      "filename": "synthetic-duplicate-purchase-tags.json",
+      "role": "primary_gtm_container_export",
+      "sha256": "359b5d8855cb291f205cda62101c247e6d617a2d60f8716d2d78304619e47afd"
+    }
+  ],
+  "client_id": null,
+  "client_profile": null,
+  "standards_applied": [
+    {
+      "id": "deliverable-contract",
+      "name": "GTM Container Audit & Patch Package required seven-artifact contract",
+      "source": "repo_standard"
+    },
+    {
+      "id": "workflow",
+      "name": "File-in/file-out GTM container audit workflow",
+      "source": "repo_standard"
+    },
+    {
+      "id": "audit-rules",
+      "name": "GTM audit rule catalog",
+      "source": "repo_standard",
+      "rule_ids_used": [
+        "GTM-INV-001",
+        "GTM-REF-001",
+        "GTM-DUP-001",
+        "GTM-ECOM-001",
+        "GTM-QA-001"
+      ]
+    },
+    {
+      "id": "gtm-object-model",
+      "name": "GTM entity and relationship model",
+      "source": "repo_standard"
+    },
+    {
+      "id": "output-standards",
+      "name": "Human-readable report structure and safety wording",
+      "source": "repo_standard"
+    },
+    {
+      "id": "qa-standard",
+      "name": "Manual QA checklist standard",
+      "source": "repo_standard"
+    },
+    {
+      "id": "consent-standard",
+      "name": "Consent/privacy review boundaries",
+      "source": "repo_standard"
+    }
+  ],
+  "user_intent": {
+    "fixture_id": "synthetic-duplicate-001",
+    "expected_issue_category": "duplicate GA4 purchase tracking on the same trigger",
+    "expected_rules": [
+      "GTM-DUP-001",
+      "GTM-ECOM-001"
+    ],
+    "use_uploaded_fixture_as_only_input": true
+  },
+  "mlp_version": "canonical-mlp-2026-05-27",
+  "tool_or_gpt_version": "GTM Container Analyst",
+  "live_platform_access": {
+    "gtm_connected": false,
+    "ga4_connected": false,
+    "google_ads_connected": false,
+    "website_connected": false,
+    "api_calls_made": false
+  },
+  "assumptions": [
+    "The uploaded fixture JSON is the only GTM container export input for this run.",
+    "Fixture ID was supplied by the user as synthetic-duplicate-001.",
+    "No client-specific profile or override was provided.",
+    "No live GTM, GA4, Google Ads, website, API, workspace, or production system was inspected."
+  ],
+  "limitations": [
+    "This audit is based only on exported GTM JSON.",
+    "Live firing behavior, dataLayer runtime values, GA4 ingestion, consent behavior, and production safety were not verified.",
+    "The optimized container is a draft proposal for human review."
+  ],
+  "draft_proposal_only": true,
+  "human_review_required_before_import_workspace_publish_or_production": true
+}

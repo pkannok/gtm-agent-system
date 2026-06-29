@@ -1,0 +1,391 @@
+{
+  "artifact_name": "audit_report.json",
+  "package_name": "GTM Container Audit & Patch Package",
+  "fixture_id": "synthetic-consent-001",
+  "run_id": "gtm-audit-synthetic-consent-001-20260626T220218Z",
+  "generated_at": "2026-06-26T22:02:18Z",
+  "source": {
+    "filename": "synthetic-consent-risk-remarketing.json",
+    "sha256": "5181286b3c384f5980368d14772075cbc69621d058f4e2145ba860c961986d45"
+  },
+  "scope": {
+    "file_in_file_out_only": true,
+    "live_platforms_inspected": false,
+    "live_platforms_modified": false,
+    "draft_proposal": true,
+    "human_review_required_before_import_workspace_publishing_or_production_use": true
+  },
+  "container_summary": {
+    "account_id": "9001",
+    "container_id": "5106",
+    "container_name": "Synthetic Consent Risk Container",
+    "container_version_name": "Synthetic Consent Risk Version",
+    "public_id": "GTM-SYN506",
+    "export_format_version": 2,
+    "export_time": "2026-06-09 00:00:00",
+    "entity_counts": {
+      "tags": 2,
+      "triggers": 1,
+      "variables": 1,
+      "folders": 1,
+      "custom_templates": 0,
+      "zones": 0,
+      "built_in_variables": 1
+    }
+  },
+  "overall_risk_level": "high",
+  "finding_counts": {
+    "high": 3,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "findings": [
+    {
+      "finding_id": "F-001",
+      "rule_id": "GTM-INV-001",
+      "category": "inventory",
+      "severity": "info",
+      "title": "Container inventory captured from export",
+      "affected_entities": [
+        {
+          "entity_type": "container",
+          "entity_id": "5106",
+          "entity_name": "Synthetic Consent Risk Container"
+        }
+      ],
+      "detected_facts": [
+        "Source filename is synthetic-consent-risk-remarketing.json.",
+        "Export format version is 2.",
+        "Container accountId=9001, containerId=5106, publicId=GTM-SYN506.",
+        "Entity counts: {'tags': 2, 'triggers': 1, 'variables': 1, 'folders': 1, 'custom_templates': 0, 'zones': 0, 'built_in_variables': 1}."
+      ],
+      "evidence": {
+        "source_filename": "synthetic-consent-risk-remarketing.json",
+        "export_format_version": 2,
+        "account_id": "9001",
+        "container_id": "5106",
+        "container_name": "Synthetic Consent Risk Container",
+        "container_public_id": "GTM-SYN506",
+        "entity_counts": {
+          "tags": 2,
+          "triggers": 1,
+          "variables": 1,
+          "folders": 1,
+          "custom_templates": 0,
+          "zones": 0,
+          "built_in_variables": 1
+        }
+      },
+      "inferred_issue": null,
+      "recommendation": "Use this inventory as the scope of the file-based audit. Missing live behavior and website context remain outside this package.",
+      "automated_change_policy": "blocked",
+      "manual_review_required": false,
+      "consent_review_required": false,
+      "unsafe_change_blocked": false,
+      "related_change_ids": [],
+      "related_qa_item_ids": [
+        "QA-001"
+      ]
+    },
+    {
+      "finding_id": "F-002",
+      "rule_id": "GTM-CONSENT-001",
+      "category": "consent/risk",
+      "severity": "high",
+      "title": "All-pages Google Ads remarketing tag lacks clear consent evidence in export",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "106",
+          "entity_name": "Google Ads - Remarketing - All Pages"
+        },
+        {
+          "entity_type": "trigger",
+          "entity_id": "206",
+          "entity_name": "PV - All Pages"
+        },
+        {
+          "entity_type": "variable",
+          "entity_id": "306",
+          "entity_name": "CONST - Google Ads Conversion ID"
+        }
+      ],
+      "detected_facts": [
+        "Tag 106 is named \"Google Ads - Remarketing - All Pages\".",
+        "Tag 106 has type \"sp\" and includes conversionId value \"{{CONST - Google Ads Conversion ID}}\".",
+        "Variable 306 resolves the conversion ID constant to \"AW-TEST506\" in the export.",
+        "Tag 106 fires on trigger 206, named \"PV - All Pages\", with trigger type PAGEVIEW.",
+        "No explicit tag-level consent settings, blocking trigger, consent initialization tag, or CMP tag were observed in the exported configuration."
+      ],
+      "evidence": {
+        "tag": {
+          "tagId": "106",
+          "name": "Google Ads - Remarketing - All Pages",
+          "type": "sp",
+          "firingTriggerId": [
+            "206"
+          ],
+          "parentFolderId": "406"
+        },
+        "trigger": {
+          "accountId": "9001",
+          "containerId": "5106",
+          "triggerId": "206",
+          "name": "PV - All Pages",
+          "type": "PAGEVIEW",
+          "fingerprint": "synthetic-consent-trigger-206"
+        },
+        "variable_reference": "{{CONST - Google Ads Conversion ID}}",
+        "variable": {
+          "accountId": "9001",
+          "containerId": "5106",
+          "variableId": "306",
+          "name": "CONST - Google Ads Conversion ID",
+          "type": "c",
+          "parameter": [
+            {
+              "type": "template",
+              "key": "value",
+              "value": "AW-TEST506"
+            }
+          ],
+          "fingerprint": "synthetic-consent-variable-306"
+        },
+        "observed_consent_settings": null,
+        "observed_blocking_triggers": [],
+        "consent_evidence_status": "not_detected_in_export"
+      },
+      "inferred_issue": "This appears to be a broad remarketing/audience tag for an advertising vendor firing on all page views without clear consent gating evidence in the export.",
+      "recommendation": "Require analyst consent review before import or production use. Confirm intended consent categories, GTM consent settings, CMP behavior, blocking/exception triggers, and network behavior in GTM Preview. Do not add consent settings, remove the tag, or alter trigger logic automatically in this MLP package.",
+      "automated_change_policy": "blocked",
+      "manual_review_required": true,
+      "consent_review_required": true,
+      "unsafe_change_blocked": true,
+      "manual_review_triggers": [
+        "advertising_vendor_tag",
+        "remarketing_signal",
+        "all_pages_trigger",
+        "missing_or_unclear_consent_settings"
+      ],
+      "related_change_ids": [],
+      "related_qa_item_ids": [
+        "QA-002",
+        "QA-003",
+        "QA-006"
+      ]
+    },
+    {
+      "finding_id": "F-003",
+      "rule_id": "GTM-CONSENT-001",
+      "category": "consent/risk",
+      "severity": "high",
+      "title": "Custom HTML vendor pixel fires on all pages without clear consent evidence",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "107",
+          "entity_name": "Custom HTML - Vendor Pixel"
+        },
+        {
+          "entity_type": "trigger",
+          "entity_id": "206",
+          "entity_name": "PV - All Pages"
+        }
+      ],
+      "detected_facts": [
+        "Tag 107 is named \"Custom HTML - Vendor Pixel\".",
+        "Tag 107 has type \"html\", which is Custom HTML.",
+        "The visible HTML loads an external script from \"https://vendor.example.test/pixel.js\".",
+        "Tag 107 fires on trigger 206, named \"PV - All Pages\", with trigger type PAGEVIEW.",
+        "No explicit tag-level consent settings, blocking trigger, consent initialization tag, or CMP tag were observed in the exported configuration."
+      ],
+      "evidence": {
+        "tag": {
+          "tagId": "107",
+          "name": "Custom HTML - Vendor Pixel",
+          "type": "html",
+          "firingTriggerId": [
+            "206"
+          ],
+          "parentFolderId": "406"
+        },
+        "trigger": {
+          "accountId": "9001",
+          "containerId": "5106",
+          "triggerId": "206",
+          "name": "PV - All Pages",
+          "type": "PAGEVIEW",
+          "fingerprint": "synthetic-consent-trigger-206"
+        },
+        "html_snippet": "<script src=\"https://vendor.example.test/pixel.js\"></script>",
+        "external_domains_observed": [
+          "vendor.example.test"
+        ],
+        "observed_consent_settings": null,
+        "observed_blocking_triggers": [],
+        "consent_evidence_status": "not_detected_in_export"
+      },
+      "inferred_issue": "This appears to be an external vendor pixel script firing broadly on all page views. The export alone does not show whether the vendor code reads cookies, identifiers, storage, URL parameters, forms, or other user data.",
+      "recommendation": "Require human code review, consent review, GTM Preview testing, and browser network inspection. Do not edit the Custom HTML, add consent settings, remove the tag, or alter its all-pages trigger automatically in this MLP package.",
+      "automated_change_policy": "blocked",
+      "manual_review_required": true,
+      "consent_review_required": true,
+      "unsafe_change_blocked": true,
+      "manual_review_triggers": [
+        "custom_html",
+        "external_script",
+        "all_pages_trigger",
+        "missing_or_unclear_consent_settings"
+      ],
+      "related_change_ids": [],
+      "related_qa_item_ids": [
+        "QA-004",
+        "QA-005",
+        "QA-006"
+      ]
+    },
+    {
+      "finding_id": "F-004",
+      "rule_id": "GTM-QA-001",
+      "category": "qa",
+      "severity": "high",
+      "title": "Manual GTM Preview and consent-sensitive QA required before any use",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "106",
+          "entity_name": "Google Ads - Remarketing - All Pages"
+        },
+        {
+          "entity_type": "tag",
+          "entity_id": "107",
+          "entity_name": "Custom HTML - Vendor Pixel"
+        }
+      ],
+      "detected_facts": [
+        "Two consent-sensitive tags fire on the all-pages pageview trigger.",
+        "No live site behavior was inspected and no GTM Preview session was executed by this file-in/file-out run."
+      ],
+      "evidence": {
+        "related_findings": [
+          "F-002",
+          "F-003"
+        ],
+        "qa_status": "not_performed",
+        "live_platform_access_used": false
+      },
+      "inferred_issue": "The package cannot determine whether consent mode, CMP behavior, network requests, or vendor payloads behave correctly on the live site.",
+      "recommendation": "Complete the QA checklist before import, workspace creation, publishing, or production use.",
+      "automated_change_policy": "blocked",
+      "manual_review_required": true,
+      "consent_review_required": true,
+      "unsafe_change_blocked": true,
+      "related_change_ids": [],
+      "related_qa_item_ids": [
+        "QA-001",
+        "QA-002",
+        "QA-003",
+        "QA-004",
+        "QA-005",
+        "QA-006"
+      ]
+    }
+  ],
+  "manual_review_items": [
+    {
+      "manual_review_id": "MR-001",
+      "related_finding_ids": [
+        "F-002"
+      ],
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "106",
+          "entity_name": "Google Ads - Remarketing - All Pages"
+        }
+      ],
+      "reason": "Google Ads remarketing signal with all-pages pageview trigger and no clear consent evidence in export.",
+      "reviewer_role": "technical marketing analyst plus legal/privacy reviewer as appropriate",
+      "status": "todo"
+    },
+    {
+      "manual_review_id": "MR-002",
+      "related_finding_ids": [
+        "F-003"
+      ],
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "107",
+          "entity_name": "Custom HTML - Vendor Pixel"
+        }
+      ],
+      "reason": "Custom HTML external vendor pixel fires on all pages and code behavior cannot be certified from visible snippet alone.",
+      "reviewer_role": "technical marketing analyst/developer plus legal/privacy reviewer as appropriate",
+      "status": "todo"
+    }
+  ],
+  "reference_checks": [
+    {
+      "source_entity_type": "tag",
+      "source_entity_id": "106",
+      "source_entity_name": "Google Ads - Remarketing - All Pages",
+      "reference_location": "firingTriggerId",
+      "referenced_entity_type": "trigger",
+      "referenced_entity_id": "206",
+      "referenced_entity_name": "PV - All Pages",
+      "target_found": true
+    },
+    {
+      "source_entity_type": "tag",
+      "source_entity_id": "106",
+      "source_entity_name": "Google Ads - Remarketing - All Pages",
+      "reference_location": "parentFolderId",
+      "referenced_entity_type": "folder",
+      "referenced_entity_id": "406",
+      "referenced_entity_name": "Ads - Consent Review Required",
+      "target_found": true
+    },
+    {
+      "source_entity_type": "tag",
+      "source_entity_id": "106",
+      "source_entity_name": "Google Ads - Remarketing - All Pages",
+      "reference_location": "parameter.conversionId",
+      "referenced_entity_type": "variable",
+      "referenced_entity_id": "306",
+      "referenced_entity_name": "CONST - Google Ads Conversion ID",
+      "target_found": true
+    },
+    {
+      "source_entity_type": "tag",
+      "source_entity_id": "107",
+      "source_entity_name": "Custom HTML - Vendor Pixel",
+      "reference_location": "firingTriggerId",
+      "referenced_entity_type": "trigger",
+      "referenced_entity_id": "206",
+      "referenced_entity_name": "PV - All Pages",
+      "target_found": true
+    },
+    {
+      "source_entity_type": "tag",
+      "source_entity_id": "107",
+      "source_entity_name": "Custom HTML - Vendor Pixel",
+      "reference_location": "parentFolderId",
+      "referenced_entity_type": "folder",
+      "referenced_entity_id": "406",
+      "referenced_entity_name": "Ads - Consent Review Required",
+      "target_found": true
+    }
+  ],
+  "assumptions": [
+    "The uploaded fixture JSON is the only GTM container export input for this run.",
+    "Absence of consent settings in the export is treated as lack of clear consent evidence, not proof of non-compliance.",
+    "No client profile or client-specific override was provided."
+  ],
+  "limitations": [
+    "No GTM, GA4, Google Ads, website, API, workspace, CMP, or production platform was connected to, inspected, changed, imported, published, or verified.",
+    "The file export cannot prove live tag firing behavior, consent behavior, legal compliance, privacy compliance, or production readiness.",
+    "Custom HTML external script behavior cannot be fully determined from the export alone."
+  ]
+}

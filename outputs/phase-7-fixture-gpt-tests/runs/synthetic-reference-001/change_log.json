@@ -1,0 +1,96 @@
+{
+  "artifact": "change_log.json",
+  "run_id": "run-4009056865b0",
+  "fixture_id": "synthetic-reference-001",
+  "source_file": "synthetic-broken-references.json",
+  "optimized_file": "optimized_container.json",
+  "summary": {
+    "applied_change_count": 0,
+    "recommended_not_applied_count": 3,
+    "reason_no_changes_applied": "GTM-REF-001 treats broken reference repair as manual-review-only. The apparent target trigger, folder, and variable candidates are not deterministic enough to alter the optimized container without human review."
+  },
+  "applied_changes": [],
+  "recommended_changes_not_applied": [
+    {
+      "change_id": "CHG-REC-001",
+      "status": "recommended_not_applied",
+      "affected_entity": {
+        "entity_type": "tag",
+        "entity_id": "102",
+        "entity_name": "GA4 - Event - Purchase"
+      },
+      "what_would_change": "Potentially replace firingTriggerId \"299\" with the intended trigger ID after analyst confirmation.",
+      "candidate_target": {
+        "entity_type": "trigger",
+        "entity_id": "202",
+        "entity_name": "CE - purchase"
+      },
+      "why_proposed": "Tag 102 references missing trigger ID 299 and a similarly named purchase trigger exists as ID 202.",
+      "related_finding_ids": [
+        "F-REF-001"
+      ],
+      "risk_level": "high",
+      "automated_change_policy": "manual_review_only",
+      "reflected_in_optimized_container": false,
+      "unsafe_change_flags": [
+        "trigger_logic_change",
+        "ecommerce_purchase_event"
+      ],
+      "human_approval_required": true,
+      "rollback_note": "If rejected, preserve the source firingTriggerId value \"299\" until the correct trigger is confirmed from GTM/source documentation."
+    },
+    {
+      "change_id": "CHG-REC-002",
+      "status": "recommended_not_applied",
+      "affected_entity": {
+        "entity_type": "tag",
+        "entity_id": "102",
+        "entity_name": "GA4 - Event - Purchase"
+      },
+      "what_would_change": "Potentially replace parentFolderId \"499\" with the intended folder ID after analyst confirmation.",
+      "candidate_target": {
+        "entity_type": "folder",
+        "entity_id": "402",
+        "entity_name": "GA4 - Ecommerce"
+      },
+      "why_proposed": "Tag 102 references missing folder ID 499 and a similarly relevant GA4 ecommerce folder exists as ID 402.",
+      "related_finding_ids": [
+        "F-REF-002"
+      ],
+      "risk_level": "medium",
+      "automated_change_policy": "manual_review_only",
+      "reflected_in_optimized_container": false,
+      "unsafe_change_flags": [
+        "ambiguous_reference_target"
+      ],
+      "human_approval_required": true,
+      "rollback_note": "If rejected, preserve the source parentFolderId value \"499\" or choose a confirmed folder assignment manually."
+    },
+    {
+      "change_id": "CHG-REC-003",
+      "status": "recommended_not_applied",
+      "affected_entity": {
+        "entity_type": "tag",
+        "entity_id": "102",
+        "entity_name": "GA4 - Event - Purchase"
+      },
+      "what_would_change": "Potentially create, rename, or remap the missing revenue variable after analyst confirmation.",
+      "candidate_target": null,
+      "why_proposed": "Tag 102 references {{Missing Revenue}} in the purchase value parameter, but no variable with that name exists in the export.",
+      "related_finding_ids": [
+        "F-REF-003",
+        "F-ECOM-001"
+      ],
+      "risk_level": "high",
+      "automated_change_policy": "manual_review_only",
+      "reflected_in_optimized_container": false,
+      "unsafe_change_flags": [
+        "ecommerce_value_mapping",
+        "variable_value_change",
+        "revenue_reporting_risk"
+      ],
+      "human_approval_required": true,
+      "rollback_note": "If rejected, preserve the source value token {{Missing Revenue}} until the intended revenue dataLayer key is confirmed."
+    }
+  ]
+}

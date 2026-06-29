@@ -1,0 +1,130 @@
+{
+  "artifact": "validation_report.json",
+  "package_name": "GTM Container Audit & Patch Package",
+  "package_status": "draft_proposal_for_human_review",
+  "run_id": "run-synthetic-ecommerce-001-20260626",
+  "fixture_id": "synthetic-ecommerce-001",
+  "source_filename": "synthetic-ecommerce-missing-fields.json",
+  "validation_timestamp": "2026-06-26T00:00:00Z",
+  "overall_status": "passed_with_warnings",
+  "artifact_checks": [
+    {
+      "artifact": "optimized_container.json",
+      "exists": true,
+      "json_parse_status": "passed"
+    },
+    {
+      "artifact": "audit_report.md",
+      "exists": true,
+      "json_parse_status": "not_applicable"
+    },
+    {
+      "artifact": "audit_report.json",
+      "exists": true,
+      "json_parse_status": "passed"
+    },
+    {
+      "artifact": "change_log.json",
+      "exists": true,
+      "json_parse_status": "passed"
+    },
+    {
+      "artifact": "validation_report.json",
+      "exists": true,
+      "json_parse_status": "passed"
+    },
+    {
+      "artifact": "qa_checklist.md",
+      "exists": true,
+      "json_parse_status": "not_applicable"
+    },
+    {
+      "artifact": "run_metadata.json",
+      "exists": true,
+      "json_parse_status": "passed"
+    }
+  ],
+  "source_container_checks": [
+    {
+      "check_id": "VAL-SRC-001",
+      "name": "Source JSON parsed",
+      "status": "passed",
+      "details": "Uploaded fixture parsed as JSON."
+    },
+    {
+      "check_id": "VAL-SRC-002",
+      "name": "GTM-like top-level structure present",
+      "status": "passed",
+      "details": "`exportFormatVersion` and `containerVersion` are present."
+    },
+    {
+      "check_id": "VAL-SRC-003",
+      "name": "Required ecommerce audit target present",
+      "status": "passed",
+      "details": "GA4 purchase tag 105 and trigger 205 are present."
+    },
+    {
+      "check_id": "VAL-REF-001",
+      "name": "Tag firing trigger references resolve",
+      "status": "passed",
+      "details": "Tag 105 references trigger ID 205, which exists."
+    },
+    {
+      "check_id": "VAL-REF-002",
+      "name": "Tag variable token references resolve",
+      "status": "passed",
+      "details": "Tag 105 references `CONST - GA4 Measurement ID` and `DLV - ecommerce.value`, both observed as variables."
+    },
+    {
+      "check_id": "VAL-ECOM-001",
+      "name": "Purchase transaction ID mapping present",
+      "status": "warning",
+      "details": "No explicit `transaction_id` parameter or dataLayer variable was observed."
+    },
+    {
+      "check_id": "VAL-ECOM-002",
+      "name": "Purchase currency mapping present",
+      "status": "warning",
+      "details": "No explicit `currency` parameter or dataLayer variable was observed."
+    }
+  ],
+  "optimized_container_checks": [
+    {
+      "check_id": "VAL-OPT-001",
+      "name": "Optimized JSON parseable",
+      "status": "passed",
+      "details": "optimized_container.json is valid JSON."
+    },
+    {
+      "check_id": "VAL-OPT-002",
+      "name": "No automated ecommerce payload mutation",
+      "status": "passed",
+      "details": "The optimized container preserves the source ecommerce payload because the recommended changes are blocked/manual-review-only."
+    }
+  ],
+  "warnings": [
+    {
+      "warning_id": "WARN-001",
+      "related_finding_id": "F-001",
+      "message": "The optimized container intentionally leaves the purchase tag unchanged. Human review is required before adding transaction ID or currency mappings."
+    },
+    {
+      "warning_id": "WARN-002",
+      "message": "Validation checks inspect exported configuration only and do not prove live tracking correctness."
+    }
+  ],
+  "errors": [],
+  "limitations": [
+    "No live GTM, GA4, Google Ads, website, API, workspace, or production platform was inspected or changed.",
+    "Validation did not run GTM Preview, test purchases, network inspection, GA4 DebugView, or reporting verification.",
+    "Validation does not certify legal compliance, privacy compliance, consent behavior, tracking correctness, production readiness, or publish safety."
+  ],
+  "safety_fields": {
+    "draft_only": true,
+    "human_review_required_before_import_workspace_publish_or_production_use": true,
+    "validation_proves_tracking_correctness": false,
+    "validation_proves_consent_correctness": false,
+    "validation_proves_legal_or_privacy_compliance": false,
+    "validation_proves_publish_safety": false
+  }
+}

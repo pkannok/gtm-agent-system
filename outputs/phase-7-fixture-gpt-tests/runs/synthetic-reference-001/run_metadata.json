@@ -1,0 +1,81 @@
+{
+  "artifact": "run_metadata.json",
+  "run_id": "run-4009056865b0",
+  "fixture_id": "synthetic-reference-001",
+  "timestamp": "2026-06-26T00:00:00Z",
+  "input_files": [
+    "synthetic-broken-references.json"
+  ],
+  "source_file_sha256": "86805d6b5716f18eb67ddb4e1b536a88301d706a7e269abe83a083acb669cca3",
+  "client_id": null,
+  "standards_applied": [
+    {
+      "standard_id": "DELIVERABLE-CONTRACT",
+      "name": "GTM Container Audit & Patch Package",
+      "source": "repo_standard"
+    },
+    {
+      "standard_id": "GTM-REF-001",
+      "name": "Reference Integrity",
+      "source": "audit_rule_catalog"
+    },
+    {
+      "standard_id": "GTM-INV-001",
+      "name": "Container Inventory Completeness",
+      "source": "audit_rule_catalog"
+    },
+    {
+      "standard_id": "GTM-ECOM-001",
+      "name": "Ecommerce Tracking Integrity",
+      "source": "audit_rule_catalog"
+    },
+    {
+      "standard_id": "GTM-UNUSED-001",
+      "name": "Unused or Orphaned Entities",
+      "source": "audit_rule_catalog"
+    },
+    {
+      "standard_id": "GTM-QA-001",
+      "name": "QA and Preview Readiness",
+      "source": "audit_rule_catalog"
+    },
+    {
+      "standard_id": "QA-STANDARD",
+      "name": "QA Checklist Standard",
+      "source": "agency_standard"
+    },
+    {
+      "standard_id": "CONSENT-STANDARD",
+      "name": "Consent and Privacy Review Standard",
+      "source": "agency_standard"
+    },
+    {
+      "standard_id": "USER-INTENT-001",
+      "name": "Use fixture as only input; expected GTM-REF-001",
+      "source": "user_intent"
+    }
+  ],
+  "mlp_version": "canonical-mlp-2026-05-27",
+  "tool_or_gpt_version": "GTM Container Analyst",
+  "workflow_mode": "file_in_file_out",
+  "live_platform_access": {
+    "gtm_api_called": false,
+    "ga4_api_called": false,
+    "google_ads_api_called": false,
+    "workspace_created": false,
+    "container_imported": false,
+    "published": false,
+    "website_verified": false
+  },
+  "assumptions": [
+    "The uploaded fixture JSON is the only GTM container export input for this run.",
+    "No client-specific override was provided beyond the active user instruction.",
+    "A tag type of gaawe with eventName purchase is treated as a GA4 event-style ecommerce purchase tag for audit purposes.",
+    "Likely target references are noted only as candidates, not as confirmed intent."
+  ],
+  "limitations": [
+    "This is file-in/file-out analysis of an exported GTM configuration only.",
+    "No live GTM, GA4, Google Ads, website, API, workspace, or production platform was inspected or modified.",
+    "Validation does not prove live tracking correctness, consent behavior, legal compliance, privacy compliance, or publish safety."
+  ]
+}
