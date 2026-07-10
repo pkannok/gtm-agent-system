@@ -117,9 +117,7 @@
           "default": true
         },
         "container": {
-          "type": "object",
-          "description": "Proposed GTM container export JSON. This object is intentionally not a publish-ready guarantee.",
-          "additionalProperties": true
+          "$ref": "#/definitions/gtmContainerExport"
         }
       }
     },
@@ -510,6 +508,71 @@
         "source": {
           "type": "string",
           "enum": ["agency_standard", "client_profile", "client_override", "user_intent"]
+        }
+      }
+    },
+    "gtmContainerExport": {
+      "type": "object",
+      "description": "Complete proposed GTM container export JSON. This object is intentionally not a publish-ready guarantee.",
+      "additionalProperties": true,
+      "required": [
+        "exportFormatVersion",
+        "containerVersion"
+      ],
+      "properties": {
+        "exportFormatVersion": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "containerVersion": {
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "tag",
+            "trigger",
+            "variable"
+          ],
+          "properties": {
+            "container": {
+              "type": "object"
+            },
+            "tag": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "trigger": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "variable": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "folder": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "builtInVariable": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "customTemplate": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            }
+          }
         }
       }
     },

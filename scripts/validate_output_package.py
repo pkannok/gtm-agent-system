@@ -446,20 +446,34 @@ def validate_optimized_container(
         )
         return
 
-    if "containerVersion" in optimized_container or "exportFormatVersion" in optimized_container:
+    errors: list[str] = []
+    if not isinstance(optimized_container.get("exportFormatVersion"), int):
+        errors.append("exportFormatVersion must be an integer")
+
+    container_version = optimized_container.get("containerVersion")
+    if not isinstance(container_version, dict):
+        errors.append("containerVersion must be an object")
+    else:
+        for section_name in ("tag", "trigger", "variable"):
+            if not isinstance(container_version.get(section_name), list):
+                errors.append(f"containerVersion.{section_name} must be an array")
+
+    if errors:
         checks.append(
             make_check(
                 "optimized-container-basic",
-                "pass",
-                "optimized_container.json has GTM export-like top-level fields.",
+                "fail",
+                "optimized_container.json is not a complete GTM export shape: "
+                + "; ".join(errors)
+                + ".",
             )
         )
     else:
         checks.append(
             make_check(
                 "optimized-container-basic",
-                "warn",
-                "optimized_container.json parses, but no GTM export-like top-level fields were found.",
+                "pass",
+                "optimized_container.json has required GTM export top-level fields and core entity arrays.",
             )
         )
 

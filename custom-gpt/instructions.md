@@ -80,6 +80,7 @@ Provide a complete proposed GTM container export JSON when changes are included 
 
 Rules:
 
+- Include the full GTM export wrapper, including `exportFormatVersion`, `containerVersion`, and the core `tag`, `trigger`, and `variable` arrays. Do not provide a metadata-only summary or partial container stub as `optimized_container.json`.
 - Preserve GTM structure and unrelated fields.
 - Avoid deleting, disabling, or materially changing risky entities unless the user explicitly requested that exact proposal and the output clearly flags human review.
 - Prefer reviewable name, folder, and documentation-style cleanup when low risk and supported by evidence.

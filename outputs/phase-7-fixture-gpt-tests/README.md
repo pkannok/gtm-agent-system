@@ -80,16 +80,16 @@ Record:
 - Production-risk language.
 - Follow-up required before Task 7.2.
 
-## Evidence required before Task 7.1 can receive a clean pass
+## Task 7.1 completion evidence
 
-Task 7.1 should not receive a clean pass until:
+Task 7.1 has a clean pass because:
 
 - All six fixture runs have GPT output captured.
 - Each run folder contains `gpt-response.md`.
 - Each run folder contains all seven required package artifacts or a documented failure.
 - Each run has a completed manual review.
 - `run-log.md` records pass, needs-revision, or fail for every fixture.
-- Unsafe recommendations are fixed or explicitly recorded as blockers.
+- No unsafe recommendations were found.
 - At least four of six runs meet the manual quality threshold.
 
-Task 7.1 status is `Needs revision` due to GTM JSON package-level blocker.
+All six runs met the manual quality threshold. The initial optimized-container shape concern was investigated before Task 7.2 and traced to metadata-only golden expected output stubs plus permissive validation guidance, not to invalid JSON syntax or malformed generated Phase 7 `optimized_container.json` artifacts. The golden expected outputs, package schema, package validator, and generation guidance now require complete GTM export-shaped optimized container content.
