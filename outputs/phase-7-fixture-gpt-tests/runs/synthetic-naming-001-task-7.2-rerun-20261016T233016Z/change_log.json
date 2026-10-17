@@ -1,0 +1,38 @@
+{
+  "artifact_type": "gtm_change_log",
+  "schema_version": "1.0",
+  "run_id": "synthetic-naming-001-20261016",
+  "client_id": null,
+  "source_container_file": "synthetic-naming-issues(1).json",
+  "optimized_container_file": "optimized_container.json",
+  "changes": [
+    {
+      "change_id": "C-001",
+      "change_type": "rename",
+      "entity_type": "tag",
+      "entity_id": "101",
+      "entity_name": "tag 1",
+      "before": {
+        "name": "tag 1"
+      },
+      "after": {
+        "name": "GA4 - Event - lead_submit"
+      },
+      "reason": "F-001 / GTM-NAME-001. Tag type gaawe and eventName lead_submit explicitly identify a GA4 event.",
+      "risk_level": "low",
+      "rollback_notes": "Restore tag ID 101 name to \"tag 1\" from the original fixture; retain its original ID and all other fields.",
+      "related_finding_ids": [
+        "F-001"
+      ],
+      "status": "proposed",
+      "human_approval_required": true
+    }
+  ],
+  "summary": {
+    "change_count": 1,
+    "high_risk_change_count": 0,
+    "manual_review_required": true
+  },
+  "human_approval_required": true,
+  "publishes_gtm_changes": false
+}

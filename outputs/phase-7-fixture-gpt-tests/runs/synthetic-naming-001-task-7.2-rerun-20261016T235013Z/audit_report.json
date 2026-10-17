@@ -1,0 +1,259 @@
+{
+  "package_name": "GTM Container Audit & Patch Package",
+  "run_id": "synthetic-naming-001-20261016",
+  "fixture_id": "synthetic-naming-001",
+  "source_file": "synthetic-naming-issues(2).json",
+  "container": {
+    "account_id": "9001",
+    "container_id": "5101",
+    "name": "Synthetic Naming Issues Container",
+    "public_id": "GTM-SYN501",
+    "export_format_version": 2,
+    "entity_counts": {
+      "tags": 1,
+      "triggers": 1,
+      "variables": 1,
+      "folders": 1,
+      "built_in_variables": 1,
+      "custom_templates": 0,
+      "zones": "not_present"
+    }
+  },
+  "overall_risk": "medium",
+  "finding_counts": {
+    "high": 0,
+    "medium": 2,
+    "low": 2,
+    "info": 0
+  },
+  "findings": [
+    {
+      "finding_id": "F-001",
+      "rule_id": "GTM-NAME-001",
+      "naming_rule_id": "NAME-TAG-001",
+      "category": "naming",
+      "severity": "low",
+      "affected_entity": {
+        "type": "tag",
+        "id": "101",
+        "name": "tag 1"
+      },
+      "detected_facts": [
+        "containerVersion.tag[0].type = gaawe",
+        "containerVersion.tag[0].parameter[eventName] = lead_submit",
+        "containerVersion.tag[0].firingTriggerId[0] = 201"
+      ],
+      "evidence": [
+        {
+          "source": "synthetic-naming-issues(2).json",
+          "path": "containerVersion.tag[0].type",
+          "observation": "containerVersion.tag[0].type = gaawe"
+        },
+        {
+          "source": "synthetic-naming-issues(2).json",
+          "path": "containerVersion.tag[0].parameter[eventName]",
+          "observation": "containerVersion.tag[0].parameter[eventName] = lead_submit"
+        },
+        {
+          "source": "synthetic-naming-issues(2).json",
+          "path": "containerVersion.tag[0].firingTriggerId[0]",
+          "observation": "containerVersion.tag[0].firingTriggerId[0] = 201"
+        }
+      ],
+      "inferred_issue": "The tag name does not identify its GA4 event purpose.",
+      "proposed_name": "GA4 - Event - lead_submit",
+      "name_only": true,
+      "recommendation": "Propose name-only rename to GA4 - Event - lead_submit",
+      "automated_change_policy": "allowed_candidate",
+      "manual_review_required": true,
+      "manual_review_triggers": [
+        "Confirm no external name-based dependencies and test before import"
+      ],
+      "related_change_ids": [
+        "C-001"
+      ],
+      "related_qa_item_ids": [
+        "QA-001"
+      ]
+    },
+    {
+      "finding_id": "F-002",
+      "rule_id": "GTM-NAME-001",
+      "naming_rule_id": "NAME-TRIGGER-001",
+      "category": "naming",
+      "severity": "low",
+      "affected_entity": {
+        "type": "trigger",
+        "id": "201",
+        "name": "all"
+      },
+      "detected_facts": [
+        "containerVersion.trigger[0].type = PAGEVIEW",
+        "containerVersion.trigger[0] has no filter fields",
+        "containerVersion.tag[0].firingTriggerId includes 201"
+      ],
+      "evidence": [
+        {
+          "source": "synthetic-naming-issues(2).json",
+          "path": "containerVersion.trigger[0].type",
+          "observation": "containerVersion.trigger[0].type = PAGEVIEW"
+        },
+        {
+          "source": "synthetic-naming-issues(2).json",
+          "path": "containerVersion.trigger[0]",
+          "observation": "containerVersion.trigger[0] has no filter fields"
+        },
+        {
+          "source": "synthetic-naming-issues(2).json",
+          "path": "containerVersion.tag[0].firingTriggerId includes 201",
+          "observation": "containerVersion.tag[0].firingTriggerId includes 201"
+        }
+      ],
+      "inferred_issue": "The trigger name omits its page-view type and intended scope.",
+      "proposed_name": "PV - All Pages",
+      "name_only": true,
+      "recommendation": "Propose name-only rename to PV - All Pages",
+      "automated_change_policy": "allowed_candidate",
+      "manual_review_required": true,
+      "manual_review_triggers": [
+        "Confirm no external name-based dependencies and test before import"
+      ],
+      "related_change_ids": [
+        "C-002"
+      ],
+      "related_qa_item_ids": [
+        "QA-002"
+      ]
+    },
+    {
+      "finding_id": "F-003",
+      "rule_id": "GTM-NAME-001",
+      "naming_rule_id": "NAME-VARIABLE-001",
+      "category": "naming",
+      "severity": "medium",
+      "affected_entity": {
+        "type": "variable",
+        "id": "301",
+        "name": "id"
+      },
+      "detected_facts": [
+        "containerVersion.variable[0].type = c",
+        "containerVersion.variable[0].parameter[value] = G-TEST501",
+        "containerVersion.tag[0].parameter[measurementId] = {{id}}"
+      ],
+      "evidence": [
+        {
+          "source": "synthetic-naming-issues(2).json",
+          "path": "containerVersion.variable[0].type",
+          "observation": "containerVersion.variable[0].type = c"
+        },
+        {
+          "source": "synthetic-naming-issues(2).json",
+          "path": "containerVersion.variable[0].parameter[value]",
+          "observation": "containerVersion.variable[0].parameter[value] = G-TEST501"
+        },
+        {
+          "source": "synthetic-naming-issues(2).json",
+          "path": "containerVersion.tag[0].parameter[measurementId]",
+          "observation": "containerVersion.tag[0].parameter[measurementId] = {{id}}"
+        }
+      ],
+      "inferred_issue": "The constant variable has a vague name; its current name is referenced textually by the tag.",
+      "proposed_name": "CONST - GA4 Measurement ID",
+      "name_only": true,
+      "recommendation": "Consider CONST - GA4 Measurement ID only after analyst verification.",
+      "automated_change_policy": "manual_review_only",
+      "manual_review_required": true,
+      "manual_review_triggers": [
+        "Textual {{id}} reference must be preserved or explicitly reviewed before variable rename"
+      ],
+      "related_change_ids": [],
+      "related_qa_item_ids": [
+        "QA-003"
+      ]
+    },
+    {
+      "finding_id": "F-004",
+      "rule_id": "GTM-NAME-001",
+      "naming_rule_id": "NAME-FOLDER-001",
+      "category": "naming",
+      "severity": "medium",
+      "affected_entity": {
+        "type": "folder",
+        "id": "401",
+        "name": "misc"
+      },
+      "detected_facts": [
+        "containerVersion.folder[0].name = misc",
+        "containerVersion.tag[0].parentFolderId = 401",
+        "containerVersion.variable[0].parentFolderId = 401"
+      ],
+      "evidence": [
+        {
+          "source": "synthetic-naming-issues(2).json",
+          "path": "containerVersion.folder[0].name",
+          "observation": "containerVersion.folder[0].name = misc"
+        },
+        {
+          "source": "synthetic-naming-issues(2).json",
+          "path": "containerVersion.tag[0].parentFolderId",
+          "observation": "containerVersion.tag[0].parentFolderId = 401"
+        },
+        {
+          "source": "synthetic-naming-issues(2).json",
+          "path": "containerVersion.variable[0].parentFolderId",
+          "observation": "containerVersion.variable[0].parentFolderId = 401"
+        }
+      ],
+      "inferred_issue": "The folder name does not explain the grouping; a GA4 measurement purpose is plausible but inferred.",
+      "proposed_name": "GA4 - Measurement",
+      "name_only": true,
+      "recommendation": "Consider GA4 - Measurement only after analyst verification.",
+      "automated_change_policy": "manual_review_only",
+      "manual_review_required": true,
+      "manual_review_triggers": [
+        "Folder grouping purpose is inferred; confirm with owner"
+      ],
+      "related_change_ids": [],
+      "related_qa_item_ids": [
+        "QA-004"
+      ]
+    }
+  ],
+  "proposed_change_ids": [
+    "C-001",
+    "C-002"
+  ],
+  "recommended_not_applied": [
+    {
+      "finding_id": "F-003",
+      "entity_type": "variable",
+      "entity_id": "301",
+      "proposed_name": "CONST - GA4 Measurement ID",
+      "reason": "{{id}} is referenced in tag measurementId; replacing only the variable name would break a visible reference, and updating the reference is not name-only.",
+      "automated_change_policy": "manual_review_only",
+      "applied": false
+    },
+    {
+      "finding_id": "F-004",
+      "entity_type": "folder",
+      "entity_id": "401",
+      "proposed_name": "GA4 - Measurement",
+      "reason": "Folder purpose derived from two members; grouping intent not independently documented.",
+      "automated_change_policy": "manual_review_only",
+      "applied": false
+    }
+  ],
+  "manual_review_required": true,
+  "human_approval_required": true,
+  "assumptions": [
+    "GA4 event tag type gaawe corresponds to GA4 event configuration.",
+    "A PAGEVIEW trigger without filter fields is intended to cover all pages; confirm during human review.",
+    "No external dependencies can be observed in this export."
+  ],
+  "limitations": [
+    "Only the exported JSON was audited; no live GTM or site validation.",
+    "The container export has no zone section; absence does not establish zone state in any live account."
+  ],
+  "draft_proposal": true
+}

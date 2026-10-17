@@ -1,0 +1,31 @@
+{
+  "run_id": "synthetic-naming-001-20261016",
+  "created_at": "2026-10-17T00:22:09.061313+00:00",
+  "input_files": [
+    "synthetic-naming-issues(3).json"
+  ],
+  "client_id": null,
+  "standards_applied": [
+    "instructions.md",
+    "deliverable-contract.md",
+    "workflow.md",
+    "output-standards.md",
+    "audit-rules.md",
+    "gtm-object-model.md",
+    "naming-conventions.md",
+    "consent-standard.md",
+    "qa-standard.md",
+    "client-overrides.md",
+    "mlp-deliverable.md",
+    "ADR-0001-canonical-mlp-deliverable.md"
+  ],
+  "mlp_version": "1.0.0",
+  "tool_version": "GPT-6 / offline Python file processing",
+  "fixture_id": "synthetic-naming-001",
+  "source_sha256": "39025f2fbf2afb5a9f67f649e1ac152d6fd0e5c88931b05d6d72537f18f7daaf",
+  "assumptions": [
+    "No client-specific overrides provided.",
+    "Only the uploaded fixture JSON was used as GTM export input."
+  ],
+  "safety_status": "draft_requires_human_approval"
+}

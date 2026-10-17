@@ -1,0 +1,61 @@
+{
+  "artifact_type": "gtm_change_log",
+  "schema_version": "1.0.0",
+  "run_id": "synthetic-consent-001-20261016",
+  "client_id": null,
+  "source_container_file": "synthetic-consent-risk-remarketing.json",
+  "optimized_container_file": "optimized_container.json",
+  "changes": [],
+  "summary": {
+    "total_changes": 0,
+    "applied_changes": 0,
+    "proposed_unapplied_changes": 0,
+    "reason": "Consent-sensitive configuration changes are blocked for automation; review actions are tracked in findings and QA instead."
+  },
+  "human_approval_required": true,
+  "publishes_gtm_changes": false,
+  "unapplied_recommendations": [
+    {
+      "finding_id": "F-001",
+      "rule_id": "GTM-CONSENT-001",
+      "action": "Human analyst and privacy reviewer should confirm expected consent states, relevant consent checks and consent initialization, and observe preview/network behavior. Do not auto-change tag or trigger.",
+      "reason_not_applied": "blocked for automation; requires human consent/privacy review",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "106",
+          "entity_name": "Google Ads - Remarketing - All Pages"
+        },
+        {
+          "entity_type": "trigger",
+          "entity_id": "206",
+          "entity_name": "PV - All Pages"
+        },
+        {
+          "entity_type": "variable",
+          "entity_id": "306",
+          "entity_name": "CONST - Google Ads Conversion ID"
+        }
+      ]
+    },
+    {
+      "finding_id": "F-002",
+      "rule_id": "GTM-CONSENT-001",
+      "action": "Obtain vendor documentation and inspect script behavior, consent requirements, network requests and data reads in an approved isolated test. Do not auto-edit HTML or firing conditions.",
+      "reason_not_applied": "blocked for automation; requires human consent/privacy review",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "107",
+          "entity_name": "Custom HTML - Vendor Pixel"
+        },
+        {
+          "entity_type": "trigger",
+          "entity_id": "206",
+          "entity_name": "PV - All Pages"
+        }
+      ]
+    }
+  ],
+  "rollback_note": "No source-to-optimized configuration difference exists; reject the proposal by retaining the original export."
+}

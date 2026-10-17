@@ -319,17 +319,17 @@ Manual review completed for all fixture runs. All six runs met the manual qualit
 
 ### Task 7.2 - Run script validation on GPT outputs
 
-Status: Upcoming.
+Status: Complete.
 
 Outcome:
-Validates generated GPT output packages with deterministic scripts after Task 7.1 outputs exist.
+Validates generated GPT output packages with deterministic scripts after Task 7.1 outputs exist. Two fresh GPT packages pass deterministic validation; older failed runs remain preserved as regression evidence.
 
 ### Task 7.3 - Perform analyst review
 
-Status: Upcoming.
+Status: In Progress.
 
 Outcome:
-Performs analyst review of workflow outputs before internal rollout.
+Performs analyst review of at least three workflow outputs before internal rollout, using the two passing Task 7.2 packages plus a higher-risk consent fixture.
 
 ### Task 7.4 - Create the MLP release checklist
 

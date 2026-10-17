@@ -1,0 +1,152 @@
+{
+  "artifact_type": "gtm_audit_report",
+  "schema_version": "1.0.0",
+  "run_id": "synthetic-duplicate-001-20261016",
+  "client_id": null,
+  "source_container_summary": {
+    "input_file_name": "synthetic-duplicate-purchase-tags(1).json",
+    "account_id": "9001",
+    "container_id": "5103",
+    "container_name": "Synthetic Duplicate Purchase Container",
+    "export_format_version": 2,
+    "entity_counts": {
+      "tags": 2,
+      "triggers": 1,
+      "variables": 2,
+      "folders": 1,
+      "templates": 0
+    }
+  },
+  "audit_summary": {
+    "summary": "Two high-severity, overlapping purchase tracking findings. No destructive or behavioral patch applied; analyst review and test purchase QA required.",
+    "finding_count": 2,
+    "highest_severity": "high",
+    "human_review_required": true
+  },
+  "findings": [
+    {
+      "finding_id": "F-001",
+      "severity": "high",
+      "category": "duplicates",
+      "title": "GTM-DUP-001 — Duplicate GA4 purchase tags share trigger and payload",
+      "description": "Observed exact configuration overlap: tags 103 and 104 share GA4 event type, purchase event, measurement ID, transaction ID mapping, and firing trigger 203. Inference: a single purchase event may generate duplicate GA4 hits/revenue. Intentional parallel tracking is not evidenced; live duplication remains unverified.",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "103",
+          "entity_name": "GA4 - Event - purchase"
+        },
+        {
+          "entity_type": "tag",
+          "entity_id": "104",
+          "entity_name": "GA4 - Event - purchase copy"
+        },
+        {
+          "entity_type": "trigger",
+          "entity_id": "203",
+          "entity_name": "CE - purchase"
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_type": "observed_fact",
+          "observation": "Tags 103 ('GA4 - Event - purchase') and 104 ('GA4 - Event - purchase copy') are both type gaawe, both use firingTriggerId ['203'], and both have eventName='purchase'."
+        },
+        {
+          "evidence_type": "observed_fact",
+          "observation": "Both tags reference measurementId='{{CONST - GA4 Measurement ID}}' (variable 303, value G-TEST503) and transaction_id='{{DLV - ecommerce.transaction_id}}' (variable 304, dataLayer key ecommerce.transaction_id)."
+        },
+        {
+          "evidence_type": "manual_review_note",
+          "observation": "Trigger 203 is named 'CE - purchase' and has type CUSTOM_EVENT, but no event-name filter or event parameter is serialized; actual trigger matching and firing require human verification."
+        }
+      ],
+      "recommended_actions": [
+        "Human analyst: confirm duplicate firing and measurement destinations in GTM Preview and test purchase flow.",
+        "If duplication is confirmed, choose one canonical purchase tag and plan controlled removal or disabling of the redundant tag only via separately approved GTM workflow; no deletion or disabling is applied here."
+      ],
+      "related_change_ids": [],
+      "human_review_required": true
+    },
+    {
+      "finding_id": "F-002",
+      "severity": "high",
+      "category": "ecommerce",
+      "title": "GTM-ECOM-001 — Purchase revenue and item integrity at risk",
+      "description": "Both purchase event tags map transaction_id; their serialized parameters do not explicitly include value, currency, or items. Inference: simultaneous firing may double-count transactions, and purchase details may be incomplete. Runtime payload behavior cannot be inferred from this export alone.",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "103",
+          "entity_name": "GA4 - Event - purchase"
+        },
+        {
+          "entity_type": "tag",
+          "entity_id": "104",
+          "entity_name": "GA4 - Event - purchase copy"
+        },
+        {
+          "entity_type": "trigger",
+          "entity_id": "203",
+          "entity_name": "CE - purchase"
+        },
+        {
+          "entity_type": "variable",
+          "entity_id": "304",
+          "entity_name": "DLV - ecommerce.transaction_id"
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_type": "observed_fact",
+          "observation": "Tags 103 and 104 each configure eventName='purchase' and transaction_id='{{DLV - ecommerce.transaction_id}}' and fire on trigger 203."
+        },
+        {
+          "evidence_type": "observed_fact",
+          "observation": "No explicit value, currency, or items parameters appear in either tag's exported parameter array."
+        },
+        {
+          "evidence_type": "manual_review_note",
+          "observation": "Export-only review cannot determine whether ecommerce fields are inherited, added elsewhere, or present on the runtime dataLayer; confirm payload and GA4 receipts manually."
+        }
+      ],
+      "recommended_actions": [
+        "Manually verify transaction_id is stable and unique per order and that value, currency, items are present in the actual purchase event or documented implementation.",
+        "Compare GTM Preview firing with GA4 DebugView and order reconciliation; check refresh/return-to-thank-you behavior for repeat sends.",
+        "Do not add or modify ecommerce parameters or tag payloads automatically."
+      ],
+      "related_change_ids": [],
+      "human_review_required": true
+    }
+  ],
+  "manual_review_items": [
+    {
+      "item_id": "MR-001",
+      "reason": "Confirm whether tags 103 and 104 both transmit a purchase hit for one ecommerce event and identify intentional exceptions before selecting any disable/delete action.",
+      "related_finding_ids": [
+        "F-001",
+        "F-002"
+      ]
+    },
+    {
+      "item_id": "MR-002",
+      "reason": "Verify transaction ID, purchase value, currency, items, and repeated-purchase controls in a safe preview/test environment.",
+      "related_finding_ids": [
+        "F-002"
+      ]
+    },
+    {
+      "item_id": "MR-003",
+      "reason": "Decide whether to retain tag 103 or tag 104 as the canonical purchase implementation; current export alone cannot establish client intent.",
+      "related_finding_ids": [
+        "F-001"
+      ]
+    }
+  ],
+  "assumptions": [
+    "Fixture ID synthetic-duplicate-001 is a task label, not a GTM entity property.",
+    "No client-specific profile or override was provided.",
+    "Identical serialized tag configuration suggests duplicate event sends if both execute; actual firing is not verified.",
+    "Repository JSON Schema and package validator files were not provided; exact schema conformance could not be verified."
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "artifact_type": "gtm_validation_report",
+  "schema_version": "1.0",
+  "run_id": "synthetic-reference-001-20261016",
+  "package_schema_version": "1.0",
+  "validation_status": "failed",
+  "checks": [
+    {
+      "check_id": "VAL-001",
+      "name": "Source GTM export parses and has required wrapper",
+      "result": "passed",
+      "details": "exportFormatVersion, containerVersion, tag, trigger, variable present"
+    },
+    {
+      "check_id": "VAL-002",
+      "name": "Optimized JSON matches source configuration",
+      "result": "passed",
+      "details": "No automatic changes applied; complete export preserved"
+    },
+    {
+      "check_id": "VAL-003",
+      "name": "Firing trigger references resolve",
+      "result": "failed",
+      "details": "tag 102 references absent trigger 299"
+    },
+    {
+      "check_id": "VAL-004",
+      "name": "Folder references resolve",
+      "result": "failed",
+      "details": "tag 102 references absent folder 499"
+    },
+    {
+      "check_id": "VAL-005",
+      "name": "Variable tokens resolve",
+      "result": "failed",
+      "details": "tag 102 value token {{Missing Revenue}} has no exported definition"
+    },
+    {
+      "check_id": "VAL-006",
+      "name": "Finding/change consistency",
+      "result": "passed",
+      "details": "3 findings, 0 changes; all change references empty"
+    },
+    {
+      "check_id": "VAL-007",
+      "name": "Deterministic repository schema validation",
+      "result": "not_run",
+      "details": "No schema JSON or deterministic validator available in supplied knowledge files"
+    }
+  ],
+  "errors": [
+    {
+      "code": "UNRESOLVED_REFERENCE",
+      "finding_id": "F-REF-001",
+      "message": "Purchase tag 102 refers to trigger 299, which is absent from the exported trigger array."
+    },
+    {
+      "code": "UNRESOLVED_REFERENCE",
+      "finding_id": "F-REF-002",
+      "message": "Purchase tag 102 refers to folder 499, which is absent from the exported folder array."
+    },
+    {
+      "code": "UNRESOLVED_REFERENCE",
+      "finding_id": "F-REF-003",
+      "message": "Purchase tag 102 has a value parameter referencing {{Missing Revenue}}, but no user-defined or exported built-in variable of that name exists."
+    }
+  ],
+  "warnings": [
+    "Draft output retains unresolved references because GTM-REF-001 is manual-review-only.",
+    "Only GTM export structure and references were inspected; no live GTM Preview or analytics verification.",
+    "Repository schema files and deterministic package validator unavailable; strict schema conformance not confirmed."
+  ],
+  "publish_safety": {
+    "optimized_container_publish_ready": false,
+    "mlp_publishes_gtm_changes": false,
+    "human_approval_required": true,
+    "tracking_correctness_verified": false,
+    "consent_correctness_verified": false,
+    "legal_compliance_verified": false,
+    "privacy_compliance_verified": false,
+    "production_readiness_verified": false
+  },
+  "limitations": [
+    "No external dataLayer contract was supplied.",
+    "Source export cannot establish intended trigger or folder targets."
+  ]
+}

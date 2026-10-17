@@ -1,0 +1,89 @@
+{
+  "run_id": "synthetic-naming-001-20261016",
+  "fixture_id": "synthetic-naming-001",
+  "status": "fail",
+  "validation_scope": "offline JSON parsing, integrity and internal package checks only",
+  "checks": [
+    {
+      "id": "V-001",
+      "name": "source_and_optimized_json_parse",
+      "status": "pass",
+      "detail": "Both parse as JSON objects."
+    },
+    {
+      "id": "V-002",
+      "name": "export_wrapper_preserved",
+      "status": "pass"
+    },
+    {
+      "id": "V-003",
+      "name": "entity_array_counts_preserved",
+      "status": "pass"
+    },
+    {
+      "id": "V-004",
+      "name": "non_name_configuration_unchanged",
+      "status": "pass",
+      "detail": "Per-entity comparison excludes only name field; all other fields match source."
+    },
+    {
+      "id": "V-005",
+      "name": "reference_resolution",
+      "status": "pass"
+    },
+    {
+      "id": "V-006",
+      "name": "change_log_alignment",
+      "status": "pass"
+    },
+    {
+      "id": "V-007",
+      "name": "seven_artifacts_exist",
+      "status": "fail"
+    },
+    {
+      "id": "V-008",
+      "name": "json_artifacts_parse",
+      "status": "pass"
+    },
+    {
+      "id": "V-009",
+      "name": "repository_schema_validation",
+      "status": "not_run",
+      "detail": "Machine-readable schema files were not supplied; custom structural checks only."
+    }
+  ],
+  "warnings": [
+    {
+      "code": "W-001",
+      "finding_id": "F-003",
+      "message": "Variable rename withheld to preserve existing {{id}} reference."
+    },
+    {
+      "code": "W-002",
+      "finding_id": "F-004",
+      "message": "Folder rename withheld because purpose is inferred."
+    },
+    {
+      "code": "W-003",
+      "message": "External name-based dependencies and actual tag firing cannot be verified from export."
+    },
+    {
+      "code": "W-004",
+      "message": "PAGEVIEW trigger all-pages inference requires manual confirmation."
+    },
+    {
+      "code": "W-005",
+      "message": "No repository JSON schema files available for formal schema validation."
+    }
+  ],
+  "errors": [],
+  "package_complete": true,
+  "human_qa_performed": false,
+  "publish_safe": false,
+  "production_ready_certified": false,
+  "consent_verified": false,
+  "legal_compliance_certified": false,
+  "human_approval_required": true,
+  "draft_proposal": true
+}

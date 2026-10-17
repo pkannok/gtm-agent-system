@@ -1,0 +1,68 @@
+{
+  "artifact_type": "validation_report",
+  "schema_version": "1.0",
+  "run_id": "synthetic-naming-001-20261016",
+  "package_schema_version": "1.0",
+  "validation_status": "warn",
+  "checks": [
+    {
+      "check_id": "VAL-001",
+      "status": "pass",
+      "message": "Input and optimized JSON parse as objects with exportFormatVersion and containerVersion.",
+      "checked_at": "2026-10-16T23:23:14.760235+00:00"
+    },
+    {
+      "check_id": "VAL-002",
+      "status": "pass",
+      "message": "Core tag, trigger, variable and folder arrays preserved; all entity IDs unchanged.",
+      "checked_at": "2026-10-16T23:23:14.760235+00:00"
+    },
+    {
+      "check_id": "VAL-003",
+      "status": "pass",
+      "message": "All referenced trigger, folder and variable-token targets resolve against the export.",
+      "checked_at": "2026-10-16T23:23:14.760235+00:00"
+    },
+    {
+      "check_id": "VAL-004",
+      "status": "pass",
+      "message": "Normalized JSON diff paths: ['.containerVersion.tag[0].name']; expected name-only change ['.containerVersion.tag[0].name'].",
+      "checked_at": "2026-10-16T23:23:14.760235+00:00"
+    },
+    {
+      "check_id": "VAL-005",
+      "status": "pass",
+      "message": "Audit finding/change references are bidirectionally consistent and change summary count matches.",
+      "checked_at": "2026-10-16T23:23:14.760235+00:00"
+    },
+    {
+      "check_id": "VAL-006",
+      "status": "warn",
+      "message": "Repository JSON Schema definitions and deterministic validator are unavailable in the supplied knowledge files; exact schema validation not run.",
+      "checked_at": "2026-10-16T23:23:14.760235+00:00"
+    },
+    {
+      "check_id": "VAL-007",
+      "status": "pass",
+      "message": "No live access or GTM workspace/import/publish operation was performed.",
+      "checked_at": "2026-10-16T23:23:14.760235+00:00"
+    },
+    {
+      "check_id": "VAL-008",
+      "status": "fail",
+      "message": "All seven required artifacts exist on disk.",
+      "checked_at": "2026-10-16T23:23:14.760235+00:00"
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "Repository JSON schemas and deterministic validator not supplied; exact schema conformance is unverified.",
+    "GTM Preview/live behavior not tested; all QA items remain todo.",
+    "Proposed PAGEVIEW scope, variable rename and folder rename require manual review."
+  ],
+  "publish_safety": {
+    "optimized_container_publish_ready": false,
+    "mlp_publishes_gtm_changes": false,
+    "human_approval_required": true
+  }
+}

@@ -1,0 +1,247 @@
+{
+  "artifact_type": "gtm_audit_report",
+  "schema_version": "1.0",
+  "run_id": "synthetic-naming-001-20261016",
+  "client_id": null,
+  "source_container_summary": {
+    "input_file_name": "synthetic-naming-issues(1).json",
+    "account_id": "9001",
+    "container_id": "5101",
+    "container_name": "Synthetic Naming Issues Container",
+    "export_format_version": 2,
+    "entity_counts": {
+      "tags": 1,
+      "triggers": 1,
+      "variables": 1,
+      "folders": 1,
+      "templates": 0
+    }
+  },
+  "audit_summary": {
+    "summary": "Four vague names found (GTM-NAME-001); one low-risk name-only patch included, three renames deferred. Lead-submit event firing scope requires manual QA.",
+    "finding_count": 5,
+    "highest_severity": "medium",
+    "human_review_required": true
+  },
+  "findings": [
+    {
+      "finding_id": "F-001",
+      "severity": "low",
+      "category": "naming",
+      "title": "GTM-NAME-001: Vague tag name",
+      "description": "The tag name \"tag 1\" does not identify its intended role. Proposed label: \"GA4 - Event - lead_submit\". Rule GTM-NAME-001; supporting agency rule NAME-TAG-001.",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "101",
+          "entity_name": "tag 1"
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_type": "observed_fact",
+          "observation": "tag ID 101 has name \"tag 1\" in containerVersion.tag[0].name."
+        },
+        {
+          "evidence_type": "observed_fact",
+          "observation": "Tag type gaawe and eventName lead_submit explicitly identify a GA4 event."
+        },
+        {
+          "evidence_type": "observed_fact",
+          "observation": "Tag 101 type gaawe; eventName is lead_submit; firingTriggerId is [\"201\"]."
+        }
+      ],
+      "recommended_actions": [
+        "Review proposed name \"GA4 - Event - lead_submit\" and confirm it matches client terminology.",
+        "Do not change GTM configuration, values, event names, or firing logic."
+      ],
+      "related_change_ids": [
+        "C-001"
+      ],
+      "human_review_required": true
+    },
+    {
+      "finding_id": "F-002",
+      "severity": "medium",
+      "category": "naming",
+      "title": "GTM-NAME-001: Vague trigger name",
+      "description": "The trigger name \"all\" does not identify its intended role. Proposed label: \"PV - All Pages\". Rule GTM-NAME-001; supporting agency rule NAME-TRIGGER-001.",
+      "affected_entities": [
+        {
+          "entity_type": "trigger",
+          "entity_id": "201",
+          "entity_name": "all"
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_type": "observed_fact",
+          "observation": "trigger ID 201 has name \"all\" in containerVersion.trigger[0].name."
+        },
+        {
+          "evidence_type": "observed_fact",
+          "observation": "PAGEVIEW type and absence of filters suggest all pages, but the intended scope is inferred."
+        },
+        {
+          "evidence_type": "manual_review_note",
+          "observation": "Confirm the trigger represents all page views before approving the scope-specific name."
+        }
+      ],
+      "recommended_actions": [
+        "Review proposed name \"PV - All Pages\" and confirm it matches client terminology.",
+        "Do not change GTM configuration, values, event names, or firing logic."
+      ],
+      "related_change_ids": [],
+      "human_review_required": true
+    },
+    {
+      "finding_id": "F-003",
+      "severity": "medium",
+      "category": "naming",
+      "title": "GTM-NAME-001: Vague variable name",
+      "description": "The variable name \"id\" does not identify its intended role. Proposed label: \"CONST - GA4 Measurement ID\". Rule GTM-NAME-001; supporting agency rule NAME-VARIABLE-001.",
+      "affected_entities": [
+        {
+          "entity_type": "variable",
+          "entity_id": "301",
+          "entity_name": "id"
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_type": "observed_fact",
+          "observation": "variable ID 301 has name \"id\" in containerVersion.variable[0].name."
+        },
+        {
+          "evidence_type": "observed_fact",
+          "observation": "Constant variable holds G-TEST501 and is referenced by literal {{id}} in tag 101; token replacement would be required for a working rename."
+        },
+        {
+          "evidence_type": "observed_fact",
+          "observation": "Tag 101 parameter measurementId contains \"{{id}}\"; variable ID 301 has type \"c\" and a constant value \"G-TEST501\"."
+        }
+      ],
+      "recommended_actions": [
+        "Review proposed name \"CONST - GA4 Measurement ID\" and confirm it matches client terminology.",
+        "Do not change GTM configuration, values, event names, or firing logic."
+      ],
+      "related_change_ids": [],
+      "human_review_required": true
+    },
+    {
+      "finding_id": "F-004",
+      "severity": "medium",
+      "category": "naming",
+      "title": "GTM-NAME-001: Vague folder name",
+      "description": "The folder name \"misc\" does not identify its intended role. Proposed label: \"GA4 - Measurement Components\". Rule GTM-NAME-001; supporting agency rule NAME-FOLDER-001.",
+      "affected_entities": [
+        {
+          "entity_type": "folder",
+          "entity_id": "401",
+          "entity_name": "misc"
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_type": "observed_fact",
+          "observation": "folder ID 401 has name \"misc\" in containerVersion.folder[0].name."
+        },
+        {
+          "evidence_type": "observed_fact",
+          "observation": "Folder contains tag 101 and variable 301, but the intended grouping label is inferred."
+        },
+        {
+          "evidence_type": "observed_fact",
+          "observation": "Tag 101 and variable 301 both use parentFolderId \"401\"."
+        }
+      ],
+      "recommended_actions": [
+        "Review proposed name \"GA4 - Measurement Components\" and confirm it matches client terminology.",
+        "Do not change GTM configuration, values, event names, or firing logic."
+      ],
+      "related_change_ids": [],
+      "human_review_required": true
+    },
+    {
+      "finding_id": "F-005",
+      "severity": "medium",
+      "category": "qa",
+      "title": "GTM-QA-001: Lead event on broad page-view trigger requires verification",
+      "description": "Tag 101 is configured with eventName lead_submit and references trigger 201 of type PAGEVIEW with no visible conditions. This suggests a broad firing scope; export-only evidence does not establish intended behavior.",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "101",
+          "entity_name": "tag 1"
+        },
+        {
+          "entity_type": "trigger",
+          "entity_id": "201",
+          "entity_name": "all"
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_type": "observed_fact",
+          "observation": "tag 101 eventName=lead_submit and firingTriggerId=[\"201\"]."
+        },
+        {
+          "evidence_type": "observed_fact",
+          "observation": "trigger 201 type=PAGEVIEW; no filter fields are present."
+        },
+        {
+          "evidence_type": "manual_review_note",
+          "observation": "Review whether lead_submit should fire on page views or only on a true lead submission."
+        }
+      ],
+      "recommended_actions": [
+        "Perform manual GTM Preview on an ordinary page view and genuine lead submission.",
+        "Do not alter trigger conditions or tag payload automatically."
+      ],
+      "related_change_ids": [],
+      "human_review_required": true
+    }
+  ],
+  "manual_review_items": [
+    {
+      "item_id": "MR-002",
+      "reason": "trigger 201 suggested rename \"all\" -> \"PV - All Pages\" was not applied: PAGEVIEW type and absence of filters suggest all pages, but the intended scope is inferred. Automated policy manual_review_only.",
+      "related_finding_ids": [
+        "F-002"
+      ]
+    },
+    {
+      "item_id": "MR-003",
+      "reason": "variable 301 suggested rename \"id\" -> \"CONST - GA4 Measurement ID\" was not applied: Constant variable holds G-TEST501 and is referenced by literal {{id}} in tag 101; token replacement would be required for a working rename. Automated policy manual_review_only.",
+      "related_finding_ids": [
+        "F-003"
+      ]
+    },
+    {
+      "item_id": "MR-004",
+      "reason": "folder 401 suggested rename \"misc\" -> \"GA4 - Measurement Components\" was not applied: Folder contains tag 101 and variable 301, but the intended grouping label is inferred. Automated policy manual_review_only.",
+      "related_finding_ids": [
+        "F-004"
+      ]
+    },
+    {
+      "item_id": "MR-005",
+      "reason": "Check whether any external references, QA scripts or documentation depend on tag name \"tag 1\" prior to adoption.",
+      "related_finding_ids": [
+        "F-001"
+      ]
+    },
+    {
+      "item_id": "MR-006",
+      "reason": "Verify lead_submit firing scope on trigger 201 and whether conversion measurement is correct; no trigger-logic change is proposed.",
+      "related_finding_ids": [
+        "F-005"
+      ]
+    }
+  ],
+  "assumptions": [
+    "No client profile or overrides supplied.",
+    "PAGEVIEW without visible filter fields may represent broad page views; must be verified.",
+    "Tag type gaawe corresponds to a GA4 event tag as indicated by its eventName parameter."
+  ]
+}

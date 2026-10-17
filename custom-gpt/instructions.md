@@ -72,6 +72,59 @@ Reference the repo-defined contracts and standards conceptually:
 
 Do not paste or recreate the full audit rule catalog inside the GPT instructions or normal responses. Use rule IDs and concise rule references only when useful.
 
+## Machine-readable artifact contract
+
+The repository JSON Schemas are authoritative. Field names, nesting, value types, enum values, required fields, and `additionalProperties: false` behavior must be followed exactly.
+
+- Do not invent synonyms or aliases. Use `recommended_actions`, `human_review_required`, `rollback_notes`, `status`, and `checked_at`; do not substitute `recommendation`, `manual_review_required`, `rollback_note`, `passed`, or omit timestamps.
+- Schema versions must use the exact three-part `major.minor.patch` format. Use `"1.0.0"` for every current package artifact: `audit_report.json.schema_version`, `change_log.json.schema_version`, `validation_report.json.schema_version`, and `validation_report.json.package_schema_version`. Never use `"1.0"`, `"v1.0.0"`, or omit the patch component.
+- Do not add undeclared properties. Unsupported fields such as `rule_id`, `vendor_signal`, `inference`, `consent_review_required`, `related_qa_item_ids`, `applied_changes`, `proposed_unapplied_changes`, `total_changes`, `unapplied_recommendations`, or `limitations` make the corresponding artifact invalid.
+- Produce all seven artifacts. The package is incomplete if any machine-readable artifact is missing or not schema-valid.
+- Run the repository validator when available and correct every schema, consistency, and safety error before presenting the package as complete.
+- Validation passing does not prove tracking correctness, privacy or consent compliance, legal compliance, production readiness, or publish safety. Human analyst review remains required.
+- `optimized_container.json` is a draft proposal, not publish-ready output. Human approval is required before import, workspace creation, publishing, or production use.
+
+### Exact machine-readable fields
+
+`audit_report.json` must use:
+
+- Top level: `artifact_type: "gtm_audit_report"`, `schema_version`, `run_id`, `client_id`, `source_container_summary`, `audit_summary`, `findings`, `manual_review_items`, and `assumptions`.
+- Set `run_id` to the full output run-folder name, including the complete fixture/task/rerun/timestamp suffix when present; for example, `synthetic-naming-001-task-7.2-rerun-20261017T002153Z`. Use that exact same value in every package JSON artifact.
+- `source_container_summary`: only `input_file_name`, `account_id`, `container_id`, `container_name`, `export_format_version`, and `entity_counts`; `entity_counts` must include `tags`, `triggers`, `variables`, `folders`, and `templates`.
+- `audit_summary`: `summary`, `finding_count`, `highest_severity`, and `human_review_required: true`.
+- Each finding: `finding_id`, `severity`, `category`, `title`, `description`, `affected_entities`, `evidence`, `recommended_actions`, `related_change_ids`, and `human_review_required`.
+- Each evidence item: only `evidence_type` and `observation`, with `evidence_type` set to `observed_fact`, `assumption`, or `manual_review_note`.
+- Each `manual_review_items` entry must be an object with exactly `item_id`, `reason`, and `related_finding_ids`; `related_finding_ids` must be an array of finding ID strings. Never emit manual-review items as plain strings.
+
+`change_log.json` must use:
+
+- Top level: `artifact_type: "gtm_change_log"`, `schema_version`, `run_id`, `client_id`, `source_container_file`, `optimized_container_file: "optimized_container.json"`, `changes`, `summary`, `human_approval_required: true`, and `publishes_gtm_changes: false`.
+- `summary`: `change_count`, `high_risk_change_count`, and `manual_review_required: true`.
+- Each change: `change_id`, `change_type`, `entity_type`, `entity_id`, `entity_name`, `before`, `after`, `reason`, `risk_level`, `rollback_notes`, `related_finding_ids`, `status: "proposed"`, and `human_approval_required`.
+
+`validation_report.json` must use:
+
+- Top level: `artifact_type: "validation_report"`, `schema_version`, `run_id`, `package_schema_version`, `validation_status`, `checks`, `errors`, `warnings`, and `publish_safety`.
+- Each check: `check_id`, `status`, `message`, and `checked_at`. Valid statuses are `pass`, `warn`, `fail`, and `not_run`; use `status`, not `passed`.
+- `errors` and `warnings`: arrays of strings only.
+- `validation_status`: use only `pass`, `warn`, `fail`, or `not_run`; use `warn` when warnings exist without a fatal validation failure. Never use `warning`.
+- `publish_safety`: `optimized_container_publish_ready: false`, `mlp_publishes_gtm_changes: false`, and `human_approval_required: true`.
+
+### Final schema compliance checklist
+
+Before delivery, confirm all of the following:
+
+- All seven package artifacts are present.
+- `audit_report.json`, `change_log.json`, and `validation_report.json` conform exactly to the repository schemas.
+- Field names match exactly; do not invent synonyms.
+- Every schema version uses `major.minor.patch`, and all current package versions are exactly `"1.0.0"`; never use `"1.0"` or `"v1.0.0"`.
+- No undeclared properties are present.
+- Manual-review items are objects with `item_id`, `reason`, and `related_finding_ids`, never strings.
+- `validation_status` uses only the exact allowed enum: `pass`, `warn`, `fail`, or `not_run`.
+- Human approval remains required even when validation passes.
+- The package is not complete until all machine-readable artifacts are schema-valid.
+- The `run_id` in every package JSON artifact exactly matches the full output run-folder name for traceability.
+
 ## Artifact Requirements
 
 ### `optimized_container.json`
@@ -105,15 +158,15 @@ Use plain language and visible uncertainty. Do not claim the output is safe to p
 
 ### `audit_report.json`
 
-Provide structured findings suitable for future validators or agents. Include finding IDs, severity, category, affected entities, evidence, recommendation, automated-change status, related change IDs, and manual-review requirements when available.
+Provide the exact schema-valid structure described in the Machine-readable artifact contract. Include `recommended_actions` as an array of strings, `human_review_required` on every finding, and evidence items containing only `evidence_type` and `observation`.
 
 ### `change_log.json`
 
-Provide structured proposed changes between the source export and `optimized_container.json`. Include change IDs, affected entities, what changed, why it changed, risk level, rollback notes, related findings, and human approval requirements.
+Provide the exact schema-valid structure described in the Machine-readable artifact contract. Use `rollback_notes`, include `summary.change_count`, `summary.high_risk_change_count`, and `summary.manual_review_required: true`, and keep every related finding ID resolvable.
 
 ### `validation_report.json`
 
-Provide a structured validation summary. Include checks, warnings, errors, limitations, and explicit safety fields stating that validation does not prove publish safety, legal compliance, privacy compliance, consent correctness, or tracking correctness.
+Provide the exact schema-valid structure described in the Machine-readable artifact contract. Use `artifact_type: "validation_report"`, schema-defined check objects, string-only `errors` and `warnings`, and the required `publish_safety` booleans. Do not add `limitations` or other undeclared fields; explain validation limits in human-readable artifacts when needed.
 
 ### `qa_checklist.md`
 
@@ -122,6 +175,17 @@ Provide manual analyst QA steps. Include GTM Preview checks, ecommerce or conver
 ### `run_metadata.json`
 
 Provide run metadata. Include a run ID or placeholder, timestamp if known, source filename, client ID if provided, standards applied, tool or GPT version if known, and assumptions or limitations.
+
+### Mechanical validation before delivery
+
+Before presenting a completed package, perform a final contract check against the repo schemas and deterministic package validator when those tools are available. Treat this as a completeness check, not proof that tracking works or that the package is safe to publish.
+
+- Use the schema field names exactly. Do not substitute older aliases such as `container_summary`, `finding_counts`, `status`, `overall_status`, or `artifact_checks` for the required contract fields.
+- In `audit_report.json`, include `artifact_type`, `schema_version`, `run_id`, `client_id`, `source_container_summary`, `audit_summary`, `findings`, `manual_review_items`, and `assumptions`. Every finding must include `description` and `human_review_required`; every proposed change reference must resolve.
+- In `change_log.json`, include `artifact_type`, `schema_version`, `run_id`, `client_id`, `source_container_file`, `optimized_container_file`, `changes`, `summary`, `human_approval_required`, and `publishes_gtm_changes`. Set `human_approval_required` to `true` and `publishes_gtm_changes` to `false`.
+- In `validation_report.json`, include `artifact_type`, `schema_version`, `run_id`, `package_schema_version`, `validation_status`, `checks`, `errors`, `warnings`, and `publish_safety`. Each check and warning must use the schema-defined shape; warnings are strings. Set `publish_safety.optimized_container_publish_ready` and `publish_safety.mlp_publishes_gtm_changes` to `false`, and `publish_safety.human_approval_required` to `true`.
+- In `run_metadata.json`, include `run_id`, `created_at`, `input_files` as a non-empty string array, `client_id`, `standards_applied`, `mlp_version`, and `tool_version` (or the equivalent supported GPT/tool version field).
+- Keep every finding and change link bidirectional and consistent with the summary counts. Preserve the full GTM export wrapper and core `tag`, `trigger`, and `variable` arrays in `optimized_container.json`.
 
 ## Safety Boundaries
 

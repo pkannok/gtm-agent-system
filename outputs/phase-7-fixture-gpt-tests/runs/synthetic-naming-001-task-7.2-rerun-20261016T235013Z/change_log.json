@@ -1,0 +1,79 @@
+{
+  "run_id": "synthetic-naming-001-20261016",
+  "source_file": "synthetic-naming-issues(2).json",
+  "optimized_file": "optimized_container.json",
+  "changes": [
+    {
+      "change_id": "C-001",
+      "finding_ids": [
+        "F-001"
+      ],
+      "rule_id": "GTM-NAME-001",
+      "entity": {
+        "type": "tag",
+        "id": "101",
+        "original_name": "tag 1"
+      },
+      "operation": "rename",
+      "field": "name",
+      "before": "tag 1",
+      "after": "GA4 - Event - lead_submit",
+      "change_type": "name_only",
+      "risk_level": "low",
+      "automated_change_policy": "allowed_candidate",
+      "included_in_optimized_json": true,
+      "reason": "The tag name does not identify its GA4 event purpose.",
+      "human_approval_required": true,
+      "manual_review_required": true,
+      "unsafe_if": "External documentation, macros, QA scripts, or integrations use the old display name.",
+      "rollback": "Restore tag ID 101 name from 'GA4 - Event - lead_submit' to 'tag 1'; leave all other source settings untouched."
+    },
+    {
+      "change_id": "C-002",
+      "finding_ids": [
+        "F-002"
+      ],
+      "rule_id": "GTM-NAME-001",
+      "entity": {
+        "type": "trigger",
+        "id": "201",
+        "original_name": "all"
+      },
+      "operation": "rename",
+      "field": "name",
+      "before": "all",
+      "after": "PV - All Pages",
+      "change_type": "name_only",
+      "risk_level": "low",
+      "automated_change_policy": "allowed_candidate",
+      "included_in_optimized_json": true,
+      "reason": "The trigger name omits its page-view type and intended scope.",
+      "human_approval_required": true,
+      "manual_review_required": true,
+      "unsafe_if": "External documentation, macros, QA scripts, or integrations use the old display name.",
+      "rollback": "Restore trigger ID 201 name from 'PV - All Pages' to 'all'; leave all other source settings untouched."
+    }
+  ],
+  "recommended_not_applied": [
+    {
+      "finding_id": "F-003",
+      "entity_type": "variable",
+      "entity_id": "301",
+      "proposed_name": "CONST - GA4 Measurement ID",
+      "reason": "{{id}} is referenced in tag measurementId; replacing only the variable name would break a visible reference, and updating the reference is not name-only.",
+      "automated_change_policy": "manual_review_only",
+      "applied": false
+    },
+    {
+      "finding_id": "F-004",
+      "entity_type": "folder",
+      "entity_id": "401",
+      "proposed_name": "GA4 - Measurement",
+      "reason": "Folder purpose derived from two members; grouping intent not independently documented.",
+      "automated_change_policy": "manual_review_only",
+      "applied": false
+    }
+  ],
+  "human_approval_required": true,
+  "draft_proposal": true
+}

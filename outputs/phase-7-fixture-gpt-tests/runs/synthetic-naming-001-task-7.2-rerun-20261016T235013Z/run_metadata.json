@@ -1,0 +1,51 @@
+{
+  "run_id": "synthetic-naming-001-20261016",
+  "fixture_id": "synthetic-naming-001",
+  "timestamp_utc": "2026-10-16T23:49:18.761218+00:00",
+  "package_name": "GTM Container Audit & Patch Package",
+  "mlp_version": "not_specified",
+  "tool_version": "GPT-6 / local Python file processing",
+  "source_inputs": [
+    {
+      "filename": "synthetic-naming-issues(2).json",
+      "sha256": "39025f2fbf2afb5a9f67f649e1ac152d6fd0e5c88931b05d6d72537f18f7daaf",
+      "role": "sole GTM container export input"
+    }
+  ],
+  "account_id": "9001",
+  "container_id": "5101",
+  "client_id": null,
+  "client_override_used": false,
+  "standards_applied": [
+    "deliverable-contract.md",
+    "workflow.md",
+    "audit-rules.md",
+    "naming-conventions.md",
+    "gtm-object-model.md",
+    "output-standards.md",
+    "qa-standard.md",
+    "consent-standard.md",
+    "client-overrides.md"
+  ],
+  "rule_ids": [
+    "GTM-NAME-001",
+    "NAME-TAG-001",
+    "NAME-TRIGGER-001",
+    "NAME-VARIABLE-001",
+    "NAME-FOLDER-001"
+  ],
+  "execution_mode": "offline_file_in_file_out",
+  "live_api_calls": 0,
+  "live_platform_inspection": false,
+  "draft_proposal": true,
+  "human_approval_required": true,
+  "output_files": [
+    "optimized_container.json",
+    "audit_report.md",
+    "audit_report.json",
+    "change_log.json",
+    "validation_report.json",
+    "qa_checklist.md",
+    "run_metadata.json"
+  ]
+}

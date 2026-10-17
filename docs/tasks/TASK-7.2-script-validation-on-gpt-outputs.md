@@ -2,7 +2,7 @@
 
 ## Status
 
-Upcoming
+Complete
 
 ## Goal
 
@@ -28,7 +28,11 @@ Script validation catches formatting and reference errors that manual review may
 
 ## Definition of done for MLP
 
-- [ ] `validate_output_package.py` passes on at least two full GPT-generated packages.
-- [ ] Known-bad packages fail.
-- [ ] Validation errors are understandable to a human analyst.
-- [ ] GPT instructions are updated based on recurring validation failures.
+- [x] `validate_output_package.py` passes on at least two full GPT-generated packages.
+- [x] Known-bad packages fail.
+- [x] Validation errors are understandable to a human analyst.
+- [x] GPT instructions are updated based on recurring validation failures.
+
+## Current validation evidence
+
+The initial deterministic failures and the final fresh-package passes are recorded in `docs/tasks/TASK-7.2-verification.md`. Two fresh GPT packages now pass the repository validator. Older failed GPT outputs remain preserved for regression evidence.

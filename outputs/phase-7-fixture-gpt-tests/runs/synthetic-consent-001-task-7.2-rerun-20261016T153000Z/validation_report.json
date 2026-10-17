@@ -1,0 +1,61 @@
+{
+  "artifact_type": "gtm_validation_report",
+  "schema_version": "1.0.0",
+  "run_id": "synthetic-consent-001-20261016",
+  "package_schema_version": "1.0.0",
+  "validation_status": "passed_with_warnings",
+  "checks": [
+    {
+      "check_id": "VAL-001",
+      "name": "Source export parse and wrapper",
+      "passed": true,
+      "details": "exportFormatVersion and containerVersion present; tag/trigger/variable arrays available"
+    },
+    {
+      "check_id": "VAL-002",
+      "name": "Core entity reference resolution",
+      "passed": true,
+      "details": "No unresolved tag firing/blocking-trigger, folder, or parameter-name variable references"
+    },
+    {
+      "check_id": "VAL-003",
+      "name": "Optimized container data equivalence",
+      "passed": true,
+      "details": "Complete source export reproduced without structural/configuration modification"
+    },
+    {
+      "check_id": "VAL-004",
+      "name": "Finding-to-change links",
+      "passed": true,
+      "details": "No unapproved automated patches; zero related change IDs correctly recorded"
+    },
+    {
+      "check_id": "VAL-005",
+      "name": "Package required artifacts",
+      "passed": true,
+      "details": "All seven canonical file paths generated for delivery"
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "Consent settings are not explicit in tag 106 or 107; this does not prove live consent checks are absent.",
+    "Custom HTML loads an external script whose contents and runtime behavior are not included in the export.",
+    "Live GTM Preview, network testing, CMP and client consent policy were not available or performed.",
+    "Repository JSON schema files and deterministic package validator were not provided; strict schema validation was not run.",
+    "No client profile/override supplied; fixture is synthetic and cannot substantiate production risk beyond configuration signals."
+  ],
+  "publish_safety": {
+    "optimized_container_publish_ready": false,
+    "mlp_publishes_gtm_changes": false,
+    "human_approval_required": true,
+    "legal_compliance_verified": false,
+    "privacy_compliance_verified": false,
+    "consent_correctness_verified": false,
+    "tracking_correctness_verified": false
+  },
+  "limitations": [
+    "Only fixture export inspected",
+    "No live APIs, websites, GTM workspaces or production environments accessed",
+    "Strict repository schema validation not performed"
+  ]
+}

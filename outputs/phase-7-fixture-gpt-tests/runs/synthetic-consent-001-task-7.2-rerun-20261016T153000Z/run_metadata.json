@@ -1,0 +1,52 @@
+{
+  "run_id": "synthetic-consent-001-20261016",
+  "created_at": "2026-10-16T21:35:00Z",
+  "fixture_id": "synthetic-consent-001",
+  "input_files": [
+    "synthetic-consent-risk-remarketing.json"
+  ],
+  "client_id": null,
+  "standards_applied": [
+    "instructions.md",
+    "deliverable-contract.md",
+    "workflow.md",
+    "output-standards.md",
+    "audit-rules.md",
+    "gtm-object-model.md",
+    "consent-standard.md",
+    "qa-standard.md",
+    "naming-conventions.md",
+    "client-overrides.md",
+    "mlp-deliverable.md",
+    "ADR-0001-canonical-mlp-deliverable.md"
+  ],
+  "mlp_version": "not supplied",
+  "tool_version": "GTM Container Analyst / GPT-6; local Python JSON checks",
+  "source_sha256": "5181286b3c384f5980368d14772075cbc69621d058f4e2145ba860c961986d45",
+  "source_container": {
+    "account_id": "9001",
+    "container_id": "5106",
+    "container_name": "Synthetic Consent Risk Container",
+    "public_id": "GTM-SYN506",
+    "export_format_version": 2,
+    "entity_counts": {
+      "tag": 2,
+      "trigger": 1,
+      "variable": 1,
+      "folder": 1,
+      "builtInVariable": 1,
+      "customTemplate": 0,
+      "zone": 0
+    }
+  },
+  "assumptions": [
+    "No client-specific override provided",
+    "Timestamp reflects run context; exact execution timestamp not independently verified"
+  ],
+  "limitations": [
+    "No live access or runtime verification",
+    "Repo schema JSON / deterministic validator unavailable"
+  ],
+  "human_approval_required": true,
+  "publishes_gtm_changes": false
+}

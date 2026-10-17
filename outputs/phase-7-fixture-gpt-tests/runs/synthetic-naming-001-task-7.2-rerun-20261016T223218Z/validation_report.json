@@ -1,0 +1,56 @@
+{
+  "artifact_type": "validation_report",
+  "schema_version": "1.0.0",
+  "run_id": "synthetic-naming-001-20261016",
+  "package_schema_version": "1.0.0",
+  "validation_status": "warning",
+  "checks": [
+    {
+      "check_id": "VAL-001",
+      "status": "pass",
+      "message": "Other six required artifacts exist; validation report created in this run.",
+      "checked_at": "2026-10-16T22:34:58Z"
+    },
+    {
+      "check_id": "VAL-002",
+      "status": "pass",
+      "message": "Trigger IDs, parentFolderIds, and {{id}} references resolve within exported entities.",
+      "checked_at": "2026-10-16T22:34:58Z"
+    },
+    {
+      "check_id": "VAL-003",
+      "status": "pass",
+      "message": "Exact deep comparison indicates only tag 101 name changed.",
+      "checked_at": "2026-10-16T22:34:58Z"
+    },
+    {
+      "check_id": "VAL-004",
+      "status": "pass",
+      "message": "Finding and change counts and bidirectional IDs are consistent.",
+      "checked_at": "2026-10-16T22:34:58Z"
+    },
+    {
+      "check_id": "VAL-005",
+      "status": "not_run",
+      "message": "Repository machine-readable JSON schemas and deterministic package validator were not supplied.",
+      "checked_at": "2026-10-16T22:34:58Z"
+    },
+    {
+      "check_id": "VAL-006",
+      "status": "pass",
+      "message": "GTM export wrapper and core entity arrays retained.",
+      "checked_at": "2026-10-16T22:34:58Z"
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "Repository machine-readable schemas and deterministic validator unavailable: strict schema compatibility is unverified.",
+    "Trigger 201 PAGEVIEW fires tag 101 configured with lead_submit eventName; verify intended lead conversion semantics manually.",
+    "Variable 301 still named id because renaming it requires coordinated {{id}} reference edits; F-003 remains unresolved."
+  ],
+  "publish_safety": {
+    "optimized_container_publish_ready": false,
+    "mlp_publishes_gtm_changes": false,
+    "human_approval_required": true
+  }
+}

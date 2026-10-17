@@ -1,0 +1,57 @@
+{
+  "artifact_type": "validation_report",
+  "schema_version": "1.0.0",
+  "run_id": "synthetic-naming-001-20261016",
+  "package_schema_version": "1.0.0",
+  "validation_status": "warn",
+  "checks": [
+    {
+      "check_id": "VAL-001",
+      "status": "pass",
+      "message": "Source and proposed container parse; full GTM export wrapper and all source sections retained.",
+      "checked_at": "2026-10-17T00:22:09.061313+00:00"
+    },
+    {
+      "check_id": "VAL-002",
+      "status": "pass",
+      "message": "Only two entity name fields differ; entity IDs, tag parameters, trigger conditions and references are unchanged.",
+      "checked_at": "2026-10-17T00:22:09.061313+00:00"
+    },
+    {
+      "check_id": "VAL-003",
+      "status": "pass",
+      "message": "Tag firing trigger 201, folder 401, and variable token {{id}} resolve within the export.",
+      "checked_at": "2026-10-17T00:22:09.061313+00:00"
+    },
+    {
+      "check_id": "VAL-004",
+      "status": "pass",
+      "message": "Four findings and two proposed changes are linked bidirectionally; change count and severity summary align.",
+      "checked_at": "2026-10-17T00:22:09.061313+00:00"
+    },
+    {
+      "check_id": "VAL-005",
+      "status": "warn",
+      "message": "No repository JSON Schema files or deterministic package validator were supplied; exact schema validation cannot be claimed.",
+      "checked_at": "2026-10-17T00:22:09.061313+00:00"
+    },
+    {
+      "check_id": "VAL-006",
+      "status": "warn",
+      "message": "GTM Preview, external name references, trigger semantics, and human approvals were not tested.",
+      "checked_at": "2026-10-17T00:22:09.061313+00:00"
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "Repository schema files/validator not available in supplied knowledge; structural contract checks performed but schema-validity is not certified.",
+    "PAGEVIEW trigger 201 is named All Pages based on export structure; analyst must confirm intended scope.",
+    "Variable 301 and folder 401 renames withheld pending manual review; external references are unknown.",
+    "No live GTM Preview, consent review, tracking QA or human approval performed."
+  ],
+  "publish_safety": {
+    "optimized_container_publish_ready": false,
+    "mlp_publishes_gtm_changes": false,
+    "human_approval_required": true
+  }
+}

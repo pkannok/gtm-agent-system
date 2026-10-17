@@ -2,23 +2,23 @@
 
 Current active task:
 
-- None
+- Task 7.3 - Perform analyst review
 
 Current task status:
 
-- Task 7.1 complete after GTM export-shape remediation
+- In progress
 
 Active task brief:
 
-- None
+- `docs/tasks/TASK-7.3-analyst-review.md`
 
 Next recommended task:
 
-- Task 7.2 - Run script validation on GPT outputs
+- Task 7.4 - Create the MLP release checklist
 
 Most recent completed task brief:
 
-- `docs/tasks/TASK-7.1-fixture-based-gpt-tests.md`
+- `docs/tasks/TASK-7.2-script-validation-on-gpt-outputs.md`
 
 Most recent completed phase brief:
 
@@ -72,4 +72,5 @@ Do not work outside the active task scope.
 - Task 7.1 fixture run output manual review is complete, all six runs met the manual quality threshold, and the optimized-container shape blocker was remediated before Task 7.2.
 - The GTM JSON investigation found no invalid JSON syntax and no generated Phase 7 `optimized_container.json` export-shape defect. The issue was metadata-only `optimized_container.container` stubs in the golden expected outputs plus underspecified package validation/generation guidance.
 - Golden expected outputs now preserve fixture intent while using complete GTM export-shaped `optimized_container.container` objects, and schema plus package-validator checks now require the GTM export wrapper and core `tag`, `trigger`, and `variable` arrays.
-- Task 7.2 has not started.
+- Task 7.2 is complete. Two fresh GPT packages pass deterministic validation; older failed runs remain preserved as regression evidence in `docs/tasks/TASK-7.2-verification.md`.
+- Task 7.3 is in progress. The planned analyst review set includes the two passing packages (`synthetic-naming-001` and `synthetic-duplicate-001`) plus the higher-risk `synthetic-consent-001` fixture.

@@ -1,0 +1,62 @@
+{
+  "artifact_type": "validation_report",
+  "schema_version": "1.0.0",
+  "run_id": "synthetic-duplicate-001-20261016",
+  "package_schema_version": "1.0.0",
+  "validation_status": "warn",
+  "checks": [
+    {
+      "check_id": "VAL-001",
+      "status": "pass",
+      "message": "Source and optimized GTM exports parse as JSON and retain required export wrapper and core tag, trigger, variable arrays.",
+      "checked_at": "2026-10-16T23:13:42.830079+00:00"
+    },
+    {
+      "check_id": "VAL-002",
+      "status": "pass",
+      "message": "Optimized container is structurally equal to supplied input; no GTM changes applied.",
+      "checked_at": "2026-10-16T23:13:42.830079+00:00"
+    },
+    {
+      "check_id": "VAL-003",
+      "status": "pass",
+      "message": "Referenced trigger IDs, folder IDs and variable token names checked within the exported tag configuration.",
+      "checked_at": "2026-10-16T23:13:42.830079+00:00"
+    },
+    {
+      "check_id": "VAL-004",
+      "status": "pass",
+      "message": "Audit and change-log JSON parse and have matching run IDs; two findings and zero applied changes.",
+      "checked_at": "2026-10-16T23:13:42.830079+00:00"
+    },
+    {
+      "check_id": "VAL-005",
+      "status": "warn",
+      "message": "Repository schema files and deterministic validator are not supplied; strict JSON Schema conformance cannot be certified.",
+      "checked_at": "2026-10-16T23:13:42.830079+00:00"
+    },
+    {
+      "check_id": "VAL-006",
+      "status": "warn",
+      "message": "F-001 and F-002 require manual test purchase QA and analyst remediation decision.",
+      "checked_at": "2026-10-16T23:13:42.830079+00:00"
+    },
+    {
+      "check_id": "VAL-007",
+      "status": "pass",
+      "message": "All seven expected filenames will be generated, including this validation report and run metadata.",
+      "checked_at": "2026-10-16T23:13:42.830079+00:00"
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "Repository JSON Schema files and deterministic package validator were unavailable; validation covers explicit field-contract and structural checks, not schema conformance.",
+    "Duplicate GA4 purchase tracking and ecommerce integrity findings are unresolved pending manual review.",
+    "Trigger 203 has no explicit custom event condition serialized; live event matching is not verified."
+  ],
+  "publish_safety": {
+    "optimized_container_publish_ready": false,
+    "mlp_publishes_gtm_changes": false,
+    "human_approval_required": true
+  }
+}

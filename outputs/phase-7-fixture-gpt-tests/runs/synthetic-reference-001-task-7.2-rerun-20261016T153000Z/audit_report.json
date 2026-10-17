@@ -1,0 +1,201 @@
+{
+  "artifact_type": "gtm_audit_report",
+  "schema_version": "1.0",
+  "run_id": "synthetic-reference-001-20261016",
+  "client_id": null,
+  "source_container_summary": {
+    "account_id": "9001",
+    "container_id": "5102",
+    "container_name": "Synthetic Broken References Container",
+    "container_public_id": "GTM-SYN502",
+    "export_format_version": 2,
+    "entity_counts": {
+      "tag": 1,
+      "trigger": 1,
+      "variable": 1,
+      "folder": 1,
+      "builtInVariable": 1,
+      "customTemplate": 0
+    },
+    "source_filename": "synthetic-broken-references(2).json"
+  },
+  "audit_summary": {
+    "overall_risk": "high",
+    "total_findings": 3,
+    "severity_counts": {
+      "high": 2,
+      "medium": 1,
+      "low": 0,
+      "info": 0
+    },
+    "primary_rule_id": "GTM-REF-001",
+    "automated_changes_applied": 0,
+    "manual_review_required": true
+  },
+  "findings": [
+    {
+      "finding_id": "F-REF-001",
+      "rule_id": "GTM-REF-001",
+      "severity": "high",
+      "category": "reference_integrity",
+      "title": "Unresolved purchase firing trigger",
+      "description": "Purchase tag 102 refers to trigger 299, which is absent from the exported trigger array.",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "102",
+          "entity_name": "GA4 - Event - Purchase"
+        }
+      ],
+      "evidence": [
+        {
+          "source_path": "containerVersion.tag[0].firingTriggerId[0]",
+          "observed_value": "299",
+          "expected_target_type": "trigger",
+          "target_exists": false,
+          "available_candidate": {
+            "trigger_id": "202",
+            "name": "CE - purchase"
+          },
+          "note": "Candidate based on name only; intent not established."
+        }
+      ],
+      "inferred_impact": "Purchase event may fail to fire as intended; live behavior has not been tested.",
+      "recommendation": "Analyst to verify intended firing logic and consider trigger 202 only after confirming its conditions.",
+      "automated_change_policy": "manual_review_only",
+      "human_review_required": true,
+      "manual_review_required": true,
+      "related_change_ids": [],
+      "related_qa_item_ids": [
+        "QA-002",
+        "QA-003"
+      ]
+    },
+    {
+      "finding_id": "F-REF-002",
+      "rule_id": "GTM-REF-001",
+      "severity": "medium",
+      "category": "reference_integrity",
+      "title": "Unresolved parent folder reference",
+      "description": "Purchase tag 102 refers to folder 499, which is absent from the exported folder array.",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "102",
+          "entity_name": "GA4 - Event - Purchase"
+        }
+      ],
+      "evidence": [
+        {
+          "source_path": "containerVersion.tag[0].parentFolderId",
+          "observed_value": "499",
+          "expected_target_type": "folder",
+          "target_exists": false,
+          "available_candidate": {
+            "folder_id": "402",
+            "name": "GA4 - Ecommerce"
+          },
+          "note": "Folder 402 is a plausible organizational target, not a verified replacement."
+        }
+      ],
+      "inferred_impact": "Folder organization/import interpretation may be inconsistent; folder membership alone does not control firing.",
+      "recommendation": "Analyst to confirm correct folder assignment; consider folder 402 only after confirmation.",
+      "automated_change_policy": "manual_review_only",
+      "human_review_required": true,
+      "manual_review_required": true,
+      "related_change_ids": [],
+      "related_qa_item_ids": [
+        "QA-002"
+      ]
+    },
+    {
+      "finding_id": "F-REF-003",
+      "rule_id": "GTM-REF-001",
+      "severity": "high",
+      "category": "reference_integrity",
+      "title": "Unresolved revenue variable token",
+      "description": "Purchase tag 102 has a value parameter referencing {{Missing Revenue}}, but no user-defined or exported built-in variable of that name exists.",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "102",
+          "entity_name": "GA4 - Event - Purchase"
+        }
+      ],
+      "evidence": [
+        {
+          "source_path": "containerVersion.tag[0].parameter[1].value",
+          "observed_value": "{{Missing Revenue}}",
+          "expected_target_type": "variable",
+          "target_exists": false,
+          "exported_user_variable_names": [
+            "DLV - ecommerce.transaction_id"
+          ],
+          "exported_builtin_variable_names": [
+            "Page URL"
+          ]
+        }
+      ],
+      "inferred_impact": "Revenue value could be undefined or incorrect; no value mapping is demonstrated by the export.",
+      "recommendation": "Confirm the ecommerce value dataLayer key and expected type; create or map a verified variable only after analyst review. Do not substitute the transaction ID variable for revenue.",
+      "automated_change_policy": "manual_review_only",
+      "human_review_required": true,
+      "manual_review_required": true,
+      "related_change_ids": [],
+      "related_qa_item_ids": [
+        "QA-003",
+        "QA-004"
+      ]
+    }
+  ],
+  "manual_review_items": [
+    {
+      "review_item_id": "MR-001",
+      "finding_id": "F-REF-001",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "102",
+          "entity_name": "GA4 - Event - Purchase"
+        }
+      ],
+      "reason": "Unresolved purchase firing trigger",
+      "review_outcome": "manual_review_required",
+      "status": "pending"
+    },
+    {
+      "review_item_id": "MR-002",
+      "finding_id": "F-REF-002",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "102",
+          "entity_name": "GA4 - Event - Purchase"
+        }
+      ],
+      "reason": "Unresolved parent folder reference",
+      "review_outcome": "manual_review_required",
+      "status": "pending"
+    },
+    {
+      "review_item_id": "MR-003",
+      "finding_id": "F-REF-003",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "102",
+          "entity_name": "GA4 - Event - Purchase"
+        }
+      ],
+      "reason": "Unresolved revenue variable token",
+      "review_outcome": "manual_review_required",
+      "status": "pending"
+    }
+  ],
+  "assumptions": [
+    "The single uploaded fixture is the only GTM export input.",
+    "Exported trigger 202 and folder 402 are only candidate destinations, not verified targets.",
+    "No dataLayer specification, website behavior, or live GTM state was provided.",
+    "No source repair is approved based solely on the fixture."
+  ]
+}

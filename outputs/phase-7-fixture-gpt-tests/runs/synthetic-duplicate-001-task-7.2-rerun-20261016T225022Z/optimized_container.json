@@ -1,0 +1,135 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-06-09 00:00:00",
+  "containerVersion": {
+    "accountId": "9001",
+    "containerId": "5103",
+    "name": "Synthetic Duplicate Purchase Version",
+    "container": {
+      "accountId": "9001",
+      "containerId": "5103",
+      "name": "Synthetic Duplicate Purchase Container",
+      "publicId": "GTM-SYN503"
+    },
+    "tag": [
+      {
+        "accountId": "9001",
+        "containerId": "5103",
+        "tagId": "103",
+        "name": "GA4 - Event - purchase",
+        "type": "gaawe",
+        "firingTriggerId": [
+          "203"
+        ],
+        "parentFolderId": "403",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "eventName",
+            "value": "purchase"
+          },
+          {
+            "type": "template",
+            "key": "measurementId",
+            "value": "{{CONST - GA4 Measurement ID}}"
+          },
+          {
+            "type": "template",
+            "key": "transaction_id",
+            "value": "{{DLV - ecommerce.transaction_id}}"
+          }
+        ],
+        "fingerprint": "synthetic-duplicate-tag-103"
+      },
+      {
+        "accountId": "9001",
+        "containerId": "5103",
+        "tagId": "104",
+        "name": "GA4 - Event - purchase copy",
+        "type": "gaawe",
+        "firingTriggerId": [
+          "203"
+        ],
+        "parentFolderId": "403",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "eventName",
+            "value": "purchase"
+          },
+          {
+            "type": "template",
+            "key": "measurementId",
+            "value": "{{CONST - GA4 Measurement ID}}"
+          },
+          {
+            "type": "template",
+            "key": "transaction_id",
+            "value": "{{DLV - ecommerce.transaction_id}}"
+          }
+        ],
+        "fingerprint": "synthetic-duplicate-tag-104"
+      }
+    ],
+    "trigger": [
+      {
+        "accountId": "9001",
+        "containerId": "5103",
+        "triggerId": "203",
+        "name": "CE - purchase",
+        "type": "CUSTOM_EVENT",
+        "fingerprint": "synthetic-duplicate-trigger-203"
+      }
+    ],
+    "variable": [
+      {
+        "accountId": "9001",
+        "containerId": "5103",
+        "variableId": "303",
+        "name": "CONST - GA4 Measurement ID",
+        "type": "c",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "value",
+            "value": "G-TEST503"
+          }
+        ],
+        "fingerprint": "synthetic-duplicate-variable-303"
+      },
+      {
+        "accountId": "9001",
+        "containerId": "5103",
+        "variableId": "304",
+        "name": "DLV - ecommerce.transaction_id",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "name",
+            "value": "ecommerce.transaction_id"
+          }
+        ],
+        "fingerprint": "synthetic-duplicate-variable-304"
+      }
+    ],
+    "folder": [
+      {
+        "accountId": "9001",
+        "containerId": "5103",
+        "folderId": "403",
+        "name": "GA4 - Ecommerce",
+        "fingerprint": "synthetic-duplicate-folder-403"
+      }
+    ],
+    "builtInVariable": [
+      {
+        "accountId": "9001",
+        "containerId": "5103",
+        "type": "PAGE_URL",
+        "name": "Page URL"
+      }
+    ],
+    "customTemplate": []
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "artifact_type": "gtm_change_log",
+  "schema_version": "1.0.0",
+  "run_id": "synthetic-naming-001-20261016",
+  "client_id": null,
+  "source_container_file": "synthetic-naming-issues(3).json",
+  "optimized_container_file": "optimized_container.json",
+  "changes": [
+    {
+      "change_id": "CH-001",
+      "change_type": "rename",
+      "entity_type": "tag",
+      "entity_id": "101",
+      "entity_name": "tag 1",
+      "before": {
+        "name": "tag 1"
+      },
+      "after": {
+        "name": "GA4 - Event - lead_submit"
+      },
+      "reason": "GTM-NAME-001 / NAME-TAG-001; evidenced by tag type gaawe and eventName lead_submit; name-only draft.",
+      "risk_level": "low",
+      "rollback_notes": "Restore tag 101 name to 'tag 1' from the original export. No trigger or payload changes were proposed.",
+      "related_finding_ids": [
+        "F-001"
+      ],
+      "status": "proposed",
+      "human_approval_required": true
+    },
+    {
+      "change_id": "CH-002",
+      "change_type": "rename",
+      "entity_type": "trigger",
+      "entity_id": "201",
+      "entity_name": "all",
+      "before": {
+        "name": "all"
+      },
+      "after": {
+        "name": "PV - All Pages"
+      },
+      "reason": "GTM-NAME-001 / NAME-TRIGGER-001; type PAGEVIEW with no exported conditions; scope requires human confirmation.",
+      "risk_level": "low",
+      "rollback_notes": "Restore trigger 201 name to 'all' from the original export. No trigger conditions were changed.",
+      "related_finding_ids": [
+        "F-002"
+      ],
+      "status": "proposed",
+      "human_approval_required": true
+    }
+  ],
+  "summary": {
+    "change_count": 2,
+    "high_risk_change_count": 0,
+    "manual_review_required": true
+  },
+  "human_approval_required": true,
+  "publishes_gtm_changes": false
+}

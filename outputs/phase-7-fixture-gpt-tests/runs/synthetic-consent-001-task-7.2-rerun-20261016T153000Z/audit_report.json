@@ -1,0 +1,301 @@
+{
+  "artifact_type": "gtm_audit_report",
+  "schema_version": "1.0.0",
+  "run_id": "synthetic-consent-001-20261016",
+  "client_id": null,
+  "source_container_summary": {
+    "account_id": "9001",
+    "container_id": "5106",
+    "container_name": "Synthetic Consent Risk Container",
+    "public_id": "GTM-SYN506",
+    "export_format_version": 2,
+    "entity_counts": {
+      "tag": 2,
+      "trigger": 1,
+      "variable": 1,
+      "folder": 1,
+      "builtInVariable": 1,
+      "customTemplate": 0,
+      "zone": 0
+    }
+  },
+  "audit_summary": {
+    "overall_risk": "high",
+    "total_findings": 3,
+    "severity_counts": {
+      "high": 2,
+      "medium": 1,
+      "low": 0,
+      "info": 0
+    },
+    "changes_applied": 0,
+    "manual_review_required": true
+  },
+  "findings": [
+    {
+      "finding_id": "F-001",
+      "rule_id": "GTM-CONSENT-001",
+      "severity": "high",
+      "category": "consent/risk",
+      "title": "All-pages Google Ads remarketing with no explicit consent gating in export",
+      "description": "The export configures Google Ads remarketing on a broad pageview trigger without an explicit consentSettings field or blocking trigger in the supplied tag record. Whether other site-level consent measures exist is unknown.",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "106",
+          "entity_name": "Google Ads - Remarketing - All Pages"
+        },
+        {
+          "entity_type": "trigger",
+          "entity_id": "206",
+          "entity_name": "PV - All Pages"
+        },
+        {
+          "entity_type": "variable",
+          "entity_id": "306",
+          "entity_name": "CONST - Google Ads Conversion ID"
+        }
+      ],
+      "vendor_signal": "Google Ads / remarketing",
+      "evidence": [
+        {
+          "path": "containerVersion.tag[0].tagId",
+          "observed": "106"
+        },
+        {
+          "path": "containerVersion.tag[0].type",
+          "observed": "sp"
+        },
+        {
+          "path": "containerVersion.tag[0].firingTriggerId",
+          "observed": [
+            "206"
+          ]
+        },
+        {
+          "path": "containerVersion.trigger[0]",
+          "observed": {
+            "triggerId": "206",
+            "name": "PV - All Pages",
+            "type": "PAGEVIEW"
+          }
+        },
+        {
+          "path": "containerVersion.tag[0].parameter[0].value",
+          "observed": "{{CONST - Google Ads Conversion ID}}"
+        },
+        {
+          "path": "containerVersion.tag[0].consentSettings",
+          "observed": "field absent from source tag"
+        },
+        {
+          "path": "containerVersion.tag[0].blockingTriggerId",
+          "observed": "field absent from source tag"
+        }
+      ],
+      "inference": "Broad remarketing firing may create consent-sensitive behavior before the requisite choice; the export alone cannot prove runtime firing or consent enforcement.",
+      "recommendation": "Human analyst and privacy reviewer should confirm expected consent states, relevant consent checks and consent initialization, and observe preview/network behavior. Do not auto-change tag or trigger.",
+      "automated_change_status": "blocked",
+      "human_review_required": true,
+      "manual_review_required": true,
+      "consent_review_required": true,
+      "related_change_ids": [],
+      "related_qa_item_ids": [
+        "QA-002",
+        "QA-003"
+      ]
+    },
+    {
+      "finding_id": "F-002",
+      "rule_id": "GTM-CONSENT-001",
+      "severity": "high",
+      "category": "consent/risk",
+      "title": "Custom HTML external vendor pixel on all pages without explicit consent gating in export",
+      "description": "Custom HTML tag 107 contains a script source pointing to vendor.example.test and fires on trigger 206. The tag record does not show explicit consentSettings or blockingTriggerId.",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "107",
+          "entity_name": "Custom HTML - Vendor Pixel"
+        },
+        {
+          "entity_type": "trigger",
+          "entity_id": "206",
+          "entity_name": "PV - All Pages"
+        }
+      ],
+      "vendor_signal": "External vendor script / pixel",
+      "evidence": [
+        {
+          "path": "containerVersion.tag[1].tagId",
+          "observed": "107"
+        },
+        {
+          "path": "containerVersion.tag[1].type",
+          "observed": "html"
+        },
+        {
+          "path": "containerVersion.tag[1].parameter[0].value",
+          "observed": "<script src=\"https://vendor.example.test/pixel.js\"></script>"
+        },
+        {
+          "path": "containerVersion.tag[1].firingTriggerId",
+          "observed": [
+            "206"
+          ]
+        },
+        {
+          "path": "containerVersion.tag[1].consentSettings",
+          "observed": "field absent from source tag"
+        },
+        {
+          "path": "containerVersion.tag[1].blockingTriggerId",
+          "observed": "field absent from source tag"
+        }
+      ],
+      "inference": "Script content loaded from the external endpoint is not visible in the export and could have additional data access or transmission behavior; actual network activity is not established.",
+      "recommendation": "Obtain vendor documentation and inspect script behavior, consent requirements, network requests and data reads in an approved isolated test. Do not auto-edit HTML or firing conditions.",
+      "automated_change_status": "blocked",
+      "human_review_required": true,
+      "manual_review_required": true,
+      "consent_review_required": true,
+      "related_change_ids": [],
+      "related_qa_item_ids": [
+        "QA-002",
+        "QA-004"
+      ]
+    },
+    {
+      "finding_id": "F-003",
+      "rule_id": "GTM-QA-001",
+      "severity": "medium",
+      "category": "QA",
+      "title": "Consent-sensitive firing requires manual runtime verification",
+      "description": "Both tags reference the same all-pages trigger; no runtime evidence or consent initialization / CMP configuration is visible in this fixture.",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "106",
+          "entity_name": "Google Ads - Remarketing - All Pages"
+        },
+        {
+          "entity_type": "tag",
+          "entity_id": "107",
+          "entity_name": "Custom HTML - Vendor Pixel"
+        },
+        {
+          "entity_type": "trigger",
+          "entity_id": "206",
+          "entity_name": "PV - All Pages"
+        }
+      ],
+      "vendor_signal": "Google Ads and external vendor",
+      "evidence": [
+        {
+          "path": "containerVersion.tag[*].firingTriggerId",
+          "observed": [
+            [
+              "206"
+            ],
+            [
+              "206"
+            ]
+          ]
+        },
+        {
+          "path": "containerVersion.trigger[0].type",
+          "observed": "PAGEVIEW"
+        },
+        {
+          "path": "containerVersion.tag[*].consentSettings",
+          "observed": "no explicit field on either tag"
+        },
+        {
+          "path": "containerVersion.trigger",
+          "observed": "only one PAGEVIEW trigger; no explicit consent-initialization trigger in exported trigger array"
+        }
+      ],
+      "inference": "No consent behavior can be established from this export.",
+      "recommendation": "Run denied, granted and consent-transition tests on an approved non-production test context; capture redacted preview and network evidence.",
+      "automated_change_status": "blocked",
+      "human_review_required": true,
+      "manual_review_required": true,
+      "consent_review_required": true,
+      "related_change_ids": [],
+      "related_qa_item_ids": [
+        "QA-002",
+        "QA-003",
+        "QA-004"
+      ]
+    }
+  ],
+  "manual_review_items": [
+    {
+      "finding_id": "F-001",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "106",
+          "entity_name": "Google Ads - Remarketing - All Pages"
+        },
+        {
+          "entity_type": "trigger",
+          "entity_id": "206",
+          "entity_name": "PV - All Pages"
+        },
+        {
+          "entity_type": "variable",
+          "entity_id": "306",
+          "entity_name": "CONST - Google Ads Conversion ID"
+        }
+      ],
+      "reason": "All-pages Google Ads remarketing with no explicit consent gating in export",
+      "review_outcome": "consent_review_required"
+    },
+    {
+      "finding_id": "F-002",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "107",
+          "entity_name": "Custom HTML - Vendor Pixel"
+        },
+        {
+          "entity_type": "trigger",
+          "entity_id": "206",
+          "entity_name": "PV - All Pages"
+        }
+      ],
+      "reason": "Custom HTML external vendor pixel on all pages without explicit consent gating in export",
+      "review_outcome": "consent_review_required"
+    },
+    {
+      "finding_id": "F-003",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "106",
+          "entity_name": "Google Ads - Remarketing - All Pages"
+        },
+        {
+          "entity_type": "tag",
+          "entity_id": "107",
+          "entity_name": "Custom HTML - Vendor Pixel"
+        },
+        {
+          "entity_type": "trigger",
+          "entity_id": "206",
+          "entity_name": "PV - All Pages"
+        }
+      ],
+      "reason": "Consent-sensitive firing requires manual runtime verification",
+      "review_outcome": "consent_review_required"
+    }
+  ],
+  "assumptions": [
+    "The supplied synthetic fixture is the only source GTM export input.",
+    "Absent exported consent fields are not evidence that live consent controls are absent.",
+    "Vendor script runtime behavior is unknown.",
+    "No client consent policy or production acceptance criteria were supplied."
+  ]
+}

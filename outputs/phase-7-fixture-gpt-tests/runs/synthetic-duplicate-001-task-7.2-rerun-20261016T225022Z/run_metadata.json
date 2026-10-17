@@ -1,0 +1,33 @@
+{
+  "run_id": "synthetic-duplicate-001-20261016",
+  "created_at": "2026-10-16T23:13:42.830079+00:00",
+  "input_files": [
+    "synthetic-duplicate-purchase-tags(1).json"
+  ],
+  "client_id": null,
+  "standards_applied": [
+    "instructions.md",
+    "deliverable-contract.md",
+    "workflow.md",
+    "output-standards.md",
+    "audit-rules.md",
+    "gtm-object-model.md",
+    "naming-conventions.md",
+    "consent-standard.md",
+    "qa-standard.md",
+    "client-overrides.md",
+    "mlp-deliverable.md",
+    "ADR-0001-canonical-mlp-deliverable.md"
+  ],
+  "mlp_version": "repository MLP (version unspecified)",
+  "tool_version": "GPT-6 / local Python file processing",
+  "fixture_id": "synthetic-duplicate-001",
+  "source_sha256": "359b5d8855cb291f205cda62101c247e6d617a2d60f8716d2d78304619e47afd",
+  "optimized_equivalent_to_source": true,
+  "review_status": "draft_human_review_required",
+  "assumptions": [
+    "Only supplied fixture JSON was used as the GTM container export input.",
+    "No client override or profile supplied.",
+    "No repository JSON Schemas or deterministic package validator were provided."
+  ]
+}

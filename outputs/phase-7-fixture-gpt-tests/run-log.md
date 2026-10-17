@@ -16,3 +16,14 @@ Use this table to record each fixture run after a human operator runs the prompt
 ## Completion rule
 
 Task 7.1 is complete. Every row is completed, all six manual results met the quality threshold, no unsafe recommendations were found, and the optimized-container shape blocker was remediated before Task 7.2.
+
+## Task 7.2 validator reruns
+
+The dynamic wrapper `scripts/validate_phase_7_outputs.ps1` was run on 2026-10-17. The two fresh rerun packages below passed `scripts/validate_output_package.py` with exit code `0` and all seven required artifacts present. The wrapper overall remained exit code `1` because older failed run directories are intentionally still discovered and reported.
+
+| Fixture | Fresh run folder | Validator result | Artifacts | Notes |
+| --- | --- | --- | --- | --- |
+| `synthetic-duplicate-001` | `outputs/phase-7-fixture-gpt-tests/runs/synthetic-duplicate-001-task-7.2-rerun-20261016T225022Z/` | pass (exit 0) | all seven present | Fresh package passed schema, consistency, optimized-container, metadata, and safety checks. |
+| `synthetic-naming-001` | `outputs/phase-7-fixture-gpt-tests/runs/synthetic-naming-001-task-7.2-rerun-20261017T002153Z/` | pass (exit 0) | all seven present | Fresh package passed schema, consistency, optimized-container, metadata, and safety checks. |
+
+These two passing packages satisfy the Task 7.2 minimum of two full GPT-generated packages passing deterministic validation. Historical failed runs remain preserved for regression evidence and do not replace the fresh passing outputs.

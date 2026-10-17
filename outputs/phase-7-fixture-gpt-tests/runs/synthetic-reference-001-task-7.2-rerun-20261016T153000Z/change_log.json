@@ -1,0 +1,17 @@
+{
+  "artifact_type": "gtm_change_log",
+  "schema_version": "1.0",
+  "run_id": "synthetic-reference-001-20261016",
+  "client_id": null,
+  "source_container_file": "synthetic-broken-references(2).json",
+  "optimized_container_file": "optimized_container.json",
+  "changes": [],
+  "summary": {
+    "total_changes": 0,
+    "applied_changes": 0,
+    "proposed_not_applied": 0,
+    "note": "No file-based mutations; recommended manual-only repairs are documented in findings and QA."
+  },
+  "human_approval_required": true,
+  "publishes_gtm_changes": false
+}

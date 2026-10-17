@@ -1,0 +1,160 @@
+{
+  "artifact_type": "gtm_audit_report",
+  "schema_version": "1.0.0",
+  "run_id": "synthetic-naming-001-20261016",
+  "client_id": null,
+  "source_container_summary": {
+    "source_file": "synthetic-naming-issues.json",
+    "account_id": "9001",
+    "container_id": "5101",
+    "container_name": "Synthetic Naming Issues Container",
+    "public_id": "GTM-SYN501",
+    "export_format_version": 2,
+    "entity_counts": {
+      "tags": 1,
+      "triggers": 1,
+      "variables": 1,
+      "folders": 1,
+      "built_in_variables": 1,
+      "custom_templates": 0
+    }
+  },
+  "audit_summary": {
+    "summary": "Four naming findings under GTM-NAME-001; one conservative tag rename in draft JSON; three suggestions held for manual review.",
+    "finding_count": 4,
+    "highest_severity": "medium",
+    "human_review_required": true
+  },
+  "findings": [
+    {
+      "finding_id": "F-001",
+      "severity": "low",
+      "category": "naming",
+      "title": "GTM-NAME-001: vague tag name \"tag 1\"",
+      "description": "GTM-NAME-001 / NAME-TAG-001: existing name lacks the prescribed purpose and type context. Candidate: \"GA4 - Event - lead_submit\". Policy: allowed_candidate.",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "101",
+          "entity_name": "tag 1"
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_type": "observed_fact",
+          "observation": "tagId=101; type=gaawe; eventName=lead_submit; measurementId={{id}}; firingTriggerId=201; parentFolderId=401."
+        },
+        {
+          "evidence_type": "assumption",
+          "observation": "GA4 event tag name is supported by tag type and eventName."
+        }
+      ],
+      "recommended_actions": [
+        "Rename tag 101 to GA4 - Event - lead_submit (included in draft)."
+      ],
+      "related_change_ids": [
+        "C-001"
+      ],
+      "human_review_required": true
+    },
+    {
+      "finding_id": "F-002",
+      "severity": "medium",
+      "category": "naming",
+      "title": "GTM-NAME-001: vague trigger name \"all\"",
+      "description": "GTM-NAME-001 / NAME-TRIGGER-001: existing name lacks the prescribed purpose and type context. Candidate: \"PV - All Pages\". Policy: manual_review_only.",
+      "affected_entities": [
+        {
+          "entity_type": "trigger",
+          "entity_id": "201",
+          "entity_name": "all"
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_type": "observed_fact",
+          "observation": "triggerId=201; type=PAGEVIEW; no explicit filter or condition exported."
+        },
+        {
+          "evidence_type": "assumption",
+          "observation": "All Pages scope is inferred, not proven by a live test."
+        }
+      ],
+      "recommended_actions": [
+        "Confirm pageview scope before considering PV - All Pages; do not alter trigger conditions."
+      ],
+      "related_change_ids": [],
+      "human_review_required": true
+    },
+    {
+      "finding_id": "F-003",
+      "severity": "medium",
+      "category": "naming",
+      "title": "GTM-NAME-001: vague variable name \"id\"",
+      "description": "GTM-NAME-001 / NAME-VARIABLE-001: existing name lacks the prescribed purpose and type context. Candidate: \"CONST - GA4 Measurement ID\". Policy: manual_review_only.",
+      "affected_entities": [
+        {
+          "entity_type": "variable",
+          "entity_id": "301",
+          "entity_name": "id"
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_type": "observed_fact",
+          "observation": "variableId=301; type=c; constant value=G-TEST501; tag 101 references {{id}} in measurementId."
+        },
+        {
+          "evidence_type": "assumption",
+          "observation": "Constant appears to be a measurement ID; renaming without updating the variable token could break references."
+        }
+      ],
+      "recommended_actions": [
+        "Review CONST - GA4 Measurement ID, then coordinate all reference rewrites if approved; no rename applied."
+      ],
+      "related_change_ids": [],
+      "human_review_required": true
+    },
+    {
+      "finding_id": "F-004",
+      "severity": "medium",
+      "category": "naming",
+      "title": "GTM-NAME-001: vague folder name \"misc\"",
+      "description": "GTM-NAME-001 / NAME-FOLDER-001: existing name lacks the prescribed purpose and type context. Candidate: \"GA4 - Event Measurement\". Policy: manual_review_only.",
+      "affected_entities": [
+        {
+          "entity_type": "folder",
+          "entity_id": "401",
+          "entity_name": "misc"
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_type": "observed_fact",
+          "observation": "folderId=401; tag 101 and variable 301 have parentFolderId=401."
+        },
+        {
+          "evidence_type": "assumption",
+          "observation": "Proposed grouping purpose follows current members; intended folder ownership is unknown."
+        }
+      ],
+      "recommended_actions": [
+        "Confirm grouping intent before considering GA4 - Event Measurement; no rename applied."
+      ],
+      "related_change_ids": [],
+      "human_review_required": true
+    }
+  ],
+  "manual_review_items": [
+    "F-001 / C-001: confirm no external dependency on exact tag name.",
+    "F-002: verify scope of PAGEVIEW trigger 201 before an All Pages name is accepted.",
+    "F-003: do not rename variable 301 without coordinated rewriting of {{id}} references.",
+    "F-004: confirm folder grouping intent before renaming.",
+    "Confirm whether tag 101 should send lead_submit on a PAGEVIEW trigger; firing behavior is not changed by this patch."
+  ],
+  "assumptions": [
+    "No client overrides provided.",
+    "Fixture is synthetic; no live behavior inspected.",
+    "Repository schema and package validator files were not supplied; conformance to unavailable JSON schemas is not asserted."
+  ]
+}
