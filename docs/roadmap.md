@@ -326,14 +326,14 @@ Validates generated GPT output packages with deterministic scripts after Task 7.
 
 ### Task 7.3 - Perform analyst review
 
-Status: In Progress.
+Status: Complete.
 
 Outcome:
-Performs analyst review of at least three workflow outputs before internal rollout, using the two passing Task 7.2 packages plus a higher-risk consent fixture.
+Analyst review completed for three workflow outputs before internal rollout. Naming and duplicate/ecommerce packages passed; the consent package was dispositioned as `needs_revision` and its validator/runtime QA requirements were carried into the controlled-release gates for Task 7.4.
 
 ### Task 7.4 - Create the MLP release checklist
 
-Status: Upcoming.
+Status: Up next.
 
 Outcome:
 Creates the release checklist for controlled internal MLP use.

@@ -2,7 +2,7 @@
 
 ## Status
 
-Upcoming
+Up next
 
 ## Goal
 

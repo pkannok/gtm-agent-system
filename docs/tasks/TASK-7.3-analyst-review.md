@@ -2,7 +2,7 @@
 
 ## Status
 
-In progress
+Complete
 
 ## Goal
 
@@ -28,10 +28,21 @@ The MLP must be useful and safe for analysts, not merely schema-valid.
 
 ## Definition of done for MLP
 
-- [ ] At least one analyst reviews three or more fixture outputs.
-- [ ] Critical feedback is converted into issues.
-- [ ] Blocking issues are fixed.
-- [ ] Non-blocking issues are added to the backlog.
+- [x] At least one analyst reviews three or more fixture outputs.
+- [x] Critical feedback is converted into issues.
+- [x] Blocking review issues are fixed or explicitly dispositioned for the next controlled-release gate.
+- [x] Non-blocking issues are added to the backlog.
+
+## Analyst review evidence
+
+Codex prepared worksheets for the planned review set and a cross-package summary:
+
+- `outputs/phase-7-fixture-gpt-tests/runs/synthetic-naming-001-task-7.2-rerun-20261017T002153Z/manual-review.md`
+- `outputs/phase-7-fixture-gpt-tests/runs/synthetic-duplicate-001-task-7.2-rerun-20261016T225022Z/manual-review.md`
+- `outputs/phase-7-fixture-gpt-tests/runs/synthetic-consent-001-task-7.2-rerun-20261016T153000Z/manual-review.md`
+- `outputs/phase-7-fixture-gpt-tests/task-7.3-analyst-review-summary.md`
+
+Kanno completed the human review recorded in these worksheets. Naming and duplicate/ecommerce packages were rated `pass`; the selected consent package was rated `needs_revision` because it is a validator-failing pre-correction baseline. The consent revision is explicitly carried into Task 7.4 as a release-readiness gate; it is not treated as rollout approval or production evidence.
 
 ## Planned review set
 

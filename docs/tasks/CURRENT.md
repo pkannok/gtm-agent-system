@@ -2,15 +2,15 @@
 
 Current active task:
 
-- Task 7.3 - Perform analyst review
+- Task 7.4 - Create the MLP release checklist
 
 Current task status:
 
-- In progress
+- Upcoming
 
 Active task brief:
 
-- `docs/tasks/TASK-7.3-analyst-review.md`
+- `docs/tasks/TASK-7.4-mlp-release-checklist.md`
 
 Next recommended task:
 
@@ -18,7 +18,7 @@ Next recommended task:
 
 Most recent completed task brief:
 
-- `docs/tasks/TASK-7.2-script-validation-on-gpt-outputs.md`
+- `docs/tasks/TASK-7.3-analyst-review.md`
 
 Most recent completed phase brief:
 
@@ -73,4 +73,4 @@ Do not work outside the active task scope.
 - The GTM JSON investigation found no invalid JSON syntax and no generated Phase 7 `optimized_container.json` export-shape defect. The issue was metadata-only `optimized_container.container` stubs in the golden expected outputs plus underspecified package validation/generation guidance.
 - Golden expected outputs now preserve fixture intent while using complete GTM export-shaped `optimized_container.container` objects, and schema plus package-validator checks now require the GTM export wrapper and core `tag`, `trigger`, and `variable` arrays.
 - Task 7.2 is complete. Two fresh GPT packages pass deterministic validation; older failed runs remain preserved as regression evidence in `docs/tasks/TASK-7.2-verification.md`.
-- Task 7.3 is in progress. The planned analyst review set includes the two passing packages (`synthetic-naming-001` and `synthetic-duplicate-001`) plus the higher-risk `synthetic-consent-001` fixture.
+- Task 7.3 is complete. Kanno reviewed the naming, duplicate/ecommerce, and consent worksheets; naming and duplicate/ecommerce passed, while consent was dispositioned as `needs_revision` because the available package is a validator-failing pre-correction baseline. That revision remains an explicit release-readiness gate for Task 7.4.

@@ -15,9 +15,9 @@ The MLP workflow is proven useful, schema-aligned, and safe enough for controlle
 ## Included tasks
 
 - Task 7.1 - Run fixture-based GPT tests - Complete after manual GPT fixture runs, manual review, and GTM export-shape remediation.
-- Task 7.2 - Run script validation on GPT outputs - Upcoming.
-- Task 7.3 - Perform analyst review - Upcoming.
-- Task 7.4 - Create the MLP release checklist - Upcoming.
+- Task 7.2 - Run script validation on GPT outputs - Complete.
+- Task 7.3 - Perform analyst review - Complete; consent revision carried into Task 7.4 release gates.
+- Task 7.4 - Create the MLP release checklist - Up next.
 
 ## Out of scope
 
