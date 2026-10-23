@@ -2,11 +2,11 @@
 
 Current active task:
 
-- Task 7.4 - Create the MLP release checklist
+- None
 
 Current task status:
 
-- Upcoming
+- Complete
 
 Active task brief:
 
@@ -14,15 +14,15 @@ Active task brief:
 
 Next recommended task:
 
-- Task 7.4 - Create the MLP release checklist
+- None; Phase 7 is complete.
 
 Most recent completed task brief:
 
-- `docs/tasks/TASK-7.3-analyst-review.md`
+- `docs/tasks/TASK-7.4-mlp-release-checklist.md`
 
 Most recent completed phase brief:
 
-- `docs/tasks/PHASE-6-goal-build-custom-gpt-wrapper.md`
+- `docs/tasks/PHASE-7-goal-mlp-workflow-testing.md`
 
 ## Instructions for Codex
 
@@ -74,3 +74,4 @@ Do not work outside the active task scope.
 - Golden expected outputs now preserve fixture intent while using complete GTM export-shaped `optimized_container.container` objects, and schema plus package-validator checks now require the GTM export wrapper and core `tag`, `trigger`, and `variable` arrays.
 - Task 7.2 is complete. Two fresh GPT packages pass deterministic validation; older failed runs remain preserved as regression evidence in `docs/tasks/TASK-7.2-verification.md`.
 - Task 7.3 is complete. Kanno reviewed the naming, duplicate/ecommerce, and consent worksheets; naming and duplicate/ecommerce passed, while consent was dispositioned as `needs_revision` because the available package is a validator-failing pre-correction baseline. That revision remains an explicit release-readiness gate for Task 7.4.
+- Task 7.4 is complete. Kanno uploaded the release checklist to GPT Knowledge, saved the GPT, and verified the seven-artifact, validator, human-approval, and consent-release gates with `synthetic-unused-001`. The consent package’s own validator/runtime evidence blockers remain unchanged.

@@ -50,15 +50,19 @@ Task 6.5 status: complete. `custom-gpt/conversation-starters.md` records the fin
 
 Current active task: None.
 
-Current task status: Task 7.1 complete.
+Current task status: Task 7.4 complete. GPT Knowledge upload and release-gate verification are recorded.
 
-Next recommended task: `docs/tasks/TASK-7.2-script-validation-on-gpt-outputs.md`.
+Next recommended task: None; Phase 7 is complete.
 
-Phase 7 status: in progress.
+Phase 7 status: complete.
 
 Task 7.1 status: complete. All six synthetic fixture GPT runs are captured, package artifacts are generated, manual reviews are complete, run-log results are recorded, and the post-review GTM JSON remediation is complete. The generated Phase 7 optimized containers were valid export-shaped JSON; the actual defect was metadata-only golden expected output stubs and permissive validation guidance.
 
-Task 7.2 status: upcoming. The next task is deterministic script validation on GPT-generated output packages.
+Task 7.2 status: complete. Fresh naming and duplicate/ecommerce packages pass deterministic validation; older failures remain regression evidence.
+
+Task 7.3 status: complete. Naming and duplicate/ecommerce passed analyst review; the consent package remains a documented `needs_revision` release gate.
+
+Task 7.4 status: complete. `docs/mlp-release-checklist.md` defines controlled internal release gates, is uploaded to GPT Knowledge, and was verified with `synthetic-unused-001`.
 
 Task 0.3 status: complete. Project terminology is defined in `docs/glossary.md`.
 

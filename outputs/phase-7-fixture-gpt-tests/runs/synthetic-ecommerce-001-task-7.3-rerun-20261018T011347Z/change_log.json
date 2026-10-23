@@ -1,0 +1,16 @@
+{
+  "artifact_type": "gtm_change_log",
+  "schema_version": "1.0.0",
+  "run_id": "synthetic-ecommerce-001-20261017",
+  "client_id": null,
+  "source_container_file": "synthetic-ecommerce-missing-fields.json",
+  "optimized_container_file": "optimized_container.json",
+  "changes": [],
+  "summary": {
+    "change_count": 0,
+    "high_risk_change_count": 0,
+    "manual_review_required": true
+  },
+  "human_approval_required": true,
+  "publishes_gtm_changes": false
+}

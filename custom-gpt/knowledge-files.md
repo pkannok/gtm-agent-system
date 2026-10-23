@@ -35,6 +35,7 @@ This file is the repo source of truth for the approved Custom GPT knowledge uplo
 | `standards/agency/naming-conventions.md`                          | Defines agency naming conventions and safe/manual-review rename guidance for GTM entities.                                                                                                             |
 | `standards/agency/consent-standard.md`                            | Defines consent and privacy risk review standards, manual-review triggers, blocked automation, and approved wording.                                                                                   |
 | `standards/agency/qa-standard.md`                                 | Defines human QA checklist structure, evidence expectations, status language, and QA categories.                                                                                                       |
+| `docs/mlp-release-checklist.md`                                   | Defines controlled internal release gates, required package validation, analyst approval, risk-specific QA, rollback evidence, and the prohibition on treating proposals as deployable guarantees.        |
 
 ## Files intentionally excluded from Task 6.3 knowledge
 

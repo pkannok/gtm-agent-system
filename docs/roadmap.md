@@ -302,7 +302,7 @@ Creates conversation starters aligned with the file-in/file-out GTM Container Au
 
 # Phase 7 - MLP workflow testing
 
-Status: In Progress.
+Status: Complete.
 
 ## Goal
 
@@ -333,7 +333,7 @@ Analyst review completed for three workflow outputs before internal rollout. Nam
 
 ### Task 7.4 - Create the MLP release checklist
 
-Status: Up next.
+Status: Complete.
 
 Outcome:
-Creates the release checklist for controlled internal MLP use.
+Creates the release checklist for controlled internal MLP use. The checklist is uploaded to GPT Knowledge and its release-gate behavior was verified with the `synthetic-unused-001` fixture.

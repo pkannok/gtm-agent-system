@@ -1,0 +1,68 @@
+{
+  "artifact_type": "validation_report",
+  "schema_version": "1.0.0",
+  "run_id": "synthetic-ecommerce-001-20261017",
+  "package_schema_version": "1.0.0",
+  "validation_status": "warn",
+  "checks": [
+    {
+      "check_id": "V-001",
+      "status": "pass",
+      "message": "Source JSON parses and contains exportFormatVersion and containerVersion with tag, trigger, variable arrays.",
+      "checked_at": "2026-10-18T01:09:42.447933+00:00"
+    },
+    {
+      "check_id": "V-002",
+      "status": "pass",
+      "message": "Optimized export parses, preserves all source bytes, and retains all core sections.",
+      "checked_at": "2026-10-18T01:09:42.447933+00:00"
+    },
+    {
+      "check_id": "V-003",
+      "status": "pass",
+      "message": "Source tag 105 trigger 205, folder 405, and variable tokens resolve to exported entities.",
+      "checked_at": "2026-10-18T01:09:42.447933+00:00"
+    },
+    {
+      "check_id": "V-004",
+      "status": "pass",
+      "message": "Audit finding references and change-log linkage consistent: one finding, zero changes.",
+      "checked_at": "2026-10-18T01:09:42.447933+00:00"
+    },
+    {
+      "check_id": "V-005",
+      "status": "pass",
+      "message": "Machine-readable keys, enum values, version strings, and safety flags locally checked against supplied instructions.md contract.",
+      "checked_at": "2026-10-18T01:09:42.447933+00:00"
+    },
+    {
+      "check_id": "V-006",
+      "status": "warn",
+      "message": "Repository JSON Schemas and deterministic repository validator unavailable; authoritative schema conformance not verified.",
+      "checked_at": "2026-10-18T01:09:42.447933+00:00"
+    },
+    {
+      "check_id": "V-007",
+      "status": "warn",
+      "message": "Runtime purchase fields, trigger behavior, GA4 reception, and consent remain unverified; human QA required.",
+      "checked_at": "2026-10-18T01:09:42.447933+00:00"
+    },
+    {
+      "check_id": "V-008",
+      "status": "pass",
+      "message": "All seven required artifact filenames generated.",
+      "checked_at": "2026-10-18T01:09:42.447933+00:00"
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "Repository JSON Schema files and validator were not supplied; field-contract checks are not schema validation.",
+    "Purchase dataLayer field sources, tag firing, analytics receipt, and consent could not be verified from export.",
+    "The optimized container deliberately contains no configuration modifications because ecommerce payload edits are blocked for automation."
+  ],
+  "publish_safety": {
+    "optimized_container_publish_ready": false,
+    "mlp_publishes_gtm_changes": false,
+    "human_approval_required": true
+  }
+}

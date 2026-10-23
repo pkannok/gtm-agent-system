@@ -17,6 +17,8 @@ GPT editor creation, intended internal access, editor version-history verificati
 - `custom-gpt/task-6.4-verification.md` - Task 6.4 capability posture, manual editor checks, and verification notes.
 - `custom-gpt/conversation-starters.md` - Final Task 6.5 Custom GPT conversation starters.
 - `custom-gpt/task-6.5-verification.md` - Task 6.5 manual GPT editor entry and verification notes.
+- `custom-gpt/task-7.4-verification.md` - Task 7.4 repository preparation and completed GPT knowledge-upload verification.
+- `docs/mlp-release-checklist.md` - Controlled internal release gates for the GTM Container Audit & Patch Package.
 - `custom-gpt/instructions-draft.md` - Superseded draft context retained for project history.
 - `custom-gpt/task-6.2-verification.md` - Record of manual GPT instruction-copy and response-section verification.
 - `custom-gpt/task-6.1-verification.md` - Record of manual GPT setup evidence and test GPT queries and responses.
@@ -74,7 +76,7 @@ Task 6.1 creates the GPT shell and records the configuration.
 
 Detailed behavior instructions were written in Task 6.2 and are stored in `custom-gpt/instructions.md`.
 
-Knowledge file selection is recorded in `custom-gpt/knowledge-files.md`. Manual GPT editor upload and verification are complete and recorded in `custom-gpt/task-6.3-verification.md`.
+Knowledge file selection is recorded in `custom-gpt/knowledge-files.md`. The Task 7.4 checklist was added to that set, uploaded to GPT Knowledge, and verified with `synthetic-unused-001`; evidence is recorded in `custom-gpt/task-7.4-verification.md`.
 
 Capability configuration is complete for Task 6.4. The approved capability posture and manual GPT editor verification are recorded in `custom-gpt/task-6.4-verification.md`.
 
@@ -96,7 +98,7 @@ Conversation starters are complete for Task 6.5 and recorded in `custom-gpt/conv
 | Name                  | `GTM Container Analyst`                                                             |
 | Description           | Use the short description in `custom-gpt/description.md` or a reviewed equivalent.  |
 | Instructions          | Short pointer to uploaded `custom-gpt/instructions.md` because the full file exceeds the GPT Instructions field limit. |
-| Knowledge             | Completed in Task 6.3. Upload set is recorded in `custom-gpt/knowledge-files.md`, including `custom-gpt/instructions.md`. |
+| Knowledge             | Task 6.3 upload is complete. Task 7.4 added `docs/mlp-release-checklist.md`; upload and release-gate verification are complete. |
 | Capabilities          | Completed in Task 6.4. File uploads and data analysis/code interpreter are enabled only for file-in/file-out MLP use; GPT Actions, API connectors, live platform access, web browsing, and image generation remain out of scope. |
 | Conversation starters | Completed in Task 6.5. Final starters are recorded in `custom-gpt/conversation-starters.md`, and manual GPT editor verification is recorded in `custom-gpt/task-6.5-verification.md`. |
 | Actions               | Out of scope. Do not configure GPT Actions or API connectors.                       |

@@ -62,6 +62,7 @@ Use this high-level workflow without duplicating the full audit rule catalog:
 Reference the repo-defined contracts and standards conceptually:
 
 - `docs/mlp-deliverable.md`
+- `docs/mlp-release-checklist.md` when assessing controlled internal release readiness
 - `docs/decisions/ADR-0001-canonical-mlp-deliverable.md`
 - `skills/gtm-container-auditor/references/deliverable-contract.md`
 - `skills/gtm-container-auditor/references/workflow.md`
@@ -71,6 +72,8 @@ Reference the repo-defined contracts and standards conceptually:
 - `skills/gtm-container-auditor/references/client-overrides.md`
 
 Do not paste or recreate the full audit rule catalog inside the GPT instructions or normal responses. Use rule IDs and concise rule references only when useful.
+
+When a user asks whether the workflow is ready for controlled internal use, apply `docs/mlp-release-checklist.md`. A validator pass and human review are required for current release evidence; the checklist does not authorize import, workspace creation, publishing, production use, or live-platform access.
 
 ## Machine-readable artifact contract
 

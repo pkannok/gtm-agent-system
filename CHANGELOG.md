@@ -6,6 +6,8 @@ All notable project changes will be documented in this file.
 
 ### Added
 
+- Added `docs/mlp-release-checklist.md` and `custom-gpt/task-7.4-verification.md` for controlled internal MLP release gates and pending GPT Knowledge verification.
+
 - Defined the canonical MLP deliverable as **GTM Container Audit & Patch Package**.
 - Added project roadmap.
 - Marked Phase 0 complete after defining the canonical deliverable, repository foundation, and project terminology.
@@ -58,6 +60,9 @@ All notable project changes will be documented in this file.
 - Added `outputs/phase-7-fixture-gpt-tests/` as the Task 7.1 manual fixture-test workspace with operator workflow, run log, review worksheet, fixture prompts, and run-folder instructions.
 
 ### Changed
+
+- Updated Task 7.4 status records, Custom GPT instructions, and the approved knowledge inventory to include the release checklist. Repository work is ready for human GPT-editor review; consent validation and runtime-evidence gates remain blocking.
+- Completed Task 7.4 after Kanno uploaded the release checklist to GPT Knowledge and verified its seven-artifact, validator, human-approval, and consent-release gates with `synthetic-unused-001`.
 
 - Activated Task 7.2, recorded deterministic validation evidence for all six captured GPT packages plus known-good/known-bad smoke controls, corrected the output template and GPT validation checklist, and added `scripts/validate_phase_7_outputs.ps1` for repeatable regression validation. Historical GPT outputs remain unchanged because they currently fail the current artifact contract.
 - Completed Task 7.2 after fresh naming and duplicate-purchase GPT reruns passed deterministic package validation; activated Task 7.3 analyst review for those two packages plus the higher-risk consent fixture.

@@ -1,0 +1,31 @@
+{
+  "run_id": "synthetic-ecommerce-001-20261017",
+  "created_at": "2026-10-18T01:09:42.447933+00:00",
+  "input_files": [
+    "synthetic-ecommerce-missing-fields.json"
+  ],
+  "client_id": null,
+  "standards_applied": [
+    "instructions.md",
+    "deliverable-contract.md",
+    "workflow.md",
+    "output-standards.md",
+    "audit-rules.md",
+    "gtm-object-model.md",
+    "naming-conventions.md",
+    "consent-standard.md",
+    "qa-standard.md",
+    "client-overrides.md",
+    "mlp-deliverable.md",
+    "ADR-0001-canonical-mlp-deliverable.md"
+  ],
+  "mlp_version": "1.0.0",
+  "tool_version": "GPT-6 file-in/file-out; Python local checks",
+  "fixture_id": "synthetic-ecommerce-001",
+  "source_sha256": "38637b5dd17869ac10dc2d82447300687ee18052bde6aeaccdd1131b9263545c",
+  "assumptions": [
+    "No client profile supplied",
+    "No live platform verification performed"
+  ],
+  "human_review_required": true
+}

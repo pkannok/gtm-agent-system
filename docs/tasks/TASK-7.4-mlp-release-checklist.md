@@ -2,7 +2,7 @@
 
 ## Status
 
-Up next
+Complete
 
 ## Goal
 
@@ -28,6 +28,7 @@ The checklist makes internal rollout safer and repeatable for analysts.
 
 ## Definition of done for MLP
 
-- [ ] Release checklist exists.
-- [ ] Checklist is included in repo and GPT knowledge.
-- [ ] Analysts know the GPT produces proposals, not deployable guarantees.
+- [x] Release checklist exists at `docs/mlp-release-checklist.md`.
+- [x] The checklist is included in the repo-approved GPT knowledge inventory.
+- [x] The checklist states that the GPT produces draft proposals, not deployable guarantees.
+- [x] A human uploads the checklist to GPT Knowledge, saves the GPT, and verifies the release-gate behavior with `synthetic-unused-001`.

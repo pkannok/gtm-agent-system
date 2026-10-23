@@ -1,0 +1,91 @@
+{
+  "artifact_type": "gtm_audit_report",
+  "schema_version": "1.0.0",
+  "run_id": "synthetic-ecommerce-001-20261017",
+  "client_id": null,
+  "source_container_summary": {
+    "input_file_name": "synthetic-ecommerce-missing-fields.json",
+    "account_id": "9001",
+    "container_id": "5105",
+    "container_name": "Synthetic Ecommerce Missing Fields Container",
+    "export_format_version": 2,
+    "entity_counts": {
+      "tags": 1,
+      "triggers": 1,
+      "variables": 2,
+      "folders": 1,
+      "templates": 0
+    }
+  },
+  "audit_summary": {
+    "summary": "One high-severity ecommerce mapping concern detected. Unsafe ecommerce payload edits intentionally withheld; human analyst review and test purchase required.",
+    "finding_count": 1,
+    "highest_severity": "high",
+    "human_review_required": true
+  },
+  "findings": [
+    {
+      "finding_id": "F-ECOM-001",
+      "severity": "high",
+      "category": "ecommerce",
+      "title": "Purchase tag lacks explicit transaction ID, currency, and items mappings",
+      "description": "The exported GA4 purchase tag explicitly maps value but does not explicitly map transaction_id, currency, or items. The export cannot establish whether other implementation layers supply these fields or whether test purchases behave correctly.",
+      "affected_entities": [
+        {
+          "entity_type": "tag",
+          "entity_id": "105",
+          "entity_name": "GA4 - Event - purchase"
+        },
+        {
+          "entity_type": "trigger",
+          "entity_id": "205",
+          "entity_name": "CE - purchase"
+        },
+        {
+          "entity_type": "variable",
+          "entity_id": "306",
+          "entity_name": "DLV - ecommerce.value"
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_type": "observed_fact",
+          "observation": "Tag 105 (GA4 - Event - purchase), type gaawe, has eventName=purchase, measurementId={{CONST - GA4 Measurement ID}}, and value={{DLV - ecommerce.value}}; its parameter array has no transaction_id, currency, or items keys."
+        },
+        {
+          "evidence_type": "observed_fact",
+          "observation": "Tag 105 fires on trigger ID 205 (CE - purchase), type CUSTOM_EVENT; the export does not include a custom-event filter/parameter proving the literal event match."
+        },
+        {
+          "evidence_type": "observed_fact",
+          "observation": "Variable 306 (DLV - ecommerce.value) points to dataLayer name ecommerce.value; no variables for ecommerce.transaction_id, ecommerce.currency, or ecommerce.items appear in this export."
+        },
+        {
+          "evidence_type": "manual_review_note",
+          "observation": "Confirm the actual dataLayer purchase payload, mapping requirements, trigger matching, and event transmission in a controlled GTM Preview/test purchase; export-only inspection cannot verify them."
+        }
+      ],
+      "recommended_actions": [
+        "Developer and analytics analyst should document observed purchase dataLayer keys and types for transaction_id, currency, value, and items, with transaction_id stable and unique per purchase.",
+        "After confirming source fields, manually configure and review the GA4 purchase tag mappings; do not invent dataLayer keys, constants, or currency defaults.",
+        "Test purchase event in GTM Preview and approved analytics debugging workflow for one firing, expected parameters, accurate totals, and no duplicate transactions."
+      ],
+      "related_change_ids": [],
+      "human_review_required": true
+    }
+  ],
+  "manual_review_items": [
+    {
+      "item_id": "MR-ECOM-001",
+      "reason": "Purchase transaction_id, currency, and items field sources are not established by the export; changing ecommerce payloads is blocked for automation.",
+      "related_finding_ids": [
+        "F-ECOM-001"
+      ]
+    }
+  ],
+  "assumptions": [
+    "Fixture ID synthetic-ecommerce-001 is user-supplied, not a field in the source export.",
+    "Absence of explicit tag mappings does not prove absence of data in all runtime analytics paths.",
+    "No client-specific override was supplied."
+  ]
+}
